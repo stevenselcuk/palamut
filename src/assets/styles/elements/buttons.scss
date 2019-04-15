@@ -1,0 +1,39 @@
+.btn,
+.btn[type="submit"],
+.button[type="submit"],
+.button {
+	@include font-size(16px);
+	@media (min-width: 700px) {
+		font-size: $font__size_base;
+	}
+	-moz-user-select: none!important;
+	-ms-user-select: none!important;
+	-webkit-appearance: none;
+	-webkit-backface-visibility: hidden;
+	-webkit-user-select: none!important;
+	backface-visibility: hidden;
+	font-weight: 400;
+	padding: 9px 30px 11px;
+	@include transition-primary();
+	@include button-shadow();
+
+	&:hover {
+//		opacity: 0.88;
+		@include shadow-secondary();
+	}
+
+	&:focus {
+		outline: 0!important;
+	}
+	
+
+	
+}
+
+.btn,
+.btn[type="submit"],
+.button[type="submit"],
+.button:not(.is-style-squared) {
+	border-radius: $border-radius__general;
+}
+

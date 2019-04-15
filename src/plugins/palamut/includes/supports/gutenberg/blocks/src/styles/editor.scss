@@ -1,0 +1,66 @@
+@import "../common";
+
+// Style icons
+@import "editor/icons";
+
+// Style various inspector region and block toolbar controls
+@import "editor/is-transient";
+@import "editor/numerals-control";
+
+// Mobile classes
+@import "editor/stacked";
+
+// Adjust dropZone component labels for our blocks.
+@import "editor/dropzone";
+
+// Global styles for our modals.
+.palamut-modal-component {
+	// Position the Palamut icon in our modals a bit better.
+	.components-modal__icon-container {
+		margin-right: 0.7em;
+
+		svg {
+			fill: #23282d; // Same color as modal headings.
+			position: relative;
+			top: 0.16em;
+		}
+	}
+	// Use the same style as core, without the extra classes.
+	.components-modal__header {
+		h1 {
+			font-size: 1rem;
+			font-weight: 700;
+		}
+	}
+}
+
+// Hide the position display fields.
+.components-focal-point-picker--palamut {
+	margin-bottom: 1.9em !important;
+	.components-focal-point-picker_position-display-container {
+		display: none;
+	}
+}
+
+.components-background-display-select--palamut {
+	margin-top: -1.05em !important;
+}
+
+.components-panel__body--palamut-background-panel {
+	> .components-base-control:first-of-type {
+		margin-bottom: 1.3em !important;
+		margin-top: 0.7em !important;
+	}
+}
+
+.components-palamut-icon-dropdown__popover {
+	.components-popover__content {
+		min-width: 80px !important;
+		text-align: center;
+		width: 80px;
+	}
+}
+
+.components-palamut-icon-menu-dropdown {
+	padding: 3px;
+}

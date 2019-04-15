@@ -1,0 +1,29 @@
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+figcaption {
+  font-size: 75%;
+  padding: 0 10px;
+}
+.wp-caption {
+	margin: 0 0 30px;
+	max-width: 100%;
+	&.aligncenter {
+		margin: 0 auto 30px;
+	}
+	&.alignleft {
+		margin: 0 30px 30px 0;
+	}
+	&.alignright {
+		margin: 0 0 30px 30px;
+	}
+}
+
+.wp-caption-text {
+	padding: 5px 0;
+	text-align: center;
+}

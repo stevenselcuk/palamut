@@ -1,0 +1,19 @@
+// Tag Cloud
+
+.widget .tagcloud {
+	@include clearfix;
+
+	a {
+		font-size: 14px !important;
+
+		&:not(:last-child) {
+			&::after {
+				content: ",";
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

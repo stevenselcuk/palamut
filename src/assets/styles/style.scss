@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+Theme Name: Palamut
+Theme URI: https://hevalandsteven.com/themes
+Author: Steven J. Selcuk
+Author URI: https://hevalandsteven.com/
+Description: A WordPress Theme Framework for us
+Version: 0.0.1
+License: GPL-2 +
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: palamut
+Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
+*
+*/
+@import 'variables/*';
+@import 'mixins/*';
+@import 'normalize';
+
+@import 'elements/*';
+@import 'layout/**/*';
+@import 'components/**/*';
+@import 'wordpress/**/*';
+@import 'helpers';
+@import 'vendors/aos';

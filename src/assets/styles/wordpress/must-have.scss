@@ -1,0 +1,152 @@
+/**
+*
+* Accessibility
+*
+* */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+	color: $white;
+	display: none;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	word-wrap: normal;
+
+	&:focus {
+		@include font-size(16px);
+		background-color: #fff;
+		border-radius: 3px;
+		clip: auto;
+		color: #000;
+		display: block;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 0.9375rem;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000;
+	}
+}
+
+#the-content[tabindex="-1"] {
+	&:focus {
+		outline: 0;
+	}
+}
+
+/**
+*
+* Alignments
+*
+* */
+
+.aligncenter,
+.alignleft,
+.alignnone,
+.alignright {
+	clear: both;
+	display: block;
+	margin: 1.6em auto;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	@include center-block;
+	clear: both;
+}
+
+@media screen and (min-width: 768px) {
+	.alignnone {
+		margin: 0 auto;
+	}
+
+	.aligncenter {
+		margin: 2em auto;
+	}
+
+	.alignleft,
+	.alignright {
+		max-width: 50%;
+	}
+
+	.alignright {
+		float: right;
+		margin: 0.4em 0 1em 2em;
+	}
+
+	.alignleft {
+		float: left;
+		margin: 0.4em 2em 1em 0;
+	}
+}
+
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/**
+*
+* Sticky Post Styling
+*
+* */
+.sticky {
+	font-family: inherit;
+}
+
+.bypostauthor > .comment_container {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/* Mejs */
+.wp-audio-shortcode {
+	background: transparent;
+}
+
+.mejs-container {
+	margin-bottom: 3rem;
+}
+
+.post-media .mejs-container {
+	margin-bottom: 0;
+}
+
+/* Password protected post */
+.post-password-form {
+    background: #EFF0F4;
+    padding: 15px;
+    text-align: center;
+}
+.post-password-form input[name="post_password"] {
+    margin-left: 10px;
+    margin-right: 10px;
+}

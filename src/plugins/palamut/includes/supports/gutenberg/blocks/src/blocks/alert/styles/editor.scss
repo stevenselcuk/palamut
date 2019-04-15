@@ -1,0 +1,10 @@
+.wp-block[data-type="palamut/alert"]{
+	background: transparent !important;
+}
+
+.wp-block-palamut-alert {
+
+	&__title {
+		margin-bottom: 0.65em;
+	}
+}

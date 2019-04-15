@@ -1,0 +1,47 @@
+.wp-block[data-type="palamut/accordion"] {
+	.wp-block[data-type="palamut/accordion-item"] {
+		margin-top: 0 !important;
+
+		&:not(:last-child) {
+			margin-bottom: -15px !important;
+		}
+
+		.editor-block-list__insertion-point {
+			display: none;
+		}
+	}
+
+	&[data-align="wide"],
+	&[data-align="full"] {
+		.editor-block-list__block {
+			max-width: none;
+		}
+	}
+
+	&[data-align="full"] {
+		.wp-block-palamut-accordion {
+			padding: 0 12px;
+		}
+	}
+}
+
+// The "Add Accordion Item" button
+.wp-block-palamut-accordion {
+	.components-palamut-add-accordion-item__button.components-button {
+		border-style: dashed;
+		box-shadow: none !important;
+		font-size: 14px;
+		height: 34px;
+		height: auto;
+		justify-content: center;
+		line-height: 31px;
+		padding: 0 9px 0 8px;
+		padding: 8px 15px;
+		text-align: center;
+		width: 100%;
+
+		svg {
+			margin-right: 5px;
+		}
+	}
+}

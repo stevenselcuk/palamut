@@ -1,0 +1,43 @@
+.footer-social-menu {
+	ul {
+		align-items: flex-end;
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		li {
+			padding: 0 15px;
+			a {
+				text-decoration: none;
+				
+				svg {
+					height: 16px;
+					width: 16px;
+					fill: var(--accent);
+					@include svg-transition();
+				&.icon-facebook:hover {
+					fill:#3b5998;
+				}
+				&.icon-linkedin:hover {
+					fill:#0077b5;
+				}
+				&.icon-twitter:hover {
+					fill:#1da1f2;
+				}
+				&.icon-instagram:hover {
+					fill:#833ab4;
+				}
+				
+				
+				
+				
+				}
+				
+				&:hover {
+
+				}
+				
+				
+			}
+		}
+	}
+}

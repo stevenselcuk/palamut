@@ -1,0 +1,87 @@
+.editor-block-list__block[data-type="palamut/click-to-tweet"] {
+	// Resolves jumpy toolbar on input focus.
+	.components-toolbar {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.wp-block-palamut-click-to-tweet {
+	margin: 0;
+
+	a {
+		pointer-events: none;
+	}
+
+	&__twitter-btn {
+		line-height: 34px;
+		margin-left: 40px;
+		margin-top: 15px;
+
+		&:active::before {
+			animation: none;
+		}
+
+		&[data-is-placeholder-visible="true"] {
+			max-width: 128px;
+		}
+	}
+
+	&__via {
+		margin: 3px;
+		padding-left: 26px !important;
+	}
+
+	&__via-label {
+		align-items: center;
+		display: flex;
+		flex-basis: 0;
+		font-size: 12px;
+		height: 36px;
+		left: 7px;
+		position: absolute;
+		white-space: nowrap;
+
+		svg {
+			color: #555d66;
+		}
+	}
+
+	&__via-wrapper {
+		position: relative;
+	}
+
+	//Top toolbar styling for the Twitter username field
+	.edit-post-header-toolbar__block-toolbar &__via {
+		border-color: #8d96a0;
+		border-radius: 3px;
+		box-shadow: 0 0 0 transparent;
+		margin: 4px;
+		padding-bottom: 3px;
+		padding-top: 3px;
+
+		@media (min-width: 1080px) {
+			border-radius: 4px;
+			margin: 2px 4px;
+			padding-left: 28px !important;
+			padding-right: 4px;
+		}
+
+		&:focus {
+			border-color: #00a0d2;
+			box-shadow: 0 0 0 1px #00a0d2;
+			color: #191e23;
+			outline-offset: -2px;
+			outline: 2px solid transparent;
+		}
+	}
+
+	.edit-post-header-toolbar__block-toolbar &__via-label {
+		padding-left: 2px;
+
+		@media (min-width: 1080px) {
+		}
+
+		svg {
+		}
+	}
+}

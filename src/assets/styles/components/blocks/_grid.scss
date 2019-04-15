@@ -1,0 +1,143 @@
+.pala-block-post-grid {
+ margin: 0 0 1.2em 0;
+ position: relative;
+
+ div[class*="columns"].is-grid {
+	 @media only screen and (max-width: 600px) {
+		 grid-template-columns: 1fr;
+	 }
+ }
+
+ .pala-block-post-grid-image {
+	 margin-bottom: 1.2em;
+
+	 img {
+		 display: block;
+		 width: 100%;
+	 }
+ }
+
+ .pala-block-post-grid-text {
+	 text-align: left;
+ }
+
+ h2 {
+	 font-size: 28px;
+	 line-height: 1.2;
+	 margin-bottom: 15px;
+	 margin-top: 0;
+
+	 a {
+		 box-shadow: none;
+		 color: $black;
+		 transition: .3s ease;
+
+		 &:hover {
+			 box-shadow: inset 0 -2px 0 $accent;
+			 color: $accent;
+		 }
+	 }
+ }
+
+ .pala-block-post-grid-byline {
+	 color: $lightgray;
+	 font-size: 13px;
+	 letter-spacing: 1px;
+	 margin-bottom: 15px;
+	 text-transform: uppercase;
+ }
+
+ .pala-block-post-grid-author,
+ .pala-block-post-grid-date {
+	 display: inline-block;
+
+	 &:not(:last-child):after {
+		 content: "\B7";
+		 line-height: 1;
+		 margin: 0 5px;
+		 vertical-align: middle;
+	 }
+ }
+
+ .pala-block-post-grid-author a {
+	 box-shadow: none;
+
+	 &:hover {
+		 box-shadow: 0 -1px 0 inset;
+		 color: inherit;
+		 color: $accent;
+	 }
+ }
+
+ .pala-block-post-grid-text p {
+	 font-size: 18px;
+	 line-height: 1.5;
+	 margin: 0 0 15px 0;
+
+	 @media only screen and (max-width: 600px) {
+		 font-size: 16px;
+	 }
+
+	 &:last-of-type {
+		 margin-bottom: 0;
+	 }
+ }
+
+ .pala-block-post-grid-link {
+	 box-shadow: none;
+	 color: $black;
+	 display: inline-block;
+	 font-weight: bold;
+	 transition: .3s ease;
+
+	 &:hover {
+		 box-shadow: 0 -2px 0 inset;
+	 }
+ }
+
+ .pala-block-post-grid-excerpt div + p {
+	 margin-top: 15px;
+ }
+
+ .is-list {
+	 article {
+		 display: grid;
+		 grid-gap: 0 2em;
+		 grid-template-columns: 30% 1fr;
+		 grid-template-rows: 1fr;
+
+		 &:not(:last-child) {
+			 margin-bottom: 5%;
+			 padding-bottom: 5%;
+		 }
+
+		 @media only screen and (min-width: 600px) {
+			 &:not(:last-child) {
+				 border-bottom: solid 1px #eee;
+			 }
+		 }
+
+		 @media only screen and (max-width: 600px) {
+			 grid-template-columns: 1fr;
+		 }
+	 }
+
+	 .pala-block-post-grid-image {
+		 margin-bottom: 0;
+
+		 @media only screen and (max-width: 600px) {
+			 margin-bottom: 5%;
+		 }
+	 }
+
+	 .pala-block-post-grid-title {
+		 @media only screen and (min-width: 600px) {
+			 font-size: 34px;
+		 }
+	 }
+
+	 .no-thumb .pala-block-post-grid-text {
+		 grid-column: span 2;
+	 }
+ }
+}

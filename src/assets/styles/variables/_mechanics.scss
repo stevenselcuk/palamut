@@ -1,0 +1,62 @@
+$border: 1px solid #ECECEC;
+@mixin transition-primary {
+	transition: all .5s cubic-bezier(.19,1,.22,1);
+}
+
+@mixin link-transition {
+		transition: color .2s ease-in-out;
+}
+
+@mixin svg-transition {
+		transition: fill .2s ease-in-out;
+}
+
+
+@mixin shadow {
+	box-shadow: 0 2px 20px 0 rgba(30,34,38,.18);
+}
+
+@mixin shadow-secondary {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 39.6px 0.4px;
+}
+
+@mixin button-shadow {
+		box-shadow: 0 1px 4px rgba(0,0,0,.1), 0 2px 4px rgba(0,0,0,.1);
+}
+
+
+@mixin scale-it {
+	transform: scale(1.05);
+}
+
+@mixin push-n-turn {
+	transform: rotate(-.75deg) scale(.96);
+}
+
+
+@mixin underline-on-hover {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+%transit {
+	@include transition-primary();
+}
+
+%hover {
+	@include shadow();
+}
+
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	50% {
+				opacity: .5;
+	}
+	100% {
+		opacity: 1;
+	}
+}

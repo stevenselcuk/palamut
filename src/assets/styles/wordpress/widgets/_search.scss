@@ -1,0 +1,34 @@
+.widget_search {
+	@include spacer;
+	.search-form {
+		display: flex;
+		justify-content: space-around;
+		& input[type="search"] {
+			border: 1px solid $border-color;
+			border-radius: $border-radius__general;
+			height: 50px;
+			padding: 0 15px;
+		  @include transition-primary();
+			
+			&:focus {
+				border-color: $accent;
+				outline: none!important;
+			}
+		}
+		& input[type="submit"] {
+			background: $accent;
+			border:none;
+			border-radius: $border-radius__general;
+			color: #fff;
+			height: 50px;
+			padding: 15px;
+			@include transition-primary();
+			&:hover {
+			@include shadow();
+			}
+			&:focus {
+				outline: none!important;
+			}
+		}
+	}
+}

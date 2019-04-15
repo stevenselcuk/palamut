@@ -1,0 +1,39 @@
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+
+}
+
+td, th {
+	border: 1px solid rgba(0, 0, 0, .08);
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+th {
+	font-weight: 700;
+	color: #222222;
+	background: url('assets/images/th_bg.png') repeat-x top left;
+}
+
+table {
+	th {
+		&.empty {
+			visibility: hidden;
+			border: 0;
+			background: none;
+		}
+	}
+	tr:first-child {
+		td {
+			background: url('assets/images/box_shadow.png') repeat-x left top;
+		}
+	}
+	tr:nth-child(2n) {
+		td {
+			background: rgba(0, 0, 0, .01);
+		}
+	}
+}
+

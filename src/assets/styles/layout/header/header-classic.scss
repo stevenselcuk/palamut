@@ -1,0 +1,84 @@
+#masthead.header-classic {
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	background: var(--header-bg-color);
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+	will-change: auto;
+	will-change: auto;
+	z-index: 9999;
+	@include transition-primary();
+
+	.site-branding {}
+
+	.site-navigation {}
+
+	.header-container {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--header-width);
+		padding: $outer_margin / 4 $outer_margin;
+		position: relative;
+	}
+}
+
+.header-classic.headroom--top {
+	background: transparent!important;
+	box-shadow: none!important;
+}
+
+.header-classic.headroom {
+	left: 0;
+	position: fixed!important;
+	right: 0;
+	top: 0;
+}
+
+.header-classic.headroom--unpinned {
+	background: var(--header-bg-color);
+	box-shadow: none!important;
+	transform: translate(0%,-100%);
+}
+
+.header-classic.headroom--pinned:not(.headroom--top) {
+	background: var(--header-bg-color);
+	transform: translate(0%,0%);
+//	@include shadow-secondary;
+	left: 0;
+	position: fixed!important;
+	right: 0;
+	top: 0;
+	z-index: 9999;
+	border-bottom: $border;
+}
+
+.has-sticky-header .site-content {
+	//	margin-top: calc( 11vh + #{$outer_margin} );
+}
+
+// Goddamn WP adminbar shit cleaning.
+/**
+.admin-bar {
+	.headroom--unpinned,
+	.headroom--pinned,{
+		margin-top: 32px;
+		@media screen and (max-width: 782px) {
+			margin-top: 0px!important;
+		}
+		}
+}
+
+.admin-bar {
+	.header-classic:not(.headroom--pinned){
+		margin-top: 32px;
+		@media screen and (max-width: 782px) {
+			margin-top: 46px;
+		}
+	}
+}
+
+**/

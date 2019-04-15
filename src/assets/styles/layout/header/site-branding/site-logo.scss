@@ -1,0 +1,22 @@
+/**
+*
+* Header > Site Logo
+**/
+.site-logo {
+	
+	a {
+		
+	}
+	
+	img {
+
+		max-height: var( --site-logo-height, #{$logo_height} );
+		@include transition-primary;
+		width: auto;
+		
+		&:hover {
+			@include scale-it;
+		}
+	}
+
+}

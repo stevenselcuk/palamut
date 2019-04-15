@@ -1,0 +1,34 @@
+.wp-block-palamut-accordion-item {
+	margin-bottom: 0;
+
+	.editor-block-list__block-edit {
+		margin-bottom: 13px !important;
+		margin-top: 14px !important;
+	}
+
+	.editor-inner-blocks {
+		margin-left: -2px;
+	}
+
+	&__title {
+		cursor: inherit;
+		margin-bottom: 0 !important;
+		padding: 10px 15px !important;
+
+		&::after {
+			display: none;
+		}
+
+		&:focus {
+			outline: none !important;
+		}
+	}
+
+	&--open &__title {
+		border-radius: $accordion-border-radius $accordion-border-radius 0 0;
+	}
+
+	&__content {
+		padding: 0 20px;
+	}
+}

@@ -1,0 +1,137 @@
+//------------------------------//
+$accent:#6515DD;
+$accent_secondary:#60FDB0;
+
+//------------------------------//
+//     Component BG Colors
+//------------------------------//
+$body-bg-color: #F5F3F2;
+$body-text-color: #002A41;
+$header-bg-color: #fff;
+$footer-bg-color: #F9F9F9;
+$bottombar-bg-color:#EBECED;
+$heading-color: #414042;
+$border-color: #ECECEC;
+$menu-item-color: darken($header-bg-color, 80%);
+$menu-item-color__hover:  darken($header-bg-color, 90%);
+
+$link-color: #6515DD;
+$link-color__hover: darken($link-color, 30%);
+$link-color__visited: darken($link-color, 60%);
+
+//------------------------------//
+//       Sum Reserve Colors
+//------------------------------//
+$white: #fff;
+$black: #000;
+$gray: rgba(0, 0, 0, .44);
+$lightgray:rgba(0, 0, 0, .66);
+$radica_red: #FF3464;
+$aqua:#00F0FF;
+
+
+//------------------------------//
+//     Sum Arangements
+//------------------------------//
+
+$color__text-heading: $heading_color;
+$color__text-main: $body-text-color;
+
+$color__background-button: $color__text-main;
+$color__background-button-hover: #444;
+$color--background-body: #fff;
+
+$color--has-background-color-fallback: #f5f5f5;
+
+$color--error: #e85c41;
+$color--success: #2cb994;
+
+$color--background-body: $body-bg-color;
+$color--background-screen: #f1f1f1;
+$color--background-hr: #ccc;
+$color--background-button: #e6e6e6;
+$color--background-pre: #f1f1f1;
+$color--background-ins: #fff9c0;
+$color--background-input-focus: #fff;
+
+$color--background-lightbox: #fff;
+$color--background-lightbox-dark: #1c1c21;
+$color--background-lightbox-button: $black;
+$color--background-lightbox-button-dark: #dfdfe2;
+
+$color--text-screen: #21759b;
+$color--text-input: $black;
+$color--text-input-focus: $black;
+$color--text-input-placeholder: #bbb;
+$color--text-footer-a: #bbb;
+$color--link: #4169e1;
+$color--link-visited: #800080;
+$color--link-hover: #333;
+
+$color--border-button: #ccc #ccc #888;
+$color--border-button-hover: #ccc #888 #aaa;
+$color--border-button-focus: #aaa #888 #888;
+$color--border-input: #e6e6e6;
+$color--border-input-hover: #d6d6d6;
+$color--border-input-focus: #c6c6c6;
+$color--border-abbr: #e8e8e8;
+$color--border-table: #ccc;
+$color--outline-button: #959595;
+
+.palamut-highlight {
+	background: var(--accent);
+	color: #fff;
+}
+
+.palamut-primary-color {
+	color: var(--accent);
+}
+
+.palamut-primary-color {
+	color: var(--accent);
+}
+
+.palamut-underline {
+	text-decoration: underline;
+}
+
+$medium-spring-green: #00C88A;
+$dark-black:#040402;
+$mine-shaft:#333333;
+$persian-blue: #6200FF;
+
+
+$colors: (white, $white), (dark-black, $dark-black), (mine-shaft, $mine-shaft), (persian-blue, $persian-blue), (medium-spring-green, $medium-spring-green), (gray, $gray), (light-gray, $lightgray);
+
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+
+}
+
+.has-background:not([class*="background-color"]) {
+	background-color: $color--has-background-color-fallback;
+}
+
+
+//------------------------------//
+//    Root of Colorz.
+//------------------------------//
+
+:root {
+	--accent: #{$accent};
+	--accent-secondary: #{$accent_secondary};
+	--body-background-color: #{$body-bg-color};
+	--link-color: #{$link-color};
+	--link-color__hover: #{$link-color__hover};
+	--link-color__visited: #{$link-color__visited};
+	--body-text-color: #{$body-text-color};
+	--heading-color:  #{$heading-color};
+	--menu-item-fontcolor: #{$menu-item-color};
+	--header-bg-color: #{$header-bg-color};
+}

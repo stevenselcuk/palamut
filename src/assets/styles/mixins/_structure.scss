@@ -1,0 +1,149 @@
+@mixin padding-vertical( $height ) {
+	padding: calc(4vw + #{$height} ) 0;
+	@media only screen and (min-width: 783px) {
+		padding: calc(4vw + #{$height} ) 0;
+	}
+}
+
+@mixin spacer {
+	margin-bottom: 2.35em;
+	margin-top: 2.35em;
+	@media only screen and (min-width: 783px) {
+		margin-bottom: 2.5em;
+		margin-top: 2.5em;
+	}
+}
+
+@mixin bottom-spacer {
+	margin-bottom: 2.35em;
+	@media only screen and (min-width: 783px) {
+		margin-bottom: 2.5em;
+	}
+}
+@mixin top-spacer {
+	margin-bottom: 2.35em;
+	@media only screen and (min-width: 783px) {
+	margin-top: 2.5em;
+	}
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  > .inline-image {
+    background-color: transparent;
+    background-position: center center;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+	> img {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+}
+
+@mixin blockMobileDisplay {
+  display: block;
+	margin-left: $content__padding;
+	margin-right: $content__padding;
+	max-width: $content__width--less-padding;
+
+	@media screen and (min-width: $content__media-query) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@mixin blockWideDisplay {
+  display: block;
+	margin-left: $content__padding;
+	margin-right: $content__padding;
+	max-width: $content__width--wide--less-padding;
+
+	@media screen and (min-width: $content__media-query--wide) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@mixin do-nice-flex {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	list-style: none;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	width: 75%;
+}
+
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin clearfix() {
+    & {
+		zoom: 1;
+    }
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin structure() {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $content_max-width;
+	width: $content_mobile-width;
+
+	@media only screen and (min-width: 600px) {
+		width: $content_width;
+	}
+}
+
+@mixin clear {
+	clear: both;
+	display: block;
+	height: 0;
+	width: 100%;
+}

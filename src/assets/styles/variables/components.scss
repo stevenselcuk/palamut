@@ -1,0 +1,14 @@
+
+$site-logo__width: 100px;
+$logo_height: 40px;
+$border-radius__general: 4px;
+$border-radius__big: 6px;
+
+
+
+//==========================================
+
+
+:root {
+	--site-logo-height: #{$logo_height};
+}

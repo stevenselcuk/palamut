@@ -1,0 +1,34 @@
+#page.site {
+	animation: fade .5s;
+	animation-timing-function: ease-out;
+	min-height: 100vh;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+
+// Old Box & Full Width System
+// Need class on body.
+body.is-full .site {
+ width: 100%;
+}
+
+body.is-boxed .site {
+margin: 0 auto;
+max-width: var(--content-width);
+}
+
+
+body.admin-bar header{
+	margin-top: 32px;
+	@media screen and (max-width: 782px) {
+    			margin-top: 46px;
+	}
+}
+.site-content {
+  margin-top: 0;
+}
+// Prevent empty or insufficint content ugly look.
+.single-post .entry-content {
+  min-height: 100vh;
+}

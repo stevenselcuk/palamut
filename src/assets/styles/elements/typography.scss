@@ -1,0 +1,53 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--heading-color);
+	font-family: var(--heading-fontfamily);
+	font-weight: var(--heading-fontweight);
+	line-height: var(--heading-line-height);
+	@include font-smoothing();
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: var(--heading-color);
+	text-decoration: none;
+	
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+h1 {
+	font-size: $font__size-xl;
+}
+h2 {
+		font-size: $font__size-lg;
+}
+h3 {
+		font-size: $font__size-mdlrg;
+}
+h4 {
+		font-size: $font__size-md;
+}
+h5 {
+		font-size: $font__size-sm;
+}
+h6 {
+		font-size: $font__size-xs;
+}
+
+.big-text {
+	font-size: $font__size-xxl;
+}
+
+.huge-text {
+	font-size: $font__size-xxxl;
+}

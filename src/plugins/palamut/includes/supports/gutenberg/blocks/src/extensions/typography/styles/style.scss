@@ -1,0 +1,87 @@
+//Custom font family block fixes
+.has-custom-font{
+	@at-root{
+		ul#{&}{
+			li{
+				font-family: inherit;
+			}
+		}
+		blockquote#{&}{
+			p, cite{
+				font-family: inherit !important;
+			}
+		}
+	}
+	&.wp-block-cover {
+		p {
+			font-family: inherit !important;
+		}
+	}
+	&.wp-block-button {
+		.wp-block-button__link {
+			font-family: inherit !important;
+		}
+	}
+	&.wp-block-palamut-click-to-tweet{
+		.wp-block-palamut-click-to-tweet__text{
+			font-family: inherit;
+		}
+	}
+	&.wp-block-palamut-pricing-table{
+		.wp-block-palamut-pricing-table__inner{
+			.wp-block-palamut-pricing-table-item__title,
+			.wp-block-palamut-pricing-table-item__amount{
+				font-family: inherit;
+			}
+		}
+	}
+}
+
+.wp-block-cover {
+	&.has-custom-size {
+		p {
+			font-size: inherit !important;
+		}
+	}
+
+	&.has-custom-lineheight {
+		p {
+			line-height: inherit !important;
+		}
+	}
+}
+
+.wp-block-button {
+	&.has-custom-lineheight {
+		.wp-block-button__link {
+			line-height: inherit;
+		}
+	}
+
+	&.has-custom-size {
+		.wp-block-button__link {
+			font-size: inherit;
+		}
+	}
+}
+
+ul{
+	&.has-custom-lineheight {
+		li{
+			line-height: inherit;
+		}
+	}
+	&.has-custom-size {
+		li{
+			font-size: inherit;
+		}
+	}
+}
+
+.has-custom-transform{
+	&.wp-block-palamut-click-to-tweet{
+		.wp-block-palamut-click-to-tweet__twitter-btn{
+			text-transform: none;
+		}
+	}
+}

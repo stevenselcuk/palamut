@@ -1,0 +1,89 @@
+.pala-instagram-widget {
+	height: 300px;
+	margin: 0 auto;
+	max-width: 450px;
+  padding: 0 $content__padding;
+	width: 100%;
+
+	.slick-dots li button:before,
+	.slick-next:before,
+	.slick-prev:before {
+		color: $accent;
+	}
+
+	.pala-insta-image {
+		background-position: center center;
+		background-size: cover;
+		height: auto;
+		margin: 0 auto;
+
+		.pala-insta-image__overlay {
+			background: rgba(0, 0, 0, .5);
+			height: 100%;
+			visibility: hidden;
+			width: 100%;
+		}
+
+		.pala-insta-image__description {
+			@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 6, $bgColor: white);
+			height: 100%;
+			padding-left: 1em!important;
+			padding-right: 1em!important;
+			transform: translateY(65%);
+			visibility: hidden;
+			width: 100%;
+			@include transition-primary();
+
+		}
+
+		&:hover {
+			.pala-insta-image__description {
+				visibility: visible;
+
+				&:hover {
+					.pala-insta-image__overlay {
+						visibility: visible;
+
+					}
+				}
+			}
+
+		}
+
+		&:active {}
+	}
+
+}
+
+.pala-insta__followme {
+	float: right;
+	font-size: 12px!important;
+}
+
+.instagram-widget-original {
+	.pala-insta-image {
+		max-width: 350px;
+		min-height: 350px;
+	}
+}
+
+.instagram-widget-large {
+	.pala-insta-image {
+		max-width: 300px;
+		min-height: 300px;
+	}
+}
+
+.instagram-widget-small {
+	.pala-insta-image {
+		max-width: 250px;
+		min-height: 250px;
+	}
+}
+
+.instagram-widget-thumbnail {
+	.pala-insta-image {
+		max-width: 150px;
+		min-height: 150px;
+	}
+}

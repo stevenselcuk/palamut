@@ -1,0 +1,40 @@
+# Distribution Files
+app/**
+dist/**
+build/**
+tmp/**
+backups/**
+src/plugins/palamut/includes/blocks/node_modules/**
+wp-config.php
+phpreport.txt
+
+# IDE & Editors
+.idea
+.vscode
+config.codekit3
+
+# OSX
+*.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Icon
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+*.iml
+
+node_modules
+package-lock.json
+
+# Debug log from npm
+npm-debug.log
+
+*.map
+/Icon
+
+/vendor/

@@ -1,0 +1,79 @@
+/**
+ * [color description]
+ *
+ * @type {[type]}
+ */
+.control-info {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  padding: 1em;
+  position: relative;
+}
+
+.control-info .m-t {
+  margin-top: 1.222em;
+}
+
+.control-info .m-b {
+  margin-bottom: 1.222em;
+}
+
+.control-info:after,
+.control-info:before {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  left: 10%;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  width: 0;
+}
+
+.control-info.no-pointer:after,
+.control-info.no-pointer:before {
+  display: none;
+}
+
+.control-info:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+.control-info:before {
+  border-color: rgba(225, 225, 225, 0);
+  border-top-color: #e1e1e1;
+  border-width: 9px;
+  margin-left: -9px;
+}
+
+.control-info> :last-child {
+  margin-bottom: 0;
+}
+
+.control-info-label {
+  padding-right: 40px;
+  position: relative;
+}
+
+.control-info-label:after {
+  font-family: dashicons;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.control-info-label .dashicons {
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 0.122em;
+}
+
+.control-info-description {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 1em;
+}

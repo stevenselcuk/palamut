@@ -1,0 +1,34 @@
+/* Recent Comments */
+.widget_recent_comments ul li {
+	color: #b6b8b9;
+	font-family: "Crimson Text", serif;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: normal;
+	letter-spacing: 0;
+	margin-bottom: 1em;
+}
+.widget_recent_comments ul li:last-child {
+	margin-bottom: 0;
+}
+.widget_recent_comments ul li a {
+	-o-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	color: #d2a74d;
+	font-family: "Crimson Text", serif;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 26px;
+	transition: all 0.3s ease;
+}
+.widget_recent_comments ul li a:hover {
+	color: #0f1f25;
+}
+.widget_recent_comments ul li .comment-author-link a,
+.widget_recent_comments ul li .comment-author-link {
+	color: #0f1f25;
+	font-size: 22px;
+	line-height: 26px;
+}

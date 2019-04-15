@@ -1,0 +1,42 @@
+// Widget RSS Styling
+
+.widget_rss {
+	.widget-title span {
+		display: block;
+
+		.rss-widget-icon {
+			float: right;
+		}
+	}
+
+	ul {
+		li {
+			border-bottom: 1px solid #e8e8e8;
+			padding-bottom: 15px;
+		}
+
+		.rsswidget {
+			display: block;
+			font-weight: 600;
+
+			&:not(:hover) {
+				color: #343538;
+			}
+		}
+
+		.rss-date {
+			font-size: 13px;
+			font-style: normal;
+		}
+
+		.rssSummary {
+			padding: 8px 0;
+		}
+
+		cite {
+			color: #343538;
+			font-style: normal;
+			font-weight: 600;
+		}
+	}
+}

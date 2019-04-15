@@ -1,0 +1,147 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+//input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	background: #fff;
+	border: 1px solid $border-color;
+	border-radius: 999px;
+	color: #878c9b;
+	flex-grow: 1;
+	height: 50px;
+	line-height: 36px;
+	min-width: 50%;
+	outline: none;
+	padding-left: 30px;
+	padding-right: 30px;
+	vertical-align: baseline;
+	width: auto;
+
+	&:focus {
+		border-color: #949596;
+		color: $color__text-input-focus;
+		outline: none;
+	}
+}
+
+select {
+	@extend %transit;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAYAAACzzX7wAAAABGdBTUEAALGPC/xhBQAAADdJREFUCB1jvHnzZsP////rGbAARkbGRkaQODZFIEl1dfUGuD6Qohs3bvwHYRAbLoHMAEmgSwIAG3IiSKCM+2YAAAAASUVORK5CYII=") no-repeat calc(100% - 5px) center;
+	border: 0;
+	border-bottom: 2px solid #dec8ae;
+	border-radius: 0;
+	margin: 0 15px;
+	max-width: 100%;
+	outline: none;
+	text-align: left;
+	width: 100%;
+
+	&:focus {
+		border-color: #777777;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+select {
+//	height: 57px;
+//	padding: 3px 0;
+}
+
+textarea {
+	display: block;
+	max-width: 100%;
+	padding: 3px 0;
+	width: 100%;
+}
+
+::-webkit-resizer {
+	border-color: transparent transparent #dec8ae transparent;
+	border-style: solid;
+	border-width: 0 0 17px 17px;
+	height: 30px;
+	width: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+select:-webkit-autofill,
+textarea:-webkit-autofill {
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+::-webkit-input-placeholder {
+	-webkit-transition: opacity 0.3s !important;
+	opacity: 1;
+	transition: opacity 0.3s !important;
+}
+
+:-moz-placeholder {
+	-moz-transition: opacity 0.3s !important;
+	opacity: 1;
+	transition: opacity 0.3s !important;
+}
+
+/* FF 4-18 */
+::-moz-placeholder {
+	-moz-transition: opacity 0.3s !important;
+	opacity: 1;
+	transition: opacity 0.3s !important;
+}
+
+/* FF 19+ */
+:-ms-input-placeholder {
+	-ms-transition: opacity 0.3s !important;
+	opacity: 1;
+	transition: opacity 0.3s !important;
+}
+
+/* IE 10+ */
+
+*:focus::-webkit-input-placeholder {
+	opacity: 0;
+}
+
+*:focus:-moz-placeholder {
+	opacity: 0;
+}
+
+/* FF 4-18 */
+*:focus::-moz-placeholder {
+	opacity: 0;
+}
+
+/* FF 19+ */
+*:focus:-ms-input-placeholder {
+	opacity: 0;
+}
+
+/* IE 10+ */

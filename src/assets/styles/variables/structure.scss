@@ -1,0 +1,66 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+$content__width: 740px;
+$content__width--wide: 1100px;
+
+$header_width:$content__width--wide;
+
+
+$content_max-width: 740px;
+$content_mobile-width: 90%;
+
+
+$content__align--width: 20px;
+
+// **************************
+// Paddings & Margins
+// Used by spacer mixins
+// **************************
+$content__padding: 20px;
+$content__spacer: 30px;
+$content__spacer--mobile: 20px;
+// **************************
+$content__width--less-padding: $content__width - ($content__padding * 2);
+$content__width--wide--less-padding: $content__width--wide - ($content__padding * 2);
+$content__media-query: $content__width - 1;
+$content__media-query--wide: $content__width--wide - 1;
+$content__align--leftright-margin: $content__width / 2 - $content__padding;
+$content__align--mobile-media-query--min: 499px;
+$content__align--mobile-media-query--max: $content__align--mobile-media-query--min - 1;
+
+$outer_margin: 1.2rem;
+$gutter-width: 1rem;
+
+$gutter-compensation: calc((#{$gutter-width} * 0.5) * -1);
+$half-gutter-width: calc(#{$gutter-width} * 0.5);
+
+@custom-media --sm-viewport only screen and (min-width: 320px) and (max-width: 481px);
+@custom-media --md-viewport only screen and (min-width: 481px) and (max-width: 783px);
+@custom-media --lg-viewport only screen and (min-width: 783px) and (max-width: 1024px);
+@custom-media --xl-viewport only screen and (min-width: 1024px) and (max-width: 1366px);
+@custom-media --xxl-viewport only screen and (min-width: 1367px);
+
+// Small Phones
+// (min-width: 320px) and (max-width: 480px)
+// Phablets & Big Phones
+// (min-width: 481px) and (max-width: 767px)
+// Tablets
+// (min-width: 783px) and (max-width: 1024px)
+// Laptops
+// (min-width: 1024px) and (max-width: 1366px)
+// Desktop & Widescreen Devices
+// (min-width: 1367px)
+
+$smallPhones: 320px;
+$Phones: 481px;
+$Tablets: 783px;
+$Laptops: 1024px;
+$Desktops: 1367px;
+
+
+:root {
+	--content-width: #{$content__width};
+	--content-width-wide: #{$content__width--wide};
+	--header-width:#{$header_width};
+}

@@ -1,0 +1,15 @@
+
+.site-info {
+	background: $bottombar-bg-color;
+	font-size: 12px;
+	padding: 0 $content__spacer--mobile;
+	display: flex;
+	justify-content: space-between;
+
+	.copyright {
+		text-align: left;
+	}
+	.footer-social-menu {
+
+	}
+}

@@ -1,0 +1,17 @@
+body {
+	background-color: var(--body-background-color);
+	color: var(--body-text-color);
+	font-family: var(--body-text-fontfamily);
+	@include fluid-type(480px, 1024px, $body-font__size-min, $body-font__size-max);
+	font-weight: var(--body-text-weight);
+	@include fluid-line-height(480px, 1024px, 1.8, calc(1.4em + (1.6 - 1.3) * ((100vw - 18em)/(35 - 18))), 1.8);
+}
+
+.entry-content p,
+.entry-conten div {
+	hyphens: auto;
+hyphenate-limit-chars: 6 3 3;
+hyphenate-limit-lines: 2;   
+hyphenate-limit-last: always;
+hyphenate-limit-zone: 8%;
+}

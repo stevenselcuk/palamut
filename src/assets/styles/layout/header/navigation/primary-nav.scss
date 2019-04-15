@@ -1,0 +1,98 @@
+/**
+*
+* Primary Nav & Subcomponents
+*
+*/
+#primary-nav {
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+	padding-bottom: $logo_height / 4;
+	padding-top: $logo_height / 4;
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	margin: 0 auto;
+	min-width: 0;
+
+	.primary-menu {
+		display: flex;
+		flex-flow: row wrap;
+		flex: 1 1 auto;
+		justify-content: flex-start;
+		min-width: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			a {
+				@include font-smoothing();
+				color: var(--menu-item-fontcolor, $menu-item-color);
+				font-family: var(--menu-item-fontfamily, $default-font-stack);
+				font-size: 12px;
+				//font-size: var(--menu-item-fontsize, $menu-item_font-size);
+				font-weight: var(--menu-item-fontweight);
+				padding: 10px 14px;
+				text-decoration: none;
+				border-bottom: 1px solid transparent;
+				text-transform: uppercase;
+
+				&:hover {
+					color: var(--menu-item-fontcolor__hover, $menu-item-color__hover);
+					border-color: var(--menu-item-fontcolor__hover, $menu-item-color__hover);
+				}
+			}
+		}
+
+		ul {
+			background: var(--header-bg-color);
+			@include shadow;
+			border: 1px solid $border-color;
+			border-radius: $border-radius__general;
+			min-width: 220px;
+			padding: 0 15px;
+
+			li:not(:last-child) {
+				//				border-bottom: 1px solid $border-color;
+				padding-bottom: 5px;
+			}
+		}
+
+		li.menu-item-has-children {
+			&:hover {
+				ul {
+					opacity: 1;
+					pointer-events: all;
+					transform: translate(-25%,0) scale(1);
+					visibility: visible;
+					z-index: 999;
+
+				}
+			}
+
+			ul {
+				background: #fff;
+				border: 1px solid #e6e8ec;
+				border-radius: 5px;
+				cursor: pointer;
+				list-style: none;
+				min-width: 200px;
+				opacity: 0;
+				padding: 30px 20px 25px;
+				pointer-events: none;
+				position: absolute;
+				text-align: left;
+				transform: translate(-25%,0%) scale(.85);
+				transition: 175ms ease-in-out;
+				transition: transform 0.07s ease-in-out;
+				transition-property: opacity,-webkit-transform;
+				transition-property: opacity,transform;
+				transition-property: opacity,transform,-webkit-transform;
+				will-change: auto;
+				z-index: -9999999;
+
+				li {}
+			}
+		}
+	}
+}
