@@ -53,13 +53,13 @@ get_header(); ?>
 				the_content(
 					sprintf(
 						/* translators: %s: Name of current post */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dude' ),
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'palamut' ),
 						get_the_title()
 					)
 				);
 				wp_link_pages(
 					array(
-						'before'      => '<div class="page-links">' . __( 'Pages:', 'dude' ),
+						'before'      => '<div class="page-links">' . __( 'Pages:', 'palamut' ),
 						'after'       => '</div>',
 						'link_before' => '<span class="page-number">',
 						'link_after'  => '</span>',

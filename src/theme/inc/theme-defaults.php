@@ -62,6 +62,7 @@ function palamut_theme_defaults( $name ) {
 			array(
 				// Identity.
 				'site_title'                   => false,
+				'show_bottombar'               => true,
 				'custom_logo_max_width'        => 50,
 				'custom_logo_mobile_max_width' => 50,
 				'custom_logo_border_radius'    => true,
@@ -102,12 +103,12 @@ function palamut_theme_strings( $name ) {
 			'palamut_theme_strings',
 			array(
 				// Identity.
-				'no_result_found_title'   => _x( 'Nothing Found', 'Search result page warning title', 'pdw-framework' ),
-				'no_result_found_desc'    => _x( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'Search result page warning text', 'pdw-framework' ),
-				'search_form_title'       => _x( 'Search for:', 'Search form placeholder text.', 'pdw-framework' ),
-				'search_form_placeholder' => _x( 'Search', 'Search form placeholder text.', 'pdw-framework' ),
+				'no_result_found_title'   => _x( 'Nothing Found', 'Search result page warning title', 'palamut' ),
+				'no_result_found_desc'    => _x( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'Search result page warning text', 'palamut' ),
+				'search_form_title'       => _x( 'Search for:', 'Search form placeholder text.', 'palamut' ),
+				'search_form_placeholder' => _x( 'Search', 'Search form placeholder text.', 'palamut' ),
 				// Translators: 1. Year 2. Site Name.
-				'copyright-text'          => sprintf( 'Copyright &copy; %1$s %2$s. All rights reserved.', date_i18n( __( 'Y', 'pdw-framework' ) ), get_bloginfo( 'name' ) ),
+				'copyright-text'          => sprintf( 'Copyright &copy; %1$s %2$s. All rights reserved.', date_i18n( __( 'Y', 'palamut' ) ), get_bloginfo( 'name' ) ),
 			)
 		);
 	}

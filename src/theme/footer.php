@@ -43,7 +43,7 @@
 		<?php endif; ?>
 
 		<!-- Start: .site-info -->
-		<?php if ( palamut_gimme( 'show-bottombar', true ) ) : ?>
+		<?php if ( true === get_theme_mod( 'show_bottombar' ) ) : ?>
 
 		<section class="site-info clearfix">
 

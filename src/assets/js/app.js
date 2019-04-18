@@ -10,7 +10,7 @@
 		finished	= ( 'nav-finished' );
 
 	function mobileNav() {
-		const dropdownOpener = $( '.mobile-navigation .mobil-nav-arrow, .main-navigation h6, .mobile-navigation a.dude-mobile-no-link' );
+		const dropdownOpener = $( '.mobile-navigation .mobil-nav-arrow, .main-navigation h6, .mobile-navigation a.palamut-mobile-no-link' );
 		const animationSpeed = 200;
 
 		if ( dropdownOpener.length ) {

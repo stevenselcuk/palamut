@@ -29,7 +29,7 @@ add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
  * Page Title
  */
 function palamut_theme_ocdi_page_title() {
-	return '<h1>' . esc_html__( 'Dude Demos', 'dude' ) . '</h1>';
+	return '<h1>' . esc_html__( 'Palamut Demos', 'palamut' ) . '</h1>';
 }
 
 /**
@@ -40,13 +40,13 @@ function palamut_theme_ocdi_page_title() {
 function palamut_theme_ocdi_plugin_intro_text( $default_text ) {
 	ob_start(); ?>
 	<div class="about-description">
-		<p><?php esc_html_e( 'Clicking the Import Demo Data button will import demo posts, pages, categories, comments, tags and widgets.', 'dude' ); ?></p>
+		<p><?php esc_html_e( 'Clicking the Import Demo Data button will import demo posts, pages, categories, comments, tags and widgets.', 'palamut' ); ?></p>
 		<p>
 		<?php
 		echo sprintf(
 			wp_kses(
 				// Translators: Demo import screen Intro text.
-				__( 'You may switch between different Demos in the <a href="%s">Customize</a> section.', 'dude' ),
+				__( 'You may switch between different Demos in the <a href="%s">Customize</a> section.', 'palamut' ),
 				array(
 					'a' => array(
 						'href' => array(),
@@ -76,21 +76,21 @@ function palamut_theme_ocdi_plugin_intro_text( $default_text ) {
 function palamut_theme_ocdi_import_files() {
 	return array(
 		array(
-			'import_file_name'           => esc_html__( 'Dude Light', 'palamut' ),
-			'import_file_url'            => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/light/content.xml' ),
-			'import_widget_file_url'     => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/light/widgets.wie' ),
-			'import_customizer_file_url' => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/light/customizer.dat' ),
-			'import_preview_image_url'   => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/light/screenshot.png' ),
-	 // 'import_notice'              => esc_html__( 'Before importing demo data you must have to install required plugins', 'palamut' ),
+			'import_file_name'           => esc_html__( 'Palamut Light', 'palamut' ),
+			'import_file_url'            => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/light/content.xml' ),
+			'import_widget_file_url'     => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/light/widgets.wie' ),
+			'import_customizer_file_url' => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/light/customizer.dat' ),
+			'import_preview_image_url'   => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/light/screenshot.png' ),
+			'import_notice'              => esc_html__( 'Before importing demo data you must have to install required plugins', 'palamut' ),
 	 // 'preview_url'                => esc_url( 'http://palamut.softhopper.net' ),
 		),
 		array(
-			'import_file_name'           => esc_html__( 'Dude Dark', 'palamut' ),
-			'import_file_url'            => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/dark/content.xml' ),
-			'import_widget_file_url'     => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/dark/widgets.wie' ),
-			'import_customizer_file_url' => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/dark/customizer.dat' ),
-			'import_preview_image_url'   => esc_url( PALAMUT_PATH_URL . 'includes/theme-demos/options/dark/screenshot.png' ),
-	 // 'import_notice'              => esc_html__( 'Before importing demo data you must have to install required plugins', 'palamut' ),
+			'import_file_name'           => esc_html__( 'Palamut Dark', 'palamut' ),
+			'import_file_url'            => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/dark/content.xml' ),
+			'import_widget_file_url'     => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/dark/widgets.wie' ),
+			'import_customizer_file_url' => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/dark/customizer.dat' ),
+			'import_preview_image_url'   => esc_url( PALAMUT_PATH_URL . 'includes/demos/options/dark/screenshot.png' ),
+			'import_notice'              => esc_html__( 'Before importing demo data you must have to install required plugins', 'palamut' ),
 	 // 'preview_url'                => esc_url( 'http://palamut.softhopper.net/dark' ),
 		),
 	);
@@ -119,10 +119,10 @@ function palamut_theme_ocdi_after_import_setup( $selected_import ) {
 		)
 	);
 
-	if ( 'Dude Light Version' === $selected_import['import_file_name'] ) {
+	if ( 'Palamut Light Version' === $selected_import['import_file_name'] ) {
 		$front_page_id = get_page_by_title( 'Home Light' );
 		$blog_page_id  = get_page_by_title( 'Blog' );
-	} elseif ( 'Dude Dark Version' === $selected_import['import_file_name'] ) {
+	} elseif ( 'Palamut Dark Version' === $selected_import['import_file_name'] ) {
 		$front_page_id = get_page_by_title( 'Home Dark' );
 		$blog_page_id  = get_page_by_title( 'Blog' );
 	}
@@ -149,8 +149,8 @@ add_action( 'pt-ocdi/after_import', 'palamut_theme_ocdi_after_import_setup' );
  */
 function palamut_theme_ocdi_plugin_page_setup( $default_settings ) {
 	$default_settings['parent_slug'] = 'themes.php';
-	$default_settings['page_title']  = esc_html__( 'Dude Demo Importer', 'palamut' );
-	$default_settings['menu_title']  = esc_html__( 'Dude Demos', 'palamut' );
+	$default_settings['page_title']  = esc_html__( 'Palamut Demo Importer', 'palamut' );
+	$default_settings['menu_title']  = esc_html__( 'Palamut Demos', 'palamut' );
 	$default_settings['capability']  = 'import';
 	$default_settings['menu_slug']   = 'palamut-importer';
 

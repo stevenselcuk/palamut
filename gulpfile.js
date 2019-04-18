@@ -156,6 +156,7 @@ function devServer() {
 
 function Reload( done ) {
 	browserSync.reload();
+	browserSync.notify( 'Page has been updated.', 1000 );
 	done();
 }
 
@@ -183,14 +184,14 @@ function stylesDev() {
 				precision: 10,
 			} )
 		)
-//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
-//		.pipe( gcmq() )
-//		.pipe( lineec() )
-//		.pipe( postcss( pluginsListDev ) )
-//		.pipe( lineec() )
+	//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
+	//		.pipe( gcmq() )
+	//		.pipe( lineec() )
+	//		.pipe( postcss( pluginsListDev ) )
+	//		.pipe( lineec() )
 		.pipe( sourcemaps.write( '.' ) )
 		.pipe( dest( './build/wordpress/wp-content/themes/' + themeName ) )
-		.pipe( browserSync.stream( { match: '**/*.css' } ) );
+		.pipe( browserSync.stream() );
 }
 
 function footerScriptsDev() {
@@ -227,12 +228,12 @@ function ShortCodestylesDev() {
 				precision: 10,
 			} )
 		)
-//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
-//		.pipe( gcmq() )
-//		.pipe( lineec() )
-//		.pipe( postcss( pluginsListDev ) )
+	//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
+	//		.pipe( gcmq() )
+	//		.pipe( lineec() )
+	//		.pipe( postcss( pluginsListDev ) )
 		.pipe( concat( 'shortcodes.css' ) )
-//		.pipe( lineec() )
+	//		.pipe( lineec() )
 		.pipe( dest( './src/plugins/palamut/includes/supports/classic-editor/shortcodes/assets/css/' ) )
 		.pipe( browserSync.stream( { match: '**/*.css' } ) );
 }
@@ -251,12 +252,12 @@ function WidgetsstylesDev() {
 				precision: 10,
 			} )
 		)
-//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
-//		.pipe( gcmq() )
-//		.pipe( lineec() )
-//		.pipe( postcss( pluginsListDev ) )
+	//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
+	//		.pipe( gcmq() )
+	//		.pipe( lineec() )
+	//		.pipe( postcss( pluginsListDev ) )
 		.pipe( concat( 'widgets.css' ) )
-//		.pipe( lineec() )
+	//		.pipe( lineec() )
 		.pipe( dest( './src/plugins/palamut/includes/widgets/assets/css/' ) )
 		.pipe( browserSync.stream( { match: '**/*.css' } ) );
 }
@@ -275,11 +276,11 @@ function ClassicStylesDev() {
 				precision: 10,
 			} )
 		)
-//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
-//		.pipe( gcmq() )
-//		.pipe( lineec() )
-//		.pipe( postcss( pluginsListDev ) )
-//		.pipe( lineec() )
+	//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
+	//		.pipe( gcmq() )
+	//		.pipe( lineec() )
+	//		.pipe( postcss( pluginsListDev ) )
+	//		.pipe( lineec() )
 		.pipe( dest( './src/theme/assets/css/' ) )
 		.pipe( browserSync.stream( { match: '**/*.css' } ) );
 }
@@ -298,11 +299,11 @@ function GutenbergStylesDev() {
 				precision: 10,
 			} )
 		)
-//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
-//		.pipe( gcmq() )
-//		.pipe( lineec() )
-//		.pipe( postcss( pluginsListDev ) )
-//		.pipe( lineec() )
+	//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
+	//		.pipe( gcmq() )
+	//		.pipe( lineec() )
+	//		.pipe( postcss( pluginsListDev ) )
+	//		.pipe( lineec() )
 		.pipe( dest( './src/theme/assets/css/' ) )
 		.pipe( browserSync.stream( { match: '**/*.css' } ) );
 }

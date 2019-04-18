@@ -29,9 +29,8 @@
 				@include font-smoothing();
 				color: var(--menu-item-fontcolor, $menu-item-color);
 				font-family: var(--menu-item-fontfamily, $default-font-stack);
-				font-size: 12px;
-				//font-size: var(--menu-item-fontsize, $menu-item_font-size);
-				font-weight: var(--menu-item-fontweight);
+				font-size: var(--menu-item-fontsize, $menu-item_font-size);
+//				font-weight: var(--menu-item-fontweight);
 				padding: 10px 14px;
 				text-decoration: none;
 				border-bottom: 1px solid transparent;

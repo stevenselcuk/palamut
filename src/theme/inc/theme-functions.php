@@ -5,199 +5,10 @@
  * @package palamut
  */
 
- // Exit if accessed directly.
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-if ( ! function_exists( 'palamut_allowed_html' ) ) {
-	/**
-	 * It gives you back allowed tags. Kinda shorthand for boring wp_kses thing.
-	 *
-	 * @method palamut_allowed_html()
-	 *
-	 * @since 1.0
-	 *
-	 * @return array Allowed html tags.
-	 */
-	function palamut_allowed_html() {
-		$allowed_tags = array(
-			'a'          => array(
-				'class'  => array(),
-				'href'   => array(),
-				'rel'    => array(),
-				'title'  => array(),
-				'target' => array(),
-			),
-			'abbr'       => array(
-				'title' => array(),
-			),
-			'iframe'     => array(
-				'src' => array(),
-			),
-			'b'          => array(),
-			'br'         => array(),
-			'blockquote' => array(
-				'cite' => array(),
-			),
-			'cite'       => array(
-				'title' => array(),
-			),
-			'code'       => array(),
-			'del'        => array(
-				'datetime' => array(),
-				'title'    => array(),
-			),
-			'dd'         => array(),
-			'div'        => array(
-				'class' => array(),
-				'title' => array(),
-				'style' => array(),
-			),
-			'dl'         => array(),
-			'dt'         => array(),
-			'em'         => array(),
-			'h1'         => array(),
-			'h2'         => array(),
-			'h3'         => array(),
-			'h4'         => array(),
-			'h5'         => array(),
-			'h6'         => array(),
-			'i'          => array(
-				'class' => array(),
-			),
-			'img'        => array(
-				'alt'    => array(),
-				'class'  => array(),
-				'height' => array(),
-				'src'    => array(),
-				'width'  => array(),
-			),
-			'li'         => array(
-				'class' => array(),
-			),
-			'ol'         => array(
-				'class' => array(),
-			),
-			'p'          => array(
-				'class' => array(),
-			),
-			'q'          => array(
-				'cite'  => array(),
-				'title' => array(),
-			),
-			'span'       => array(
-				'class' => array(),
-				'title' => array(),
-				'style' => array(),
-			),
-			'strike'     => array(),
-			'strong'     => array(),
-			'ul'         => array(
-				'class' => array(),
-			),
-		);
-
-		return $allowed_tags;
-	}
-}
-
-
- /**
-  * [palamut_svg_allowed_html description]
-  *
-  * @method palamut_svg_allowed_html
-  *
-  * @since
-  *
-  * @link
-  *
-  * @see
-  *
-  * @return [type]
-  */
-function palamut_clean_svg() {
-	return apply_filters(
-		'palamut_svg_allowed_html',
-		array(
-			'svg' => array(
-				'class'       => array(),
-				'aria-hidden' => array(),
-				'role'        => array(),
-			),
-			'use' => array(
-				'xlink:href' => array(),
-			),
-		)
-	);
-
-}
-
- /**
-  * [palamut_gimme description]
-  *
-  * @method palamut_gimme
-  *
-  * @since
-  *
-  * @link
-  *
-  * @param  string $name Which option that we want?.
-  * @param  string $default_value A fallback if something is wrong.
-  *
-  * @return [type]
-  */
-function palamut_gimme( $name = null, $default_value = null ) {
-
-	if ( null === $name ) {
-		return $default_value ? $default_value : null;
-	}
-
-	$value = null;
-
-	if ( null === $value || 'default' === $value && class_exists( 'Palamut_Customizer' ) ) {
-			$value = Palamut_Customizer::get( $name, $default_value );
-	}
-	/**
-	 * What if there is no BestMan? Ugly theme? Nope.
-	 *
-	 * Try theme palamuttheme_defaults
-	 *
-	 * @see palamuttheme_defaults
-	 */
-	if ( null === $value ) {
-		$value = palamut_theme_defaults( $name );
-	}
-		 /**
-		* Still no luck? let's look user given value.
-		*
-		* @var $value
-		* @var $default_value
-		*/
-	if ( null === $value && null !== $default_value ) {
-		$value = $default_value;
-	}
-	return $value;
-}
-
-
-/**
- * [dude_icons description]
- *
- * @method dude_icons
- *
- * @since
- *
- * @link
- *
- * @see classes/class-dude-icon-bucket.php
- *
- * @return [type]
- */
-function palamut_icons() {
-	return Palamut_Icon_Bucket::instance();
-}
-
 
 if ( ! function_exists( 'palamut_add_body_class' ) ) {
 	/**
@@ -216,8 +27,8 @@ if ( ! function_exists( 'palamut_add_body_class' ) ) {
 			$classes[] = 'is-customize-preview';
 		}
 
-		if ( palamut_gimme( 'is-header-sticky' ) ) {
-			$classes[] = 'has-sticky-header';
+		if ( true === palamut_gimme( 'is-header-sticky', false ) ) {
+//			$classes[] = 'has-sticky-header';
 		}
 
 		if ( palamut_gimme( 'boxed-page' ) ) {
@@ -390,3 +201,26 @@ if ( ! function_exists( 'palamut_get_pagination' ) ) {
 		endif;
 	}
 }
+
+/**
+ * Adds a custom template for the block editor for the post type.
+ */
+function palamut_add_template_to_posts() {
+
+	if ( function_exists( 'register_block_type' ) ) {
+		return;
+	}
+
+	$post_type_object = get_post_type_object( 'post' );
+
+	$post_type_object->template = array(
+		array(
+			'core/image',
+			array(
+				'align' => 'wide',
+			),
+		),
+		array( 'core/paragraph' ),
+	);
+}
+add_action( 'init', 'palamut_add_template_to_posts' );

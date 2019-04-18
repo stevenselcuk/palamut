@@ -10,7 +10,7 @@
 	
 	img {
 
-		max-height: var( --site-logo-height, #{$logo_height} );
+		max-height: var( --site-logo-height);
 		@include transition-primary;
 		width: auto;
 		

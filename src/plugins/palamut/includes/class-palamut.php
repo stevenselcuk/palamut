@@ -141,10 +141,6 @@ class Palamut {
 				 * Add metaboxes
 				 */
 				require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/metaboxes/init.php';
-				/**
-				 * Get Kirki Helper.
-				 */
-				require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/helpers/class-palamut-customizer.php';
 
 				require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/helpers/class-palamut-templater.php';
 
