@@ -21,6 +21,33 @@ if ( ! function_exists( 'palamut_add_body_class' ) ) {
 	 * @return array $classes add calculated class to body element
 	 */
 	function palamut_add_body_class( $classes ) {
+		global $is_lynx, $is_gecko, $is_ie, $is_opera, $is_ns4, $is_safari, $is_chrome, $is_iphone;
+
+		if ( $is_lynx ) {
+			$classes[] = 'lynx';
+		} elseif ( $is_gecko ) {
+			$classes[] = 'gecko';
+		} elseif ( $is_opera ) {
+			$classes[] = 'opera';
+		} elseif ( $is_ns4 ) {
+			$classes[] = 'ns4';
+		} elseif ( $is_safari ) {
+			$classes[] = 'safari';
+		} elseif ( $is_chrome ) {
+			$classes[] = 'chrome';
+		} elseif ( $is_ie ) {
+			$classes[] = 'ie';
+			if ( preg_match( '/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version ) ) {
+				$classes[] = 'ie' . $browser_version[1];
+			}
+		} else {
+			$classes[] = 'unknown';
+		}
+
+		if ( $is_iphone ) {
+			$classes[] = 'iphone';
+		}
+
 		$classes[] = 'clearfix';
 
 		if ( is_customize_preview() ) {
@@ -28,7 +55,7 @@ if ( ! function_exists( 'palamut_add_body_class' ) ) {
 		}
 
 		if ( true === palamut_gimme( 'is-header-sticky', false ) ) {
-//			$classes[] = 'has-sticky-header';
+			// $classes[] = 'has-sticky-header';
 		}
 
 		if ( palamut_gimme( 'boxed-page' ) ) {

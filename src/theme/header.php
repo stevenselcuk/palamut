@@ -55,7 +55,7 @@
 				?>
 			</nav>
 			<!-- End: #main-nav -->
-
+<?php palamut_cart_icon( 'header_checkout' ); ?>
 			<!-- Start: .hamburger-->
 			<button class="hamburger">
 				<div></div>

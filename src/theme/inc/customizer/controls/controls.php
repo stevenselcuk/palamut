@@ -7,7 +7,7 @@
  */
 
 /**
- * Register the control types that we're using as JavaScript controls.
+ * Register the control types that we're using as JpalamutScript controls.
  *
  * @param WP_Customize_Manager $wp_customize the Customizer object.
  */

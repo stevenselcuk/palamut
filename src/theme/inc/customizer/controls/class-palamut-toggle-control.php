@@ -58,7 +58,7 @@ class Palamut_Toggle_Control extends WP_Customize_Control {
 	}
 
 	/**
-	 * Refresh the parameters passed to the JavaScript via JSON.
+	 * Refresh the parameters passed to the JpalamutScript via JSON.
 	 *
 	 * @uses WP_Customize_Control::to_json()
 	 */

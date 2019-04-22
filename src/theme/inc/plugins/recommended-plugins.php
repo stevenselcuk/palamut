@@ -39,6 +39,11 @@ function palamut_register_required_plugins() {
 			'is_callable'        => '',
 		),
 		array(
+			'name'     => esc_html__( 'WooCommerce', 'palamut' ),
+			'slug'     => 'woocommerce',
+			'required' => false,
+		),
+		array(
 			'name'     => esc_html__( 'WP Term Order', 'palamut' ),
 			'slug'     => 'wp-term-order',
 			'required' => false,

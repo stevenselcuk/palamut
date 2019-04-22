@@ -34,7 +34,7 @@ if ( ! function_exists( 'palamut_setup' ) ) :
 	 */
 	function palamut_setup() {
 		/*
-			* Make theme available for translation.
+			* Make theme palamutilable for translation.
 			* Translations can be filed in the /languages/ directory.
 			* If you're building a theme based on palamut, use a find and replace
 			* to change 'palamut' to the name of your theme in all the template files.
@@ -120,6 +120,15 @@ if ( ! function_exists( 'palamut_setup' ) ) :
 
 		}
 
+		/*
+		 * Delcare support for WooCommerce.
+		 * See: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+		 */
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-slider' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+
 	}
 endif;
 
@@ -128,7 +137,7 @@ add_action( 'after_setup_theme', 'palamut_setup' );
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
- * Priority 0 to make it available to lower priority callbacks.
+ * Priority 0 to make it palamutilable to lower priority callbacks.
  *
  * @global int $content_width
  */

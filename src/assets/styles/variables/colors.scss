@@ -12,6 +12,8 @@ $footer-bg-color: #F9F9F9;
 $bottombar-bg-color:#EBECED;
 $heading-color: #414042;
 $border-color: #ECECEC;
+// WooCommerce
+$color__border-bottom: $border-color;
 $menu-item-color: darken($header-bg-color, 80%);
 $menu-item-color__hover:  darken($header-bg-color, 90%);
 
@@ -28,6 +30,8 @@ $gray: rgba(0, 0, 0, .44);
 $lightgray:rgba(0, 0, 0, .66);
 $radica_red: #FF3464;
 $aqua:#00F0FF;
+$red: #EE4465;
+$blue: #00B6FF;
 
 
 //------------------------------//

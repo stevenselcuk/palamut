@@ -17,8 +17,8 @@
 	vertical-align: baseline;
 	word-wrap: break-word;
 }
-.mce-content-body {
 
+.mce-content-body {
 	
 	h1,
 	h2,
@@ -142,7 +142,7 @@
 
 .wp-block[data-type="core/paragraph"],
 .wp-block[data-type="core/list"]  {
-  
+  font-family: var(--body-text-fontfamily);
 }
 .wp-block[data-type="core/heading"] {
 	h1,

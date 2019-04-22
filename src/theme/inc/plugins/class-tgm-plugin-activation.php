@@ -357,8 +357,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
 					/* translators: 1: plugin name(s). */
-					'There is an update available for: %1$s.',
-					'There are updates available for the following plugins: %1$s.',
+					'There is an update palamutilable for: %1$s.',
+					'There are updates palamutilable for the following plugins: %1$s.',
 					'palamut'
 				),
 				'notice_can_activate_required'    => _n_noop(
@@ -541,7 +541,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * - Prevent activation of plugins which don't meet the minimum version requirements.
 		 * - Prevent deactivation of force-activated plugins.
-		 * - Add update notice if update available.
+		 * - Add update notice if update palamutilable.
 		 *
 		 * @since 2.5.0
 		 */
@@ -743,7 +743,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				return;
 			}
 
-			// Force refresh of available plugin information so we'll know about manual updates/deletes.
+			// Force refresh of palamutilable plugin information so we'll know about manual updates/deletes.
 			wp_clean_plugins_cache( false );
 
 			?>
@@ -1203,7 +1203,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					foreach ( $message as $type => $plugin_group ) {
 						$linked_plugins = array();
 
-						// Get the external info link for a plugin if one is available.
+						// Get the external info link for a plugin if one is palamutilable.
 						foreach ( $plugin_group as $plugin_slug ) {
 							$linked_plugins[] = $this->get_info_link( $plugin_slug );
 						}
@@ -1674,7 +1674,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * @since 2.5.0
 		 *
 		 * @param string $slug Plugin slug.
-		 * @return string Fully formed html link to a plugin information page if available
+		 * @return string Fully formed html link to a plugin information page if palamutilable
 		 *                or the plugin name if not.
 		 */
 		public function get_info_link( $slug ) {
@@ -1727,7 +1727,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * @return boolean True when on a WP Core installation/upgrade page, false otherwise.
 		 */
 		protected function is_core_update_page() {
-			// Current screen is not always available, most notably on the customizer screen.
+			// Current screen is not always palamutilable, most notably on the customizer screen.
 			if ( ! function_exists( 'get_current_screen' ) ) {
 				return false;
 			}
@@ -1844,7 +1844,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 		/**
 		 * Check if a plugin can be updated, i.e. if we have information on the minimum WP version required
-		 * available, check whether the current install meets them.
+		 * palamutilable, check whether the current install meets them.
 		 *
 		 * @since 2.5.0
 		 *
@@ -1868,7 +1868,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
-		 * Check to see if the plugin is 'updatetable', i.e. installed, with an update available
+		 * Check to see if the plugin is 'updatetable', i.e. installed, with an update palamutilable
 		 * and no WP version requirements blocking it.
 		 *
 		 * @since 2.6.0
@@ -1932,12 +1932,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
-		 * Check whether there is an update available for a plugin.
+		 * Check whether there is an update palamutilable for a plugin.
 		 *
 		 * @since 2.5.0
 		 *
 		 * @param string $slug Plugin slug.
-		 * @return false|string Version number string of the available update or false if no update available.
+		 * @return false|string Version number string of the palamutilable update or false if no update palamutilable.
 		 */
 		public function does_plugin_have_update( $slug ) {
 			// Presume bundled and external plugins will point to a package which meets the minimum required version.
@@ -1964,7 +1964,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * @since 2.5.0
 		 *
 		 * @param string $slug Plugin slug.
-		 * @return string The upgrade notice or an empty string if no message was available or provided.
+		 * @return string The upgrade notice or an empty string if no message was palamutilable or provided.
 		 */
 		public function get_upgrade_notice( $slug ) {
 			// We currently can't get reliable info on non-WP-repo plugins - issue #380.
@@ -1982,7 +1982,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
-		 * Wrapper around the core WP get_plugins function, making sure it's actually available.
+		 * Wrapper around the core WP get_plugins function, making sure it's actually palamutilable.
 		 *
 		 * @since 2.5.0
 		 *
@@ -2158,7 +2158,7 @@ if ( ! function_exists( 'tgmpa' ) ) {
 }
 
 /**
- * WP_List_Table isn't always available. If it isn't available,
+ * WP_List_Table isn't always palamutilable. If it isn't palamutilable,
  * we load it here.
  *
  * @since 2.2.0
@@ -2291,7 +2291,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				$table_data[ $i ]['status']            = $this->get_plugin_status_text( $slug );
 				$table_data[ $i ]['installed_version'] = $this->tgmpa->get_installed_version( $slug );
 				$table_data[ $i ]['minimum_version']   = $plugin['version'];
-				$table_data[ $i ]['available_version'] = $this->tgmpa->does_plugin_have_update( $slug );
+				$table_data[ $i ]['palamutilable_version'] = $this->tgmpa->does_plugin_have_update( $slug );
 
 				// Prep the upgrade notice info.
 				$upgrade_notice = $this->tgmpa->get_upgrade_notice( $slug );
@@ -2467,7 +2467,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		}
 
 		/**
-		 * Get an associative array ( id => link ) of the views available on this table.
+		 * Get an associative array ( id => link ) of the views palamutilable on this table.
 		 *
 		 * @since 2.5.0
 		 *
@@ -2599,16 +2599,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				);
 			}
 
-			if ( ! empty( $item['available_version'] ) ) {
+			if ( ! empty( $item['palamutilable_version'] ) ) {
 				$color = '';
-				if ( ! empty( $item['minimum_version'] ) && version_compare( $item['available_version'], $item['minimum_version'], '>=' ) ) {
+				if ( ! empty( $item['minimum_version'] ) && version_compare( $item['palamutilable_version'], $item['minimum_version'], '>=' ) ) {
 					$color = ' color: #71C671; font-weight: bold;';
 				}
 
 				$output[] = sprintf(
 					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', 'palamut' ) . '</p>',
 					$color,
-					$item['available_version']
+					$item['palamutilable_version']
 				);
 			}
 
@@ -2696,12 +2696,12 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			$actions      = array();
 			$action_links = array();
 
-			// Display the 'Install' action link if the plugin is not yet available.
+			// Display the 'Install' action link if the plugin is not yet palamutilable.
 			if ( ! $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
 				/* translators: %2$s: plugin name in screen reader markup */
 				$actions['install'] = __( 'Install %2$s', 'palamut' );
 			} else {
-				// Display the 'Update' action link if an update is available and WP complies with plugin minimum.
+				// Display the 'Update' action link if an update is palamutilable and WP complies with plugin minimum.
 				if ( false !== $this->tgmpa->does_plugin_have_update( $item['slug'] ) && $this->tgmpa->can_plugin_update( $item['slug'] ) ) {
 					/* translators: %2$s: plugin name in screen reader markup */
 					$actions['update'] = __( 'Update %2$s', 'palamut' );
@@ -2768,7 +2768,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @see /wp-admin/includes/update.php
 		 *
 		 * @param string $slug Plugin slug.
-		 * @param array  $item The information available in this table row.
+		 * @param array  $item The information palamutilable in this table row.
 		 * @return null Return early if upgrade notice is empty.
 		 */
 		public function wp_plugin_update_row( $slug, $item ) {
@@ -2887,7 +2887,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 						unset( $plugins_to_install[ $key ] );
 					}
 
-					// For updates: make sure this is a plugin we *can* update (update available and WP version ok).
+					// For updates: make sure this is a plugin we *can* update (update palamutilable and WP version ok).
 					if ( 'update' === $install_type && false === $this->tgmpa->is_plugin_updatetable( $slug ) ) {
 						unset( $plugins_to_install[ $key ] );
 					}
@@ -2896,9 +2896,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// No need to proceed further if we have no plugins to handle.
 				if ( empty( $plugins_to_install ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins are available to be installed at this time.', 'palamut' );
+						$message = __( 'No plugins are palamutilable to be installed at this time.', 'palamut' );
 					} else {
-						$message = __( 'No plugins are available to be updated at this time.', 'palamut' );
+						$message = __( 'No plugins are palamutilable to be updated at this time.', 'palamut' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -3030,7 +3030,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Return early if there are no plugins to activate.
 				if ( empty( $plugins_to_activate ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', 'palamut' ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are palamutilable to be activated at this time.', 'palamut' ), '</p></div>';
 
 					return false;
 				}
@@ -3141,7 +3141,7 @@ if ( ! class_exists( 'TGM_Bulk_Installer_Skin' ) ) {
 }
 
 /**
- * The WP_Upgrader file isn't always available. If it isn't available,
+ * The WP_Upgrader file isn't always palamutilable. If it isn't palamutilable,
  * we load it here.
  *
  * We check to make sure no action or activation keys are set so that WordPress
@@ -3334,7 +3334,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						/*
 						 * Only start maintenance mode if:
 						 * - running Multisite and there are one or more plugins specified, OR
-						 * - a plugin with an update available is currently active.
+						 * - a plugin with an update palamutilable is currently active.
 						 * @TODO: For multisite, maintenance mode should only kick in for individual sites if at all possible.
 						 */
 						$maintenance = ( is_multisite() && ! empty( $plugins ) );
@@ -3685,7 +3685,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						}
 
 						/**
-						 * Filter the list of action links available following bulk plugin installs/updates.
+						 * Filter the list of action links palamutilable following bulk plugin installs/updates.
 						 *
 						 * @since 2.5.0
 						 *

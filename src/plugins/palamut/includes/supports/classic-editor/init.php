@@ -389,17 +389,14 @@ function palamut_wysiwyg_styles( $settings ) {
 
 	// Add new styles.
 	$settings['style_formats'] = wp_json_encode( $theme_styles );
-
+	$body_font_family          = get_theme_mod( 'body_font_family', 'inherit' );
+	$heading_font_family       = get_theme_mod( 'heading_font_family', 'inherit' );
 	// Add new styles dynamic CSS.
-	$add_css = '';
-
-	$add_css .= 'body.mce-content-body .palamut-bold-primary,';
-	$add_css .= 'body.mce-content-body .palamut-primary-color,';
-	$add_css .= 'body.mce-content-body .palamut-bold-primary a,';
-	$add_css .= 'body.mce-content-body .palamut-primary-color a{';
-//	$add_css .= 'color:#000';
-	$add_css .= '}';
-
+	$add_css                   = '';
+	$add_css                  .= ':root {';
+	$add_css                  .= '--body-text-fontfamily:' . $body_font_family . '!important;';
+	$add_css                  .= '--heading-fontfamily:' . $heading_font_family . '!important;';
+	$add_css                  .= '}';
 	$settings['content_style'] = $add_css;
 
 	// Return Settings.

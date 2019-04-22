@@ -1,19 +1,31 @@
 <?php
 /**
- * Fonts library.
+ * Google Fonts
  *
- * @package     Charmed Pro
- * @link        https://themebeans.com/themes/charmed-pro
- * @version     @@pkg.version
+ * Helper function for Google Fonts array.
+ *
+ * @link to be defined
+ *
+ * @package pdwname
+ *
+ * @subpackage Template Functions
+ * @category Theme Framework
+ *
+ * @version pdwversion
+ * @since 1.0.1
+ *
+ * @author pdwauthor
+ * @copyright pdwcopyright
+ * @license pdwlicense
  */
 
 /**
- * Load the available Google fonts.
+ * Load the palamutilable Google fonts.
  */
 function palamut_font_library() {
 
 	$palamut_font_library = array(
-		'default'                  => 'Default',
+		'inherit'                  => 'Default',
 		'arial'                    => 'Arial',
 		'verdana'                  => 'Verdana, Geneva',
 		'Trebuchet MS'             => 'Trebuchet MS',

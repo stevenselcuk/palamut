@@ -47,7 +47,7 @@
 
 		<section class="site-info clearfix">
 
-		<p class="copyright">
+		<p class="copyright" itemscope itemtype="http://schema.org/copyrightYear">
 			<?php echo wp_kses( palamut_gimme( 'copyright-text', palamut_theme_strings( 'copyright-text' ) ), palamut_allowed_html() ); ?>
 		</p>
 			<?php

@@ -39,6 +39,17 @@ function palamut_is_front() {
 }
 
 /**
+ * Query whether WooCommerce is activated.
+ */
+function palamut_is_woocommerce_activated() {
+	if ( class_exists( 'woocommerce' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
  * [palamut_is_blog description]
  *
  * @method palamut_is_blog

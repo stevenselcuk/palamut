@@ -5,6 +5,10 @@ $font__heading: CircularStd;
 $font__sans: CircularStd;
 $menu-item_font-family: CircularStd;
 
+// WooCommerce
+$font__main: $font__body;
+$font__mono: $font__body;
+
 // Body Font Sizes & Base Sizes
 $body-font__size-min: 14px;
 $body-font__size-max: 16px;
@@ -56,10 +60,10 @@ $font-size__meta: 17px;
 $font-size__meta-mobile: 15px;
 
 :root {
-	--body-text-fontfamily: #{$font__body};
+//	--body-text-fontfamily: #{$font__body};
 	--body-text-fontsize: #{$body-font__size-min};
 	--body-text-weight: #{$font__weight-body};
-	--heading-fontfamily: #{$font__heading};
+//	--heading-fontfamily: #{$font__heading};
 	--heading-fontweight: #{$font__weight-heading};
 	--heading-line-height: #{$font__line-height-heading};
 	--huge-text-fontsize: #{$font__size-editor--huge};
@@ -72,7 +76,6 @@ $font-size__meta-mobile: 15px;
 }
 
 // Palamut for Classic Editor Font Sizes.
-
 .palamut-huge-text {
 	font-size: var(--huge-text-fontsize);
 }
@@ -90,7 +93,6 @@ $font-size__meta-mobile: 15px;
 }
 
 // Gutenberg Font Sizes.
-
 .has-small-font-size {
 	font-size: var(--small-text-fontsize);
 }
