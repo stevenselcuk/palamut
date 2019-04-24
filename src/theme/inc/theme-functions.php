@@ -71,8 +71,10 @@ if ( ! function_exists( 'palamut_add_body_class' ) ) {
 		if ( palamut_gimme( 'show_search' ) ) {
 			$classes[] = palamut_gimme( 'search_type' );
 		}
-		if ( is_singular() && has_blocks() ) {
-			$classes[] = 'has-gutenberg-blocks';
+		if ( is_singular() && has_blocks() && ! class_exists( 'Classic_Editor' ) ) {
+			$classes[] = 'gutenberg-editor';
+		} else {
+			$classes[] = 'classic-editor';
 		}
 		if ( is_singular() ) {
 			$classes[] = 'single';
@@ -234,7 +236,7 @@ if ( ! function_exists( 'palamut_get_pagination' ) ) {
  */
 function palamut_add_template_to_posts() {
 
-	if ( function_exists( 'register_block_type' ) ) {
+	if ( ! function_exists( 'register_block_type' ) ) {
 		return;
 	}
 
@@ -251,3 +253,16 @@ function palamut_add_template_to_posts() {
 	);
 }
 add_action( 'init', 'palamut_add_template_to_posts' );
+
+/**
+ * Use front-page.php when Front page displays is set to a static page.
+ *
+ * @param string $template front-page.php.
+ *
+ * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
+ */
+function palamut_front_page_template( $template ) {
+	return is_home() ? '' : $template;
+}
+add_filter( 'frontpage_template', 'palamut_front_page_template' );
+

@@ -24,7 +24,7 @@ if ( ! function_exists( 'palamut_portfolio_post_type' ) ) {
 	 * @link
 	 */
 	function palamut_portfolio_post_type() {
-		$slug = esc_attr( 'work' );
+		$slug = esc_attr( 'portfolio' );
 		$tax  = esc_attr( 'Categories' );
 
 		$labels = array(
@@ -51,7 +51,7 @@ if ( ! function_exists( 'palamut_portfolio_post_type' ) ) {
 			'capability_type'    => 'post',
 			'hierarchical'       => false,
 			'menu_position'      => null,
-//			'show_in_rest'       => true,
+			'show_in_rest'       => true,
 			'rewrite'            => array(
 				'slug' => $slug,
 			),

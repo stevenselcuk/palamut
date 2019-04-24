@@ -41,18 +41,40 @@ function palamut_load_portfolio_cpt() {
 
 add_action( 'plugins_loaded', 'palamut_load_portfolio_cpt', 9999 );
 
+
 /**
- * Enables block editor support for the Portfolio Post Type plugin.
+ * [palamut_taxonomy_filter_portfolio description]
  *
- * @param array $args Existing arguments.
+ * @method palamut_taxonomy_filter_portfolio
  *
- * @return array Amended arguments.
+ * @since
+ *
+ * @link
  */
-function palamut_portfolio_cpt_args( array $args ) {
+function palamut_taxonomy_filter_portfolio() {
+	global $typenow;
 
-	$args['show_in_rest'] = true;
+	if ( 'portfolio' === $typenow ) {
+		$filters = array( 'portfolio-types' );
 
-	return $args;
+		foreach ( $filters as $tax_slug ) {
+			$tax_obj  = get_taxonomy( $tax_slug );
+			$tax_name = $tax_obj->labels->name;
+			$terms    = get_terms( $tax_slug );
+
+			echo '<select name="' . esc_attr( $tax_slug ) . '" id="' . esc_attr( $tax_slug ) . '" class="postform">';
+
+				echo '<option value="">' . esc_html__( 'All', 'palamut' ) . ' ' . esc_html( $tax_name ) . '</option>';
+
+			foreach ( $terms as $term ) {
+				echo '<option value=' . $term->slug, $_GET[ $tax_slug ] == $term->slug ? ' selected="selected"' : '','>' . esc_html( $term->name ) . ' (' . esc_html( $term->count ) . ')</option>';
+			}
+
+			echo '</select>';
+		}
+	}
 }
-add_action( 'portfolioposttype_args', 'palamut_portfolio_cpt_args' );
+
+add_action( 'restrict_manage_posts', 'palamut_taxonomy_filter_portfolio' );
+
 
