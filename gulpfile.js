@@ -149,18 +149,6 @@ async function unzipWordPress() {
 	return await zip.src( './build/latest.zip' ).pipe( dest( './build/' ) );
 }
 
-function copyConfig() {
-	return src( './build/wordpress/wp-config-sample.php' )
-		.pipe( rename( 'wp-config.php' ) )
-		.pipe( dest( './build/wordpress' ) );
-}
-
-function editConfig() {
-	return src( './build/wordpress/wp-config.php' )
-		.pipe( inject.after( 'define( \'WP_DEBUG\', false );', '\ndefine(\'DISABLE_WP_CRON\', true);\ndefine( \'WP_MEMORY_LIMIT\', \'128M\' );\ndefine( \'WP_DEBUG\', true );' ) )
-		.pipe( dest( './build/wordpress' ) );
-}
-
 function copyDevPlugins() {
 	return src( './tools/dev-plugins/**' )
 		.pipe( dest( './build/wordpress/wp-content/plugins/' ) );
@@ -172,8 +160,7 @@ async function installationDone() {
 }
 
 exports.setup = series( cleanup, downloadWordPress );
-exports.install = series( unzipWordPress, copyDevPlugins );
-exports.config = series( copyConfig, editConfig, installationDone );
+exports.install = series( unzipWordPress, copyDevPlugins, installationDone );
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
