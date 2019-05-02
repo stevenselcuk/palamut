@@ -59,6 +59,7 @@ const sort		= require( 'gulp-sort' );
 const replace = require( 'gulp-replace-task' );
 const log = require( 'fancy-log' );
 const bump = require( 'gulp-bump' );
+const rename = require( 'gulp-rename' );
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -131,7 +132,7 @@ const headerJS = [
 const footerJS = [ './src/assets/js/**' ];
 
 /* -------------------------------------------------------------------------------------------------
-Installation Tasks
+Baby Steps Tasks
 -------------------------------------------------------------------------------------------------- */
 async function cleanup() {
 	await del( [ './build' ] );
@@ -148,12 +149,16 @@ async function unzipWordPress() {
 	return await zip.src( './build/latest.zip' ).pipe( dest( './build/' ) );
 }
 
-async function copyConfig() {
-	if ( await fs.existsSync( './wp-config.php' ) ) {
-		return src( './wp-config.php' )
-			.pipe( inject.after( 'define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);\ndefine( \'WP_DEBUG\', true );\ndefine( \'WP_MEMORY_LIMIT\', \'128M\' );' ) )
-			.pipe( dest( './build/wordpress' ) );
-	}
+function copyConfig() {
+	return src( './build/wordpress/wp-config-sample.php' )
+		.pipe( rename( 'wp-config.php' ) )
+		.pipe( dest( './build/wordpress' ) );
+}
+
+function editConfig() {
+	return src( './build/wordpress/wp-config.php' )
+		.pipe( inject.after( 'define( \'WP_DEBUG\', false );', '\ndefine(\'DISABLE_WP_CRON\', true);\ndefine( \'WP_MEMORY_LIMIT\', \'128M\' );\ndefine( \'WP_DEBUG\', true );' ) )
+		.pipe( dest( './build/wordpress' ) );
 }
 
 function copyDevPlugins() {
@@ -163,11 +168,12 @@ function copyDevPlugins() {
 
 async function installationDone() {
 	await gutil.beep();
-	await gutil.log( devServerReady );
+	await gutil.log( '{{ 🙌🏻 yaaaay! }} Installation has done! Let\'s work! Proceed with that command: \x1b[1m npm run dev \x1b[0m' );
 }
 
 exports.setup = series( cleanup, downloadWordPress );
-exports.install = series( unzipWordPress, copyConfig, copyDevPlugins, installationDone );
+exports.install = series( unzipWordPress, copyDevPlugins );
+exports.config = series( copyConfig, editConfig, installationDone );
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
@@ -195,12 +201,12 @@ function devServer() {
 	watch( './src/assets/js/**', series( footerScriptsDev, Reload ) );
 	watch( './src/theme/**', series( copyThemeDev, Reload ) );
 	watch( './src/plugins/**', series( pluginsDev, Reload ) );
-	watch( './build/wordpress/wp-config.php', { events: 'add' }, series( disableCron ) );
 }
 
 function Reload( done ) {
 	browserSync.reload();
 	browserSync.notify( 'Page has been updated.', 1000 );
+	gutil.log( '{{ 🍔 work }} \x1b[1m Reloaded \x1b[0m' );
 	done();
 }
 
@@ -594,55 +600,6 @@ exports.build = series(
 	translatePlugin,
 );
 
-const onError = err => {
-	gutil.beep();
-	gutil.log( wpFy + ' - ' + errorMsg + ' ' + err.toString() );
-	this.emit( 'end' );
-};
-
-async function disableCron() {
-	if ( fs.existsSync( './build/wordpress/wp-config.php' ) ) {
-		await fs.readFile( './build/wordpress/wp-config.php', ( err, data ) => {
-			if ( err ) {
-				log( wpFy + ' - ' + warning + ' WP_CRON was not disabled!' );
-			}
-			if ( data ) {
-				if ( data.indexOf( 'DISABLE_WP_CRON' ) >= 0 ) {
-					log( 'WP_CRON is already disabled!' );
-				} else {
-					return src( './build/wordpress/wp-config.php' )
-						.pipe( inject.after( 'define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);' ) )
-						.pipe( dest( './build/wordpress' ) );
-				}
-			}
-		} );
-	}
-}
-
-async function freshInstall() {
-	await del( [ './src/**' ] ).then( () => {
-		return src( './tools/fresh-theme/**' ).pipe( dest( './src' ) );
-	} );
-}
-
-exports.fresh = series( freshInstall );
-
-function Backup() {
-	if ( ! fs.existsSync( './build' ) ) {
-		gutil.log( buildNotFound );
-		process.exit( 1 );
-	} else {
-		return src( './build/**/*' )
-			.pipe( zip.dest( './backups/' + date + '.zip' ) )
-			.on( 'end', () => {
-				gutil.beep();
-				gutil.log( backupsGenerated );
-			} );
-	}
-}
-
-exports.backup = series( Backup );
-
 /* -------------------------------------------------------------------------------------------------
 Build Tasks
 -------------------------------------------------------------------------------------------------- */
@@ -988,13 +945,45 @@ exports.build = series(
 );
 
 /* -------------------------------------------------------------------------------------------------
+Utils
+-------------------------------------------------------------------------------------------------- */
+
+const onError = err => {
+	gutil.beep();
+	gutil.log( '{{ 😱 Shit Happened }} ' + errorMsg + ' ' + err.toString() );
+	this.emit( 'end' );
+};
+
+async function freshInstall() {
+	await del( [ './src/**' ] ).then( () => {
+		return src( './tools/fresh-theme/**' ).pipe( dest( './src' ) );
+	} );
+}
+
+exports.fresh = series( freshInstall );
+
+function Backup() {
+	if ( ! fs.existsSync( './build' ) ) {
+		gutil.log( buildNotFound );
+		process.exit( 1 );
+	} else {
+		return src( './build/**/*' )
+			.pipe( zip.dest( './backups/' + date + '.zip' ) )
+			.on( 'end', () => {
+				gutil.beep();
+				gutil.log( backupsGenerated );
+			} );
+	}
+}
+
+exports.backup = series( Backup );
+
+/* -------------------------------------------------------------------------------------------------
 Messages
 -------------------------------------------------------------------------------------------------- */
 const date = new Date().toLocaleDateString( 'en-US' ).replace( /\//g, '.' );
 const errorMsg = '\x1b[41mError\x1b[0m';
 const warning = '\x1b[43mWarning\x1b[0m';
-const devServerReady =
-	'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
 const buildNotFound =
 	errorMsg +
 	' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
@@ -1009,8 +998,7 @@ const filesGenerated =
 const pluginsGenerated =
 	'{{ 🍩 Good Stuff }} Palamut for ' + project + 'has been created: Plugin zip file in: \x1b[1m' + __dirname + '/dist/plugins/palamut_' + pluginVersion + '\x1b[0m - 📦';
 const backupsGenerated =
-	'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
-const wpFy = '\x1b[42m\x1b[1mPalamutFramework\x1b[0m';
+	'{{ 🍟 Well Done }} A Backup zip has been generated: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
 
 /* -------------------------------------------------------------------------------------------------
 End of all Tasks

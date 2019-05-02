@@ -24,6 +24,19 @@ A few notes about the sections above:
 *   "Tested up to" is the highest version that you've *successfully used to test the theme*. Note that it might work on
 higher versions... this is just the highest one you've verified.
 
+## Setup : Baby Steps
+
+This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+ 
+ 
+A few notes about the sections above:
+ 
+  $`git clone https://github.com/stevenselcuk/palamut.git yourdesiredfoldernamehere`
+  $`cd yourdesiredfoldernamehere`
+  $`npm install`
+  $`npm run install:wordpress`
+  $`npm run install:wordpress`
+
 
 ## Frequently Asked Questions
 
