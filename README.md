@@ -1,13 +1,4 @@
-# Palamut WordPress Theme Framework
-
-**Contributors:** stevenselcuk
-**Requires at least:** WordPress 4.7  
-**Tested up to:** WordPress 5.1  
-**Stable tag:** 1.0  
-**Version:** 1.0  
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
-**Tags:** one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+# Palamut WordPress Theme Framework & Companion Plugin
 
 Here is a short description of the theme that might appear in the customizer.
 
@@ -16,13 +7,9 @@ Here is a short description of the theme that might appear in the customizer.
 This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
  
  
-A few notes about the sections above:
- 
-*   "Contributors" is a comma separated list of wp.orgusernames
-*   "Tags" is a comma separated list of tags that apply to the theme
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the theme*. Note that it might work on
-higher versions... this is just the highest one you've verified.
+Before you start here are some informations
+
+*   Don't confuse with companion plugin **Palamut** and working environment **Palamut**, It's just for github repository name. That's all.
 
 ## File Structure
     
@@ -32,10 +19,15 @@ higher versions... this is just the highest one you've verified.
     │   ├── assets/              # Assets directory
     │       ├── fonts/           # Fonts directory
     │       ├── img/             # Image directory
-    │       ├── js/              # JavaScript files
-    │       ├── styles/          # CSS files
+    │       ├── js/              # Main App JS File
+    │       ├── styles/          # SCSS files
     │   ├── plugins/             # Include Palamut the Companion to your theme
     │   ├── theme/               # Standard Theme files
+    │       ├── assets/ 
+    │       ├── components/
+    │       ├── inc/ 
+    │       ├── languages/ 
+    │       ├── wooCommerce/ 
     ├── tools/                   # Tools and utilities
     │   ├── dev-plugins          # Developer Plugins (Just for development env.)
     │   ├── dummy-data           # Demo posts and testing data
@@ -49,38 +41,57 @@ higher versions... this is just the highest one you've verified.
 
 ## Setup : Baby Steps
 
-Follow the Baby Steps when you are starting to develop new theme
+Follow the Baby Steps when you are starting to develop new theme.
+
+* Open your terminal and go your working directory and follow these commands:
  
-A few notes about the sections above:
- 
-$`git clone https://github.com/stevenselcuk/palamut.git yourdesiredfoldernamehere`
+`$ git clone https://github.com/stevenselcuk/palamut.git yourdesiredfoldernamehere`
 
-$`cd yourdesiredfoldernamehere`
+`$ cd yourdesiredfoldernamehere`
 
-$`npm install`
+`$ npm install`
 
-$`npm run install:wordpress`
+`$ npm run install:wordpress`
 
-$`npm run dev`
+`$ npm run dev`
 
-The latest command starts gulp task which has opens a new tab in your default browser. Please proceed to standard WordPress installation at this step.
-You will need a new database. You may want to use your old one if available but the new database is strongly recommended.
-When you finish the WordPress installation wizard, you also finished the Baby Steps tasks.
+* The latest command starts gulp task which has opens a new tab in your default browser. Please proceed to standard **WordPress installation** at this step.
+You will need a new database. *You may want to use your old one if available but the new database is strongly recommended.*
+When you finish the WordPress installation wizard, you also finished the **Baby Steps** tasks.
 
 ## Setup : Toddler Stuff
 
-* Go `http://127.0.0.1:3020/wp-admin` (Login WordPress if not logged yet) and proceed Dashboard > Plugins Activate all plugins except `Hello Dolly` & `Akismet Anti-Spam`.
-  ( If you want to develop a WooCommerce theme you may want to install & activate WooCommerce Plugin. )
-* Go Dashboard > Themes and activate the theme : pkg.name.
+* Go `http://127.0.0.1:3020/wp-admin` (Login WordPress if not logged yet) and proceed Dashboard > Plugins Activate all plugins except **Hello Dolly** & **Akismet Anti-Spam**.
+  ( If you want to develop a **WooCommerce** supported theme you may want to install & activate **WooCommerce Plugin**. )
+* Go `Dashboard > Themes` and activate the theme : pkg.name.
  ( It's our theme, just looks weird, for now.)
-* Go Dashboard > Tools > Import and find WordPress row and click "Install Now" & after installing click Run Importer 
-Find themeunittestdata.wordpress.xml under yourdesiredfoldernamehere/tools/dummy-data and click "Upload file and import"
+* Go `Dashboard > Tools > Import` and find WordPress row and click "Install Now" & after installing click Run Importer 
+Find **themeunittestdata.wordpress.xml** under **yourdesiredfoldernamehere/tools/dummy-data** and click **Upload file and import**
 Click checkbox "Download and import file attachments" and click submit.
-* Looks good! Just go 'http://127.0.0.1:3010' and start to work.
+* Just go `http://127.0.0.1:3010` this is your theme! Looks good!
 
 ## Setup : Young as fuck
 
-*
+* Open your favorite editor and edit /yourdesiredfoldernamehere/packgage.json
+Find these lines and edit **Yourthemename** things as you want. 
+
+    "name": "Yourthemename", *No spaces please*
+    "version": "1.0.0",
+    "slug": "yourthemename", *No spaces please*
+    "prefix": "yourthemenamebutshort", *No spaces please*
+    "textdomain": "yourthemename", *No spaces please*
+
+( Don't forget reset as 1.0.0 to version, it is important.)
+* Go your working directory and delete /yourdesiredfoldernamehere/.git
+* Proceed to 'https://github.com/new' and create new private repository pass other options.
+* And init new git & add origin & push it It is someting like that: 
+
+    git init
+    git commit -m "first commit"
+    git remote add origin https://github.com/yourname/your-new-repo.git
+    git push -u origin master
+
+## You better work : Ricky Steps
 
 
 ## Frequently Asked Questions
@@ -101,13 +112,28 @@ Font Awesome icons, Copyright Dave Gandy
 **License:** SIL Open Font License, version 1.1.
 Source: http://fontawesome.io/
 
-Bundled header image, Copyright Alvin Engler
-**License:** CC0 1.0 Universal (CC0 1.0)
-Source: https://unsplash.com/@englr?photo=bIhpiQA009k
+## Framework Changelog
 
-## Changelog
+### 1.0
+* Released: Feb 1, 2019
+Initial release
+### 1.1.0
+* Released: May 2, 2019
+Building task has been added.  Use `npm run build`. Files and folders appears in `./build`
+
+
+## WordPress Theme Boilerplate Changelog
+
+### 1.0
+* Released: April 1, 2019
+Initial release
+
+### 1.1.0
+* Released: May 1, 2019
+Woocommerce support has been implemented.
+
+## Palamut the Companion Plugin Changelog
 
 ### 1.0
 * Released: June 1, 2019
-
 Initial release
