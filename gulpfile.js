@@ -59,7 +59,18 @@ const sort		= require( 'gulp-sort' );
 const replace = require( 'gulp-replace-task' );
 const log = require( 'fancy-log' );
 const bump = require( 'gulp-bump' );
-const rename = require( 'gulp-rename' );
+//const rename = require( 'gulp-rename' );
+const git = require( 'gulp-git' );
+const filter = require( 'gulp-filter' );
+const exec = require( 'child_process' ).exec;
+const argv = require( 'yargs' )
+	.option( 'type', {
+		alias: 't',
+		choices: [ 'patch', 'minor', 'major' ],
+	} ).argv;
+const tag = require( 'gulp-tag-version' );
+const push = require( 'gulp-git-push' );
+const date = new Date().toLocaleDateString( 'en-US' ).replace( /\//g, '.' );
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -155,13 +166,28 @@ function copyDevPlugins() {
 }
 
 async function installationDone() {
-	await gutil.beep();
 	await gutil.log( '{{ 🙌🏻 yaaaay! }} Installation has done! Let\'s work! Proceed with that command: \x1b[1m npm run dev \x1b[0m' );
+}
+
+function editConfig() {
+	return src( './build/wordpress/wp-config.php' )
+		.pipe( inject.after( 'define( \'WP_DEBUG\', false );', '\ndefine( \'DISABLE_WP_CRON\', true );\ndefine( \'WP_MEMORY_LIMIT\', \'128M\' );\n' ) )
+		.pipe( replace( {
+			patterns: [
+				{
+					match: 'define( \'WP_DEBUG\', false );',
+					replacement: 'define( \'WP_DEBUG\', true );',
+				},
+			],
+			usePrefix: false,
+		} ) )
+		.pipe( gutil.log( '{{ 🎛 Sum configs }} Config has been applied.' ) )
+		.pipe( dest( './build/wordpress' ) );
 }
 
 exports.setup = series( cleanup, downloadWordPress );
 exports.install = series( unzipWordPress, copyDevPlugins, installationDone );
-
+exports.config = series( editConfig );
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
@@ -594,8 +620,12 @@ async function cleanProd() {
 	await del( [ './dist' ] );
 }
 
-function updateThemeVer() {
-	return src( './package.json' ).pipe( bump() ).pipe( dest( './' ) );
+function updateThemeVerMin() {
+	return src( './package.json' ).pipe( bump( { type: 'minor' } ) ).pipe( dest( './' ) );
+}
+
+function updateThemeVerPrerelease() {
+	return src( './package.json' ).pipe( bump( { type: 'prerelease' } ) ).pipe( dest( './' ) );
 }
 
 function copyThemeProd() {
@@ -914,7 +944,7 @@ function copyZip() {
 
 exports.build = series(
 	cleanProd,
-	updateThemeVer,
+	updateThemeVerMin,
 	cleanPalamutProd,
 	copyPalamutProd,
 	WidgetsstylesProd,
@@ -940,6 +970,40 @@ const onError = err => {
 	gutil.log( '{{ 😱 Shit Happened }} ' + errorMsg + ' ' + err.toString() );
 	this.emit( 'end' );
 };
+
+function endOfTheDay() {
+	return src( './package.json' )
+	// bump package.json and bowser.json version
+		.pipe( bump( {
+			type: argv.type || 'patch',
+		} ) )
+	// save the bumped files into filesystem
+		.pipe( dest( './' ) )
+	// commit the changed files
+		.pipe( git.commit( 'v' + themeVersion + ' ' + date ) )
+	// filter one file
+		.pipe( filter( 'package.json' ) )
+	// create tag based on the filtered file
+		.pipe( tag() )
+	// push changes into repository
+		.pipe( push( {
+			repository: 'origin',
+			refspec: 'HEAD',
+		} ) );
+}
+
+exports.zreport = series( endOfTheDay );
+
+async function createFreshTheme() {
+	return src( './src/**' )
+		.pipe( dest( './tools/fresh-theme' ) )
+		.on( 'end', () => {
+			gutil.beep();
+			gutil.log( '{{ 🍟 Well Done }} A fresh theme created.' );
+		} );
+}
+
+exports.createfresh = series( createFreshTheme );
 
 async function freshInstall() {
 	await del( [ './src/**' ] ).then( () => {
@@ -968,12 +1032,10 @@ exports.backup = series( Backup );
 /* -------------------------------------------------------------------------------------------------
 Messages
 -------------------------------------------------------------------------------------------------- */
-const date = new Date().toLocaleDateString( 'en-US' ).replace( /\//g, '.' );
+
 const errorMsg = '\x1b[41mError\x1b[0m';
 const warning = '\x1b[43mWarning\x1b[0m';
-const buildNotFound =
-	errorMsg +
-	' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
+const buildNotFound = '{{ ⚠️ Bad Stuff }} - There is no active WordPress installation. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m or follow README.md instructions.';
 const filesGenerated =
 	'{{ 🍩 Good Stuff }} ' + project + ' has been created. Theme zip file in: \x1b[1m' +
 	__dirname +

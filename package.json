@@ -1,6 +1,6 @@
 {
   "name": "Dude",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "slug": "dude",
   "prefix": "dude",
   "textdomain": "dude",
@@ -24,6 +24,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "install:wordpress": "gulp setup && gulp install",
+    "config:wordpress": "gulp config",
     "dev": "gulp start",
     "build": "gulp prod",
     "fresh-start": "gulp fresh",
@@ -88,6 +89,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.4",
+    "child_process": "^1.0.2",
     "del": "^3.0.0",
     "eslint": "^5.15.1",
     "eslint-plugin-react": "^7.12.4",
@@ -97,6 +99,9 @@
     "gulp-bump": "^3.1.3",
     "gulp-cache": "^1.1.1",
     "gulp-copy": "^1.0.1",
+    "gulp-filter": "^5.1.0",
+    "gulp-git": "^2.9.0",
+    "gulp-git-push": "^2.0.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-if": "^2.0.2",
     "gulp-line-ending-corrector": "^1.0.1",
@@ -109,6 +114,7 @@
     "gulp-sass-bulk-import": "^1.0.1",
     "gulp-sftp": "^0.1.5",
     "gulp-sort": "^2.0.0",
+    "gulp-tag-version": "^1.3.1",
     "gulp-uglify": "^1.5.3",
     "gulp-uglifycss": "^1.0.8",
     "gulp-wp-pot": "^2.3.5",
@@ -122,7 +128,8 @@
     "stylelint-config-prettier": "^3.1.0",
     "stylelint-config-wordpress": "^13.1.0",
     "stylelint-order": "^0.8.1",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "yargs": "^13.2.2"
   },
   "stylelint": {
     "extends": [

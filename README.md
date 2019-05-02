@@ -21,7 +21,8 @@ Before you start here are some informations
     │       ├── img/             # Image directory
     │       ├── js/              # Main App JS File
     │       ├── styles/          # SCSS files
-    │   ├── plugins/             # Include Palamut the Companion to your theme
+    │   ├── plugins/             
+    │       ├── palamut/         # Palamut the Companion for your theme
     │   ├── theme/               # Standard Theme files
     │       ├── assets/ 
     │       ├── components/
@@ -57,7 +58,12 @@ Follow the Baby Steps when you are starting to develop new theme.
 
 * The latest command starts gulp task which has opens a new tab in your default browser. Please proceed to standard **WordPress installation** at this step.
 You will need a new database. *You may want to use your old one if available but the new database is strongly recommended.*
-When you finish the WordPress installation wizard, you also finished the **Baby Steps** tasks.
+When you finish the WordPress installation wizard, return to the terminal and break current task and run 
+
+`$ npm run config:wordpress`
+
+
+* You have just finished WordPress installation step. Go other step : Toddler Stuff.
 
 ## Setup : Toddler Stuff
 
