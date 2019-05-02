@@ -151,19 +151,23 @@ async function unzipWordPress() {
 async function copyConfig() {
 	if ( await fs.existsSync( './wp-config.php' ) ) {
 		return src( './wp-config.php' )
-			.pipe( inject.after( 'define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);' ) )
+			.pipe( inject.after( 'define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);\ndefine( \'WP_DEBUG\', true );\ndefine( \'WP_MEMORY_LIMIT\', \'128M\' );' ) )
 			.pipe( dest( './build/wordpress' ) );
 	}
+}
+
+function copyDevPlugins() {
+	return src( './tools/dev-plugins/**' )
+		.pipe( dest( './build/wordpress/wp-content/plugins/' ) );
 }
 
 async function installationDone() {
 	await gutil.beep();
 	await gutil.log( devServerReady );
-	await gutil.log( thankYou );
 }
 
 exports.setup = series( cleanup, downloadWordPress );
-exports.install = series( unzipWordPress, copyConfig, installationDone );
+exports.install = series( unzipWordPress, copyConfig, copyDevPlugins, installationDone );
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
