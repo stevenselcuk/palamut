@@ -80,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</table>
 
 
-		<?php do_action( 'palamut_attributes_tab_content' ); ?>
+		<?php do_action( 'prefix_attributes_tab_content' ); ?>
 
 		<div class="product_meta">
 

@@ -17,7 +17,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -31,7 +31,7 @@
  * @param bool $checked Whether the checkbox is checked.
  * @return bool Whether the checkbox is checked.
  */
-function palamut_sanitize_checkbox( $checked ) {
+function prefix_sanitize_checkbox( $checked ) {
 	// Boolean check.
 	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
@@ -55,7 +55,7 @@ function palamut_sanitize_checkbox( $checked ) {
  * @param string $css CSS to sanitize.
  * @return string Sanitized CSS.
  */
-function palamut_sanitize_css( $css ) {
+function prefix_sanitize_css( $css ) {
 	return wp_strip_all_tags( $css );
 }
 
@@ -77,7 +77,7 @@ function palamut_sanitize_css( $css ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return int|string Page ID if the page is published; otherwise, the setting default.
  */
-function palamut_sanitize_dropdown_pages( $page_id, $setting ) {
+function prefix_sanitize_dropdown_pages( $page_id, $setting ) {
 	// Ensure $input is an absolute integer.
 	$page_id = absint( $page_id );
 
@@ -103,7 +103,7 @@ function palamut_sanitize_dropdown_pages( $page_id, $setting ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return string The sanitized email if not null; otherwise, the setting default.
  */
-function palamut_sanitize_email( $email, $setting ) {
+function prefix_sanitize_email( $email, $setting ) {
 	// Sanitize $input as a hex value without the hash prefix.
 	$email = sanitize_email( $email );
 
@@ -129,7 +129,7 @@ function palamut_sanitize_email( $email, $setting ) {
  * @param WP_Customize_Setting $setting   Setting instance.
  * @return string The sanitized hex color if not null; otherwise, the setting default.
  */
-function palamut_sanitize_hex_color( $hex_color, $setting ) {
+function prefix_sanitize_hex_color( $hex_color, $setting ) {
 	// Sanitize $input as a hex value without the hash prefix.
 	$hex_color = sanitize_hex_color( $hex_color );
 
@@ -156,7 +156,7 @@ function palamut_sanitize_hex_color( $hex_color, $setting ) {
  * @param string $html HTML to sanitize.
  * @return string Sanitized HTML.
  */
-function palamut_sanitize_html( $html ) {
+function prefix_sanitize_html( $html ) {
 	global $allowedposttags;
 
 	return wp_kses( $html, $allowedposttags );
@@ -196,7 +196,7 @@ function palamut_sanitize_html( $html ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return string The image filename if the extension is allowed; otherwise, the setting default.
  */
-function palamut_sanitize_image( $image, $setting ) {
+function prefix_sanitize_image( $image, $setting ) {
 	/*
 	 * Array of valid image file types.
 	 *
@@ -237,7 +237,7 @@ function palamut_sanitize_image( $image, $setting ) {
  * @param string $nohtml The no-HTML content to sanitize.
  * @return string Sanitized no-HTML content.
  */
-function palamut_sanitize_nohtml( $nohtml ) {
+function prefix_sanitize_nohtml( $nohtml ) {
 	return wp_filter_nohtml_kses( $nohtml );
 }
 
@@ -261,7 +261,7 @@ function palamut_sanitize_nohtml( $nohtml ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return int Sanitized number; otherwise, the setting default.
  */
-function palamut_sanitize_number_absint( $number, $setting ) {
+function prefix_sanitize_number_absint( $number, $setting ) {
 	// Ensure $number is an absolute integer (whole number, zero or greater).
 	$number = absint( $number );
 
@@ -270,9 +270,9 @@ function palamut_sanitize_number_absint( $number, $setting ) {
 }
 
 /**
- * [palamut_sanitize_number_intval description]
+ * [prefix_sanitize_number_intval description]
  *
- * @method palamut_sanitize_number_intval
+ * @method prefix_sanitize_number_intval
  *
  * @since
  *
@@ -284,7 +284,7 @@ function palamut_sanitize_number_absint( $number, $setting ) {
  *
  * @return [type]
  */
-function palamut_sanitize_number_intval( $int ) {
+function prefix_sanitize_number_intval( $int ) {
 	return intval( $int );
 }
 
@@ -306,7 +306,7 @@ function palamut_sanitize_number_intval( $int ) {
  * @return int|string The number, if it is zero or greater and falls within the defined range; otherwise,
  *                    the setting default.
  */
-function palamut_sanitize_number_range( $number, $setting ) {
+function prefix_sanitize_number_range( $number, $setting ) {
 
 	// Ensure input is an absolute integer.
 	$number = absint( $number );
@@ -345,7 +345,7 @@ function palamut_sanitize_number_range( $number, $setting ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */
-function palamut_sanitize_select( $input, $setting ) {
+function prefix_sanitize_select( $input, $setting ) {
 
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );
@@ -375,6 +375,6 @@ function palamut_sanitize_select( $input, $setting ) {
  * @param string $url URL to sanitize.
  * @return string Sanitized URL.
  */
-function palamut_sanitize_url( $url ) {
+function prefix_sanitize_url( $url ) {
 	return esc_url_raw( $url );
 }

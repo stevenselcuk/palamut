@@ -14,20 +14,23 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
 
-require_once PALA_THEME_DIR . '/inc/customizer/sanitization.php';
-require_once PALA_THEME_DIR . '/inc/customizer/dynamic-css.php';
-require_once PALA_THEME_DIR . '/inc/customizer/fonts-library.php';
+/**
+ * Sub-Files
+ */
+require_once __PRE_THEME_DIR . '/inc/customizer/sanitization.php';
+require_once __PRE_THEME_DIR . '/inc/customizer/dynamic-css.php';
+require_once __PRE_THEME_DIR . '/inc/customizer/fonts-library.php';
 /**
  * Add postMessage support for site title and description for the Customizer.
  *
  * @param WP_Customize_Manager $wp_customize the Customizer object.
  */
-function palamut_customize_register( $wp_customize ) {
+function prefix_customize_register( $wp_customize ) {
 
 	/**
 	 * Customize.
@@ -40,7 +43,7 @@ function palamut_customize_register( $wp_customize ) {
 		array(
 			'selector'        => '.site-title a',
 			'settings'        => array( 'blogname' ),
-			'render_callback' => 'palamut_customize_partial_blogname',
+			'render_callback' => 'prefix_customize_partial_blogname',
 		)
 	);
 
@@ -48,7 +51,7 @@ function palamut_customize_register( $wp_customize ) {
 		'blogdescription',
 		array(
 			'selector'        => '.site-description',
-			'render_callback' => 'palamut_customize_partial_blogdescription',
+			'render_callback' => 'prefix_customize_partial_blogdescription',
 		)
 	);
 
@@ -61,9 +64,9 @@ function palamut_customize_register( $wp_customize ) {
 	/**
 	 * Add custom controls.
 	 */
-	require_once PALA_THEME_DIR . '/inc/customizer/controls/class-palamut-range-control.php';
-	require_once PALA_THEME_DIR . '/inc/customizer/controls/class-palamut-toggle-control.php';
-	require_once PALA_THEME_DIR . '/inc/customizer/controls/class-palamut-alpha-color-control.php';
+	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-range-control.php' );
+	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-toggle-control.php' );
+	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-alpha-color-control.php' );
 
 	if ( class_exists( 'Palamut_Range_Control' ) ) {
 		$wp_customize->register_control_type( 'Palamut_Range_Control' );
@@ -73,34 +76,36 @@ function palamut_customize_register( $wp_customize ) {
 		$wp_customize->register_control_type( 'Palamut_Toggle_Control' );
 	}
 
-	require get_theme_file_path( '/inc/customizer/sections/identity.php' );
-	require get_theme_file_path( '/inc/customizer/sections/typography.php' );
-	require get_theme_file_path( '/inc/customizer/sections/footer.php' );
+
+	// Get Sections & Options.
+	require_once get_theme_file_path( '/inc/customizer/sections/identity.php' );
+	require_once get_theme_file_path( '/inc/customizer/sections/typography.php' );
+	require_once get_theme_file_path( '/inc/customizer/sections/footer.php' );
 	/**
 	 * Top-Level Customizer sections and panels.
 	 */
 	$wp_customize->add_panel(
-		'palamut_theme_options',
+		'prefix_theme_options',
 		array(
-			'title'    => esc_html__( 'Theme Options', 'palamut' ),
+			'title'    => esc_html__( 'Theme Options', 'textdomain' ),
 			'priority' => 30,
 		)
 	);
-	
+
 	$wp_customize->add_panel(
-		'palamut_theme_options',
+		'prefix_theme_options',
 		array(
-			'title'    => esc_html__( 'Theme Options', 'palamut' ),
+			'title'    => esc_html__( 'Theme Options', 'textdomain' ),
 			'priority' => 30,
 		)
 	);
 	
-	
+
 	$wp_customize->add_section(
-		'palamut_demo',
+		'prefix_demo',
 		array(
-			'title'    => esc_html__( 'Demo', 'palamut' ),
-			'panel'    => 'palamut_theme_options',
+			'title'    => esc_html__( 'Demo', 'textdomain' ),
+			'panel'    => 'prefix_theme_options',
 			'priority' => 1,
 		)
 	);
@@ -119,8 +124,8 @@ function palamut_customize_register( $wp_customize ) {
 			'color_1',
 			array(
 				'type'    => 'alpha-color',
-				'label'   => esc_html__( 'Logo Max Width', 'palamut' ),
-				'section' => 'palamut_demo',
+				'label'   => esc_html__( 'Logo Max Width', 'textdomain' ),
+				'section' => 'prefix_demo',
 			)
 		)
 	);
@@ -131,51 +136,51 @@ function palamut_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'custom_logo_max_width' )->transport = 'postMessage';
 }
 
-add_action( 'customize_register', 'palamut_customize_register', 11 );
+add_action( 'customize_register', 'prefix_customize_register', 11 );
 
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  */
-function palamut_customize_preview_js() {
-	wp_enqueue_script( 'palamut-customize-preview-scripts', PALA_THEME_DIR_URL . '/inc/customizer/assets/js/customize-preview.js', array( 'customize-preview', 'jquery' ), '1.0', true );
+function prefix_customize_preview_js() {
+	wp_enqueue_script( 'prefix-customize-preview-scripts', __PRE_THEME_DIR_URL . '/inc/customizer/assets/js/customize-preview.js', array( 'customize-preview', 'jquery' ), '1.0', true );
 }
-add_action( 'customize_preview_init', 'palamut_customize_preview_js' );
+add_action( 'customize_preview_init', 'prefix_customize_preview_js' );
 
 /**
  * Load dynamic logic for the customizer controls area.
  */
-function palamut_customize_controls_js() {
-	wp_enqueue_script( 'palamut-customize-controls', PALA_THEME_DIR_URL . '/inc/customizer/assets/js/customize-controls.js', array( 'customize-controls' ), '1.0', true );
+function prefix_customize_controls_js() {
+	wp_enqueue_script( 'prefix-customize-controls', __PRE_THEME_DIR_URL . '/inc/customizer/assets/js/customize-controls.js', array( 'customize-controls' ), '1.0', true );
 }
-add_action( 'customize_controls_enqueue_scripts', 'palamut_customize_controls_js' );
+add_action( 'customize_controls_enqueue_scripts', 'prefix_customize_controls_js' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @see palamut_customize_register()
+ * @see prefix_customize_register()
  *
  * @return void
  */
-function palamut_customize_partial_blogname() {
+function prefix_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @see palamut_customize_register()
+ * @see prefix_customize_register()
  *
  * @return void
  */
-function palamut_customize_partial_blogdescription() {
+function prefix_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @see palamut_customize_register()
+ * @see prefix_customize_register()
  */
-function palamut_customize_partial_copyright_text() {
+function prefix_customize_partial_copyright_text() {
 	return get_theme_mod( 'copyright_text' );
 }

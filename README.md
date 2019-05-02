@@ -1,7 +1,7 @@
-# Palamut WordPress Starter Theme
+# Palamut WordPress Theme Framework
 
 **Contributors:** stevenselcuk
-**Requires at least:** WordPress 4.9  
+**Requires at least:** WordPress 4.7  
 **Tested up to:** WordPress 5.1  
 **Stable tag:** 1.0  
 **Version:** 1.0  

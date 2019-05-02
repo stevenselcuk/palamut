@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -36,7 +36,7 @@ $wp_customize->add_control(
 		array(
 			'default'     => '50',
 			'type'        => 'palamut-range',
-			'label'       => esc_html__( 'Logo Max Width', 'palamut' ),
+			'label'       => esc_html__( 'Logo Max Width', 'textdomain' ),
 			'description' => 'px',
 			'section'     => 'title_tagline',
 			'priority'    => 8,

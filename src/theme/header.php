@@ -6,7 +6,17 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package palamut
+ * @package pkg.name
+ *
+ * @subpackage Theme Functions
+ * @category Functions
+ *
+ * @version pkg.license
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
 ?>
@@ -22,9 +32,9 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 
-	<?php do_action( 'palamut_site_start' ); ?>
+	<?php do_action( 'prefix_site_start' ); ?>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'palamut' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'textdomain' ); ?></a>
 
 	<!-- Start: .site-header -->
 	<header id="masthead" class="site-header header-classic clearfix" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
@@ -32,7 +42,7 @@
 
 			<!-- Start: .site-branding -->
 			<div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-				<?php palamut_site_logo(); ?>
+				<?php prefix_site_logo(); ?>
 			</div>
 			<!-- End: .site-branding -->
 
@@ -40,7 +50,7 @@
 		if ( has_nav_menu( 'menu-1' ) ) :
 			?>
 			<!-- Start: #main-nav -->
-			<nav id="primary-nav" class="site-navigation" aria-label="<?php esc_attr_e( 'Header Menu', 'palamut' ); ?>" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"
+			<nav id="primary-nav" class="site-navigation" aria-label="<?php esc_attr_e( 'Header Menu', 'textdomain' ); ?>" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"
 				role="navigation">
 				<?php
 				wp_nav_menu(
@@ -55,7 +65,7 @@
 				?>
 			</nav>
 			<!-- End: #main-nav -->
-<?php palamut_cart_icon( 'header_checkout' ); ?>
+			<?php prefix_cart_icon( 'header_checkout' ); ?>
 			<!-- Start: .hamburger-->
 			<button class="hamburger">
 				<div></div>
@@ -66,7 +76,7 @@
 
 		<?php endif; ?>
 		<?php
-		if ( palamut_gimme( 'show-search' ) ) :
+		if ( prefix_gimme( 'show-search' ) ) :
 			get_search_form();
 		endif;
 		?>

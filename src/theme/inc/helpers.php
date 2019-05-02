@@ -1,36 +1,34 @@
 <?php
 /**
- * { Document title }
+ * Document_title
  *
- * { Document descriptions will be add. }
+ * Document_desc
  *
- * @link to be defined
+ * @link N/A
  *
- * @package pdwname
+ * @package pkg.name
  *
- * @subpackage Template Functions
- * @category Theme Framework
+ * @subpackage Theme Functions
+ * @category Functions
  *
- * @version pdwversion
- * @since 1.0.1
+ * @version pkg.license
+ * @since 1.0.0
  *
- * @author pdwauthor
- * @copyright pdwcopyright
- * @license pdwlicense
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
 /**
- * [palamut_is_front description]
+ * [prefix_is_front description]
  *
- * @method palamut_is_front
+ * @method prefix_is_front
  *
- * @since
- *
- * @link
+ * @since 1.0
  *
  * @return boolean
  */
-function palamut_is_front() {
+function prefix_is_front() {
 	if ( ( ! is_home() ) && ( is_front_page() ) ) {
 		return true;
 	} else {
@@ -41,7 +39,7 @@ function palamut_is_front() {
 /**
  * Query whether WooCommerce is activated.
  */
-function palamut_is_woocommerce_activated() {
+function prefix_is_woocommerce_activated() {
 	if ( class_exists( 'woocommerce' ) ) {
 		return true;
 	} else {
@@ -50,17 +48,15 @@ function palamut_is_woocommerce_activated() {
 }
 
 /**
- * [palamut_is_blog description]
+ * [prefix_is_blog description]
  *
- * @method palamut_is_blog
+ * @method prefix_is_blog
  *
- * @since
- *
- * @link
+ * @since 1.0
  *
  * @return boolean
  */
-function palamut_is_blog() {
+function prefix_is_blog() {
 	if ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) || ( is_search() ) ) {
 		return true;
 	} else {
@@ -69,17 +65,17 @@ function palamut_is_blog() {
 }
 
 
-if ( ! function_exists( 'palamut_allowed_html' ) ) {
+if ( ! function_exists( 'prefix_allowed_html' ) ) {
 	/**
 	 * It gives you back allowed tags. Kinda shorthand for boring wp_kses thing.
 	 *
-	 * @method palamut_allowed_html()
+	 * @method prefix_allowed_html()
 	 *
 	 * @since 1.0
 	 *
 	 * @return array Allowed html tags.
 	 */
-	function palamut_allowed_html() {
+	function prefix_allowed_html() {
 		$allowed_tags = array(
 			'a'          => array(
 				'class'  => array(),
@@ -163,19 +159,17 @@ if ( ! function_exists( 'palamut_allowed_html' ) ) {
 
 
 /**
- * [palamut_svg_allowed_html description]
+ * [prefix_svg_allowed_html description]
  *
- * @method palamut_svg_allowed_html
+ * @method prefix_svg_allowed_html
  *
- * @since
- *
- * @link
+ * @since 1.0
  *
  * @return [type]
  */
-function palamut_clean_svg() {
+function prefix_clean_svg() {
 	return apply_filters(
-		'palamut_svg_allowed_html',
+		'prefix_svg_allowed_html',
 		array(
 			'svg' => array(
 				'class'       => array(),
@@ -191,20 +185,18 @@ function palamut_clean_svg() {
 }
 
 /**
- * [palamut_gimme description]
+ * [prefix_gimme description]
  *
- * @method palamut_gimme
+ * @method prefix_gimme
  *
- * @since
- *
- * @link
+ * @since 1.0
  *
  * @param  [type] $name desc.
  * @param  [type] $default_value desc.
  *
  * @return [type]
  */
-function palamut_gimme( $name = null, $default_value = null ) {
+function prefix_gimme( $name = null, $default_value = null ) {
 
 	if ( null === $name ) {
 		return $default_value ? $default_value : null;
@@ -223,7 +215,7 @@ function palamut_gimme( $name = null, $default_value = null ) {
 	 * @see palamuttheme_defaults
 	 */
 	if ( null === $value ) {
-		$value = palamut_theme_defaults( $name );
+		$value = prefix_theme_defaults( $name );
 	}
 		/**
 		* Still no luck? let's look user given value.
@@ -239,19 +231,17 @@ function palamut_gimme( $name = null, $default_value = null ) {
 
 
 /**
- * [palamut_icons description]
+ * [prefix_icons description]
  *
- * @method palamut_icons
+ * @method prefix_icons
  *
- * @since
- *
- * @link
+ * @since 1.0
  *
  * @see classes/class-palamut-icon-bucket.php
  *
  * @return [type]
  */
-function palamut_icons() {
+function prefix_icons() {
 	return Palamut_Icon_Bucket::instance();
 }
 
@@ -262,7 +252,7 @@ function palamut_icons() {
  * @return array Array containing RGB (red, green, and blue) values for the given
  * HEX code, empty array otherwise.
  */
-function palamut_hex2rgb( $color ) {
+function prefix_hex2rgb( $color ) {
 	$color = trim( $color, '#' );
 
 	if ( strlen( $color ) === 3 ) {

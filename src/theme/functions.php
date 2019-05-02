@@ -4,68 +4,81 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package palamut
+ * @package pkg.name
+ *
+ * @subpackage Template Functions
+ * @category Theme Framework
+ *
+ * @version pkg.version
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
 // Add Defaults, Theme Costants, Default Strings and Theme Variables.
-require get_template_directory() . '/inc/theme-defaults.php';
+require get_theme_file_path( '/inc/theme-defaults.php' );
 
 // Helper Functions.
-require PALA_THEME_DIR . '/inc/helpers.php';
+require get_theme_file_path( '/inc/helpers.php' );
 
 // Setting up Palamut Theme, Supports etc.
-require PALA_THEME_DIR . '/inc/theme-setup.php';
+require get_theme_file_path( '/inc/theme-setup.php' );
 
 // Enqueque JS, CSS, fonts etc. for both of side.
-require PALA_THEME_DIR . '/inc/theme-sources.php';
+require get_theme_file_path( '/inc/theme-sources.php' );
 
 // Functions which enhance the theme by hooking into WordPress.
-require PALA_THEME_DIR . '/inc/theme-functions.php';
+require get_theme_file_path( '/inc/theme-functions.php' );
 
 // Theme specific changes about WP.
-require PALA_THEME_DIR . '/inc/theme-filters.php';
+require get_theme_file_path( '/inc/theme-filters.php' );
 
 // Theme specific changes about WP.
-require PALA_THEME_DIR . '/inc/theme-hooks.php';
+require get_theme_file_path( '/inc/theme-hooks.php' );
 
 // Custom theme tags for this theme.
-require PALA_THEME_DIR . '/inc/theme-tags.php';
+require get_theme_file_path( '/inc/theme-tags.php' );
 
 // Init Customizer.
-require PALA_THEME_DIR . '/inc/customizer/customizer.php';
+require get_theme_file_path( '/inc/customizer/customizer.php' );
 
 
 // Palamut Theme Classes.
 /**
  * Call Icon Bucket
  */
-require PALA_THEME_DIR . '/inc/classes/class-palamut-icon-bucket.php';
+require get_theme_file_path( '/inc/classes/class-palamut-icon-bucket.php' );
 
 /**
  * Call Navwalker
  */
-require PALA_THEME_DIR . '/inc/classes/class-palamut-mobile-navwalker.php';
+require get_theme_file_path( '/inc/classes/class-palamut-mobile-navwalker.php' );
 
 /**
  * Implement the Custom Header feature.
  */
-require PALA_THEME_DIR . '/inc/custom-header.php';
+require get_theme_file_path( '/inc/supports/custom-header.php' );
 
-/**
- * Recommended Plugins.
- */
-require PALA_THEME_DIR . '/inc/plugins/recommended-plugins.php';
+require get_theme_file_path( '/inc/supports/portfolio-support.php' );
+require get_theme_file_path( '/inc/extras/documentation/init.php' );
 
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
-	require PALA_THEME_DIR . '/inc/jetpack.php';
+	require get_theme_file_path( '/inc/supports/jetpack.php' );
 }
 
 /**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	require PALA_THEME_DIR . '/inc/woocommerce.php';
+	require get_theme_file_path( '/inc/supports/woocommerce.php' );
 }
+
+/**
+ * Recommended Plugins.
+ */
+require get_theme_file_path( '/inc/plugins/recommended-plugins.php' );

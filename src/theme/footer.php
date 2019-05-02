@@ -6,16 +6,27 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package palamut
+ * @package pkg.name
+ *
+ * @subpackage Theme Functions
+ * @category Functions
+ *
+ * @version pkg.license
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
+
 
 ?>
 
-		<?php if ( palamut_gimme( 'show-footer', false ) ) : ?>
+		<?php if ( prefix_gimme( 'show-footer', false ) ) : ?>
 		<!-- Start: #colophon -->
 		<footer id="colophon" class="site-footer classic-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
-			<?php do_action( 'palamut_footer_start' ); ?>
+			<?php do_action( 'prefix_footer_start' ); ?>
 
 			<!-- Start: .footer-widgets-->
 			<div class="footer-widgets row justify-around clearfix">
@@ -35,7 +46,7 @@
 			</div>
 			<!-- End: .footer-widgets-->
 
-			<?php do_action( 'palamut_footer_end' ); ?>
+			<?php do_action( 'prefix_footer_end' ); ?>
 
 		</footer>
 		<!-- #colophon -->
@@ -48,7 +59,7 @@
 		<section class="site-info clearfix">
 
 		<p class="copyright" itemscope itemtype="http://schema.org/copyrightYear">
-			<?php echo wp_kses( palamut_gimme( 'copyright-text', palamut_theme_strings( 'copyright-text' ) ), palamut_allowed_html() ); ?>
+			<?php echo wp_kses( prefix_gimme( 'copyright-text', prefix_theme_strings( 'copyright-text' ) ), prefix_allowed_html() ); ?>
 		</p>
 			<?php
 			if ( has_nav_menu( 'social' ) ) :
@@ -61,7 +72,7 @@
 						'fallback_cb'     => false,
 						'depth'           => 1,
 						'link_before'     => '<span class="screen-reader-text">',
-						'link_after'      => '</span>' . palamut_icons()->get( array( 'icon' => 'plus' ) ),
+						'link_after'      => '</span>' . prefix_icons()->get( array( 'icon' => 'plus' ) ),
 					)
 				);
 			endif;
@@ -72,7 +83,7 @@
 
 	<?php endif; ?>
 
-		<?php do_action( 'palamut_site_end' ); ?>
+		<?php do_action( 'prefix_site_end' ); ?>
 
 	</div>
 	<!-- End: #page -->

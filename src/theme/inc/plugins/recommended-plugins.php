@@ -1,20 +1,22 @@
 <?php
 /**
- * This file represents an example of the code that themes would use to register
- * the required plugins.
+ * Document_title
  *
- * It is expected that theme authors would copy and paste this code into their
- * functions.php file, and amend to suit.
+ * Document_desc
  *
- * @see http://tgmpluginactivation.com/configuration/ for detailed documentation.
+ * @link N/A
  *
- * @package    TGM-Plugin-Activation
- * @subpackage Example
- * @version    2.6.1 for parent theme Thesaas for publication on ThemeForest
- * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
- * @copyright  Copyright (c) 2011, Thomas Griffin
- * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
- * @link       https://github.com/TGMPA/TGM-Plugin-Activation
+ * @package pkg.name
+ *
+ * @subpackage Theme Functions
+ * @category Functions
+ *
+ * @version pkg.license
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
 /**
@@ -25,11 +27,11 @@ require_once get_template_directory() . '/inc/plugins/class-tgm-plugin-activatio
 /**
  * Palamut_register_required_plugins
  */
-function palamut_register_required_plugins() {
+function prefix_register_required_plugins() {
 	$plugins = array(
 		array(
 			'name'               => 'Palamut for themename',
-			'slug'               => 'palamut',
+			'slug'               => 'textdomain',
 			'source'             => get_template_directory() . '/inc/plugins/trunk/palamut.zip',
 			'required'           => true,
 			'version'            => '1.0',
@@ -39,12 +41,12 @@ function palamut_register_required_plugins() {
 			'is_callable'        => '',
 		),
 		array(
-			'name'     => esc_html__( 'WooCommerce', 'palamut' ),
+			'name'     => esc_html__( 'WooCommerce', 'textdomain' ),
 			'slug'     => 'woocommerce',
 			'required' => false,
 		),
 		array(
-			'name'     => esc_html__( 'WP Term Order', 'palamut' ),
+			'name'     => esc_html__( 'WP Term Order', 'textdomain' ),
 			'slug'     => 'wp-term-order',
 			'required' => false,
 		),
@@ -60,28 +62,26 @@ function palamut_register_required_plugins() {
 		'is_automatic' => true,
 		'message'      => '',
 		'strings'      => array(
-			'page_title' => esc_html__( 'Palamut Recommended Plugins', 'palamut' ),
-			'menu_title' => esc_html__( 'Install Plugins', 'palamut' ),
+			'page_title' => esc_html__( 'Palamut Recommended Plugins', 'textdomain' ),
+			'menu_title' => esc_html__( 'Install Plugins', 'textdomain' ),
 		),
 	);
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'palamut_register_required_plugins' );
+add_action( 'tgmpa_register', 'prefix_register_required_plugins' );
 
 /**
- * [palamut_activated_plugin description]
+ * [prefix_activated_plugin description]
  *
- * @method palamut_activated_plugin
+ * @method prefix_activated_plugin
  *
- * @since
- *
- * @link
+ * @since 1.0
  *
  * @param  [type] $plugin No Desc.
  *
  * @return void
  */
-function palamut_activated_plugin( $plugin ) {
+function prefix_activated_plugin( $plugin ) {
 	// Check if PVC constant is defined, use it to get PVC path anc compare to activated plugin.
 	// if ( defined( 'POST_VIEWS_COUNTER_PATH' ) && plugin_basename( POST_VIEWS_COUNTER_PATH . 'post-views-counter.php' ) === $plugin ) {
 		// Get display options.
@@ -92,4 +92,4 @@ function palamut_activated_plugin( $plugin ) {
 		// update_option( 'post_views_counter_settings_display', $display_options );
 	// }.
 }
-add_action( 'activated_plugin', 'palamut_activated_plugin' );
+add_action( 'activated_plugin', 'prefix_activated_plugin' );

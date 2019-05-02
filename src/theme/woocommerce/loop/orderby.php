@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <form class="woocommerce-ordering" method="get">
-	<span class="woocommerce-ordering__sort-by"><?php echo esc_html__( 'Sort by', 'palamut' ); ?>:</span>
+	<span class="woocommerce-ordering__sort-by"><?php echo esc_html__( 'Sort by', 'textdomain' ); ?>:</span>
 
 	<select name="orderby" id="orderby" class="orderby">
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>

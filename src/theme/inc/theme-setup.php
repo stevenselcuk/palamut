@@ -1,22 +1,22 @@
 <?php
 /**
- * { Document title }
+ * Document_title
  *
- * { Document descriptions will be add. }
+ * Document_desc
  *
- * @link to be defined
+ * @link N/A
  *
- * @package pdwname
+ * @package pkg.name
  *
- * @subpackage Template Functions
- * @category Theme Framework
+ * @subpackage Theme Functions
+ * @category Functions
  *
- * @version pdwversion
- * @since 1.0.1
+ * @version pkg.license
+ * @since 1.0.0
  *
- * @author pdwauthor
- * @copyright pdwcopyright
- * @license pdwlicense
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
 // Exit if accessed directly.
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'palamut_setup' ) ) :
+if ( ! function_exists( 'prefix_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -32,14 +32,14 @@ if ( ! function_exists( 'palamut_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function palamut_setup() {
+	function prefix_setup() {
 		/*
 			* Make theme palamutilable for translation.
 			* Translations can be filed in the /languages/ directory.
 			* If you're building a theme based on palamut, use a find and replace
-			* to change 'palamut' to the name of your theme in all the template files.
+			* to change 'textdomain' to the name of your theme in all the template files.
 			*/
-		load_theme_textdomain( 'palamut', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'textdomain', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -62,8 +62,8 @@ if ( ! function_exists( 'palamut_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'palamut' ),
-				'social' => esc_html__( 'Social Menu', 'palamut' ),
+				'menu-1' => esc_html__( 'Primary', 'textdomain' ),
+				'social' => esc_html__( 'Social Menu', 'textdomain' ),
 			)
 		);
 
@@ -86,7 +86,7 @@ if ( ! function_exists( 'palamut_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'palamut_custom_background_args',
+				'prefix_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -116,7 +116,7 @@ if ( ! function_exists( 'palamut_setup' ) ) :
 
 		if ( class_exists( 'Classic_Editor' ) || version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
 
-			add_editor_style( PALA_THEME_DIR_URL . '/assets/css/classic-editor-style.css' );
+			add_editor_style( __PRE_THEME_DIR_URL . '/assets/css/classic-editor-style.css' );
 
 		}
 
@@ -128,12 +128,10 @@ if ( ! function_exists( 'palamut_setup' ) ) :
 		add_theme_support( 'wc-product-gallery-slider' );
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
-
-
 	}
 endif;
 
-add_action( 'after_setup_theme', 'palamut_setup' );
+add_action( 'after_setup_theme', 'prefix_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -142,26 +140,26 @@ add_action( 'after_setup_theme', 'palamut_setup' );
  *
  * @global int $content_width
  */
-function palamut_content_width() {
+function prefix_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'palamut_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'prefix_content_width', 640 );
 }
 
-add_action( 'after_setup_theme', 'palamut_content_width', 0 );
+add_action( 'after_setup_theme', 'prefix_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function palamut_widgets_init() {
+function prefix_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'palamut' ),
+			'name'          => esc_html__( 'Sidebar', 'textdomain' ),
 			'id'            => 'sidebar',
-			'description'   => esc_html__( 'Add widgets here.', 'palamut' ),
+			'description'   => esc_html__( 'Add widgets here.', 'textdomain' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -170,9 +168,9 @@ function palamut_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 1', 'palamut' ),
+			'name'          => esc_html__( 'Footer 1', 'textdomain' ),
 			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Add widgets here.', 'palamut' ),
+			'description'   => esc_html__( 'Add widgets here.', 'textdomain' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -181,9 +179,9 @@ function palamut_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 2', 'palamut' ),
+			'name'          => esc_html__( 'Footer 2', 'textdomain' ),
 			'id'            => 'footer-2',
-			'description'   => esc_html__( 'Add widgets here.', 'palamut' ),
+			'description'   => esc_html__( 'Add widgets here.', 'textdomain' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -193,6 +191,6 @@ function palamut_widgets_init() {
 
 }
 
-add_action( 'widgets_init', 'palamut_widgets_init' );
+add_action( 'widgets_init', 'prefix_widgets_init' );
 
 

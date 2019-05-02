@@ -14,15 +14,15 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
 
 /**
- * [palamut_customizer_css description]
+ * [prefix_customizer_css description]
  *
- * @method palamut_customizer_css
+ * @method prefix_customizer_css
  *
  * @since
  *
@@ -30,7 +30,7 @@
  *
  * @return $css It's our user defined CSS vars. and other values.
  */
-function palamut_customizer_css() {
+function prefix_customizer_css() {
 
 	$body_font_family    = get_theme_mod( 'body_font_family', 'Karla' );
 	$body_font_size      = get_theme_mod( 'body_font_size', '15' );
@@ -65,9 +65,9 @@ function palamut_customizer_css() {
 
 }
 /**
- * [palamut_enqueue_google_fonts description]
+ * [prefix_enqueue_google_fonts description]
  *
- * @method palamut_enqueue_google_fonts
+ * @method prefix_enqueue_google_fonts
  *
  * @since
  *
@@ -75,7 +75,7 @@ function palamut_customizer_css() {
  *
  * @return [type]
  */
-function palamut_google_fonts() {
+function prefix_google_fonts() {
 	$default = array(
 		'default',
 		'Default',
@@ -121,25 +121,25 @@ function palamut_google_fonts() {
 }
 
 /**
- * [palamut_enqueue_google_fonts description]
+ * [prefix_enqueue_google_fonts description]
  *
- * @method palamut_enqueue_google_fonts
+ * @method prefix_enqueue_google_fonts
  *
  * @since
  *
  * @link
  */
-function palamut_enqueue_google_fonts() {
-	wp_enqueue_style( 'palamut-google-fonts', palamut_google_fonts(), false, '1.0', 'all' );
+function prefix_enqueue_google_fonts() {
+	wp_enqueue_style( 'palamut-google-fonts', prefix_google_fonts(), false, '1.0', 'all' );
 }
-add_action( 'wp_enqueue_scripts', 'palamut_enqueue_google_fonts' );
+add_action( 'wp_enqueue_scripts', 'prefix_enqueue_google_fonts' );
 
-add_action( 'enqueue_block_editor_assets', 'palamut_enqueue_google_fonts', 11 );
+add_action( 'enqueue_block_editor_assets', 'prefix_enqueue_google_fonts', 11 );
 
 /**
- * [palamut_classic_editor_google_fonts description]
+ * [prefix_classic_editor_google_fonts description]
  *
- * @method palamut_classic_editor_google_fonts
+ * @method prefix_classic_editor_google_fonts
  *
  * @since
  *
@@ -147,13 +147,13 @@ add_action( 'enqueue_block_editor_assets', 'palamut_enqueue_google_fonts', 11 );
  *
  * @return [type]
  */
-function palamut_classic_editor_google_fonts() {
+function prefix_classic_editor_google_fonts() {
 	if ( class_exists( 'Classic_Editor' ) || version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
-		add_editor_style( palamut_google_fonts() );
+		add_editor_style( prefix_google_fonts() );
 	}
 }
 
-add_action( 'after_setup_theme', 'palamut_classic_editor_google_fonts', 99 );
+add_action( 'after_setup_theme', 'prefix_classic_editor_google_fonts', 99 );
 
 /**
  * Add preconnect for Google Fonts.
@@ -162,7 +162,7 @@ add_action( 'after_setup_theme', 'palamut_classic_editor_google_fonts', 99 );
  * @param  string $relation_type  The relation type the URLs are printed.
  * @return array  $urls           URLs to print for resource hints.
  */
-function palamut_resource_hints( $urls, $relation_type ) {
+function prefix_resource_hints( $urls, $relation_type ) {
 	if ( wp_style_is( 'palamut-google-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
@@ -172,38 +172,38 @@ function palamut_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'palamut_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'prefix_resource_hints', 10, 2 );
 
 
 
 /**
- * [palamut_enqueue_dynamic_css description]
+ * [prefix_enqueue_dynamic_css description]
  *
- * @method palamut_enqueue_dynamic_css
+ * @method prefix_enqueue_dynamic_css
  *
  * @since
  *
  * @link
  */
-function palamut_dynamic_styles() {
-	wp_add_inline_style( 'palamut-style', palamut_customizer_css() );
+function prefix_dynamic_styles() {
+	wp_add_inline_style( 'palamut-style', prefix_customizer_css() );
 }
 
-add_action( 'wp_enqueue_scripts', 'palamut_dynamic_styles' );
+add_action( 'wp_enqueue_scripts', 'prefix_dynamic_styles' );
 
 
 /**
- * [palamut_editor_customizer_styles description]
+ * [prefix_editor_customizer_styles description]
  *
- * @method palamut_editor_customizer_styles
+ * @method prefix_editor_customizer_styles
  *
  * @since
  *
  * @link
  */
-function palamut_gutenberg_dynamic_styles() {
-	wp_add_inline_style( 'gutenberg-editor-style', palamut_customizer_css() );
+function prefix_gutenberg_dynamic_styles() {
+	wp_add_inline_style( 'gutenberg-editor-style', prefix_customizer_css() );
 }
 
-add_action( 'enqueue_block_editor_assets', 'palamut_gutenberg_dynamic_styles' );
+add_action( 'enqueue_block_editor_assets', 'prefix_gutenberg_dynamic_styles' );
 

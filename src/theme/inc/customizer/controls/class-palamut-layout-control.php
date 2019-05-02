@@ -1,11 +1,22 @@
 <?php
 /**
- * Layout Customizer Control.
+ * Document_title
  *
- * @see https://developer.wordpress.org/reference/classes/wp_customize_control/
+ * Document_desc
  *
- * @package     Palamut Admin
- * @link        https://palamut.com/
+ * @link N/A
+ *
+ * @package pkg.name
+ *
+ * @subpackage Theme Functions
+ * @category Functions
+ *
+ * @version pkg.license
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
 // Exit if accessed directly.
@@ -38,14 +49,14 @@ class Palamut_Layout_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		wp_enqueue_style( 'palamut-layout-control', PALA_THEME_DIR_URL . 'inc/customizer/controls/assets/css/layout.css', false, '1.0', 'all' );
-		wp_enqueue_script( 'palamut-layout-control', PALA_THEME_DIR_URL . 'inc/customizer/controls/assets/js/layout.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_style( 'palamut-layout-control', prefix_THEME_DIR_URL . 'inc/customizer/controls/assets/css/layout.css', false, __PRE_THEME_VERSION, 'all' );
+		wp_enqueue_script( 'palamut-layout-control', prefix_THEME_DIR_URL . 'inc/customizer/controls/assets/js/layout.js', array( 'jquery' ), __PRE_THEME_VERSION, true );
 
 		// Localization.
-		$palamut_layout_control_l10n['open']  = esc_html__( 'Layout', 'palamut' );
-		$palamut_layout_control_l10n['close'] = esc_html__( 'Close', 'palamut' );
+		$prefix_layout_control_l10n['open']  = esc_html__( 'Layout', 'textdomain' );
+		$prefix_layout_control_l10n['close'] = esc_html__( 'Close', 'textdomain' );
 
-		wp_localize_script( 'palamut-layout-control', 'palamutLocalization', $palamut_layout_control_l10n );
+		wp_localize_script( 'palamut-layout-control', 'palamutLocalization', $prefix_layout_control_l10n );
 	}
 
 	/**
@@ -83,7 +94,7 @@ class Palamut_Layout_Control extends WP_Customize_Control {
 			<span class="customize-control-description">{{ data.description }}</span>
 		<# } #>
 
-		<button id="layout-switcher" class="button layout-switcher"><?php esc_html_e( 'Layout', 'palamut' ); ?></button>
+		<button id="layout-switcher" class="button layout-switcher"><?php esc_html_e( 'Layout', 'textdomain' ); ?></button>
 
 		<div class="layout-switcher__wrapper">
 

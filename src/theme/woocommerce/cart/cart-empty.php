@@ -22,7 +22,7 @@ if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
 	<div class="cart-empty-icon">
 		<div class="svg__wrapper">
 			<a href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
-				<?php echo palamut_icons()->get( array( 'icon' => 'empty-cart' ) ); ?>
+				<?php echo prefix_icons()->get( array( 'icon' => 'empty-cart' ) ); ?>
 			</a>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-/* global jQuery, palamut_license_control, ajaxurl, wp */
+/* global jQuery, prefix_license_control, ajaxurl, wp */
 
 ( function ( $ ) {
 
@@ -36,13 +36,13 @@
 			var activation_data = {
 				type: 'post',
 				action: 'activate_license',
-				nonce: palamut_license_control.nonce.activate,
+				nonce: prefix_license_control.nonce.activate,
 				wp_customize: 'on',
 				key: $( '#theme-license-key' ).val(),
 			};
 
 			// License activation AJAX request.
-			$.post( palamut_license_control.ajaxurl, activation_data, function ( r ) {
+			$.post( prefix_license_control.ajaxurl, activation_data, function ( r ) {
 
 				console.log( r.error );
 
@@ -72,7 +72,7 @@
 					} else {
 						$( '#theme-license-key' ).addClass( not_valid );
 						$( '#theme-license-key' ).focus();
-						wp.customize.control( 'palamut_license[key]' ).setting.set( '' );
+						wp.customize.control( 'prefix_license[key]' ).setting.set( '' );
 
 
 						$( '#theme-license-error' ).html( r.error );
@@ -104,12 +104,12 @@
 			var deactivation_data = {
 				type: 'post',
 				action: 'deactivate_license',
-				nonce: palamut_license_control.nonce.deactivate,
+				nonce: prefix_license_control.nonce.deactivate,
 				wp_customize: 'on',
 			};
 
 			// License deactivation AJAX request.
-			$.post( palamut_license_control.ajaxurl, deactivation_data, function ( r ) {
+			$.post( prefix_license_control.ajaxurl, deactivation_data, function ( r ) {
 
 				console.log( r.error );
 
@@ -130,7 +130,7 @@
 					$( '#theme-license-info' ).removeClass( valid ).addClass( not_valid );
 
 					// Empty the license key input field.
-					wp.customize.control( 'palamut_license[key]' ).setting.set( '' );
+					wp.customize.control( 'prefix_license[key]' ).setting.set( '' );
 
 					// Log the data, for debugging purposes.
 					console.log( deactivation_data );

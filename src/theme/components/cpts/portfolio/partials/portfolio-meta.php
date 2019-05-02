@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */

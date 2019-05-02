@@ -37,8 +37,8 @@ class Palamut_Range_Control extends WP_Customize_Control {
 	 * Enqueue scripts and styles.
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'palamut-range-control', PALA_THEME_DIR_URL . '/inc/customizer/controls/assets/css/range.css', false, '1.0', 'all' );
-		wp_enqueue_script( 'palamut-range-control', PALA_THEME_DIR_URL . '/inc/customizer/controls/assets/js/range.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_style( 'palamut-range-control', get_theme_file_uri( '/inc/customizer/controls/assets/css/range.css' ), false, __PRE_THEME_VERSION, 'all' );
+		wp_enqueue_script( 'palamut-range-control', get_theme_file_uri( '/inc/customizer/controls/assets/js/range.js' ), array( 'jquery' ), __PRE_THEME_VERSION, true );
 	}
 
 	/**

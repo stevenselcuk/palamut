@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -28,25 +28,29 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Definitions & Globals
  */
 
-if ( ! defined( 'PALA_THEME_DIR' ) ) :
-	define( 'PALA_THEME_DIR', get_template_directory() );
+if ( ! defined( '__PRE_THEME_DIR' ) ) :
+	define( '__PRE_THEME_DIR', get_template_directory() );
 endif;
-if ( ! defined( 'PALA_THEME_DIR_URL' ) ) :
-	define( 'PALA_THEME_DIR_URL', get_template_directory_uri() );
-endif;
-
-if ( ! defined( 'PALA_THEME_NAME' ) ) :
-	define( 'PALA_THEME_NAME', wp_get_theme()->get( 'Name' ) );
+if ( ! defined( '__PRE_THEME_DIR_URL' ) ) :
+	define( '__PRE_THEME_DIR_URL', get_template_directory_uri() );
 endif;
 
-if ( ! defined( 'PALA_THEME_VERSION' ) ) :
-	define( 'PALA_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
+if ( ! defined( '__PRE_THEME_NAME' ) ) :
+	define( '__PRE_THEME_NAME', wp_get_theme()->get( 'Name' ) );
+endif;
+
+if ( ! defined( '__PRE_THEME_VERSION' ) ) :
+	define( '__PRE_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
+endif;
+
+if ( ! defined( 'PORTFOLIO_SUPPORT' ) ) :
+	define( 'PORTFOLIO_SUPPORT', 'true' );
 endif;
 
 /**
- * [palamut_theme_defaults description]
+ * [prefix_theme_defaults description]
  *
- * @method palamut_theme_defaults
+ * @method prefix_theme_defaults
  *
  * @since 1.0
  *
@@ -54,11 +58,11 @@ endif;
  *
  * @return string Value of default.
  */
-function palamut_theme_defaults( $name ) {
+function prefix_theme_defaults( $name ) {
 	static $defaults;
 	if ( ! $defaults ) {
 		$defaults = apply_filters(
-			'palamut_theme_defaults',
+			'prefix_theme_defaults',
 			array(
 				// Identity.
 				'site_title'                   => false,
@@ -86,9 +90,9 @@ function palamut_theme_defaults( $name ) {
 }
 
 /**
- * [palamut_theme_strings description]
+ * [prefix_theme_strings description]
  *
- * @method palamut_theme_strings
+ * @method prefix_theme_strings
  *
  * @since 1.0
  *
@@ -96,19 +100,19 @@ function palamut_theme_defaults( $name ) {
  *
  * @return [type]
  */
-function palamut_theme_strings( $name ) {
+function prefix_theme_strings( $name ) {
 	static $strings;
 	if ( ! $strings ) {
 		$strings = apply_filters(
-			'palamut_theme_strings',
+			'prefix_theme_strings',
 			array(
 				// Identity.
-				'no_result_found_title'   => _x( 'Nothing Found', 'Search result page warning title', 'palamut' ),
-				'no_result_found_desc'    => _x( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'Search result page warning text', 'palamut' ),
-				'search_form_title'       => _x( 'Search for:', 'Search form placeholder text.', 'palamut' ),
-				'search_form_placeholder' => _x( 'Search', 'Search form placeholder text.', 'palamut' ),
+				'no_result_found_title'   => _x( 'Nothing Found', 'Search result page warning title', 'textdomain' ),
+				'no_result_found_desc'    => _x( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'Search result page warning text', 'textdomain' ),
+				'search_form_title'       => _x( 'Search for:', 'Search form placeholder text.', 'textdomain' ),
+				'search_form_placeholder' => _x( 'Search', 'Search form placeholder text.', 'textdomain' ),
 				// Translators: 1. Year 2. Site Name.
-				'copyright-text'          => sprintf( 'Copyright &copy; %1$s %2$s. All rights reserved.', date_i18n( __( 'Y', 'palamut' ) ), get_bloginfo( 'name' ) ),
+				'copyright-text'          => sprintf( 'Copyright &copy; %1$s %2$s. All rights reserved.', date_i18n( __( 'Y', 'textdomain' ) ), get_bloginfo( 'name' ) ),
 			)
 		);
 	}

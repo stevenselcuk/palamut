@@ -2,10 +2,19 @@
 /**
  * Jetpack Compatibility File
  *
- * @link https://jetpack.com/
+ * @package pkg.name
  *
- * @package palamut
+ * @subpackage Theme Functions
+ * @category Functions
+ *
+ * @version pkg.license
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
+
 
 /**
  * Jetpack setup function.
@@ -14,11 +23,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function palamut_jetpack_setup() {
+function prefix_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'palamut_infinite_scroll_render',
+		'render'    => 'prefix_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -42,12 +51,12 @@ function palamut_jetpack_setup() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'palamut_jetpack_setup' );
+add_action( 'after_setup_theme', 'prefix_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function palamut_infinite_scroll_render() {
+function prefix_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

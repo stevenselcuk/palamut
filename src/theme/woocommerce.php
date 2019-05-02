@@ -22,7 +22,7 @@ get_header(); ?>
 		 * Check if WooCommerce is activated, then display the following
 		 * only on the WooCommerce archive and taxonomy pages.
 		 */
-		if ( palamut_is_woocommerce_activated() ) {
+		if ( prefix_is_woocommerce_activated() ) {
 
 			if ( is_shop() || is_product_category() || is_product_tag() || is_singular( 'product' ) ) {
 				/*
@@ -37,7 +37,7 @@ get_header(); ?>
 
 						<button class="product-categories-trigger">
 							<span class="product-categories-trigger--text">
-								<?php echo esc_html__( 'Filter', 'palamut' ); ?>
+								<?php echo esc_html__( 'Filter', 'textdomain' ); ?>
 							</span>
 							<span class="product-categories-trigger--icon"></span>
 						</button>
@@ -62,12 +62,12 @@ get_header(); ?>
 				 */
 				woocommerce_content();
 
-				$pagination = get_theme_mod( 'shop_pagination', palamut_theme_defaults( 'shop_pagination' ) );
+				$pagination = get_theme_mod( 'shop_pagination', prefix_theme_defaults( 'shop_pagination' ) );
 
 				if ( 'pager' === $pagination ) {
-					palamut_woocommerce_standard_pagination();
+					prefix_woocommerce_standard_pagination();
 				} else {
-					palamut_woocommerce_pagination();
+					prefix_woocommerce_pagination();
 				}
 			}
 		}

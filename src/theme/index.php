@@ -9,7 +9,17 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package palamut
+ * @package pkg.name
+ *
+ * @subpackage Theme Functions
+ * @category Functions
+ *
+ * @version pkg.license
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
 get_header();
@@ -40,7 +50,7 @@ get_header();
 
 			endwhile;
 
-			palamut_get_pagination();
+			prefix_get_pagination();
 
 		else :
 

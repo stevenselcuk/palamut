@@ -21,5 +21,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <p class="woocommerce-info">
-	<?php echo apply_filters( 'palamut_shop_no_products_found', esc_html__( 'No products were found.', 'palamut' ) ); ?>
+	<?php echo apply_filters( 'prefix_shop_no_products_found', esc_html__( 'No products were found.', 'textdomain' ) ); ?>
 </p>

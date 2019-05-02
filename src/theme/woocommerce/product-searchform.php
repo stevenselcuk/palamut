@@ -24,13 +24,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label class="screen-reader-text" for="woocommerce-product-search-field"><?php echo esc_html__( 'Search for:', 'palamut' ); ?></label>
-	<input type="search" id="woocommerce-product-search-field" class="search-field" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'palamut' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'palamut' ); ?>" />
+	<label class="screen-reader-text" for="woocommerce-product-search-field"><?php echo esc_html__( 'Search for:', 'textdomain' ); ?></label>
+	<input type="search" id="woocommerce-product-search-field" class="search-field" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'textdomain' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'textdomain' ); ?>" />
 
 	<div class="input-control">
 		<div class="svg__wrapper">
-			<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'palamut' ); ?>" />
-			<?php echo palamut_icons()->get( array( 'icon' => 'search' ) ); ?>
+			<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'textdomain' ); ?>" />
+			<?php echo prefix_icons()->get( array( 'icon' => 'search' ) ); ?>
 		</div>
 	</div>
 

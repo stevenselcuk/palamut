@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -55,12 +55,12 @@ class Palamut_Alpha_Color_Control extends WP_Customize_Control {
 	 * stand alone class we'll register and enqueue them here.
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'palamut-alpha-color-picker', get_theme_file_uri( '/inc/customizer/controls/assets/js/alpha-color-picker.js' ), array( 'jquery', 'wp-color-picker' ), '1.0', true );
+		wp_enqueue_script( 'palamut-alpha-color-picker', get_theme_file_uri( '/inc/customizer/controls/assets/js/alpha-color-picker.js' ), array( 'jquery', 'wp-color-picker' ), __PRE_THEME_VERSION, true );
 		wp_enqueue_style(
 			'palamut-alpha-color-picker',
 			get_theme_file_uri( '/inc/customizer/controls/assets/css/alpha-color-picker.css' ),
 			array( 'wp-color-picker' ),
-			'1.0'
+			__PRE_THEME_VERSION
 		);
 	}
 	/**

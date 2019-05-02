@@ -14,12 +14,12 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
 
-if ( palamut_is_woocommerce_activated() ) :
-	add_action( 'palamut_site_end', 'palamut_woocommerce_minicart' );
-	add_action( 'palamut_site_end', 'palamut_woocommerce_minibar' );
+if ( prefix_is_woocommerce_activated() ) :
+	add_action( 'prefix_site_end', 'prefix_woocommerce_minicart' );
+	add_action( 'prefix_site_end', 'prefix_woocommerce_minibar' );
 endif;

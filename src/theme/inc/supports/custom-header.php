@@ -4,42 +4,56 @@
  *
  * You can add an optional custom header image to header.php like so ...
  *
-	<?php the_header_image_tag(); ?>
- *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package palamut
+ * @package pkg.name
+ *
+ * @subpackage Theme Functions
+ * @category Functions
+ *
+ * @version pkg.license
+ * @since 1.0.0
+ *
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
- // Exit if accessed directly.
- if ( ! defined( 'ABSPATH' ) ) {
- 	exit;
- }
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses palamut_header_style()
+ * @uses prefix_header_style()
  */
-function palamut_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'palamut_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'palamut_header_style',
-	) ) );
+function prefix_custom_header_setup() {
+	add_theme_support(
+		'custom-header',
+		apply_filters(
+			'prefix_custom_header_args',
+			array(
+				'default-image'      => '',
+				'default-text-color' => '000000',
+				'width'              => 1000,
+				'height'             => 250,
+				'flex-height'        => true,
+				'wp-head-callback'   => 'prefix_header_style',
+			)
+		)
+	);
 }
-add_action( 'after_setup_theme', 'palamut_custom_header_setup' );
+add_action( 'after_setup_theme', 'prefix_custom_header_setup' );
 
-if ( ! function_exists( 'palamut_header_style' ) ) :
+if ( ! function_exists( 'prefix_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see palamut_custom_header_setup().
+	 * @see prefix_custom_header_setup().
 	 */
-	function palamut_header_style() {
+	function prefix_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
@@ -62,8 +76,8 @@ if ( ! function_exists( 'palamut_header_style' ) ) :
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 			}
-		<?php
-		// If the user has set a custom color for the text use that.
+			<?php
+			// If the user has set a custom color for the text use that.
 		else :
 			?>
 			.site-title a,

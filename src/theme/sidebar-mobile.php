@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -25,17 +25,17 @@ $is_active = ( ! is_active_sidebar( 'sidebar-1' ) ) ? 'no-widget-area' : 'has-wi
 
 	<!-- Start: .hamburger-->
 	<button class="offcanvas-close">
-		<?php echo wp_kses( palamut_icons()->get( array( 'icon' => 'cancel' ) ), palamut_clean_svg() ); ?>
+		<?php echo wp_kses( prefix_icons()->get( array( 'icon' => 'cancel' ) ), prefix_clean_svg() ); ?>
 	</button>
 	<!-- End: .hamburger-->
 
-	<?php do_action( 'palamut_mobile_sidebar_start' ); ?>
+	<?php do_action( 'prefix_mobile_sidebar_start' ); ?>
 
 	<div class="sidebar--section">
 
 		<div class="sidebar--section-inner">
 
-			<nav id="mobile-nav" class="mobile-navigation" aria-label="<?php esc_attr_e( 'Mobile Menu', 'palamut' ); ?>">
+			<nav id="mobile-nav" class="mobile-navigation" aria-label="<?php esc_attr_e( 'Mobile Menu', 'textdomain' ); ?>">
 
 				<?php
 				wp_nav_menu(
@@ -64,6 +64,6 @@ $is_active = ( ! is_active_sidebar( 'sidebar-1' ) ) ? 'no-widget-area' : 'has-wi
 		</div>
 	<?php endif; ?>
 
-	<?php do_action( 'palamut_mobile_sidebar_end' ); ?>
+	<?php do_action( 'prefix_mobile_sidebar_end' ); ?>
 
 </aside>

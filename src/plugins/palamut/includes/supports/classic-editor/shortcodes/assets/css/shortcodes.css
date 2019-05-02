@@ -51,7 +51,7 @@
 @custom-media --xxl-viewport only screen and (min-width: 1367px);
 :root { --content-width: 740px; --content-width-wide: 1100px; --header-width:1100px; }
 
-:root { --body-text-fontfamily: CircularStd; --body-text-fontsize: 14px; --body-text-weight: 400; --heading-fontfamily: CircularStd; --heading-fontweight: 800; --heading-line-height: 1.25; --huge-text-fontsize: 2.2em; --large-text-fontsize: 1.925em; --medium-text-fontsize: 1.375em; --menu-item-fontfamily: CircularStd; --menu-item-fontsize: 14px; --menu-item-fontweight: 600; --small-text-fontsize: 0.7575757576em; }
+:root { --body-text-fontsize: 14px; --body-text-weight: 400; --heading-fontweight: 800; --heading-line-height: 1.25; --huge-text-fontsize: 2.2em; --large-text-fontsize: 1.925em; --medium-text-fontsize: 1.375em; --menu-item-fontfamily: CircularStd; --menu-item-fontsize: 14px; --menu-item-fontweight: 600; --small-text-fontsize: 0.7575757576em; }
 
 .palamut-huge-text { font-size: var(--huge-text-fontsize); }
 

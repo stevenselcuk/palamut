@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Cart contents count.
-echo palamut_woocommerce_get_cart_contents_count();
+echo prefix_woocommerce_get_cart_contents_count();
 
 // Mini cart.
 woocommerce_mini_cart();

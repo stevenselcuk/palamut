@@ -1,25 +1,25 @@
 <?php
 /**
- * { Document title }
+ * Document_title
  *
- * { Document descriptions will be add. }
+ * Document_desc
  *
- * @link to be defined
+ * @link N/A
  *
- * @package pdwname
+ * @package pkg.name
  *
- * @subpackage Template Functions
- * @category Theme Framework
+ * @subpackage Theme Functions
+ * @category Functions
  *
- * @version pdwversion
- * @since 1.0.1
+ * @version pkg.license
+ * @since 1.0.0
  *
- * @author pdwauthor
- * @copyright pdwcopyright
- * @license pdwlicense
+ * @author pkg.author
+ * @copyright pkg.copyright
+ * @license pkg.license
  */
 
- // Exit if accessed directly.
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -27,68 +27,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue for front-end.
  *
- * @method palamut_scripts
+ * @method prefix_scripts
  *
  * @since 1.0
  */
-function palamut_scripts() {
+function prefix_scripts() {
 
-	wp_enqueue_style( 'palamut-style', get_stylesheet_uri(), '1.0', true );
+	wp_enqueue_style( 'prefix-style', get_stylesheet_uri(), __PRE_THEME_VERSION, true );
 
-	wp_enqueue_style( 'palamut-font', PALA_THEME_DIR_URL . '/assets/fonts/circularstd/circular-std.css', false, '1.0' );
+	wp_enqueue_style( 'prefix-font', get_theme_file_uri( '/assets/fonts/circularstd/circular-std.css' ), false, __PRE_THEME_VERSION );
 
-	wp_enqueue_style( 'fontawesome', PALA_THEME_DIR_URL . '/assets/fonts/fontawesome/css/all.min.css', array(), '5.8.1' );
+	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/fonts/fontawesome/css/all.min.css' ), array(), '5.8.1' );
 
-	wp_enqueue_script( 'headroom', PALA_THEME_DIR_URL . '/assets/js/headroom.min.js', array(), '1.0', true );
+	wp_enqueue_script( 'headroom', get_theme_file_uri( '/assets/js/headroom.min.js' ), array(), '1.0', true );
 
-	wp_enqueue_script( 'headroom-jquery', PALA_THEME_DIR_URL . '/assets/js/jquery.headroom.min.js', array( 'jquery', 'headroom' ), '1.0', true );
-	
-		wp_enqueue_script( 'infinitescroll', PALA_THEME_DIR_URL . '/assets/js/infinitescroll.js', array(), '1.0', true );
+	wp_enqueue_script( 'headroom-jquery', get_theme_file_uri( '/assets/js/jquery.headroom.min.js' ), array( 'jquery', 'headroom' ), '1.0', true );
 
-	wp_enqueue_script( 'pace', PALA_THEME_DIR_URL . '/assets/js/pace.min.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'infinitescroll', get_theme_file_uri( '/assets/js/infinitescroll.js' ), array(), '1.0', true );
 
-	wp_enqueue_script( 'aos', PALA_THEME_DIR_URL . '/assets/js/aos.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'pace', get_theme_file_uri( '/assets/js/pace.min.js' ), array( 'jquery' ), '1.0', true );
 
-	wp_enqueue_script( 'palamut-app', PALA_THEME_DIR_URL . '/assets/js/app.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'aos', get_theme_file_uri( '/assets/js/aos.js' ), array( 'jquery' ), '1.0', true );
 
+	wp_enqueue_script( 'prefix-app', get_theme_file_uri( '/assets/js/app.js' ), array( 'jquery' ), __PRE_THEME_VERSION, true );
 
-	
-	
-
-	if ( palamut_is_woocommerce_activated() ) {
+	if ( prefix_is_woocommerce_activated() ) {
 
 		// Custom WooCommerce scripts.
-		wp_enqueue_script( 'ava-woocommerce', PALA_THEME_DIR_URL . '/assets/js/ava-woocommerce.js', array( 'jquery' ), '1.0', true );
-		wp_enqueue_script( 'ava-woocommerce-add-to-cart', PALA_THEME_DIR_URL . '/assets/js/woocommerce-add-to-cart.js', array( 'jquery' ), '1.0', true );
-		wp_enqueue_script( 'ava-woocommerce-cart', PALA_THEME_DIR_URL . '/assets/js/woocommerce-cart.js', array( 'jquery' ), '1.0', true );
-		wp_enqueue_script( 'ava-woocommerce-shop', PALA_THEME_DIR_URL . '/assets/js/woocommerce-shop.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'prefix-woocommerce', get_theme_file_uri( '/assets/js/ava-woocommerce.js' ), array( 'jquery' ), __PRE_THEME_VERSION, true );
+		wp_enqueue_script( 'prefix-woocommerce-add-to-cart', get_theme_file_uri( '/assets/js/woocommerce-add-to-cart.js' ), array( 'jquery' ), __PRE_THEME_VERSION, true );
+		wp_enqueue_script( 'prefix-woocommerce-cart', get_theme_file_uri( '/assets/js/woocommerce-cart.js' ), array( 'jquery' ), __PRE_THEME_VERSION, true );
+		wp_enqueue_script( 'prefix-woocommerce-shop', get_theme_file_uri( '/assets/js/woocommerce-shop.js' ), array( 'jquery' ), __PRE_THEME_VERSION, true );
 		$local_js_vars = array(
-			'ava_ajaxUrl'           => admin_url( 'admin-ajax.php' ),
-			'ava_shopAjaxAddToCart' => ( get_option( 'woocommerce_enable_ajax_add_to_cart' ) === 'yes' && get_option( 'woocommerce_cart_redirect_after_add' ) === 'no' ) ? 1 : 0,
+			'prefix_ajaxUrl'           => admin_url( 'admin-ajax.php' ),
+			'prefix_shopAjaxAddToCart' => ( get_option( 'woocommerce_enable_ajax_add_to_cart' ) === 'yes' && get_option( 'woocommerce_cart_redirect_after_add' ) === 'no' ) ? 1 : 0,
 		);
-		wp_localize_script( 'ava-woocommerce', 'ava_wp_vars', $local_js_vars );
-		wp_localize_script( 'ava-woocommerce-shop', 'ava_wp_vars', $local_js_vars );
+		wp_localize_script( 'prefix-woocommerce', 'prefix_wp_vars', $local_js_vars );
+		wp_localize_script( 'prefix-woocommerce-shop', 'prefix_wp_vars', $local_js_vars );
 	}
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'palamut_scripts' );
+add_action( 'wp_enqueue_scripts', 'prefix_scripts' );
 
 /**
  * Enqueue theme styles related to Gutenberg.
  *
- * @method palamut_gutenberg_styles
+ * @method prefix_gutenberg_styles
  *
- * @since
- *
- * @link
+ * @since 1.0
  */
-function palamut_gutenberg_styles() {
+function prefix_gutenberg_styles() {
 	// Load the theme styles within Gutenberg.
-	wp_enqueue_style( 'gutenberg-editor-style', PALA_THEME_DIR_URL . '/assets/css/gutenberg-editor-style.css', false, '1.0' );
+	wp_enqueue_style( 'prefix-gutenberg-editor-style', __PRE_THEME_DIR_URL . '/assets/css/gutenberg-editor-style.css', false, __PRE_THEME_VERSION );
 }
 
-add_action( 'enqueue_block_editor_assets', 'palamut_gutenberg_styles', 10 );
+add_action( 'enqueue_block_editor_assets', 'prefix_gutenberg_styles', 10 );

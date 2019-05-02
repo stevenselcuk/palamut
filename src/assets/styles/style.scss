@@ -1,25 +1,73 @@
 @charset "UTF-8";
 /*
-Theme Name: Palamut
-Theme URI: https://hevalandsteven.com/themes
-Author: Steven J. Selcuk
-Author URI: https://hevalandsteven.com/
-Description: A WordPress Theme Framework for us
-Version: 0.0.1
-License: GPL-2 +
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: palamut
+Theme Name: pkg.name
+Theme URI: pkg.theme_uri
+Author: pkg.author
+Author URI: pkg.author_uri
+Description: pkg.description
+Version: pkg.version
+License: pkg.license
+License URI: pkg.license_uri
+Text Domain: pkg.textdomain
 Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
-*
 */
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Alignments
+# Media
+    ## Captions
+    ## Galleries
+# Accessibility
+# Forms
+# Navigation
+    ## Links
+    ## Menus
+    ## Pagination
+    ## Cart
+    ## Search
+    ## Mobile
+    ## Social
+# Logo
+# Layouts
+    ## Main
+    ## Header
+    ## Header Secondary
+    ## Footer
+    ## Colophon
+    ## Blogroll
+    ## Search
+# Content
+    ## Posts and Pages
+    ## Comments
+# 404
+# Widgets
+# Infinite scroll
+# Customizer
+# Animations
+--------------------------------------------------------------*/
+
+/** Variables **/
 @import 'variables/*';
 @import 'mixins/*';
+/** Normalize **/
 @import 'normalize';
-
+/** Elements **/
 @import 'elements/*';
+/** Layouts **/
 @import 'layout/**/*';
+/** Components **/
 @import 'components/**/*';
+/** WordPress Spesific **/
 @import 'wordpress/**/*';
+/** Helpers **/
 @import 'helpers';
+/** Custom Post Types **/
+@import 'cpts/**/*';
+/** WooCommerce **/
 @import 'woocommerce/*';
+/** Vendors **/
 @import 'vendors/aos';

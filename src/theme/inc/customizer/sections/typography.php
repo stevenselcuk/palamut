@@ -14,50 +14,50 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
 
 // Call Google Font List.
-$fonts = palamut_font_library();
+$fonts = prefix_font_library();
 
 // Register Typography Panel.
 $wp_customize->add_panel(
-	'palamut_typography',
+	'prefix_typography',
 	array(
-		'title'       => esc_html__( 'Typography', 'palamut' ),
-		'description' => esc_html__( 'Customize various typographic options throughout the theme with the settings within this panel.', 'palamut' ),
+		'title'       => esc_html__( 'Typography', 'textdomain' ),
+		'description' => esc_html__( 'Customize various typographic options throughout the theme with the settings within this panel.', 'textdomain' ),
 		'priority'    => 32,
 	)
 );
 
 // Register Heading Typography Section.
 $wp_customize->add_section(
-	'palamut_typography_pagetitles',
+	'prefix_typography_pagetitles',
 	array(
-		'title'    => esc_html__( 'Heading', 'palamut' ),
-		'panel'    => 'palamut_typography',
+		'title'    => esc_html__( 'Heading', 'textdomain' ),
+		'panel'    => 'prefix_typography',
 		'priority' => 1,
 	)
 );
 
 // Register Body Typography Section.
 $wp_customize->add_section(
-	'palamut_typography_body',
+	'prefix_typography_body',
 	array(
-		'title'    => esc_html__( 'Body', 'palamut' ),
-		'panel'    => 'palamut_typography',
+		'title'    => esc_html__( 'Body', 'textdomain' ),
+		'panel'    => 'prefix_typography',
 		'priority' => 2,
 	)
 );
 
 // Register Content Typography Section.
 $wp_customize->add_section(
-	'palamut_typography_pagecontent',
+	'prefix_typography_pagecontent',
 	array(
-		'title'    => esc_html__( 'Page Content', 'palamut' ),
-		'panel'    => 'palamut_typography',
+		'title'    => esc_html__( 'Page Content', 'textdomain' ),
+		'panel'    => 'prefix_typography',
 		'priority' => 3,
 	)
 );
@@ -76,8 +76,8 @@ $wp_customize->add_section(
 		'body_font_family',
 		array(
 			'type'    => 'select',
-			'label'   => esc_html__( 'Font Family', 'palamut' ),
-			'section' => 'palamut_typography_body',
+			'label'   => esc_html__( 'Font Family', 'textdomain' ),
+			'section' => 'prefix_typography_body',
 			'choices' => $fonts,
 		)
 	);
@@ -97,9 +97,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '15',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Font Size', 'palamut' ),
+				'label'       => esc_html__( 'Font Size', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_body',
+				'section'     => 'prefix_typography_body',
 				'input_attrs' => array(
 					'min'  => 10,
 					'max'  => 100,
@@ -124,9 +124,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '26',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Line Height', 'palamut' ),
+				'label'       => esc_html__( 'Line Height', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_body',
+				'section'     => 'prefix_typography_body',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 50,
@@ -151,9 +151,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '0',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Letter Spacing', 'palamut' ),
+				'label'       => esc_html__( 'Letter Spacing', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_body',
+				'section'     => 'prefix_typography_body',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 10,
@@ -178,9 +178,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '0',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Word Spacing', 'palamut' ),
+				'label'       => esc_html__( 'Word Spacing', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_body',
+				'section'     => 'prefix_typography_body',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 20,
@@ -204,8 +204,8 @@ $wp_customize->add_section(
 		'heading_font_family',
 		array(
 			'type'    => 'select',
-			'label'   => esc_html__( 'Font Family', 'palamut' ),
-			'section' => 'palamut_typography_pagetitles',
+			'label'   => esc_html__( 'Font Family', 'textdomain' ),
+			'section' => 'prefix_typography_pagetitles',
 			'choices' => $fonts,
 		)
 	);
@@ -225,9 +225,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '26',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Font Size', 'palamut' ),
+				'label'       => esc_html__( 'Font Size', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_pagetitles',
+				'section'     => 'prefix_typography_pagetitles',
 				'input_attrs' => array(
 					'min'  => 10,
 					'max'  => 100,
@@ -252,9 +252,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '26',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Line Height', 'palamut' ),
+				'label'       => esc_html__( 'Line Height', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_pagetitles',
+				'section'     => 'prefix_typography_pagetitles',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 50,
@@ -279,9 +279,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '0',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Letter Spacing', 'palamut' ),
+				'label'       => esc_html__( 'Letter Spacing', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_pagetitles',
+				'section'     => 'prefix_typography_pagetitles',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 10,
@@ -306,9 +306,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '0',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Word Spacing', 'palamut' ),
+				'label'       => esc_html__( 'Word Spacing', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_pagetitles',
+				'section'     => 'prefix_typography_pagetitles',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 20,
@@ -335,9 +335,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '19',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Font Size', 'palamut' ),
+				'label'       => esc_html__( 'Font Size', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_pagecontent',
+				'section'     => 'prefix_typography_pagecontent',
 				'input_attrs' => array(
 					'min'  => 10,
 					'max'  => 100,
@@ -362,9 +362,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '32',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Line Height', 'palamut' ),
+				'label'       => esc_html__( 'Line Height', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_pagecontent',
+				'section'     => 'prefix_typography_pagecontent',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 50,
@@ -389,9 +389,9 @@ $wp_customize->add_section(
 			array(
 				'default'     => '0',
 				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Word Spacing', 'palamut' ),
+				'label'       => esc_html__( 'Word Spacing', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'palamut_typography_pagecontent',
+				'section'     => 'prefix_typography_pagecontent',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 20,

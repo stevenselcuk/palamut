@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -22,9 +22,9 @@
 /**
  * Load the palamutilable Google fonts.
  */
-function palamut_font_library() {
+function prefix_font_library() {
 
-	$palamut_font_library = array(
+	$prefix_font_library = array(
 		'inherit'                  => 'Default',
 		'arial'                    => 'Arial',
 		'verdana'                  => 'Verdana, Geneva',
@@ -688,6 +688,6 @@ function palamut_font_library() {
 		'Zeyada'                   => 'Zeyada',
 	);
 
-	return $palamut_font_library;
+	return $prefix_font_library;
 
 }

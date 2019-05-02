@@ -53,8 +53,8 @@ class Palamut_Toggle_Control extends WP_Customize_Control {
 	 * Enqueue scripts and styles.
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'palamut-toggle-control', PALA_THEME_DIR_URL . '/inc/customizer/controls/assets/css/toggle.css', false, '1.0', 'all' );
-		wp_enqueue_script( 'palamut-toggle-control', PALA_THEME_DIR_URL . '/inc/customizer/controls/assets/js/toggle.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_style( 'palamut-toggle-control', get_theme_file_uri( '/inc/customizer/controls/assets/css/toggle.css' ), false, __PRE_THEME_VERSION, 'all' );
+		wp_enqueue_script( 'palamut-toggle-control', get_theme_file_uri( '/inc/customizer/controls/assets/js/toggle.js' ), array( 'jquery' ), __PRE_THEME_VERSION, true );
 	}
 
 	/**

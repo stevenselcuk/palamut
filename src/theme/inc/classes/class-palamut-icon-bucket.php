@@ -27,16 +27,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Palamut_Icon_Bucket {
 	/**
-	 * Declaration of palamut_Icon_Bucket Instance
+	 * Declaration of prefix_Icon_Bucket Instance
 	 *
 	 * @var object
 	 */
 	public static $instance = null;
 
 	/**
-	 * Return an instance of palamut_Icon_Bucket
+	 * Return an instance of prefix_Icon_Bucket
 	 *
-	 * @return    object    palamut_Icon_Bucket
+	 * @return    object    prefix_Icon_Bucket
 	 */
 	public static function instance() {
 
@@ -47,7 +47,7 @@ class Palamut_Icon_Bucket {
 		return self::$instance;
 	}
 	/**
-	 * The Magic Method for building palamut_Icon_Bucket
+	 * The Magic Method for building prefix_Icon_Bucket
 	 *
 	 * @method __construct
 	 *
@@ -55,7 +55,7 @@ class Palamut_Icon_Bucket {
 	 */
 	public function __construct() {
 		add_action( 'wp_footer', array( $this, 'add_svg_sprite' ), 9999 );
-		add_filter( 'walker_nav_menu_start_el', array( $this, 'palamut_social_nav_icons' ), 10, 4 );
+		add_filter( 'walker_nav_menu_start_el', array( $this, 'prefix_social_nav_icons' ), 10, 4 );
 	}
 
 	/**
@@ -87,12 +87,12 @@ class Palamut_Icon_Bucket {
 	public function get( $args = array() ) {
 		// Make sure $args are an array.
 		if ( empty( $args ) ) {
-			return __( 'Please define default parameters in the form of an array.', 'palamut' );
+			return __( 'Please define default parameters in the form of an array.', 'textdomain' );
 		}
 
 		// Define an icon.
 		if ( false === array_key_exists( 'icon', $args ) ) {
-			return __( 'Please define an SVG icon filename.', 'palamut' );
+			return __( 'Please define an SVG icon filename.', 'textdomain' );
 		}
 
 		// Set defaults.
@@ -117,9 +117,9 @@ class Palamut_Icon_Bucket {
 		 *
 		 * However, child themes can use the title and description to add information to non-decorative SVG icons to improve accessibility.
 		 *
-		 * Example 1 with title: <?php echo palamut_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ) ) ); ?>
+		 * Example 1 with title: <?php echo prefix_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ) ) ); ?>
 		 *
-		 * Example 2 with title and description: <?php echo palamut_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ), 'desc' => __( 'This is the description', 'textdomain' ) ) ); ?>
+		 * Example 2 with title and description: <?php echo prefix_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ), 'desc' => __( 'This is the description', 'textdomain' ) ) ); ?>
 		 *
 		 * See https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/.
 		 */
@@ -174,9 +174,9 @@ class Palamut_Icon_Bucket {
 	 * @param  array   $args        wp_nav_menu() arguments.
 	 * @return string  $item_output The menu item output with social icon.
 	 */
-	public function palamut_social_nav_icons( $item_output, $item, $depth, $args ) {
+	public function prefix_social_nav_icons( $item_output, $item, $depth, $args ) {
 		// Get supported social icons.
-		$social_icons = $this->palamut_social_network_icons();
+		$social_icons = $this->prefix_social_network_icons();
 
 		// Change SVG icon inside social links menu if there is supported URL.
 		if ( 'social' === $args->theme_location ) {
@@ -195,7 +195,7 @@ class Palamut_Icon_Bucket {
 	 *
 	 * @return array $social_links_icons
 	 */
-	private static function palamut_social_network_icons() {
+	private static function prefix_social_network_icons() {
 
 		$social_links_icons = array(
 			'behance.net'     => 'behance',
@@ -224,7 +224,7 @@ class Palamut_Icon_Bucket {
 			'youtube.com'     => 'youtube',
 		);
 
-		return apply_filters( 'palamut_social_network_icons', $social_links_icons );
+		return apply_filters( 'prefix_social_network_icons', $social_links_icons );
 	}
 
 }

@@ -107,17 +107,17 @@ $empty_class = ( WC()->cart->is_empty() ) ? ' class="palamut-cart-panel-empty"' 
 
 					<div class="product-details__bottom">
 
-						<?php if ( palamut_woocommerce_version_check() ) { ?>
+						<?php if ( prefix_woocommerce_version_check() ) { ?>
 							<?php echo wc_get_formatted_cart_item_data( $cart_item, false ); ?>
 						<?php } else { ?>
 							<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 
 						<?php } ?>
 
-						<div class="product-quantity" data-title="<?php esc_html_e( 'Quantity', 'palamut' ); ?>">
+						<div class="product-quantity" data-title="<?php esc_html_e( 'Quantity', 'textdomain' ); ?>">
 							<?php
 							if ( $_product->is_sold_individually() ) :
-								echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . esc_html__( 'Qty', 'palamut' ) . ': ' . $cart_item['quantity'] . '</span>', $cart_item, $cart_item_key );
+								echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . esc_html__( 'Qty', 'textdomain' ) . ': ' . $cart_item['quantity'] . '</span>', $cart_item, $cart_item_key );
 								else :
 									$product_quantity = woocommerce_quantity_input(
 										array(
@@ -136,7 +136,7 @@ $empty_class = ( WC()->cart->is_empty() ) ? ' class="palamut-cart-panel-empty"' 
 						</div>
 
 							<?php
-							if ( palamut_woocommerce_version_check() && function_exists( 'wc_get_cart_remove_url' ) ) {
+							if ( prefix_woocommerce_version_check() && function_exists( 'wc_get_cart_remove_url' ) ) {
 								$remove_url = wc_get_cart_remove_url( $cart_item_key );
 							} else {
 								$remove_url = WC()->cart->get_remove_url( $cart_item_key );
@@ -150,11 +150,11 @@ $empty_class = ( WC()->cart->is_empty() ) ? ' class="palamut-cart-panel-empty"' 
 								sprintf(
 									'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">%s</a>',
 									esc_url( $remove_url ),
-									esc_html__( 'Remove this item', 'palamut' ),
+									esc_html__( 'Remove this item', 'textdomain' ),
 									esc_attr( $product_id ),
 									esc_attr( $cart_item_key ),
 									esc_attr( $_product->get_sku() ),
-									esc_html__( 'Remove', 'palamut' )
+									esc_html__( 'Remove', 'textdomain' )
 								),
 								$cart_item_key
 							);
@@ -173,8 +173,8 @@ $empty_class = ( WC()->cart->is_empty() ) ? ' class="palamut-cart-panel-empty"' 
 	</div>
 
 	<?php
-	$url  = ( 'checkout' === get_theme_mod( 'shop_minicart_url', palamut_theme_defaults( 'shop_minicart_url' ) ) ) ? wc_get_checkout_url() : wc_get_cart_url();
-	$text = ( 'checkout' === get_theme_mod( 'shop_minicart_url', palamut_theme_defaults( 'shop_minicart_url' ) ) ) ? esc_html__( 'Checkout', 'palamut' ) : esc_html__( 'View Cart', 'palamut' );
+	$url  = ( 'checkout' === get_theme_mod( 'shop_minicart_url', prefix_theme_defaults( 'shop_minicart_url' ) ) ) ? wc_get_checkout_url() : wc_get_cart_url();
+	$text = ( 'checkout' === get_theme_mod( 'shop_minicart_url', prefix_theme_defaults( 'shop_minicart_url' ) ) ) ? esc_html__( 'Checkout', 'textdomain' ) : esc_html__( 'View Cart', 'textdomain' );
 	?>
 
 	<footer class="palamut-cart-panel-summary">
@@ -191,7 +191,7 @@ $empty_class = ( WC()->cart->is_empty() ) ? ' class="palamut-cart-panel-empty"' 
 		<?php $url = get_permalink( wc_get_page_id( 'shop' ) ); ?>
 
 		<a href="<?php echo esc_url( $url ); ?>" id="cart--button-continue" class="checkout btn">
-			<em><?php echo esc_html__( 'Continue Shopping', 'palamut' ); ?></em>
+			<em><?php echo esc_html__( 'Continue Shopping', 'textdomain' ); ?></em>
 		</a>
 		<?php endif; ?>
 	</footer>

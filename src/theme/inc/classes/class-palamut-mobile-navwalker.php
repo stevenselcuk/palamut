@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -67,14 +67,14 @@ if ( ! class_exists( 'Palamut_Mobile_Navwalker' ) ) :
 				if ( $menu_class ) {
 					$fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
 				$fallback_output .= '>';
-				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'palamut' ) . '">' . esc_html__( 'Add a menu', 'palamut' ) . '</a></li>';
+				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'textdomain' ) . '">' . esc_html__( 'Add a menu', 'textdomain' ) . '</a></li>';
 				$fallback_output .= '</ul>';
 				if ( $container ) {
 					$fallback_output .= '</' . esc_attr( $container ) . '>';
 				}
 				// if $args has 'echo' key and it's true echo, otherwise return.
 				if ( array_key_exists( 'echo', $args ) && $args['echo'] ) {
-					echo wp_kses( $fallback_output, palamut_allowed_html() ); // WPCS: XSS OK.
+					echo wp_kses( $fallback_output, prefix_allowed_html() ); // WPCS: XSS OK.
 				} else {
 					return $fallback_output;
 				}
@@ -227,7 +227,7 @@ if ( ! class_exists( 'Palamut_Mobile_Navwalker' ) ) :
 				}
 
 				if ( $args->has_children ) {
-					$item_output .= '<span class="mobil-nav-arrow">' . palamut_icons()->get( array( 'icon' => 'next-1 ' ) ) . '</span>';
+					$item_output .= '<span class="mobil-nav-arrow">' . prefix_icons()->get( array( 'icon' => 'next-1 ' ) ) . '</span>';
 				}
 			}
 			$item_output .= $args->after;

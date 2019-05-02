@@ -33,10 +33,10 @@ if ( $max_value && $min_value === $max_value ) {
 	<div class="quantity">
 
 		<span class="quantity__title">
-			<?php echo esc_html__( 'Qty:', 'palamut' ); ?>
+			<?php echo esc_html__( 'Qty:', 'textdomain' ); ?>
 		</span>
 
-		<select name="<?php echo esc_attr( $input_name ); ?>" title="<?php esc_html_x( 'Qty', 'Product quantity input tooltip', 'palamut' ); ?>" class="qty">
+		<select name="<?php echo esc_attr( $input_name ); ?>" title="<?php esc_html_x( 'Qty', 'Product quantity input tooltip', 'textdomain' ); ?>" class="qty">
 
 		<?php
 

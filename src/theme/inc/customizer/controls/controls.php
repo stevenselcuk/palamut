@@ -11,7 +11,7 @@
  *
  * @param WP_Customize_Manager $wp_customize the Customizer object.
  */
-function palamut_register_control_types( $wp_customize ) {
+function prefix_register_control_types( $wp_customize ) {
 
 	if ( class_exists( 'Palamut_Toggle_Control' ) ) {
 		$wp_customize->register_control_type( 'Palamut_Toggle_Control' );
@@ -34,4 +34,4 @@ function palamut_register_control_types( $wp_customize ) {
 	}
 }
 
-add_action( 'customize_register', 'palamut_register_control_types', 11 );
+add_action( 'customize_register', 'prefix_register_control_types', 11 );

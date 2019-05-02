@@ -38,7 +38,7 @@ if ( $rating_count > 0 ) : ?>
 				<?php
 				/* translators: 1 average rating, 2 max rating (i.e. 5) */
 				printf(
-					esc_html__( '%1$1s out of %2$2s', 'palamut' ),
+					esc_html__( '%1$1s out of %2$2s', 'textdomain' ),
 					'<strong class="rating">' . esc_html( $average ) . '</strong>',
 					'<span>5</span>'
 				);
@@ -46,7 +46,7 @@ if ( $rating_count > 0 ) : ?>
 				<?php
 				/* translators: %s: rating count */
 				printf(
-					_n( 'based on %s customer rating', 'based on %s customer ratings', $rating_count, 'palamut' ),
+					_n( 'based on %s customer rating', 'based on %s customer ratings', $rating_count, 'textdomain' ),
 					'<span class="rating">' . esc_html( $rating_count ) . '</span>'
 				);
 				?>
@@ -55,7 +55,7 @@ if ( $rating_count > 0 ) : ?>
 		<?php
 		if ( comments_open() ) :
 ?>
-<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s review', '%s reviews', $review_count, 'palamut' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a><?php endif ?>
+<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s review', '%s reviews', $review_count, 'textdomain' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a><?php endif ?>
 	</div>
 
 <?php endif; ?>

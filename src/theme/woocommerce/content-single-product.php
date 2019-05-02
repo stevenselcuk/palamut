@@ -20,9 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$visibility = ( false === get_theme_mod( 'single_product_breadcrumbs', palamut_theme_defaults( 'single_product_breadcrumbs' ) ) ) ? ' hidden ' : '';
+$visibility = ( false === get_theme_mod( 'single_product_breadcrumbs', prefix_theme_defaults( 'single_product_breadcrumbs' ) ) ) ? ' hidden ' : '';
 
-if ( true === get_theme_mod( 'single_product_breadcrumbs', palamut_theme_defaults( 'single_product_breadcrumbs' ) ) || is_customize_preview() ) : ?>
+if ( true === get_theme_mod( 'single_product_breadcrumbs', prefix_theme_defaults( 'single_product_breadcrumbs' ) ) || is_customize_preview() ) : ?>
 
 	<div class="product-navigation-wrapper <?php echo esc_attr( $visibility ); ?>">
 
@@ -41,7 +41,7 @@ if ( true === get_theme_mod( 'single_product_breadcrumbs', palamut_theme_default
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
 
-	<?php $slider_nav = get_theme_mod( 'singleproduct_gallery_nav', palamut_theme_defaults( 'singleproduct_gallery_nav' ) ); ?>
+	<?php $slider_nav = get_theme_mod( 'singleproduct_gallery_nav', prefix_theme_defaults( 'singleproduct_gallery_nav' ) ); ?>
 
 	<div class="product__inner <?php echo esc_attr( $slider_nav ); ?>">
 

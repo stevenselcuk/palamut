@@ -14,7 +14,7 @@
  * @version pdwversion
  * @since 1.0.1
  *
- * @author pdwauthor
+ * @author pkg.author
  * @copyright pdwcopyright
  * @license pdwlicense
  */
@@ -23,10 +23,10 @@
   * @TODO : Renew its position.
   */
 $wp_customize->add_section(
-	'palamut_theme_options_footer',
+	'prefix_theme_options_footer',
 	array(
-		'title' => esc_html__( 'Footer', 'palamut' ),
-		'panel' => 'palamut_theme_options',
+		'title' => esc_html__( 'Footer', 'textdomain' ),
+		'panel' => 'prefix_theme_options',
 	)
 );
 
@@ -34,8 +34,8 @@ $wp_customize->add_section(
 		$wp_customize->add_setting(
 			'show_bottombar',
 			array(
-				'default'           => palamut_theme_defaults( 'show_bottombar' ),
-				'sanitize_callback' => 'palamut_sanitize_checkbox',
+				'default'           => prefix_theme_defaults( 'show_bottombar' ),
+				'sanitize_callback' => 'prefix_sanitize_checkbox',
 			)
 		);
 
@@ -47,9 +47,9 @@ $wp_customize->add_section(
 					'type'        => 'palamut-toggle',
 					'priority'    => 1,
 					'style'       => 'flat',
-					'label'       => esc_html__( 'Bottom Bar', 'palamut' ),
+					'label'       => esc_html__( 'Bottom Bar', 'textdomain' ),
 					'description' => 'Show or hide bottom bar.',
-					'section'     => 'palamut_theme_options_footer',
+					'section'     => 'prefix_theme_options_footer',
 				)
 			)
 		);
@@ -57,8 +57,8 @@ $wp_customize->add_section(
 		$wp_customize->add_setting(
 			'copyright_text',
 			array(
-				'default'           => palamut_theme_strings( 'copyright-text' ),
-				'sanitize_callback' => 'palamut_sanitize_html',
+				'default'           => prefix_theme_strings( 'copyright-text' ),
+				'sanitize_callback' => 'prefix_sanitize_html',
 			)
 		);
 
@@ -66,9 +66,9 @@ $wp_customize->add_section(
 			'copyright_text',
 			array(
 				'type'        => 'textarea',
-				'label'       => esc_html__( 'Footer Text', 'palamut' ),
-				'description' => esc_html__( 'Add a custom copyright or colophon text to the site footer. The option must be selected below to display this.', 'palamut' ),
-				'section'     => 'palamut_theme_options_footer',
+				'label'       => esc_html__( 'Footer Text', 'textdomain' ),
+				'description' => esc_html__( 'Add a custom copyright or colophon text to the site footer. The option must be selected below to display this.', 'textdomain' ),
+				'section'     => 'prefix_theme_options_footer',
 			)
 		);
 
@@ -77,6 +77,6 @@ $wp_customize->add_section(
 			array(
 				'settings'        => 'copyright_text',
 				'selector'        => '.copyright',
-				'render_callback' => 'palamut_customize_partial_copyright_text',
+				'render_callback' => 'prefix_customize_partial_copyright_text',
 			)
 		);
