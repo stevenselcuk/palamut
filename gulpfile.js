@@ -63,11 +63,7 @@ const bump = require( 'gulp-bump' );
 const git = require( 'gulp-git' );
 const filter = require( 'gulp-filter' );
 const exec = require( 'child_process' ).exec;
-const argv = require( 'yargs' )
-	.option( 'type', {
-		alias: 't',
-		choices: [ 'patch', 'minor', 'major' ],
-	} ).argv;
+const argv = require( 'yargs' ).option( 'type', {	alias: 't', choices: [ 'patch', 'minor', 'major' ] } ).option( 'fix', {	alias: 'f' } ).option( 'feature', {	alias: 'p' } ).argv;
 const tag = require( 'gulp-tag-version' );
 const push = require( 'gulp-git-push' );
 const date = new Date().toLocaleDateString( 'en-US' ).replace( /\//g, '.' );
@@ -980,16 +976,20 @@ function endOfTheDay() {
 	// save the bumped files into filesystem
 		.pipe( dest( './' ) )
 	// commit the changed files
-		.pipe( git.commit( 'v' + themeVersion + ' ' + date ) )
+		.pipe( git.commit( '🍔 v' + themeVersion + ' - 🐛 FIX: ' + argv.fix + ' - 🍭 FEATURE: ' + argv.feature + ' ' ) )
 	// filter one file
-		.pipe( filter( 'package.json' ) )
+	//	.pipe( filter( 'package.json' ) )
 	// create tag based on the filtered file
-		.pipe( tag() )
+	//	.pipe( tag() )
 	// push changes into repository
 		.pipe( push( {
 			repository: 'origin',
 			refspec: 'HEAD',
-		} ) );
+		} ) )
+		.on( 'end', () => {
+			gutil.beep();
+			gutil.log( '{{ 🍟 Well Done }} It was really productive day! You are awesome! 🙌🏻' );
+		} );
 }
 
 exports.zreport = series( endOfTheDay );
