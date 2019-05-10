@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'PALAMUT_NAME', 'Palamut' );
 /**
- * Assiate Theme Name
+ * Friend Theme Name
  */
 define( 'PALAMUT_THEME_NAME', wp_get_theme()->get( 'Name' ) );
 /**

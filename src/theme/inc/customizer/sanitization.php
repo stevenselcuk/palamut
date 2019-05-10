@@ -179,7 +179,27 @@ function prefix_sanitize_html( $html ) {
 	return wp_kses( $html, $allowed );
 }
 
-
+/**
+ * [prefix_sanitize_multiselect description]
+ *
+ * @method prefix_sanitize_multiselect
+ *
+ * @param  [type]                      $input
+ *
+ * @return [type]
+ */
+function prefix_sanitize_multiselect( $input ) {
+	if ( ! is_array( $input ) ) {
+			$output = explode( ',', $input );
+	} else {
+			$output = $input;
+	}
+	if ( ! empty( $output ) ) {
+			return array_map( 'sanitize_text_field', $output );
+	} else {
+			return array();
+	}
+}
 
 /**
  * Image sanitization callback example.
@@ -280,7 +300,7 @@ function prefix_sanitize_number_absint( $number, $setting ) {
  *
  * @see
  *
- * @param  [type]                         $int
+ * @param  [type] $int
  *
  * @return [type]
  */

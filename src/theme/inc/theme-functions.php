@@ -35,6 +35,7 @@ if ( ! function_exists( 'prefix_add_body_class' ) ) {
 	 * @return array $classes add calculated class to body element
 	 */
 	function prefix_add_body_class( $classes ) {
+/**
 		global $is_lynx, $is_gecko, $is_ie, $is_opera, $is_ns4, $is_safari, $is_chrome, $is_iphone;
 
 		if ( $is_lynx ) {
@@ -61,7 +62,7 @@ if ( ! function_exists( 'prefix_add_body_class' ) ) {
 		if ( $is_iphone ) {
 			$classes[] = 'iphone';
 		}
-
+**/
 		$classes[] = 'clearfix';
 
 		if ( is_customize_preview() ) {
@@ -90,9 +91,19 @@ if ( ! function_exists( 'prefix_add_body_class' ) ) {
 		} else {
 			$classes[] = 'classic-editor';
 		}
+
 		if ( is_singular() ) {
 			$classes[] = 'single';
 		}
+
+		if ( is_singular( 'portfolio' ) ) {
+			$classes[] = 'single-portfolio';
+		}
+
+		if ( is_singular( 'page' ) ) {
+			$classes[] = 'page';
+		}
+
 		if ( is_front_page() ) {
 			$classes[] = 'front-page';
 		}
@@ -113,8 +124,13 @@ if ( ! function_exists( 'prefix_add_post_classes' ) ) {
 	 * @param  array $classes All classes we need to add post.
 	 */
 	function prefix_add_post_classes( $classes ) {
-		if ( is_singular() || is_single() ) {
-			$classes[] = 'single-post';
+
+		if ( is_singular( 'post' ) || is_single() ) {
+			$classes[] = 'is-post';
+		}
+
+		if ( is_singular( 'portfolio' ) ) {
+			$classes[] = 'is-portfolio';
 		}
 
 		if ( is_front_page() && is_home() ) {

@@ -67,6 +67,8 @@ function prefix_customize_register( $wp_customize ) {
 	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-range-control.php' );
 	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-toggle-control.php' );
 	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-alpha-color-control.php' );
+	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-typography-control.php' );
+	require_once get_theme_file_path( '/inc/customizer/controls/class-palamut-multiple-select-control.php' );
 
 	if ( class_exists( 'Palamut_Range_Control' ) ) {
 		$wp_customize->register_control_type( 'Palamut_Range_Control' );
@@ -76,6 +78,9 @@ function prefix_customize_register( $wp_customize ) {
 		$wp_customize->register_control_type( 'Palamut_Toggle_Control' );
 	}
 
+	if ( class_exists( 'Palamut_Multiple_Select_Control' ) ) {
+		$wp_customize->register_control_type( 'Palamut_Multiple_Select_Control' );
+	}
 
 	// Get Sections & Options.
 	require_once get_theme_file_path( '/inc/customizer/sections/identity.php' );
@@ -92,15 +97,6 @@ function prefix_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_panel(
-		'prefix_theme_options',
-		array(
-			'title'    => esc_html__( 'Theme Options', 'textdomain' ),
-			'priority' => 30,
-		)
-	);
-	
-
 	$wp_customize->add_section(
 		'prefix_demo',
 		array(
@@ -109,21 +105,22 @@ function prefix_customize_register( $wp_customize ) {
 			'priority' => 1,
 		)
 	);
+	
 	// Logo Max. Height (Its under Site Identity).
 	$wp_customize->add_setting(
-		'color_1',
+		'font_1',
 		array(
-			'default'   => '#ff0099',
+			'default'   => 'Open Sans',
 			'transport' => 'postMessage',
 		)
 	);
 
 	$wp_customize->add_control(
-		new Palamut_Alpha_Color_Control(
+		new Palamut_Typography_Control(
 			$wp_customize,
-			'color_1',
+			'font_1',
 			array(
-				'type'    => 'alpha-color',
+				'type'    => 'prefix-font-family',
 				'label'   => esc_html__( 'Logo Max Width', 'textdomain' ),
 				'section' => 'prefix_demo',
 			)
@@ -139,21 +136,37 @@ function prefix_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'prefix_customize_register', 11 );
 
 /**
- * Binds JS handlers to make the Customizer preview reload changes asynchronously.
+ * Customizer Preview.
  */
 function prefix_customize_preview_js() {
-	wp_enqueue_script( 'prefix-customize-preview-scripts', __PRE_THEME_DIR_URL . '/inc/customizer/assets/js/customize-preview.js', array( 'customize-preview', 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'prefix-customize-preview', get_theme_file_uri( '/inc/customizer/assets/js/customize-preview.js' ), array( 'jquery', 'customize-preview' ), __PRE_THEME_VERSION, true );
+	wp_enqueue_script( 'prefix-customize-live', get_theme_file_uri( '/inc/customizer/assets/js/customize-live.js' ), array( 'jquery', 'customize-preview', 'prefix-customize-preview' ), __PRE_THEME_VERSION, true );
 }
+
 add_action( 'customize_preview_init', 'prefix_customize_preview_js' );
 
 /**
- * Load dynamic logic for the customizer controls area.
+ * Customizer Events.
  */
-function prefix_customize_controls_js() {
-	wp_enqueue_script( 'prefix-customize-controls', __PRE_THEME_DIR_URL . '/inc/customizer/assets/js/customize-controls.js', array( 'customize-controls' ), '1.0', true );
+function prefix_customize_events_enqueue_scripts() {
+	wp_enqueue_script( 'prefix-customize-controls', get_theme_file_uri( '/inc/customizer/assets/js/customize-controls.js' ), false, '1.0', true );
+	wp_enqueue_script( 'prefix-customize-events', get_theme_file_uri( '/inc/customizer/assets/js/customize-events.js' ), false, '1.0', true );
 }
-add_action( 'customize_controls_enqueue_scripts', 'prefix_customize_controls_js' );
 
+add_action( 'customize_controls_enqueue_scripts', 'prefix_customize_events_enqueue_scripts' );
+
+/**
+ * [prefix_customize_preview_style description]
+ *
+ * @method prefix_customize_preview_style
+ */
+function prefix_customize_preview_style() {
+	wp_enqueue_style( 'prefix-customize-preview', get_theme_file_uri( '/inc/customizer/assets/css/customizer-styles.css' ), false, __PRE_THEME_VERSION );
+}
+
+if ( is_customize_preview() ) {
+	add_action( 'admin_enqueue_scripts', 'prefix_customize_preview_style' );
+}
 /**
  * Render the site title for the selective refresh partial.
  *

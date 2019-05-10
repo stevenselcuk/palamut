@@ -21,8 +21,6 @@
 
 
 ?>
-
-		<?php if ( prefix_gimme( 'show-footer', false ) ) : ?>
 		<!-- Start: #colophon -->
 		<footer id="colophon" class="site-footer classic-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
@@ -44,14 +42,14 @@
 				<?php endif; ?>
 
 			</div>
+
+			<?php do_action( 'prefix_footer' ); ?>
 			<!-- End: .footer-widgets-->
 
 			<?php do_action( 'prefix_footer_end' ); ?>
 
 		</footer>
 		<!-- #colophon -->
-
-		<?php endif; ?>
 
 		<!-- Start: .site-info -->
 		<?php if ( true === get_theme_mod( 'show_bottombar' ) ) : ?>

@@ -7,7 +7,6 @@
  * @package palamut
  */
 
-
 ?>
 
 <article id="project-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" itemid="<?php echo esc_url( get_the_permalink() ); ?>" content="<?php echo esc_attr( get_the_title() ); ?>">
@@ -28,7 +27,7 @@
 
 		do_action( 'prefix_portfolio_header_end' );
 
-		if ( 'post' === get_portfolio_type() ) :
+		if ( 'post' === get_post_type() ) :
 			?>
 			<!-- Start: .entry-meta -->
 			<div class="entry-meta">
@@ -101,4 +100,4 @@
 	<!-- End: .entry-footer -->
 
 </article>
-<!-- #post-<?php the_ID(); ?> -->
+<!-- #project-<?php the_ID(); ?> -->

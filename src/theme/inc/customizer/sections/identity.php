@@ -48,3 +48,33 @@ $wp_customize->add_control(
 		)
 	)
 );
+
+// Site Name Font Size (Its under Site Identity).
+$wp_customize->add_setting(
+	'site_title_font_size',
+	array(
+		'default'           => '50',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'absint',
+	)
+);
+
+$wp_customize->add_control(
+	new Palamut_Range_Control(
+		$wp_customize,
+		'site_title_font_size',
+		array(
+			'default'     => '50',
+			'type'        => 'palamut-range',
+			'label'       => esc_html__( 'Site Title Font Size', 'textdomain' ),
+			'description' => 'px',
+			'section'     => 'title_tagline',
+			'priority'    => 10,
+			'input_attrs' => array(
+				'min'  => 12,
+				'max'  => 96,
+				'step' => 1,
+			),
+		)
+	)
+);

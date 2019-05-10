@@ -35,6 +35,8 @@ require get_theme_file_path( '/inc/theme-functions.php' );
 // Theme specific changes about WP.
 require get_theme_file_path( '/inc/theme-filters.php' );
 
+require get_theme_file_path( '/inc/theme-components.php' );
+
 // Theme specific changes about WP.
 require get_theme_file_path( '/inc/theme-hooks.php' );
 
@@ -43,7 +45,6 @@ require get_theme_file_path( '/inc/theme-tags.php' );
 
 // Init Customizer.
 require get_theme_file_path( '/inc/customizer/customizer.php' );
-
 
 // Palamut Theme Classes.
 /**

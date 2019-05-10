@@ -27,6 +27,7 @@
 	p {
 		font-size: var(--site-title-fontsize, $site-title__font-size);
 		font-spacing: 0px;
+		font-family: var(--heading-fontfamily, $font__heading);
 	}
 
 	p {
@@ -37,6 +38,7 @@
 		font-weight: 400;
 		line-height: 1.25;
 		margin: 0;
+		font-family: var(--body-text-fontfamily, $font__body);
 	}
 
 }

@@ -62,8 +62,10 @@ if ( ! function_exists( 'prefix_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'textdomain' ),
-				'social' => esc_html__( 'Social Menu', 'textdomain' ),
+				'main-navigation'   => esc_html__( 'Main Navigation', 'textdomain' ),
+				'mobile-navigation' => esc_html__( 'Mobile Navigation', 'textdomain' ),
+				'footer-navigation' => esc_html__( 'Footer Navigation', 'textdomain' ),
+				'social'            => esc_html__( 'Social Menu', 'textdomain' ),
 			)
 		);
 

@@ -421,4 +421,4 @@ function palamut_register_post_metabox() {
 	);
 }
 
-//add_action( 'cmb2_admin_init', 'palamut_register_post_metabox' );
+add_action( 'cmb2_admin_init', 'palamut_register_post_metabox' );

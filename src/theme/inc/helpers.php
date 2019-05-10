@@ -274,3 +274,50 @@ function prefix_hex2rgb( $color ) {
 	);
 }
 
+/**
+ * [get_google_fonts description]
+ *
+ * @method get_google_fonts
+ *
+ * @return [type]
+ */
+function prefix_get_google_fonts() {
+
+	if ( empty( $this->$google_fonts ) ) {
+
+		$google_fonts_file = apply_filters( 'prefix_google_fonts_json_file', __PRE_THEME_DIR . 'assets/fonts/google-fonts.json' );
+
+		if ( ! file_exists( __PRE_THEME_DIR . 'assets/fonts/google-fonts.json' ) ) {
+			return array();
+		}
+
+		global $wp_filesystem;
+		if ( empty( $wp_filesystem ) ) {
+			require_once ABSPATH . '/wp-admin/includes/file.php';
+			WP_Filesystem();
+		}
+
+		$file_contants     = $wp_filesystem->get_contents( $google_fonts_file );
+		$google_fonts_json = json_decode( $file_contants, 1 );
+
+		foreach ( $google_fonts_json as $key => $font ) {
+			$name = key( $font );
+			foreach ( $font[ $name ] as $font_key => $single_font ) {
+
+				if ( 'variants' === $font_key ) {
+
+					foreach ( $single_font as $variant_key => $variant ) {
+
+						if ( 'regular' == $variant ) {
+							$font[ $name ][ $font_key ][ $variant_key ] = '400';
+						}
+					}
+				}
+
+				$this->$google_fonts[ $name ] = array_values( $font[ $name ] );
+			}
+		}
+	}
+
+	return apply_filters( 'prefix_google_fonts', $this->$google_fonts );
+}

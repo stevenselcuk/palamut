@@ -35,7 +35,7 @@
 	</header>
 	<!-- End: .entry-header -->
 
-	<?php prefix_portfolio_thumbnail(); ?>
+	<?php //prefix_portfolio_thumbnail(); ?>
 
 	<!-- Start: .entry-content -->
 	<main class="entry-content">

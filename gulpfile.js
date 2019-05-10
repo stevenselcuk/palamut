@@ -971,7 +971,7 @@ function endOfTheDay() {
 	return src( './package.json' )
 	// bump package.json and bowser.json version
 		.pipe( bump( {
-			type: argv.type || 'patch',
+			type: argv.type || 'prerelease',
 		} ) )
 	// save the bumped files into filesystem
 		.pipe( dest( './' ) )

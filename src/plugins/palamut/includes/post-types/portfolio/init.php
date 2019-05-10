@@ -55,7 +55,7 @@ function palamut_taxonomy_filter_portfolio() {
 	global $typenow;
 
 	if ( 'portfolio' === $typenow ) {
-		$filters = array( 'portfolio-types' );
+		$filters = array( 'portfolio-category' );
 
 		foreach ( $filters as $tax_slug ) {
 			$tax_obj  = get_taxonomy( $tax_slug );

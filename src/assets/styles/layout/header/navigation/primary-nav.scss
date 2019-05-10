@@ -30,11 +30,11 @@
 				color: var(--menu-item-fontcolor, $menu-item-color);
 				font-family: var(--menu-item-fontfamily, $default-font-stack);
 				font-size: var(--menu-item-fontsize, $menu-item_font-size);
-//				font-weight: var(--menu-item-fontweight);
+				font-weight: var(--menu-item-fontweight, $menu-item_font-weight);
 				padding: 10px 14px;
 				text-decoration: none;
+				text-transform: var(--menu-item-transform);
 				border-bottom: 1px solid transparent;
-				text-transform: uppercase;
 
 				&:hover {
 					color: var(--menu-item-fontcolor__hover, $menu-item-color__hover);

@@ -24,8 +24,8 @@ if ( ! function_exists( 'palamut_portfolio_post_type' ) ) {
 	 * @link
 	 */
 	function palamut_portfolio_post_type() {
-		$slug = esc_attr( 'work' );
-		$tax  = esc_attr( 'Categories' );
+		$slug = esc_attr( 'portfolio' );
+		$tax  = esc_attr( 'category' );
 
 		$labels = array(
 			'name'               => esc_html__( 'Portfolio', 'palamut' ),
@@ -61,7 +61,7 @@ if ( ! function_exists( 'palamut_portfolio_post_type' ) ) {
 		register_post_type( 'portfolio', $args );
 
 		register_taxonomy(
-			'portfolio-types',
+			'portfolio-category',
 			'portfolio',
 			array(
 				'label'        => esc_html__( 'Portfolio categories', 'palamut' ),

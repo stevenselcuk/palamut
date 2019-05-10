@@ -36,6 +36,7 @@ $font__size-xxxl: 1em * (5 * $font__size-ratio);
 // Captions.
 $font__figcaption: $font__heading;
 $caption_fontsize: 12px;
+
 // Line Heights.
 $font__line-height-body: 1.8;
 $font__line-height-heading: 1.25;
@@ -44,7 +45,7 @@ $font__line-height-pre: 1.6;
 // Font Weights.
 $font__weight-body: 400;
 $font__weight-heading: 800;
-$menu-item_font-weight: 600;
+$menu-item_font-weight: 400;
 
 $block__quote--border-width: 4px;
 $block__quote--cite-font: $font__figcaption;
@@ -58,23 +59,9 @@ $font__size-editor--huge: $font__size-xl;
 // Old
 $font-size__meta: 17px;
 $font-size__meta-mobile: 15px;
+/**
 
-:root {
-//	--body-text-fontfamily: #{$font__body};
-	--body-text-fontsize: #{$body-font__size-min};
-	--body-text-weight: #{$font__weight-body};
-//	--heading-fontfamily: #{$font__heading};
-	--heading-fontweight: #{$font__weight-heading};
-	--heading-line-height: #{$font__line-height-heading};
-	--huge-text-fontsize: #{$font__size-editor--huge};
-	--large-text-fontsize: #{$font__size-editor--large};
-	--medium-text-fontsize: #{$font__size-editor--medium};
-	--menu-item-fontfamily: #{$menu-item_font-family};
-	--menu-item-fontsize: #{$menu-item_font-size};
-	--menu-item-fontweight: #{$menu-item_font-weight};
-	--small-text-fontsize: #{$font__size-editor--small};
-}
-
+**/
 // Palamut for Classic Editor Font Sizes.
 .palamut-huge-text {
 	font-size: var(--huge-text-fontsize);

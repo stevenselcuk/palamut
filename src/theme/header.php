@@ -47,7 +47,7 @@
 			<!-- End: .site-branding -->
 
 		<?php
-		if ( has_nav_menu( 'menu-1' ) ) :
+		if ( has_nav_menu( 'main-navigation' ) ) :
 			?>
 			<!-- Start: #main-nav -->
 			<nav id="primary-nav" class="site-navigation" aria-label="<?php esc_attr_e( 'Header Menu', 'textdomain' ); ?>" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"
@@ -55,7 +55,7 @@
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'menu-1',
+						'theme_location' => 'main-navigation',
 						'menu_class'     => 'primary-menu',
 						'depth'          => 2,
 						'container'      => false,

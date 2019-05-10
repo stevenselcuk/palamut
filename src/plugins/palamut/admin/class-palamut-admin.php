@@ -51,8 +51,6 @@ class Palamut_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
-		add_action( 'customize_preview_init', array( $this, 'palamut_customize_preview_js' ) );
-
 	}
 
 	/**
@@ -100,13 +98,5 @@ class Palamut_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/palamut-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
-
-	/**
-	 * Binds JS handlers to make the Customizer preview reload changes asynchronously.
-	 */
-	public function palamut_customize_preview_js() {
-		wp_enqueue_script( 'palamut-customize-preview', plugin_dir_url( __FILE__ ) . 'js/customize-preview.js', array( 'customize-preview' ), $this->version, true );
-	}
-
 
 }
