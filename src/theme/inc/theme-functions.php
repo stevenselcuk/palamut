@@ -107,6 +107,10 @@ if ( ! function_exists( 'prefix_add_body_class' ) ) {
 		if ( is_front_page() ) {
 			$classes[] = 'front-page';
 		}
+
+		if ( is_active_sidebar( 'sidebar' ) && prefix_gimme( 'show_sidebar' ) === true ) {
+			$classes[] = 'has-sidebar';
+		}
 		return $classes;
 	}
 }
@@ -180,7 +184,18 @@ function prefix_pingback_header() {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
+
 add_action( 'wp_head', 'prefix_pingback_header' );
+
+/**
+ * JavaScript Detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ */
+function prefix_javascript_detection() {
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js');})(document.documentElement);</script>\n";
+}
+add_action( 'wp_enqueue_scripts', 'prefix_javascript_detection', 0 );
 
 if ( ! function_exists( 'prefix_site_logo' ) ) {
 	/**

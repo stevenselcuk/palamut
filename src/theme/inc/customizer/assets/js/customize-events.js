@@ -19,6 +19,48 @@
 					siteIndentity.expand();
 				}
 			} );
+			
+			this.preview.bind( 'open-header', function() {
+				const headerOptions = wp.customize.section( 'prefix_theme_options_header' );
+				if ( ! headerOptions.expanded() ) {
+					headerOptions.expand();
+				}
+			} );
+
+			this.preview.bind( 'open-navigation', function() {
+				const SectionNavigation = wp.customize.section( 'prefix_theme_options_navigation' );
+				if ( ! SectionNavigation.expanded() ) {
+					SectionNavigation.expand();
+				}
+			} );
+			
+			this.preview.bind( 'open-menus', function() {
+				const editMenu = wp.customize.panel( 'nav_menus' );
+				if ( ! editMenu.expanded() ) {
+					editMenu.expand();
+				}
+			} );
+			
+			this.preview.bind( 'open-content', function() {
+				const contentOptions = wp.customize.section( 'prefix_theme_options_content' );
+				if ( ! contentOptions.expanded() ) {
+					contentOptions.expand();
+				}
+			} );
+			
+			this.preview.bind( 'open-sidebar-widgets', function() {
+				const sidebarWidgets = wp.customize.section( 'sidebar-widgets-sidebar' );
+				if ( ! sidebarWidgets.expanded() ) {
+					sidebarWidgets.expand();
+				}
+			} );
+			
+			this.preview.bind( 'open-footer', function() {
+				const footerOptions = wp.customize.section( 'prefix_theme_options_footer' );
+				if ( ! footerOptions.expanded() ) {
+					footerOptions.expand();
+				}
+			} );
 
 			// Single Post Sidebar
 			this.preview.bind( 'index-open-single_product-styles', function() {
@@ -77,12 +119,7 @@
 			} );
 
 			// Colophon Styles
-			this.preview.bind( 'index-open-colophon-styles', function() {
-				const primary_sidebar_section = wp.customize.section( 'ava__style-colophon' );
-				if ( ! primary_sidebar_section.expanded() ) {
-					primary_sidebar_section.expand();
-				}
-			} );
+
 
 			// Colophon Menu
 			this.preview.bind( 'index-add-menu', function() {
@@ -101,12 +138,7 @@
 			} );
 
 			// Single Post Sidebar
-			this.preview.bind( 'index-open-sidebar-1', function() {
-				const primary_sidebar_section = wp.customize.section( 'sidebar-widgets-sidebar-1' );
-				if ( ! primary_sidebar_section.expanded() ) {
-					primary_sidebar_section.expand();
-				}
-			} );
+
 
 			this.preview.bind( 'index-add-widget-sidebar-1', function() {
 				const primary_sidebar_section = wp.customize.section( 'sidebar-widgets-sidebar-1' ), // Grab the Primary Sidebar from the collection of panels

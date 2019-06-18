@@ -321,3 +321,10 @@ function prefix_get_google_fonts() {
 
 	return apply_filters( 'prefix_google_fonts', $this->$google_fonts );
 }
+
+/*
+
+ */
+function prefix_menu_fallback() {
+	return 'Add menu';
+}

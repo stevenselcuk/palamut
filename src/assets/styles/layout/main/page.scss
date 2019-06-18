@@ -1,10 +1,46 @@
 #page.site {
 	animation: fade .5s;
 	animation-timing-function: ease-out;
+	transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	transition: transform 0.3s, -webkit-transform 0.3s;
 	min-height: 100vh;
 	overflow: hidden;
 	position: relative;
 	z-index: 0;
+}
+
+// Classic Widget Area Mechanism
+.has-sidebar .site {
+	display: flex;
+	@include media-breakpoint-down(lg) {
+		display: block;
+	}
+	flex-wrap: wrap;
+	align-items:flex-start;
+	justify-content: space-around;
+	
+	main {
+		@include itsfor(tablet) {
+			flex-basis: 0 0 600px;
+		}
+		@include itsfor(laptop) {
+			flex-basis: 0 0 720px;
+		}
+		@include itsfor(desktop) {
+			flex-basis: 0 0 780px;
+		}
+	
+	}
+	aside {
+		flex-basis: 0 0 360px;
+		@include itsfor(desktop) {
+			flex-basis: 0 0 400px;
+		}
+		@include itsfor(tablet) {
+			flex-basis: 0 0 340px;
+		}
+	}
 }
 
 // Old Box & Full Width System

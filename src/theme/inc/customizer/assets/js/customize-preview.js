@@ -6,13 +6,33 @@
  */
 
 ( function( $ ) {
+  
+  wp.customize( 'custom_logo_max_width', function( value ) {
+    value.bind( function( newval ) {
+      $( '.site-logo img' ).css( { 'max-width': newval + 'px' } );
+    } );
+  } );
+  
+  
 	wp.customize( 'site_title_font_size', function( value ) {
 		value.bind( function( newval ) {
 			$( '.site-title h1, .site-title p' ).css( { 'font-size': newval + 'px' } );
 		} );
 	} );
 
-  // Primary Nav Operations Start.
+	wp.customize( 'site_desc_font_size', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site-description' ).css( { 'font-size': newval + 'px' } );
+		} );
+	} );
+  
+  wp.customize( 'header_max_width', function( value ) {
+    value.bind( function( newval ) {
+      $( '.header-container' ).css( { 'max-width': newval + 'px' } );
+    } );
+  } );
+
+	// Primary Nav Operations Start.
 	wp.customize( 'menu_item_font_size', function( value ) {
 		value.bind( function( newval ) {
 			$( '#primary-nav .primary-menu li a' ).css( { 'font-size': newval + 'px' } );
@@ -30,5 +50,5 @@
 			$( '#primary-nav .primary-menu li a' ).css( { 'text-transform': newval } );
 		} );
 	} );
-    // Primary Nav Operations End.
+	// Primary Nav Operations End.
 }( jQuery ) );

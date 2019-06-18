@@ -17,6 +17,10 @@
  * @license pkg.license
  */
 
+// Return before it is too late...
+if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+	require get_parent_theme_file_path( '/inc/back-compat.php' );
+}
 // Add Defaults, Theme Costants, Default Strings and Theme Variables.
 require get_theme_file_path( '/inc/theme-defaults.php' );
 

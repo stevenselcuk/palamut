@@ -10,9 +10,13 @@
 	
 	img {
 
-		max-height: var( --site-logo-height);
+		max-width: var(--site-logo-width, #{$site-logo__width});
 		@include transition-primary;
 		width: auto;
+		
+		@include media-breakpoint-down(lg) {
+			max-width: calc( var(--site-logo-width, #{$site-logo__width}) * .5 );
+		}
 		
 		&:hover {
 			@include scale-it;

@@ -25,7 +25,7 @@
 
 	h1,
 	p {
-		font-size: var(--site-title-fontsize, $site-title__font-size);
+		font-size: var(--site-title-fontsize, #{$site-title__font-size});
 		font-spacing: 0px;
 		font-family: var(--heading-fontfamily, $font__heading);
 	}

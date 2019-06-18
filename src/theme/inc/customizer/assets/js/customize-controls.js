@@ -91,7 +91,13 @@
 		customizer_image_option_display( 'custom_logo', 'custom_logo_mobile_max_width', 140 );
 		customizer_image_option_display( 'custom_logo', 'light_site_logo', 140 );
 
+		// Remove if , if a logo is uploaded.
 		customizer_image_option_display_reverse( 'custom_logo', 'site_title_font_size', 140 );
+		customizer_image_option_display_reverse( 'custom_logo', 'site_desc_font_size', 140 );
+		customizer_image_option_display_reverse( 'custom_logo', 'blogname', 140 );
+		customizer_image_option_display_reverse( 'custom_logo', 'blogdescription', 140 );
+		customizer_image_option_display_reverse( 'custom_logo', 'display_header_text', 140 );
+
 
 		// Only show the columns size and gutter controls, when the "Columns" shop layout option is selected.
 		customizer_option_display( 'shop_layout', 'shop_layout_columns_size', 'product-grid__columns' );

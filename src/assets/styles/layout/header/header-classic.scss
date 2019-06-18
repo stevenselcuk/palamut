@@ -17,7 +17,7 @@
 		justify-content: space-between;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--header-width);
+		max-width: var(--header-max-width, #{$header_width});
 		padding: $outer_margin / 4 $outer_margin;
 		position: relative;
 	}

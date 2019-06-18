@@ -31,33 +31,47 @@
  * @return $css It's our user defined CSS vars. and other values.
  */
 function prefix_customizer_css() {
-
-	$body_font_family      = get_theme_mod( 'body_font_family', 'Open Sans' );
-	$body_font_size        = get_theme_mod( 'body_font_size', '15' );
-	$body_line_height      = get_theme_mod( 'body_line_height', '26' );
-	$body_letter_spacing   = get_theme_mod( 'body_letter_spacing', '0' );
-	$body_word_spacing     = get_theme_mod( 'body_word_spacing', '0' );
-	$heading_font_family   = get_theme_mod( 'heading_font_family', 'inherit' );
-
+	// Body Typography.
+	$body_font_family    = get_theme_mod( 'body_font_family', 'Open Sans' );
+	$body_font_size      = get_theme_mod( 'body_font_size', '15' );
+	$body_line_height    = get_theme_mod( 'body_line_height', '26' );
+	$body_letter_spacing = get_theme_mod( 'body_letter_spacing', '0' );
+	$body_word_spacing   = get_theme_mod( 'body_word_spacing', '0' );
+	$heading_font_family = get_theme_mod( 'heading_font_family', 'inherit' );
+	// Menu Typography.
 	$menu_item_font_family = get_theme_mod( 'menu_item_font_family', 'inherit' );
 	$menu_item_font_size   = get_theme_mod( 'menu_item_font_size', '14' );
 	$menu_item_font_weight = get_theme_mod( 'menu_item_font_weight', 'normal' );
 	$menu_item_transform   = get_theme_mod( 'menu_item_transform', 'none' );
+	// Site Identity.
+	$site_logo_width     = get_theme_mod( 'custom_logo_max_width', prefix_theme_defaults( 'custom_logo_max_width' ) );
+	$site_title_fontsize = get_theme_mod( 'site_title_font_size', prefix_theme_defaults( 'site_title_font_size' ) );
+	$site_desc_fontsize  = get_theme_mod( 'site_desc_font_size', prefix_theme_defaults( 'site_desc_font_size' ) );
+	// Layout.
+	$header_max_width = get_theme_mod( 'header_max_width', prefix_theme_defaults( 'header_max_width' ) );
 
-	$site_logo_width     = get_theme_mod( 'custom_logo_max_width', '50' );
-	$site_title_fontsize = get_theme_mod( 'site_title_font_size', '50' );
-	$css                 =
+	// CSS render.
+	$css =
 	'
  	:root {
- 		--site-logo-height:     ' . $site_logo_width . 'px;
+	
+ 		--site-logo-width:     ' . $site_logo_width . 'px;
+		--site-title-fontsize: ' . $site_title_fontsize . 'px;
+		--site-desc-fontsize: ' . $site_desc_fontsize . 'px;
+		
+		--header-max-width: ' . $header_max_width . 'px;
+
  		--body-text-fontfamily: ' . $body_font_family . ';
  		--body-text-fontsize:   ' . $body_font_size . 'px;
  		--heading-fontfamily:   ' . $heading_font_family . ';
+
 		--menu-item-fontfamily:' . $menu_item_font_family . ';
 		--menu-item-fontsize:  ' . $menu_item_font_size . 'px;
 		--menu-item-fontweight:  ' . $menu_item_font_weight . ';
 		--menu-item-transform:  ' . $menu_item_transform . ';
-		--site-title-fontsize: ' . $site_title_fontsize . 'px;
+
+
+
  	}
  	';
 

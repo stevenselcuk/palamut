@@ -210,8 +210,8 @@ class Palamut_Typography_Control extends WP_Customize_Control {
 			$google_fonts_json = json_decode( $file_contants, 1 );
 		}
 
-		foreach ( $google_fonts_json[ items ] as $name => $single_font ) {
-			echo '<option value="' . esc_attr( $single_font[ family ] ) . '" ' . selected( $name, $this->value(), false ) . '>' . esc_attr( $single_font[ family ] ) . '</option>';
+		foreach ( $google_fonts_json['items'] as $name => $single_font ) {
+			echo '<option value="' . esc_attr( $single_font['family'] ) . '" ' . selected( $name, $this->value(), false ) . '>' . esc_attr( $single_font['family'] ) . '</option>';
 		}
 
 		echo '</select>';

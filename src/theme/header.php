@@ -21,7 +21,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,8 +30,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site" itemscope="itemscope" itemtype="https://schema.org/WebPage">
-
 	<?php do_action( 'prefix_site_start' ); ?>
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'textdomain' ); ?></a>
@@ -60,12 +58,12 @@
 						'depth'          => 2,
 						'container'      => false,
 						'fallback_cb'    => false,
+						// @TODO: We need a fallback for no menu situation.
 					)
 				);
 				?>
 			</nav>
 			<!-- End: #main-nav -->
-			<?php prefix_cart_icon( 'header_checkout' ); ?>
 			<!-- Start: .hamburger-->
 			<button class="hamburger">
 				<div></div>
@@ -74,6 +72,10 @@
 			</button>
 			<!-- End: .hamburger-->
 
+		<?php elseif ( is_customize_preview() ): ?>
+			<div class="customizer-menu-notice">
+			<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-menus" data-balloon-pos="right" data-balloon="Add menu item"></button></span>
+		</div>
 		<?php endif; ?>
 		<?php
 		if ( prefix_gimme( 'show-search' ) ) :
@@ -83,3 +85,4 @@
 		</div>
 	</header>
 	<!-- End: .site-header -->
+	<div id="page" class="site" itemscope="itemscope" itemtype="https://schema.org/WebPage">

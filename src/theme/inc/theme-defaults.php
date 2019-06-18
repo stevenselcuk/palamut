@@ -65,24 +65,22 @@ function prefix_theme_defaults( $name ) {
 			'prefix_theme_defaults',
 			array(
 				// Identity.
-				'site_title'                   => false,
-				'show_bottombar'               => true,
-				'custom_logo_max_width'        => 50,
-				'custom_logo_mobile_max_width' => 50,
-				'custom_logo_border_radius'    => true,
+				'custom_logo_max_width' => 64,
+				'site_title_font_size'  => 32,
+				'site_desc_font_size'   => 12,
 				// Layout.
-				'pagination_type'              => 'paginated',
-				'alt_heading_color'            => '#656e79',
-				'text_color'                   => '#2a2a2a',
-				'header_icon_color'            => '#2a2a2a',
-				'nav_color'                    => '#656e79',
-				'mobile_nav_color'             => '#2a2a2a',
-				'footer_bg_color'              => '#f1f1f1',
-				'footer_text_color'            => '#2a2a2a',
+				'header_max_width'      => 1100,
+				'content_max_width'     => 1100,
+				'text_color'            => '#2a2a2a',
+				'header_icon_color'     => '#2a2a2a',
+				'nav_color'             => '#656e79',
+				'mobile_nav_color'      => '#2a2a2a',
+				'footer_bg_color'       => '#f1f1f1',
+				'footer_text_color'     => '#2a2a2a',
 				// Options.
-				'header_search'                => true,
-				'night_mode'                   => true,
-				'categories'                   => true,
+				'show_sidebar'          => false,
+				'prefix_site_info'      => true,
+				'show_theme_info'       => true,
 			)
 		);
 	}
@@ -112,7 +110,7 @@ function prefix_theme_strings( $name ) {
 				'search_form_title'       => _x( 'Search for:', 'Search form placeholder text.', 'textdomain' ),
 				'search_form_placeholder' => _x( 'Search', 'Search form placeholder text.', 'textdomain' ),
 				// Translators: 1. Year 2. Site Name.
-				'copyright-text'          => sprintf( 'Copyright &copy; %1$s %2$s. All rights reserved.', date_i18n( __( 'Y', 'textdomain' ) ), get_bloginfo( 'name' ) ),
+				'colophon_copyright_text' => sprintf( 'Copyright &copy; %1$s %2$s. All rights reserved.', date_i18n( __( 'Y', 'textdomain' ) ), get_bloginfo( 'name' ) ),
 			)
 		);
 	}

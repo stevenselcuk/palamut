@@ -23,15 +23,18 @@
 				const $body = $( 'body' ),
 					$document = $( document ); // Store references to the body and document elements
 				const	$header = $( '.site-header' ),
-				$branding = $( '.site-branding' ),
-				
-				
-					$siteContent = $( '.site-content' );
+					$branding = $( '.site-branding' ),
+					$navigation = $( '.primary-menu' ),
+					$siteContent = $( '.site-content' ),
+					$sidebar = $( '#secondary' ),
+					$footer = $( '.site-footer' );
 
-				// Colophon: Open Editor
-				$header.append( '<button class="index-event-button customizer-editlayout-button customizer-open-widgetarea" data-customizer-event="index-open-colophon-styles">Edit</button>' );
-				$header.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div>' );
-				$branding.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-site-indentity" data-balloon-pos="right" data-balloon="Edit this"></button></span>');
+				$header.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button" data-customizer-event="open-header">Edit</button>' );
+				$siteContent.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button customizer-open-widgetarea" data-customizer-event="open-content">Edit</button>' );
+				$sidebar.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button customizer-open-widgetarea" data-customizer-event="open-sidebar-widgets">Edit</button>' );
+				$footer.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button customizer-open-widgetarea" data-customizer-event="open-footer">Edit</button>' );
+				$branding.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-site-indentity" data-balloon-pos="right" data-balloon="Edit this"></button></span>' );
+				$navigation.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-navigation" data-balloon-pos="right" data-balloon="Edit this"></button></span>' );
 
 				// Listen for events on the new previewer buttons
 				$document.on( 'touch click', '.index-event-button', function( e ) {

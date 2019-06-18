@@ -85,6 +85,9 @@ function prefix_customize_register( $wp_customize ) {
 	// Get Sections & Options.
 	require_once get_theme_file_path( '/inc/customizer/sections/identity.php' );
 	require_once get_theme_file_path( '/inc/customizer/sections/typography.php' );
+	require_once get_theme_file_path( '/inc/customizer/sections/header.php' );
+	require_once get_theme_file_path( '/inc/customizer/sections/navigation.php' );
+	require_once get_theme_file_path( '/inc/customizer/sections/content.php' );
 	require_once get_theme_file_path( '/inc/customizer/sections/footer.php' );
 	/**
 	 * Top-Level Customizer sections and panels.
@@ -94,36 +97,6 @@ function prefix_customize_register( $wp_customize ) {
 		array(
 			'title'    => esc_html__( 'Theme Options', 'textdomain' ),
 			'priority' => 30,
-		)
-	);
-
-	$wp_customize->add_section(
-		'prefix_demo',
-		array(
-			'title'    => esc_html__( 'Demo', 'textdomain' ),
-			'panel'    => 'prefix_theme_options',
-			'priority' => 1,
-		)
-	);
-	
-	// Logo Max. Height (Its under Site Identity).
-	$wp_customize->add_setting(
-		'font_1',
-		array(
-			'default'   => 'Open Sans',
-			'transport' => 'postMessage',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Typography_Control(
-			$wp_customize,
-			'font_1',
-			array(
-				'type'    => 'prefix-font-family',
-				'label'   => esc_html__( 'Logo Max Width', 'textdomain' ),
-				'section' => 'prefix_demo',
-			)
 		)
 	);
 

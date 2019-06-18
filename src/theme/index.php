@@ -23,6 +23,7 @@
  */
 
 get_header();
+
 ?>
 	<!-- Start: #main -->
 	<main id="content" class="site-content loop" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">

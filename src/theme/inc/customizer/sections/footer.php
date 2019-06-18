@@ -18,6 +18,7 @@
  * @copyright pdwcopyright
  * @license pdwlicense
  */
+
  /**
   * Layout (Its onder)
   * @TODO : Renew its position.
@@ -32,7 +33,7 @@ $wp_customize->add_section(
 
 		 // Bottom Bar Toggle.
 		$wp_customize->add_setting(
-			'show_bottombar',
+			'colophon_copyright',
 			array(
 				'default'           => prefix_theme_defaults( 'show_bottombar' ),
 				'sanitize_callback' => 'prefix_sanitize_checkbox',
@@ -42,12 +43,12 @@ $wp_customize->add_section(
 		$wp_customize->add_control(
 			new Palamut_Toggle_Control(
 				$wp_customize,
-				'show_bottombar',
+				'colophon_copyright',
 				array(
 					'type'        => 'palamut-toggle',
 					'priority'    => 1,
 					'style'       => 'flat',
-					'label'       => esc_html__( 'Bottom Bar', 'textdomain' ),
+					'label'       => esc_html__( 'Show Copyright Section', 'textdomain' ),
 					'description' => 'Show or hide bottom bar.',
 					'section'     => 'prefix_theme_options_footer',
 				)
@@ -80,3 +81,28 @@ $wp_customize->add_section(
 				'render_callback' => 'prefix_customize_partial_copyright_text',
 			)
 		);
+
+		$wp_customize->add_setting(
+			'colophon_theme_info',
+			array(
+				'default'           => prefix_theme_defaults( 'show_theme_info' ),
+				'sanitize_callback' => 'prefix_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			new Palamut_Toggle_Control(
+				$wp_customize,
+				'colophon_theme_info',
+				array(
+					'type'        => 'palamut-toggle',
+					'priority'    => 1,
+					'style'       => 'flat',
+					'label'       => esc_html__( 'Show Theme Info', 'textdomain' ),
+					'description' => 'Show or hide theme info.',
+					'section'     => 'prefix_theme_options_footer',
+				)
+			)
+		);
+		
+		

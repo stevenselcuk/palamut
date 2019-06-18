@@ -3,6 +3,6 @@
 * Header > Site Title
 **/
 .site-description {
-	font-size: var( --site-desc-fontsize );
+	font-size: var(--site-desc-fontsize, #{$site-desc__font-size});
 	margin:0;
 }

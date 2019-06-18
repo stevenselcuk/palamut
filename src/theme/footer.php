@@ -19,8 +19,9 @@
  * @license pkg.license
  */
 
-
 ?>
+	</div>
+	<!-- End: #page -->
 		<!-- Start: #colophon -->
 		<footer id="colophon" class="site-footer classic-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
@@ -51,40 +52,7 @@
 		</footer>
 		<!-- #colophon -->
 
-		<!-- Start: .site-info -->
-		<?php if ( true === get_theme_mod( 'show_bottombar' ) ) : ?>
-
-		<section class="site-info clearfix">
-
-		<p class="copyright" itemscope itemtype="http://schema.org/copyrightYear">
-			<?php echo wp_kses( prefix_gimme( 'copyright-text', prefix_theme_strings( 'copyright-text' ) ), prefix_allowed_html() ); ?>
-		</p>
-			<?php
-			if ( has_nav_menu( 'social' ) ) :
-				wp_nav_menu(
-					array(
-						'theme_location'  => 'social',
-						'menu_class'      => 'social-menu',
-						'container'       => 'nav',
-						'container_class' => 'footer-social-menu',
-						'fallback_cb'     => false,
-						'depth'           => 1,
-						'link_before'     => '<span class="screen-reader-text">',
-						'link_after'      => '</span>' . prefix_icons()->get( array( 'icon' => 'plus' ) ),
-					)
-				);
-			endif;
-			?>
-
-		</section>
-		<!-- End: .site-info -->
-
-	<?php endif; ?>
-
 		<?php do_action( 'prefix_site_end' ); ?>
-
-	</div>
-	<!-- End: #page -->
 
 	<?php get_sidebar( 'mobile' ); ?>
 
