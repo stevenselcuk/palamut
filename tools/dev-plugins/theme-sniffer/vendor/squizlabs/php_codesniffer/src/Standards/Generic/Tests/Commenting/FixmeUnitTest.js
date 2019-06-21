@@ -4,7 +4,7 @@
  * FIXME  id:37
  */
 
-// DONE: remove this. id:3
+// GARBAGE: remove this. id:3
 alert('test');
 
 // GARBAGE remove this. id:11
