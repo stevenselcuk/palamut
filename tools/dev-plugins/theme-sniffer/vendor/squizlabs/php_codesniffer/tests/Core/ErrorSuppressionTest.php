@@ -314,7 +314,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a docblock suppression (deprecated syntax).
-        $content = '<?php '.PHP_EOL.'/** @codingStandardsIgnoreStart */'.PHP_EOL.'//TODO: write some code'.PHP_EOL.'/** */'; id:31 @codingStandardsIgnoreEnd
+        $content = '<?php '.PHP_EOL.'/** @codingStandardsIgnoreStart */'.PHP_EOL.'//GARBAGE: write some code'.PHP_EOL.'/** */'; id:31 @codingStandardsIgnoreEnd
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
