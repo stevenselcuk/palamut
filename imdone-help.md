@@ -7,7 +7,7 @@ imdone-help
 #HELP: Use markdown in todo comments or in the description id:26 +imdone-help
 - **This is a description...**
 
-#HELP: Add tags to your comments like this `+mvp` id:17 +imdone-help
+#GARBAGE: Add tags to your comments like this `+mvp` id:17 +imdone-help
 
 #HELP: Add metadata like this... points:5 id:35 +imdone-help
 - [imdone.io](https://imdone.io) adds `id:n` to all your todo comments, so take care to leave that one alone
