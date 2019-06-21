@@ -15,10 +15,6 @@
   },
   "lists": [
     {
-      "name": "HELP",
-      "hidden": false
-    },
-    {
       "name": "DONE",
       "hidden": false
     },
