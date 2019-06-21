@@ -15,10 +15,6 @@
   },
   "lists": [
     {
-      "name": "NOTE",
-      "hidden": false
-    },
-    {
       "name": "TODO",
       "hidden": false
     },
