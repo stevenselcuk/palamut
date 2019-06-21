@@ -224,7 +224,7 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 			$boxes_data['css_dependencies'] = array_values( array_diff( $wp_styles->queue, $before_css ) );
 		}
 
-		// TODO: look into 'embed' parameter. id:27
+		// GARBAGE: look into 'embed' parameter. id:27
   // http://demo.wp-api.org/wp-json/wp/v2/posts?_embed
 		unset( $boxes_data['fields'] );
 		// Handle callable properties.
