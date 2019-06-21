@@ -1,6 +1,6 @@
 {
   "name": "Dude",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "slug": "dude",
   "prefix": "dude",
   "textdomain": "dude",
@@ -75,7 +75,7 @@
     "delete-empty": "^2.0.0",
     "eslint": "^4.19.1",
     "eslint-config-wordpress": "^2.0.0",
-    "lodash": "4.17.4",
+    "lodash": ">=4.17.11",
     "memize": "^1.0.5",
     "postcss": "^6.0.23",
     "react": "^16.6.3",
