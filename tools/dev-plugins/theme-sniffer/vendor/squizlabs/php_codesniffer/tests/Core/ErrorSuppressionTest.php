@@ -1074,7 +1074,7 @@ class ErrorSuppressionTest extends TestCase
         $ruleset = new Ruleset($config);
 
         // No suppression.
-        $content = '<?php '.PHP_EOL.'$var = FALSE; //TODO: write some code'.PHP_EOL.'$var = FALSE; //TODO: write some code'; id:42
+        $content = '<?php '.PHP_EOL.'$var = FALSE; //GARBAGE: write some code'.PHP_EOL.'$var = FALSE; //TODO: write some code'; id:42
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
