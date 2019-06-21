@@ -685,7 +685,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a multi-line block comment suppression.
-        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.' phpcs:ignoreFile'.PHP_EOL.' */'.PHP_EOL.'//TODO: write some code'; id:6
+        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.' phpcs:ignoreFile'.PHP_EOL.' */'.PHP_EOL.'//GARBAGE: write some code'; id:6
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
