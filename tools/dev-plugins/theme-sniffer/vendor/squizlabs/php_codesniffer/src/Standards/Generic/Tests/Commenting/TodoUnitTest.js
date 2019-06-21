@@ -4,7 +4,7 @@
  * TODO  id:4
  */
 
-// TODO: remove this. id:12
+// GARBAGE: remove this. id:12
 alert('test');
 
 // TODO remove this. id:30
