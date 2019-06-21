@@ -304,7 +304,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a docblock suppression.
-        $content = '<?php '.PHP_EOL.'/** phpcs:disable */'.PHP_EOL.'//TODO: write some code'.PHP_EOL.'/** */'; phpcs:enable id:13
+        $content = '<?php '.PHP_EOL.'/** phpcs:disable */'.PHP_EOL.'//GARBAGE: write some code'.PHP_EOL.'/** */'; phpcs:enable id:13
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
