@@ -1205,7 +1205,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(1, $warnings);
 
         // Suppress a single sniff using block comments.
-        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.'    Disable some checks'.PHP_EOL.'    phpcs:disable Generic.Commenting.Todo'.PHP_EOL.'*/'.PHP_EOL.'$var = FALSE;'.PHP_EOL.'//TODO: write some code'; id:43
+        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.'    Disable some checks'.PHP_EOL.'    phpcs:disable Generic.Commenting.Todo'.PHP_EOL.'*/'.PHP_EOL.'$var = FALSE;'.PHP_EOL.'//GARBAGE: write some code'; id:43
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
