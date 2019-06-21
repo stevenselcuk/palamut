@@ -13,7 +13,7 @@ alert('test');
 // todo - remove this.
 
 // Extract info from the array.
-// TODO: can this be done faster? id:21
+// GARBAGE: can this be done faster? id:21
 
 // Extract info from the array (todo: make it faster)
 // To do this, use a function!
