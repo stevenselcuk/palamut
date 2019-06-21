@@ -41,7 +41,7 @@ class WXRImporter extends \WP_Importer {
 	protected $tags = array();
 	protected $base_url = '';
 
-	// TODO: REMOVE THESE id:36
+	// GARBAGE: REMOVE THESE id:36
 	protected $processed_terms = array();
 	protected $processed_posts = array();
 	protected $processed_menu_items = array();
