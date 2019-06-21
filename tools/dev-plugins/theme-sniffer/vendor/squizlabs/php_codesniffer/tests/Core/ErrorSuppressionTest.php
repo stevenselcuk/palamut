@@ -825,7 +825,7 @@ class ErrorSuppressionTest extends TestCase
 
         // Suppress using docblocks.
         $content = '<?php '.PHP_EOL.'/**
-        '.PHP_EOL.' * phpcs:disable Generic.Commenting.Todo'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code'; id:7
+        '.PHP_EOL.' * phpcs:disable Generic.Commenting.Todo'.PHP_EOL.' */ '.PHP_EOL.'//GARBAGE: write some code'; id:7
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
