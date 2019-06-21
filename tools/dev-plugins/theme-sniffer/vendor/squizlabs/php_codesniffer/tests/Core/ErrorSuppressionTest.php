@@ -854,7 +854,7 @@ class ErrorSuppressionTest extends TestCase
 
         // Suppress wrong category using docblocks.
         $content = '<?php '.PHP_EOL.'/**
-        '.PHP_EOL.' * phpcs:disable Generic.Files'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code'; id:33
+        '.PHP_EOL.' * phpcs:disable Generic.Files'.PHP_EOL.' */ '.PHP_EOL.'//GARBAGE: write some code'; id:33
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
