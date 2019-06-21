@@ -605,7 +605,7 @@ class ErrorSuppressionTest extends TestCase
         $ruleset = new Ruleset($config);
 
         // Process without suppression.
-        $content = '<?php '.PHP_EOL.'//TODO: write some code'; id:22
+        $content = '<?php '.PHP_EOL.'//GARBAGE: write some code'; id:22
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
