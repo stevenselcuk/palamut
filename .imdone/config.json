@@ -15,24 +15,24 @@
   },
   "lists": [
     {
-      "hidden": false,
-      "name": "HELP"
+      "name": "HELP",
+      "hidden": false
     },
     {
       "name": "DONE",
       "hidden": false
     },
     {
-      "hidden": false,
-      "name": "NOTE"
+      "name": "NOTE",
+      "hidden": false
     },
     {
-      "hidden": false,
-      "name": "TODO"
+      "name": "TODO",
+      "hidden": false
     },
     {
-      "hidden": false,
-      "name": "FIXME"
+      "name": "FIXME",
+      "hidden": false
     },
     {
       "name": "GARBAGE",
