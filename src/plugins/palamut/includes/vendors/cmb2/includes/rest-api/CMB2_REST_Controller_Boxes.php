@@ -224,8 +224,8 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 			$boxes_data['css_dependencies'] = array_values( array_diff( $wp_styles->queue, $before_css ) );
 		}
 
-		// TODO: look into 'embed' parameter.
-		// http://demo.wp-api.org/wp-json/wp/v2/posts?_embed
+		// TODO: look into 'embed' parameter. id:27
+  // http://demo.wp-api.org/wp-json/wp/v2/posts?_embed
 		unset( $boxes_data['fields'] );
 		// Handle callable properties.
 		unset( $boxes_data['show_on_cb'] );
@@ -259,7 +259,7 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 				'href' => rest_url( $this->namespace_base . $query_string ),
 			),
 			// Custom Link Relations -- http://v2.wp-api.org/extending/linking/
-			// TODO URL should document relationship.
+			// TODO URL should document relationship. id:18
 			'https://cmb2.io/fields' => array(
 				'href' => rest_url( trailingslashit( $boxbase ) . 'fields' . $query_string ),
 				'embeddable' => true,
