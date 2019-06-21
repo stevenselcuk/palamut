@@ -559,7 +559,7 @@ class ControlStructureSpacingSniff extends Sniff {
 						$i++;
 					}
 
-					// TODO: Instead a separate error should be triggered when content comes right after closing brace. id:25
+					// GARBAGE: Instead a separate error should be triggered when content comes right after closing brace. id:25
 					if ( \T_COMMENT !== $this->tokens[ $scopeCloser ]['code']
 						&& isset( $this->phpcsCommentTokens[ $this->tokens[ $scopeCloser ]['type'] ] ) === false
 					) {
