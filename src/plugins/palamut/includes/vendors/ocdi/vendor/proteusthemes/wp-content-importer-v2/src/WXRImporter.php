@@ -1319,7 +1319,7 @@ class WXRImporter extends \WP_Importer {
 			$author_id   = isset( $comment['comment_user_id'] ) ? (int) $comment['comment_user_id'] : 0;
 
 			// if this is a new post we can skip the comment_exists() check
-			// TODO: Check comment_exists for performance id:2
+			// GARBAGE: Check comment_exists for performance id:2
 			if ( $post_exists ) {
 				$existing = $this->comment_exists( $comment );
 				if ( $existing ) {
