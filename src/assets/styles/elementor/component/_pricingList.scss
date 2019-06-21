@@ -1,0 +1,88 @@
+$background-v: true;
+.single-pricing-lists {
+    box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+    background-color: $color-white;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    @include transition;
+    @if $background-v==true {
+        &.background-v {
+            background-repeat: no-repeat;
+            background-position: center center;
+            &::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: rgba($color: #023c5b, $alpha: .85);
+            }
+        }
+    }
+}
+
+
+$white-v: true;
+$lsit-striped: true;
+$dark-v: true;
+$style-bullet: true;
+$style-bold: true;
+.pricing-list-group {
+    >li {
+        position: relative;
+        line-height: 1;
+        color: rgba($color: $color-black, $alpha: .7);
+        justify-content: space-evenly;
+        >i {
+            display: inline-block;
+            @include equal-size-lineHeight(70px);
+            border-radius: 50%;
+            background-color: $color-white;
+            color: $color-black;
+            flex: 0 0 70px;
+            text-align: center;
+            margin-right: 18px;
+            font-size: rem(30px);
+        }
+
+        p{
+            margin-top: 20px;
+        }
+        .dot-border {
+            width: 100%;
+            display: inline-block;
+            border-bottom: 1px dashed #e7e7e7;
+        }
+        .list-price {
+            padding-left: 20px;
+        }
+        .list-title,
+        .list-price {
+            white-space: nowrap;
+        }
+    }
+
+
+}
+
+.content-with-media{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    .text-content{
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+    > img{
+        margin-right: 20px;
+    }
+    > i{
+        margin-right: 20px;
+    }
+}

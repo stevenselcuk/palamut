@@ -1,0 +1,283 @@
+.pala-facebook-feed {
+    padding: {
+        left: 15px;
+        right: 15px;
+    }
+}
+
+.pala-layout-grid {
+    &.pala-fb-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: {
+            left: -15px;
+            right: -15px;
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .pala-fb-col-#{$i} {
+            max-width: ((100% / 12) * $i);
+            flex: 0 0 ((100% / 12) * $i);
+
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        @for $i from 1 through 12 {
+            .pala-fb-col-#{$i} {
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        @for $i from 1 through 12 {
+            .pala-fb-col-#{$i} {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+    }
+}
+
+.pala-layout-masonary {
+    column-gap: 30px;
+
+    @for $i from 1 through 12 {
+        &.pala-fb-col-#{$i} {
+            column-count: 12 / $i;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        @for $i from 1 through 12 {
+            &.pala-fb-col-#{$i} {
+                column-count: 2;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        @for $i from 1 through 12 {
+            &.pala-fb-col-#{$i} {
+                column-count: 1;
+            }
+        }
+    }
+
+    .pala-single-fb-feed-holder {
+        break-inside: avoid;
+    }
+}
+
+
+.pala-fb-feed-header {
+    display: flex;
+    margin-bottom: 10px;
+
+    .user-name {
+        display: block;
+        color: #365899;
+        font-size: rem(14px);
+        font-weight: 600;
+        line-height: 1;
+
+        // &:hover {
+        //     text-decoration: underline;
+        // }
+    }
+
+    .pala-fb-post-publish-date {
+        display: inline-block;
+        color: #616770;
+        font-size: rem(12px);
+        line-height: 1;
+    }
+}
+
+.pala-single-fb-feed {
+    margin-bottom: 30px;
+    @include transition;
+    position: relative;
+    overflow: hidden;
+
+    &:not(.pala_fb_photo_gallery) {
+        border: 1px solid #dddfe2;
+        border-radius: 4px;
+        background-color: $color-white;
+        padding: 12px;
+
+        .pala-fb-feed-media {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.pala-fb-feed-status {
+    font-size: rem(14px);
+    color: $color-black;
+    margin-bottom: 10px;
+
+    >a {
+        color: #365899;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.pala-fb-feed-profile-thumb {
+    margin-right: 10px;
+
+    >a {
+        display: block;
+        @include equal-size(40px);
+        position: relative;
+        overflow: hidden;
+
+        &.circle {
+            border-radius: 50%;
+        }
+    }
+}
+
+.pala-fb-hover-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 100%;
+    text-align: center;
+}
+
+.pala-fb-video-post {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        .pala-fb-video-play-button {
+            svg {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.pala-fb-video-play-button {
+    svg {
+        @include equal-size(60px);
+        @include transition;
+        transform: scale(.9);
+        backface-visibility: hidden;
+
+        path {
+            fill: $color-white;
+            @include transition;
+        }
+    }
+}
+
+.pala-fb-link-type-footer {
+    background-color: rgb(242, 243, 245);
+    padding: 10px 12px;
+    position: relative;
+
+    .pala-fb-source-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #606770;
+        font-size: rem(12px);
+        text-transform: uppercase;
+        margin-bottom: 0px;
+    }
+
+    .pala-fb-caption-name {
+        color: #1d2129;
+        font-weight: 600;
+        font-size: rem(16px);
+        margin-bottom: 0px;
+    }
+
+    .pala-fb-caption {
+        color: #606770;
+        font-size: rem(14px);
+    }
+}
+
+// .pala-fb-feed-media {
+//     margin-bottom: 20px;
+// }
+
+.pala-fb-fotter-section {
+    display: flex;
+    justify-content: space-between;
+
+    .pala-facebook-like,
+    .pala-facebook-comments,
+    .pala-facebook-retweet {
+        color: #606770;
+
+        >i {
+            padding-right: 5px;
+        }
+
+        &:hover {
+            color: #365899;
+            // text-decoration: underline;
+        }
+    }
+
+    .pala-facebook-comments {
+        margin-right: 5px;
+    }
+}
+
+.pala-layout-grid {
+    .pala_fb_photo_gallery {
+
+        .pala_fb_photo_link {
+            padding-bottom: 85%;
+        }
+
+        .pala_fb_photo {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 2;
+        }
+    }
+}
+
+.pala-fb-feed-media {
+    .pala_fb_photo_link {
+        position: relative;
+        display: block;
+        overflow: hidden;
+
+        &:hover {
+            .pala_fb_photo {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .pala_fb_photo {
+        width: 100%;
+        object-fit: cover;
+        @include transition;
+        // backface-visibility: hidden;
+    }
+}

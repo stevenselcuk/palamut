@@ -1,0 +1,16 @@
+.palamut-image-comparison {
+    >img {
+        width: 100%;
+    }
+    z-index: 3;
+    .twentytwenty-handle {
+        box-shadow: none;
+        background-color: $color-white;
+        .twentytwenty-left-arrow {
+            border-right-color: $color-black;
+        }
+        .twentytwenty-right-arrow {
+            border-left-color: $color-black;
+        }
+    }
+}

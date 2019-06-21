@@ -1,0 +1,14 @@
+.product-ribbon {
+    background-image: url(../images/products/ribbon-background.png);
+    color: $color-white;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    @include equal-size(44px);
+    text-align: center;
+    .ribbon-title {
+        line-height: 37px;
+        font-size: rem(12px);
+        font-weight: 700;
+    }
+}

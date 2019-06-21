@@ -1,0 +1,524 @@
+$innerContetnt: true;
+$multishadow-bar: true;
+$skilltrack-style2: true;
+$gradient-bar: true;
+$dark-bar: true;
+$track-color2: true;
+$tooltip-style: true;
+$pin-style: true;
+$tooltip-style2: true;
+$tooltip-style3: true;
+$style-switch: true;
+$multishadow-track: true;
+$style-stripe: true;
+$style-ribbon: true;
+$bar-color3: true;
+$trackColor: (1, #ff3984),
+(2, #cc24fc),
+(3, #00e49a),
+(4, #4285f4),
+(5, #7ed500),
+(6, #f96933),
+(7, #53f8a2),
+(8, #fe8f75),
+(9, #35ed7e),
+(10, #9460ff);
+$skill: skill;
+$trackSize: (medium, 10),
+(big, 35);
+@each $name,
+
+$size in $trackSize {
+    .skill-#{$name} {
+        .#{$skill}-bar {
+            height: $size+px;
+        }
+        &.skill-radius {
+            .#{$skill}-bar,
+            .#{$skill}-track {
+                border-radius: ($size / 2)+px;
+            }
+        }
+    }
+}
+
+.multicolor-track {
+    @each $name,
+    $color in $trackColor {
+        .single-skill-bar {
+            &.color-#{$name} {
+                .skill-bar {
+                    background-color: rgba($color: $color, $alpha: .07);
+                }
+            }
+        }
+    }
+}
+
+.single-skill-bar {
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+    @each $name,
+    $color in $trackColor {
+        &.color-#{$name} {
+            .#{$skill}-bar {
+                .#{$skill}-track {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}
+
+.#{$skill}-bar {
+    height: 3px;
+    background-color: #f5f5f5;
+    .#{$skill}-track {
+        width: 0%;
+        background-color: $color-semi-black;
+        display: block;
+        height: 100%;
+        overflow: visible !important;
+        position: relative;
+        .number-percentage-wraper {
+            position: absolute;
+            right: 0;
+            top: -33px;
+            z-index: 1;
+        }
+        .icon,
+        .fa {
+            font-size: rem(30px);
+            position: absolute;
+            right: 19px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $color-black;
+            + .number-percentage-wraper {
+                padding-right: 57px;
+            }
+        }
+    }
+}
+
+.#{$skill}-bar-content {
+    margin-bottom: 7px;
+    .#{$skill}-title {
+        font-weight: 700;
+        color: $color-black;
+    }
+}
+
+.number-percentage-wraper {
+    color: $color-black;
+    &.style2 {
+        font-size: rem(13px);
+        font-weight: 700;
+    }
+}
+
+@if $innerContetnt==true {
+    .inner-content {
+        .single-skill-bar {
+            position: relative;
+            .#{$skill}-bar-content {
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-bottom: 0;
+                padding-left: 30px;
+            }
+            .skill-title {
+                color: $color-white;
+            }
+        }
+        .skill-track {
+            .number-percentage-wraper {
+                top: 50%;
+                transform: translateY(-50%);
+                color: $color-white;
+                padding-right: 30px;
+            }
+            .icon,
+            .fa {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+@mixin box-shadow ($color: $color, $opacity: $opacity) {
+    box-shadow: 0px 0px 20px 0px rgba($color, $opacity);
+}
+
+@if $skilltrack-style2==true {
+    .skilltrack-style2 {
+        .single-skill-bar {
+            .skill-bar {
+                height: 30px;
+                background-color: $color-white;
+                padding: 10px;
+                @include box-shadow($color-black, .25);
+                border-radius: 15px;
+                .skill-track {
+                    height: 10px;
+                    border-radius: 5px;
+                    .number-percentage-wraper {
+                        top: -39px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $multishadow-bar==true {
+    .multishadow-bar {
+        .single-skill-bar {
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .skill-bar {
+                        @include box-shadow($color, .25)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $gradient-bar==true {
+    .gradient-bar {
+        .single-skill-bar {
+            $names: color-1, color-2, color-3, color-4;
+            $grColor1: #07b787, #fad470, #03cffc, #f2709c;
+            $grColor2: #7ed500, #f96933, #53f8a2, #fe8f75;
+            @for $i from 1 through length($names) {
+                $color1: nth($list: $grColor1, $n: $i);
+                $color2: nth($list: $grColor2, $n: $i);
+                &.#{nth($names, $i)} {
+                    .skill-track {
+                        background-color: $color1;
+                        background: linear-gradient(270deg, $color1 35%, $color2 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $dark-bar==true {
+    .dark-bar {
+        .single-skill-bar {
+            .skill-bar {
+                background-color: $color-semi-black;
+            }
+        }
+    }
+}
+
+@if $track-color2==true {
+    .track-color2 {
+        .single-skill-bar {
+            .skill-bar {
+                background-color: #e7e7e7;
+            }
+        }
+    }
+}
+
+@if $tooltip-style==true {
+    .tooltip-style {
+        .single-skill-bar {
+            .number-percentage-wraper {
+                color: $color-white;
+                height: 30px;
+                padding: 0 10px;
+                z-index: 1;
+                text-align: center;
+                right: calc(0% - 22px);
+                top: -30px;
+                .svg-content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    fill: $color-semi-black;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .svg-content {
+                        >svg {
+                            fill: $color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $pin-style==true {
+    .pin-style {
+        .single-skill-bar {
+            .number-percentage-wraper {
+                @include equal-size-lineHeight(35px);
+                border-radius: 50%;
+                background-color: $color-semi-black;
+                color: $color-white;
+                text-align: center;
+                font-size: rem(13px);
+                right: calc(0% - 15.5px);
+                top: -39.9px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    bottom: -5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 3px;
+                    height: 5px;
+                    background-color: $color-semi-black;
+                }
+            }
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .number-percentage-wraper {
+                        background-color: $color;
+                        &::before {
+                            background-color: $color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $tooltip-style2==true {
+    .tooltip-style2 {
+        .single-skill-bar {
+            .number-percentage-wraper {
+                height: 22px;
+                padding: 0 8px;
+                background-color: $color-semi-black;
+                text-align: center;
+                font-size: rem(13px);
+                color: $color-white;
+                z-index: 1;
+                right: -20px;
+                top: -31px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    bottom: -6px;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(45deg);
+                    width: 14px;
+                    height: 14px;
+                    background-color: inherit;
+                    z-index: -1;
+                }
+            }
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .number-percentage-wraper {
+                        background-color: $color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $tooltip-style3==true {
+    .tooltip-style3 {
+        .single-skill-bar {
+            .number-percentage-wraper {
+                @include height-lineheight(24px);
+                display: inline-block;
+                color: $color-white;
+                font-size: rem(13px);
+                background-color: $color-semi-black;
+                text-align: center;
+                padding: 0 11px;
+                border-radius: 4.32px;
+                border-bottom-right-radius: 0px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    bottom: -8px;
+                    color: $color-semi-black;
+                    border: {
+                        top: solid currentColor;
+                        right: solid currentColor;
+                        left: solid transparent;
+                        bottom: solid transparent;
+                        width: 4px;
+                    }
+                }
+            }
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .number-percentage-wraper {
+                        background-color: $color;
+                        &::before {
+                            color: $color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $style-switch==true {
+    .style-switch {
+        .single-skill-bar {
+            .skill-bar-content {
+                margin-bottom: 18px;
+            }
+            .content-group {
+                width: calc(100% - 50px);
+                display: inline-block;
+            }
+            .number-percentage-wraper {
+                float: right;
+                position: relative;
+                top: 31px;
+            }
+            .skill-track {
+                $size: 25px;
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    border-radius: 50%;
+                    color: $color-semi-black;
+                }
+                &::before {
+                    top: -($size / 2);
+                    @include equal-size($size);
+                    background-color: $color-white;
+                    border: 1px solid currentColor;
+                    box-shadow: -1.216px 6.894px 15px 0px rgba(0, 0, 0, 0.07), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+                }
+                &::after {
+                    @include equal-size(8px);
+                    background-color: currentColor;
+                    top: -3px;
+                    right: 8px;
+                }
+            }
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .skill-track {
+                        &::before,
+                        &::after {
+                            color: $color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $multishadow-track==true {
+    .multishadow-track {
+        .single-skill-bar {
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .skill-track {
+                        box-shadow: 0px 10px 20px 0px rgba($color, 0.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $style-stripe==true {
+    .style-stripe {
+        .single-skill-bar {
+            $size: 4px;
+            $gap: $size * 2;
+            .skill-track {
+                background: repeating-linear-gradient( to right, $color-semi-black, $color-semi-black $size, $color-white $size, $color-white $gap);
+            }
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .skill-track {
+                        background: repeating-linear-gradient( to right, $color, $color $size, $color-white $size, $color-white $gap);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $style-ribbon==true {
+    .style-ribbon {
+        .single-skill-bar {
+            .number-percentage-wraper {
+                @include height-lineheight(35px);
+                color: $color-white;
+                background-color: $color-semi-black;
+                text-align: center;
+                padding: 0 8px;
+                top: -10px;
+                z-index: 1;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: -10px;
+                    color: #1a1a1a;
+                    border: {
+                        top: solid $color-white;
+                        left: solid $color-white;
+                        right: solid currentColor;
+                        bottom: solid currentColor;
+                        width: 5px;
+                    }
+                }
+            }
+            @each $name,
+            $color in $trackColor {
+                &.color-#{$name} {
+                    .number-percentage-wraper {
+                        background-color: mix($color-black, $color, 20%);
+                        &::before {
+                            color: mix($color-black, $color, 50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $bar-color3==true {
+    .bar-color3 {
+        .single-skill-bar {
+            .skill-bar {
+                background-color: rgba($color: #ff3984, $alpha: .07);
+            }
+        }
+    }
+}

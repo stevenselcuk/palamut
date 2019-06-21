@@ -1,0 +1,41 @@
+.vertical-testimonial {
+    max-height: 250px;
+}
+
+.vertical-comment {
+    align-items: unset;
+    .commentor-img {
+        background-repeat: no-repeat;
+        background-position: top left;
+        flex: 0 0 285px;
+        > img {
+            margin-left: 45px;
+            @include equal-size(190px);
+            border-radius: 50%;
+        }
+    }
+    .testimonial-card {
+        padding-left: 45px;
+    }
+}
+
+.vertical-pagination {
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    z-index: 5;
+    right: 30px;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+    .swiper-pagination-bullet {
+        margin: 12px 0;
+        display: block;
+        background-color: #e7e7e7;
+        transition: all .3s ease-in-out;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        transform: scale(1.9);
+        background-color: $color-primary;
+    }
+}

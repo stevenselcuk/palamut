@@ -1,0 +1,53 @@
+@import 'animation';
+
+.pala_motion_text_title {
+    margin-bottom: 0px;
+}
+
+.background_reveal_anim {
+    display: inline-block;
+    position: relative;
+
+    .pala-RevealInTop {
+        +.elementkit_background_reveal_bg {
+            transform-origin: top;
+            animation: ekitRevealInTop 1s ease forwards;
+        }
+    }
+
+    .pala-RevealInBottom {
+        +.elementkit_background_reveal_bg {
+            transform-origin: bottom;
+            animation: ekitRevealInBottom 1s ease forwards;
+        }
+    }
+
+    .pala-RevealInLeft {
+        +.elementkit_background_reveal_bg {
+            transform-origin: left;
+            animation: ekitRevealInLeft 1s ease forwards;
+        }
+    }
+
+    .pala-RevealInRight {
+        +.elementkit_background_reveal_bg {
+            transform-origin: right;
+            animation: ekitRevealInRight 1s ease forwards;
+        }
+    }
+
+    .elementkit_background_reveal_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $color-black;
+    }
+}
+
+span {
+    &.pala_animation  {
+        display: block;
+    }
+}

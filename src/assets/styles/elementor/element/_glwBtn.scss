@@ -1,0 +1,16 @@
+.glow-btn {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        z-index: -1;
+        animation: button-pulse 2s infinite cubic-bezier(0.4, 0, 1, 1) both;
+        color: red;
+    }
+}
+

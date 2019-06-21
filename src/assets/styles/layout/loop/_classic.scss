@@ -1,0 +1,9 @@
+.default-loop {
+	padding: 50px;
+	min-height: 400px;
+	
+	&:not(:first-child) {
+		margin-top: $content__spacer;
+		border-top: 1px solid $border-color;
+	}
+}

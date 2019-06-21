@@ -1,0 +1,46 @@
+.custom-control {
+    padding-left: 0;
+    .custom-control-label {
+        &::before {
+            border-radius: 0px;
+        }
+    }
+    .custom-control-input {
+        &:checked {
+            ~.custom-control-label {
+                &::after {
+                    transform: scale(1);
+                }
+                &::before {
+                    box-shadow: none;
+                }
+            }
+        }
+        &:focus {
+            ~.custom-control-label {
+                &::before {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+.custom-control-label {
+    cursor: pointer;
+    line-height: 1;
+    padding-left: 21px;
+    user-select: none;
+    &::before,
+    &::after {
+        @include equal-size(10px);
+        top: 8px;
+    }
+    &::before {
+        background-color: transparent;
+        border: 1px solid $color-primary;
+    }
+    &::after {
+        transform: scale(0);
+        @include transition;
+    }
+}

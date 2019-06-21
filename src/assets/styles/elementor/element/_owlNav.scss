@@ -1,0 +1,186 @@
+$box-arrow: true;
+$round-arrow: true;
+.owl-carousel {
+    position: relative;
+    .simple-arrow {
+        color: $color-black;
+        font-size: rem(28px);
+    }
+    .owl-nav {
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 50%;
+            z-index: 3;
+            transform: translateY(-50%);
+            @include transition();
+        }
+        .owl-prev {
+            left: 0;
+        }
+        .owl-next {
+            right: 0;
+        }
+    }
+}
+
+.clients-slider-2 {
+    .owl-nav {
+        .owl-prev,
+        .owl-next {
+            top: calc(50% - 39px);
+        }
+        .owl-prev {
+            left: -70px;
+            &:hover {
+                left: -65px;
+            }
+        }
+        .owl-next {
+            right: -70px;
+            &:hover {
+                right: -65px;
+            }
+        }
+    }
+}
+
+.clients-slider-4 {
+    @extend .clients-slider-2;
+    .owl-nav {
+        .owl-prev,
+        .owl-next {
+            top: calc(50% - 20px);
+        }
+        .owl-prev {
+            left: -85px;
+            &:hover {
+                left: -80px;
+            }
+        }
+    }
+}
+
+@if $box-arrow==true {
+    /* box-arrow */
+    .box-arrow {
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.07);
+        width: 30px;
+        display: block;
+        @include height-lineheight(40px);
+        background-color: #e7e7e7;
+        text-align: center;
+        color: rgba($color: $color-black, $alpha: .5);
+    }
+}
+
+@if $round-arrow==true {
+    .round-arrow {
+        @include equal-size-lineHeight(40px);
+        border-radius: 50%;
+        background-color: $color-primary;
+        color: $color-white;
+        display: inline-block;
+        @include transition;
+        &:hover {
+            background-color: darken($color: $color-primary, $amount: 10);
+        }
+    }
+}
+
+// modern nav
+$modern-nav: true;
+@if $modern-nav==true {
+    .modern-nav {
+        .owl-nav {
+            width: 920px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            height: 0;
+            top: 50%;
+            .owl-next,
+            .owl-prev {
+                position: static;
+            }
+            .owl-next {
+                float: right;
+            }
+            .owl-prev {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+// egg arrow
+$egg-arrow: true;
+@if $egg-arrow==true {
+    .egg-arrow {
+        box-shadow: 9.899px 9.899px 20px 0px rgba(0, 0, 0, 0.15);
+        display: inline-block;
+        background-color: $color-white;
+        @include height-lineheight(47px);
+        border-radius: 23.5px;
+        color: $color-primary;
+        font-size: rem(30px);
+        padding: 0 26px;
+    }
+}
+
+.testimonial-card-slider {
+    &.modern-nav {
+        .owl-nav {
+            width: 1110px;
+        }
+    }
+    .owl-nav {
+        button {
+            > i {
+                font-size: rem(30px);
+            }
+        }
+    }
+}
+
+$tall-box: true;
+@if $tall-box == true {
+    .tall-box {
+        font-size: rem(14px);
+        display: inline-block;
+        color: $bColor;
+        width: 30px;
+        @include height-lineheight(70px);
+        background-color: rgba($color: $color-black, $alpha: .1);
+    }
+}
+
+.customNavigation {
+    > .customnav {
+        cursor: pointer;
+        display: inline-block;
+        @include equal-size-lineHeight(50px);
+        border-radius: 50%;
+        text-align: center;
+        box-shadow: 19.799px 19.799px 40px 0px rgba(0, 0, 0, 0.1);
+        background-color: $color-white;
+        border: 0px solid #000;
+        @include transition;
+        &:not(:last-child) {
+            margin-right: 18px;
+        }
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+    &.gradient-v {
+        > .customnav {
+            background-color: rgba($color: $color-white, $alpha: .11);
+            &:hover {
+                background: rgb(242,112,156);
+                background: linear-gradient(-35deg, rgba(242,112,156,1) 0%, rgba(254,143,117,1) 100%);
+            }
+        }
+    }
+}

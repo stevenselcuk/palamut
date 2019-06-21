@@ -1,0 +1,31 @@
+$white-v: true;
+$border-v: true;
+$box-shadow: true;
+
+.round-icon {
+    display: inline-block;
+    @include equal-size-lineHeight(100px);
+    border-radius: 50%;
+    text-align: center;
+    background-color: #53f995;
+    color: $color-black;
+    font-size: rem(50px);
+    @if $white-v == true {
+        &.white-v {
+            color: $color-white;
+            background-color: rgba($color: $color-white, $alpha: .15);
+        }
+    }
+    @if $border-v == true {
+        &.border-v {
+            border: 1px solid #e7e7e7;
+            background-color: transparent;
+        }
+    }
+    @if $box-shadow == true {
+        &.box-shadow {
+            background-color: $color-white;
+            box-shadow: 19.799px 19.799px 40px 0px rgba(0, 0, 0, 0.1);
+        }
+    }
+}

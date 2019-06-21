@@ -1,11 +1,15 @@
-# Palamut WordPress Theme Framework & Companion Plugin
+# Palamut : The WordPress Developer Habitat
 
+[![palamut version](https://img.shields.io/badge/habitat-1.0.9-blue.svg)](https://img.shields.io/badge/habitat-1.0.9-blue.svg)
+[![palamut theme version](https://img.shields.io/badge/theme-1.0.0-brightgreen.svg)](https://img.shields.io/badge/theme-1.0.0-brightgreen.svg)
+[![palamut plugin version](https://img.shields.io/badge/plugin-1.0.0-brightgreen.svg)](https://img.shields.io/badge/plugin-1.0.0-brightgreen.svg)
 
 ## What is Palamut?
 
 Palamut is a habitat where is your unique WordPress theme born and lives. 
 **What is inside?**
-### WordPress Starter Theme
+
+### WordPress Starter Theme (v.1.0.0)
 It's your first spark. Tested up to WordPress 5.2. Support all WordPress Template Hierarchy. But there are some extras: Portfolio template (and also it's own category page, single and loop page. Starter theme includes customizer support with custom controls.
 **Other Starter Theme Features:**
 - Main Menu
@@ -13,16 +17,21 @@ It's your first spark. Tested up to WordPress 5.2. Support all WordPress Templat
 - Social Accounts menu
 - Sidebar (It is a classic, just  like 2010)
 - Footer Widget Area X 2
-**Companion Plugin: The Palamut**
+
+### Palamut The companion Plugin (v.1.0.0)
 Yes, it has the same name as this repo but don't worry. All features are in here which are must in plugin domain in according with Envato. What are they?🤔
 - Gutenberg Blocks
 - Elementor Widgets (Right, It has gooooood support for Elementor)
 - WordPress Widgets
 - Short Codes ( Yes, I don't forget Classic Editor Support)
 - Demo Import
+
+### Helpers
+Some additional features for your comfort.👐
 **Gulp**
 It's your friend who never lets you down. Includes life saving tasks and there is more browserSync with PHP server! No more boring PHP stuff.😓 Live reload with this feature! Perfekt mix.🍔
-**Helpers**
+
+**3rd Party Plugins**
 Palamut coded iaw WPTRT, Envato guideline. Palamut recommends Envato Theme Check, Query Monitor, Classic Editor and Elementor plugin for your working habitat. You can find them under /tools. 
 
 ## File Structure
@@ -112,19 +121,20 @@ Find these lines and edit **Yourthemename** things as you want.
     git push -u origin master
 
 ## You better work : Ricky Steps
+Oh boy, Documentation ends here. Maybe next time.
 
 
 ## Frequently Asked Questions
 
-* A question that someone might have?
+* May I ask a question?
  
-An answer to that question.
+Sure, stevenjselcuk on gmail.com shoot here!
 
 
 ## Copyright
 
-Twenty Seventeen WordPress Theme, Copyright 2016 WordPress.org
-Twenty Seventeen is distributed under the terms of the GNU GPL
+Palamut WordPress Starter Theme, Copyright 2019 Tabby Cat, LLC
+Palamut is distributed under the terms of the GNU GPL
 
 Palamut bundles the following third-party resources:
 
@@ -132,7 +142,7 @@ Font Awesome icons, Copyright Dave Gandy
 **License:** SIL Open Font License, version 1.1.
 Source: http://fontawesome.io/
 
-## Framework Changelog
+## Palamut
 
 ### 1.0
 * Released: Feb 1, 2019
@@ -142,18 +152,14 @@ Initial release
 Building task has been added.  Use `npm run build`. Files and folders appears in `./build`
 
 
-## WordPress Theme Boilerplate Changelog
+## Palamut The companion Plugin
 
 ### 1.0
-* Released: April 1, 2019
+* Released: July 1, 2019
 Initial release
-
-### 1.1.0
-* Released: May 1, 2019
-Woocommerce support has been implemented.
 
 ## Palamut the Companion Plugin Changelog
 
 ### 1.0
-* Released: June 1, 2019
+* Released: July 1, 2019
 Initial release

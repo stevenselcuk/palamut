@@ -1,0 +1,169 @@
+$circle: false;
+$bg-colored: false;
+$large: false;
+$text-colored: false;
+$small-version: false;
+$social-v2: false;
+$hover-color: false;
+$v2-medium: false;
+$white-v: false;
+$medium: false;
+
+$colorList: (facebook, #3b5998),
+            (twitter, #1da1f2),
+            (linkedin, #0077b5),
+            (youtube, #ff0000);
+
+.pala-team-social-list {
+    > li {
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+        > a {
+            display: block;
+            color: $color-white;
+            @include equal-size-lineHeight(30px, $Lheight: 32px);
+            font-size: rem(12px);
+            background-color: $color-black;
+            text-align: center;
+            &:hover {
+                background-color: rgba($color: $color-black, $alpha: .8);
+                border-radius: 50%;
+                > i {
+                    &::before {
+                        animation: iconTranslateY 0.4s forwards;
+                    }
+                }
+            }
+            > i {
+                overflow: hidden;
+                &::before {
+                    display: inline-block;
+                    backface-visibility: hidden;
+                }
+            }
+        }
+    }
+    @if $circle == true {
+        &.circle  {
+            > li {
+                > a {
+                    border-radius: 50%;
+                    &:hover {
+                        border-radius: 0%;
+                    }
+                }
+            }
+        }
+    }
+    @if $bg-colored == true {
+        &.bg-colored {
+            > li {
+                > a {
+                    color: $color-white;
+                    @each $colorName, $color in $colorList {
+                        &.#{$colorName} {
+                            background-color: $color;
+                            &:hover {
+                                background-color: darken($color: $color, $amount: 15);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $large ==  true{
+        &.large {
+            > li {
+                > a {
+                    @include equal-size-lineHeight(50px);
+                    font-size: rem(15px);
+                }
+            }
+        }
+    }
+    @if $medium ==  true{
+        &.medium {
+            > li {
+                > a {
+                    @include equal-size-lineHeight(40px, $Lheight: 43px);
+                }
+            }
+        }
+    }
+    @if $text-colored == true {
+        &.text-colored {
+            > li {
+                > a {
+                    background-color: $color-white;
+                    box-shadow: 3.5px 6.062px 15px 0px rgba(0, 0, 0, 0.15);
+                    @each $name, $color in $colorList {
+                        &.#{$name} {
+                            color: $color;
+                            box-shadow: 3.5px 6.062px 15px 0px rgba($color: $color, $alpha: .15);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $social-v2 == true {
+        &.social-v2 {
+            > li{
+                > a {
+                    @include equal-size-lineHeight(19px, $Lheight: 21px);
+                    font-size: rem(10px);
+                    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+                    background-color: #a1a1a1;
+                    &:hover {
+                        border-radius: 50%;
+                    }
+                    @each $name, $color in $colorList {
+                        &.#{$name} {
+                            &:hover {
+                                background-color: $color;
+                            }
+                        }
+                    }
+                }
+            }
+            @if $hover-color == true {
+                &.hover-color {
+                    > li {
+                        > a {
+                            &:hover {
+                                background-color: $color-white;
+                                @each $name, $color in $colorList {
+                                    &.#{$name} {
+                                        color: $color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @if $v2-medium == true {
+                &.v2-medium {
+                    > li {
+                        > a {
+                            @include equal-size-lineHeight(25px, $Lheight: 27px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $white-v == true {
+        &.white-v {
+            > li {
+                > a {
+                    background-color: $color-white;
+                    color: $bColor;
+                }
+            }
+        }
+    }
+}

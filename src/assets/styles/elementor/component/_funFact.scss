@@ -1,0 +1,404 @@
+$funfact-style2: true;
+$funfact-style3: true;
+$box-shadow: true;
+$style-radius: true;
+$style-border: true;
+$style-border-bottom: true;
+$funfact-white-v: true;
+$funfact-modern: true;
+$modern-style2: true;
+$modern-style3: true;
+$modern-style4: true;
+$small-gutters: true;
+$style-large: true;
+$style-transparent: true;
+$border-bottom-style2: true;
+$vertical-bar: true;
+$active-border-bottom: true;
+$colors: (1, #9460ff),
+(2, #fc5290),
+(3, #09b2a0);
+.palamut-funfact {
+    @include transition;
+    backface-visibility: hidden;
+    position: relative;
+    z-index: 2;
+    @include background-content();
+    .funfact-content {
+        // margin-bottom: 12px;
+        line-height: 1;
+        .number-percentage-wraper {
+            font-size: rem(28px);
+            font-weight: 700;
+            color: $color-semi-black;
+        }
+        .icon,
+        .fa {
+            font-size: rem(25px);
+            padding-right: 5px;
+        }
+    }
+    .palamut-funfact-icon {
+        display: inline-block;
+    }
+    .funfact-title {
+        color: mix($color-white, $color-black, 50%);
+        font-size: rem(15px);
+        margin-bottom: 0px;
+        font-weight: 400;
+        &.black-v {
+            color: $color-black;
+        }
+    }
+    .super {
+        font-size: rem(22px);
+        color: $color-primary;
+        vertical-align: super;
+        position: relative;
+        top: -5px;
+    }
+    @each $name,
+    $color in $colors {
+        .color-#{$name} {
+            .icon,
+            .fa,
+            .super {
+                color: $color;
+            }
+        }
+    }
+    .xs-overlay {
+        z-index: -1;
+        opacity: .7;
+        pointer-events: none;
+    }
+    &.divider_funfact {
+        display: flex;
+        .palamut-funfact-inner{
+            //width: 100%;
+            flex: 0 0 auto;
+        }
+        &.position_center {
+            align-items: center;
+        }
+        &.position_bottom {
+            align-items: flex-end;
+        }
+    }
+}
+
+.funfact-group {
+    @if $small-gutters==true {
+        &.small-gutters {
+            &.row {
+                margin: {
+                    left: -6px;
+                    right: -6px;
+                }
+                >[class^="col"] {
+                    padding: {
+                        left: 3px;
+                        right: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $box-shadow==true {
+    .box-shadow {
+        .palamut-funfact {
+            box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+@if $funfact-style2==true {
+    .funfact-style2 {
+        .palamut-funfact {
+            background-color: $color-white;
+            padding: 60px 10px;
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+}
+
+@if $style-radius==true {
+    .style-radius {
+        .palamut-funfact {
+            border-radius: 20px;
+        }
+    }
+}
+
+@if $style-border==true {
+    .style-border {
+        .palamut-funfact {
+            border: 2px solid #53f995;
+        }
+    }
+}
+
+@if $style-border-bottom==true {
+    .style-border-bottom {
+        &.palamut-funfact {
+            &::before {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                height: 5px;
+                width: 100%;
+                z-index: 1;
+                background-color: #53f995;
+                transform-origin: 100% 100%;
+                transform: scaleX(1);
+                transition: transform 300ms ease;
+            }
+            &:hover {
+                &::before {
+                    transform: scaleX(0);
+                    transform-origin: 0% 50%;
+                }
+            }
+            &.hover_from_left {
+                &::before {
+                    transform-origin: left center;
+                }
+                &:hover {
+                    &::before {
+                        transform-origin: right center;
+                    }
+                }
+            }
+        }
+        @if $border-bottom-style2==true {
+            &.border-bottom-style2 {
+                .palamut-funfact {
+                    &::before {
+                        background-color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $funfact-modern==true {
+    .funfact-modern {
+        &.palamut-funfact {
+            &::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0;
+                width: 2px;
+                height: 30px;
+                background-color: #e7e7e7;
+            }
+        }
+        &.position_bottom {
+            &::before {
+                top: auto;
+                bottom: 0;
+            }
+        }
+        &.position_center {
+            &::before {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        &.border_right_side {
+            &::before {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+}
+
+@if $funfact-style3==true {
+    .funfact-style3 {
+        .palamut-funfact {
+            .funfact-title {
+                color: $color-primary;
+                &.black-v {
+                    color: $color-black;
+                }
+            }
+            .funfact-content {
+                .number-percentage-wraper {
+                    font-size: rem(48px);
+                }
+                .icon,
+                .fa {
+                    font-size: rem(38px)
+                }
+            }
+        }
+        @if $funfact-white-v==true {
+            &.funfact-white-v {
+                .palamut-funfact {
+                    .funfact-title {
+                        color: $color-white;
+                    }
+                    .super {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $modern-style2==true {
+    .modern-style2 {
+        .palamut-funfact {
+            background-color: $color-white;
+            box-shadow: 19.799px 19.799px 40px 0px rgba(0, 0, 0, 0.1);
+            padding: 36px 0;
+        }
+    }
+}
+
+@if $modern-style3==true {
+    .modern-style3 {
+        .palamut-funfact {
+            padding-left: 60px;
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+    }
+}
+
+@if $style-large==true {
+    .style-large {
+        .palamut-funfact {
+            padding-left: 26px;
+            .number-percentage-wraper {
+                font-size: rem(48px);
+            }
+            .super {
+                color: $color-semi-black;
+            }
+            .funfact-title {
+                color: $color-semi-black;
+            }
+        }
+        @if $funfact-white-v==true {
+            &.funfact-white-v {
+                .palamut-funfact {
+                    .super {
+                        color: $color-white;
+                    }
+                    .funfact-title {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $funfact-white-v==true {
+    .funfact-white-v {
+        @if $vertical-bar==true {
+            .vertical-bar {
+                background-color: $color-white;
+            }
+        }
+    }
+}
+
+@if $vertical-bar==true {
+    .vertical-bar {
+        // margin-left: -26px;
+        // margin-top: 8px;
+        width: 3px;
+        height: 20px;
+        background-color: $color-primary;
+        display: inline-block;
+        float: left;
+        &.border_left_side {
+            float: right;
+        }
+    }
+}
+
+@if $modern-style4==true {
+    .modern-style4 {
+        .palamut-funfact {
+            background-color: $color-white;
+            padding: 55px 57px;
+            .funfact-content {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@if $style-transparent==true {
+    .style-transparent {
+        .palamut-funfact {
+            background-color: rgba($color: $color-white, $alpha: .15);
+        }
+    }
+}
+
+@if $border-bottom-style2==true {
+    .border-bottom-style2 {
+        .palamut-funfact {
+            .funfact-content {
+                .number-percentage-wraper {
+                    font-size: rem(48px);
+                }
+            }
+        }
+    }
+}
+
+@if $active-border-bottom==true {
+    .active-border-bottom {
+        .palamut-funfact {
+            border-bottom: 3px solid rgba($color: $color-black, $alpha: .2);
+        }
+    }
+}
+
+$names: gradient-1,
+gradient-2,
+gradient-3,
+gradient-4;
+$gradient-1: #f2709c,
+#b18cfe,
+#82e182,
+#07b787;
+$gradient-2: #fe8f75,
+#9460ff,
+#0acbf5,
+#7ed500;
+.palamut-funfact {
+    @for $i from 1 through length($names) {
+        $color-1: nth($list: $gradient-1, $n: $i);
+        $color-2: nth($list: $gradient-2, $n: $i);
+        &.#{nth($names, $i)} {
+            background-color: $color-1;
+            background: linear-gradient(-35deg, $color-1 0%, $color-2 100%);
+        }
+    }
+}
+
+.palamut-funfact {
+    &.divider_funfact {
+        &.text-center {
+            justify-content: center;
+        }
+        &.text-right {
+            justify-content: flex-end;
+        }
+    }
+}

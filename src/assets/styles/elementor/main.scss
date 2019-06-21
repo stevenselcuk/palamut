@@ -1,0 +1,8 @@
+@import '_function';
+@import '_mixin';
+@import '_variable';
+@import 'component/*';
+@import 'element/*';
+.foo {
+	background: #fff;
+}

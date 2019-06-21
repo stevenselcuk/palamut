@@ -1,0 +1,384 @@
+// .palamut-main-filter {
+//     margin-bottom: 20px;
+//     > li {
+//         display: inline-block;
+//         &:not(:last-child) {
+//             margin-right: 50px;
+//         }
+//         > a {
+//             display: block;
+//             color: #737373;
+//             font-size: rem(18px);
+//             font-weight: 700;
+//             position: relative;
+//             @include transition;
+//             &::before {
+//                 position: absolute;
+//                 content: "";
+//                 bottom: 4px;
+//                 left: -10px;
+//                 width: 50px;
+//                 height: 5px;
+//                 transition: transform 300ms ease;
+//                 transform: scaleX(0);
+//                 transform-origin: 0% 50%;
+//                 border-bottom: 5px solid #e7e7e7;
+//             }
+//             &:hover,
+//             &.selected {
+//                 color: $color-black;
+//                 &::before {
+//                     transform: scaleX(1);
+//                     transform-origin: 100% 50%;
+//                     border-color: #53f995;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.palamut-main-filter {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+
+    >li {
+        margin-right: 10px;
+
+        @media (max-width: 1024px) {
+            margin-bottom: 20px;
+        }
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        >a {
+            color: #374a5e;
+            background-color: $color-white;
+            padding: 8px 34px;
+            display: block;
+            @include transition;
+            position: relative;
+
+            &.selected {
+                background-color: #374a5e;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.elemetskit_filter_wraper_outer {
+    &.elemetskit_filter_center {
+        text-align: center;
+
+        .filter-button-wraper {
+            display: inline-flex;
+        }
+    }
+
+    &.elemetskit_filter_left {
+        text-align: left;
+
+        .filter-button-wraper {
+            display: inline-flex;
+        }
+    }
+
+    &.elemetskit_filter_right {
+        text-align: right;
+
+        .filter-button-wraper {
+            display: inline-flex;
+        }
+    }
+}
+
+.palamut_filter_style_one {
+    >li {
+        >a {
+            &.selected {
+                color: #374a5e;
+                background-color: $color-white;
+                box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.07);
+            }
+        }
+    }
+}
+
+.palamut_filter_style_two {
+    >li {
+        z-index: 1;
+        position: relative;
+
+        >a {
+            &.selected {
+                background: rgb(37, 117, 252);
+                background: linear-gradient(90deg, rgba(37, 117, 252, 1) 0%, rgba(106, 17, 203, 1) 100%);
+
+                .palamut_blur_shadow_panel {
+                    opacity: 1;
+                    top: 5px;
+                }
+            }
+        }
+    }
+
+    .palamut_blur_shadow_panel {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: calc(100% - 20px);
+        background: rgb(37, 117, 252);
+        background: linear-gradient(90deg, rgba(37, 117, 252, 1) 0%, rgba(106, 17, 203, 1) 100%);
+        filter: blur(5px);
+        opacity: 0;
+        transition: 200ms top ease, opacity 300ms ease-in;
+        z-index: -1;
+    }
+}
+
+.palamut_filter_style_three {
+    >li {
+        >a {
+            border: 2px solid transparent;
+
+            &.selected {
+                box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.07);
+                border-color: currentColor;
+                color: #374a5e;
+                background-color: $color-white;
+            }
+        }
+    }
+
+    &.palamut_nav_caret {
+        >li {
+            >a {
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 0px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 15px;
+                    width: 2px;
+                    opacity: 0;
+                    transition: 200ms top ease, opacity 300ms ease-in;
+                    background-color: rgb(55, 74, 94);
+                    z-index: -1;
+                }
+
+                &.selected {
+                    &::before {
+                        top: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.palamut_filter_style_four {
+    box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.07);
+    border: 2px solid rgb(234, 83, 86);
+    background-color: rgb(255, 255, 255);
+
+    >li {
+        >a {
+            &.selected {
+                background-color: $color-white;
+                color: #ea5356;
+            }
+        }
+    }
+
+    &.palamut_divider_active {
+        >li {
+            >a {
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    background-color: rgb(234, 83, 86);
+                    width: 2px;
+                    height: 19px;
+                }
+            }
+
+            &:last-child {
+                >a {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.palamut_nav_caret {
+        >li {
+            >a {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(45deg);
+                    @include equal-size(15px);
+                    background: rgb(234, 83, 86);
+                    background: linear-gradient(-45deg, #ea5356 0%, #ea5356 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+                    opacity: 0;
+                    transition: 200ms bottom ease, opacity 300ms ease-in;
+                }
+
+                &.selected {
+                    &::after {
+                        bottom: -7.5px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.palamut_filter_style_five {
+    border: 2px solid #374a5e;
+    border-radius: 21.5px;
+    box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.07);
+    background-color: $color-white;
+    overflow: hidden;
+
+    >li {
+        margin-right: 0px;
+    }
+
+    &.palamut_divider_active {
+        >li {
+            >a {
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    background-color: #374a5e;
+                    width: 2px;
+                    height: 19px;
+                }
+            }
+
+            &:last-child {
+                >a {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.palamut_filter_style_six {
+    >li {
+        >a {
+            background-color: transparent;
+
+            >.palamut_filter_nav_text {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: -5px;
+                    width: 100%;
+                    height: 2px;
+                    @include transition;
+                    background-color: rgb(234, 83, 86);
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    z-index: -1;
+                }
+            }
+
+            &.selected {
+                background-color: transparent;
+                color: rgb(234, 83, 86);
+
+                >.palamut_filter_nav_text {
+                    &::before {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.palamut_filter_style_seven {
+    >li {
+        >a {
+            background-color: transparent;
+
+            &.selected {
+                background-color: transparent;
+                font-weight: 700;
+                color: #374a5e;
+            }
+        }
+    }
+}
+
+.palamut_filter_style_eight {
+    >li {
+        >a {
+            background-color: transparent;
+
+            &.selected {
+                background-color: #6a11cb;
+                box-shadow: 0px 7px 15px 0px rgba(106, 17, 203, 0.3);
+            }
+        }
+    }
+}
+
+.palamut_filter_style_nine {
+    >li {
+        >a {
+            background-color: transparent;
+
+            &.selected {
+                background-color: transparent;
+                color: rgb(234, 83, 86);
+                text-shadow: 0px 3px 7px rgba(234, 83, 86, 0.3);
+            }
+        }
+    }
+}
+
+.palamut_filter_style_ten {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 7px 0px rgba(55, 74, 94, 0.05);
+    border-radius: 30px;
+    padding: 12px;
+
+    >li {
+        >a {
+            &.selected {
+                background-color: rgb(55, 74, 94);
+                box-shadow: 0px 3px 7px 0px rgba(55, 74, 94, 0.3);
+                border-radius: 30px;
+            }
+        }
+    }
+}

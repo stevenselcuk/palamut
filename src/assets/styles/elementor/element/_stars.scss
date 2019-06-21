@@ -1,0 +1,33 @@
+.palamut-stars {
+    position: relative;
+    z-index: 6;
+    >li {
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+        >a {
+            display: block;
+        }
+    }
+    $style-2: true;
+    @if $style-2==true {
+        &.style-2 {
+            >li{
+                >a {
+                    color: #fec42d;
+                }
+            }
+        }
+    }
+    $style-3: true;
+    @if $style-3==true {
+        &.style-3 {
+            >li{
+                >a {
+                    color: $color-black;
+                }
+            }
+        }
+    }
+}

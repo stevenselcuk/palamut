@@ -1,0 +1,294 @@
+ $icon-hover: true;
+ $solid-active: true;
+ $gradient-active: true;
+ $bg-active: true;
+ $image-hover: true;
+ $image-active: true;
+ $numeric-number: true;
+ $colorfull-box: true;
+ $style-2: true;
+ $small-gutters: true;
+ $colorfull-hover-box: true;
+ $fly-card: true;
+ $colorfull-active-box: true;
+ /* accordioin info box */
+
+ .round-img img {
+     border-radius: 100%;
+ }
+
+ // /* info box */
+ .palamut-infobox {
+     padding: 60px 40px;
+     border: 1px solid #f5f5f5;
+     border-radius: 5px;
+     @include transition;
+     background-color: $color-white;
+     position: relative;
+     overflow: hidden;
+     @include background-content();
+
+     &:hover {
+         transform: translateY(-5px);
+         border-color: #2575fc;
+
+         &.image-active {
+             &::before {
+                 background-color: rgba($color: #2575fc, $alpha: 0);
+             }
+
+             .image-hover {
+                 >img {
+                     opacity: 1;
+                     -webkit-transform: scale(1.06);
+                     transform: scale(1.06);
+                 }
+             }
+         }
+
+         .icon-hover {
+             opacity: 1;
+             bottom: -20px;
+         }
+     }
+
+     .palamut-box-header {
+         //  margin-bottom: 20px;
+         position: relative;
+         z-index: 2;
+
+         .palamut-info-box-icon {
+             display: inline-block;
+             margin-bottom: 25px;
+
+             i {
+                 -webkit-transition: all .4s;
+                 -o-transition: all .4s;
+                 transition: all .4s;
+             }
+         }
+
+         .icon-switcher {
+             position: relative;
+             display: inline-block;
+             overflow: hidden;
+
+             >img {
+                 transition: all .4s ease;
+             }
+
+             .main-image {
+                 opacity: 1;
+                 position: relative;
+                 top: 0px;
+             }
+
+             .hover-image {
+                 position: absolute;
+                 top: 80px;
+                 left: 0;
+             }
+         }
+
+         .info-box-subtitle {
+             font-size: rem(14px);
+             font-weight: 400;
+             color: $color-primary;
+             @include transition;
+         }
+     }
+
+     .box-body {
+         position: relative;
+         z-index: 2;
+
+         p {
+             @include transition;
+         }
+     }
+
+     .box-footer {
+         //  margin-top: 15px;
+         position: relative;
+         z-index: 2;
+     }
+
+     .btn-wraper {
+         position: relative;
+         z-index: 2; //  margin-top: 35px;
+     }
+
+     .border-divider {
+         margin-bottom: 25px;
+         @include transition;
+         z-index: 2;
+     }
+
+     .link-btn {
+         font-size: rem(13px);
+     }
+
+     .icon-hover {
+         position: absolute;
+         bottom: -50px;
+         right: 0;
+         opacity: 0;
+         -webkit-transition: all 0.4s ease;
+         transition: all 0.4s ease;
+
+         i {
+             font-size: 100px;
+         }
+     }
+
+     &.gradient-active {
+         &::before {
+             position: absolute;
+             content: "";
+             top: 0;
+             left: -100%;
+             height: 100%;
+             width: 100%;
+             background: #2575fc;
+             background: -webkit-gradient(linear, left top, right top, from(#2575fc), to(#6a11cb));
+             background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+             transition: all 0.4s ease;
+             background-size: 101% 101%;
+         }
+
+         &:hover {
+             &::before {
+                 left: 0;
+             }
+         }
+
+         &.hover_from_top {
+             &::before {
+                 left: 0;
+                 top: -100%;
+             }
+
+             &:hover {
+                 &::before {
+                     top: 0;
+                 }
+             }
+         }
+
+         &.hover_from_right {
+             &::before {
+                 left: 100%;
+             }
+
+             &:hover {
+                 &::before {
+                     left: 0;
+                 }
+             }
+         }
+
+         &.hover_from_bottom {
+             &::before {
+                 left: 0%;
+                 top: 100%;
+             }
+
+             &:hover {
+                 &::before {
+                     top: 0;
+                 }
+             }
+         }
+     }
+
+     &.image-active {
+         &::before {
+             position: absolute;
+             content: "";
+             top: 0;
+             left: 0;
+             height: 100%;
+             width: 100%;
+             background-color: rgba($color: #2575fc, $alpha: 0);
+             //  opacity: 0;
+             transition: all 0.4s ease;
+             z-index: 1;
+             background-size: 101% 101%;
+         }
+
+         .image-hover {
+             position: absolute;
+             top: 0;
+             left: 0;
+             height: 100%;
+             width: 100%;
+
+             >img {
+                 opacity: 0;
+                 width: 100%;
+                 height: 100%;
+                 -webkit-transition: all 0.4s ease;
+                 transition: all 0.4s ease;
+             }
+         }
+     }
+ }
+
+ .palamut-infobox.icon-lef-right-aligin {
+     padding: 15px;
+ }
+
+ .elementkit-infobox-icon.framed {
+     border: 2px solid red;
+     padding: 10px;
+ }
+
+ .palamut-infobox.icon-lef-right-aligin {
+     padding: 15px 30px;
+ }
+
+ .elementkit-infobox-icon.framed.round {
+     border-radius: 100%;
+ }
+
+ .palamut-icon-right {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: horizontal;
+     -webkit-box-direction: reverse;
+     -ms-flex-direction: row-reverse;
+     flex-direction: row-reverse;
+ }
+
+ .infobox-ovelry {
+     position: relative;
+ }
+
+ .infobox-ovelry:before {
+     position: absolute;
+     content: "";
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background-color: #2575fc;
+     -webkit-transition: all 0.4s ease;
+     transition: all 0.4s ease;
+     z-index: 1;
+ }
+
+ .palamut-info-box-title {
+     margin-bottom: 0px;
+     font-size: 18px;
+     @include transition;
+ }
+
+ .palamut-info-box-icon {
+     display: inline-block;
+
+     >i {
+         color: $color-black;
+         font-size: rem(40px);
+     }
+ }

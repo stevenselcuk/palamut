@@ -1,0 +1,141 @@
+.pala-mailChimpForm {
+    .palamut_input_label {
+        display: inline-block;
+        margin-bottom: .5rem;
+    }
+
+    .palamut_form_group {
+        margin-bottom: 1rem;
+    }
+
+    .pala_form_control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+        @include inputPlaceholder() {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+        &:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+        }
+    }
+}
+
+.pala-mail-submit {
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    padding: 15px 40px 15px 40px;
+    box-shadow: 0px 7px 15px 0px rgba(55, 74, 94, 0.3);
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    color: #ffffff;
+    background-color: #374a5e;
+
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        @include transition;
+        z-index: -1;
+        opacity: 0;
+        background-size: 101% 101%;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.palamut_input_group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+
+    .pala_form_control {
+        position: relative;
+        flex: 1 1 auto;
+        width: 1%;
+
+        &.pala_append_input {
+            border-radius: 5px 0px 0px 5px;
+        }
+    }
+}
+
+.palamut_input_group_prepend {
+    margin-right: -1px;
+
+    +.pala_form_control {
+        border-radius: 0px 5px 5px 0px;
+    }
+}
+
+.palamut_input_group_append {
+    .palamut_input_group_text {
+        border-radius: 0px 5px 5px 0px;
+        margin-left: -1px;
+    }
+}
+
+.palamut_input_group_text {
+    display: flex;
+    align-items: center;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    height: 100%;
+    padding: 15px;
+    border-radius: 5px 0 0 5px;
+}
+
+.palamut_inline_form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .palamut_form_group {
+        margin-bottom: 0px;
+    }
+
+    .palamut_input_wraper {
+        flex: 1;
+    }
+
+    .pala_submit_input_holder {
+        align-self: flex-end;
+    }
+
+    .pala-mail-submit {
+        width: 100%;
+    }
+}
+
+.pala-mail-submit {
+    padding: 11.5px 40px;
+}

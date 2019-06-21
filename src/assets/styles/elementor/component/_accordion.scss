@@ -1,0 +1,556 @@
+/* accordion default */
+$radius: true;
+$accoedion-gradient: true;
+$line: true;
+$boxShaodw: true;
+$accoedion-primary: true;
+$rounded: true;
+$active-primary: true;
+$line-2: true;
+$rounded-line: true;
+$fill-primary: true;
+$floating-style: true;
+$accordion-2: true;
+$line-3: true;
+$left-border: true;
+$right-border: true;
+$accordion-3: true;
+$side-curve: true;
+$curve-shape: true;
+$accordion-4: true;
+
+.palamut-accordion {
+    counter-reset: myNumber;
+    .pala-accordion-title {
+        padding-right: 10px;
+        display: inline-block;
+    }
+    .palamut-card {
+        border: 0px;
+        border-radius: 0px;
+        background-color: transparent;
+        @include transition;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    .palamut-card-header {
+        padding: 0px;
+        background-color: transparent;
+        border-bottom: 0px solid #000;
+        > .palamut-btn-link {
+            display: flex;
+            color: #000000;
+            background-color: #f7f9fb;
+            font-weight: 700;
+            padding: 14px 30px;
+            border: 1px solid transparent;
+            align-items: center;
+            // justify-content: space-between;
+            @include transition();
+            position: relative;
+            &:focus , &:hover{
+                text-decoration: none;
+            }
+            > i {
+                color: $color-primary;
+                line-height: $blineHeight;
+                display: inline-block;
+                transition: transform .4s ease;
+            }
+            > .icon-left {
+                padding-right: 26px;
+                float: left;
+            }
+
+            &[aria-expanded="true"] {
+                .icon-closed {
+                    display: block;
+                }
+                .icon-open {
+                    display: none;
+                }
+            }
+            &[aria-expanded="false"] {
+                .icon-closed {
+                    display: none;
+                }
+                .icon-open {
+                    display: block;
+                }
+            }
+        }
+    }
+    .palamut-card-body {
+        padding: 20px 30px;
+    }
+    @if $radius == true {
+        &.radius {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    background-color: $color-white;
+                    &[aria-expanded="true"] {
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+    @if $accoedion-gradient == true {
+        &.palamut-accoedion-gradient {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    background: rgb(37,117,252);
+                    background: linear-gradient(90deg, rgba(37,117,252,1) 0%, rgba(106,17,203,1) 100%);
+                    color: $color-white;
+                    border: 0px;
+                    > i {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+    }
+    @if $line == true {
+        &.line {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    > i {
+                        color: $color-black;
+                    }
+                    &[aria-expanded="true"] {
+                        border-color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+    @if $boxShaodw == true {
+        &.boxShaodw {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    box-shadow: $shadow-primary;
+                    > i {
+                        color: inherit;
+                    }
+                    &[aria-expanded="true"] {
+                        color: $color-primary;
+                        > i{
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $accoedion-primary == true {
+        &.palamut-accoedion-primary {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    background-color: $color-primary;
+                    color: $color-white;
+                    > i {
+                        color: inherit;
+                    }
+                    &[aria-expanded="true"] {
+                        color: $color-white;
+                        > i {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $rounded == true {
+        &.rounded {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    border-radius: 28px;
+                    background-color: $color-white;
+                    border-color: #f0f5fd;
+                    &[aria-expanded="true"]  {
+                        border-color: $color-primary;
+                        color: $color-primary;
+                    }
+                }
+            }
+            &.boxShaodw {
+                .palamut-card-header {
+                    > .palamut-btn-link {
+                        border-color: transparent;
+                        &[aria-expanded="true"] {
+                            background-color: $color-primary;
+                            color: $color-white;
+                            > i {
+                                color: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $active-primary == true {
+        &.active-primary {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    &[aria-expanded="true"] {
+                        background-color: $color-primary;
+                        color: $color-white;
+                        border-radius: 5px;
+                        > i {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $line-2 {
+        &.line-2 {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    border-color: #e7e7e7;
+                }
+            }
+        }
+    }
+    @if $rounded-line == true {
+        &.rounded-line {
+            > .palamut-card {
+                border: 1px solid rgba($color: $color-primary, $alpha: .2);
+                border-radius: 27.5px;
+                overflow: hidden;
+                &[aria-expanded="true"] {
+                    border-color: $color-primary;
+                    > .palamut-card-header {
+                        > .palamut-btn-link {
+                            color: $color-primary;
+                            border-bottom-color: $color-primary;
+                        }
+                    }
+                }
+                > .palamut-card-header {
+                    .palamut-btn-link {
+                        background-color: transparent;
+                        border-bottom: 1px solid rgba($color: $color-primary, $alpha: 0);
+                        > i {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $fill-primary == true {
+        &.fill-primary {
+            > .palamut-card {
+                border: 1px solid rgba($color: $color-primary, $alpha: .2);
+                border-radius: 27.5px;
+                overflow: hidden;
+                background-color: $color-white;
+                padding: 0 30px;
+                > .palamut-card-header {
+                    > .palamut-btn-link {
+                        padding: {
+                            left: 0;
+                            right: 0;
+                        }
+                        background-color: transparent;
+                        > i {
+                            color: inherit;
+                        }
+                    }
+                }
+                .palamut-card-body {
+                    padding:  {
+                        left: 0;
+                        right: 0;
+                    }
+                }
+                &[aria-expanded="true"] {
+                    background-color: $color-primary;
+                    border-color: transparent;
+                    > .palamut-card-header {
+                        > .palamut-btn-link {
+                            color: $color-white;
+                            border-bottom: 1px solid rgba($color: $color-white, $alpha: .2);
+                        }
+                    }
+                    .palamut-card-body {
+                        p {
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $floating-style == true {
+        &.floating-style {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    box-shadow: $shadow-secondary;
+                    border-radius: 0 0 5px 5px;
+                    background-color: $color-white;
+                }
+            }
+            .palamut-card-body {
+                width: calc(100% - 40px);
+                border-radius: 0 0 5px 5px;
+                position: relative;
+                // z-index: -1;
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+            }
+            .palamut-card {
+                &[aria-expanded="true"] {
+                    .palamut-btn-link {
+                        background-color: $color-primary;
+                        color: $color-white;
+                        box-shadow: $shadow-primary;
+                        > i {
+                            color: inherit;
+                        }
+                    }
+                    .palamut-card-body {
+                        background-color: $color-primary;
+                        p {
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @if $accordion-2 == true {
+        &.accordion-2 {
+            .palamut-card-body {
+                padding: {
+                    left: 0;
+                    right: 0;
+                }
+            }
+            .palamut-card {
+                &[aria-expanded="true"] {
+                    background-color: $color-white;
+                    box-shadow: $shadow-primary;
+                }
+            }
+        }
+    }
+    @if $line-3 == true {
+        &.line-3 {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    background-color: transparent;
+                    border-color: #f5f5f5;
+                    > i {
+                        color: inherit;
+                    }
+                }
+            }
+            .palamut-card-body {
+                border: 1px solid #f5f5f5;
+                border-top: 0px;
+            }
+        }
+    }
+    @if $left-border == true {
+        &.left-border {
+            > .palamut-card {
+                border-left: 3px solid rgba($color: $color-primary, $alpha: .2);
+                &[aria-expanded="true"] {
+                    border-color: $color-primary;
+                }
+            }
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    border-left: 0px;
+                }
+            }
+            .palamut-card-body {
+                border-left: 0px;
+            }
+        }
+    }
+    @if $right-border == true {
+        &.right-border {
+            > .palamut-card {
+                border-right: 3px solid rgba($color: $color-primary, $alpha: .2);
+                &[aria-expanded="true"] {
+                    border-color: $color-primary;
+                }
+            }
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    border-right: 0px;
+                }
+            }
+            .palamut-card-body {
+                border-right: 0px;
+            }
+        }
+    }
+    @if $accordion-3 == true {
+        &.accordion-3 {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    border-color: #e7e7e7;
+                    background-color: $color-white;
+                    &[aria-expanded="true"] {
+                        background-color: $color-primary;
+                        color: $color-white;
+                        border-color: $color-primary;
+                        > i {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+            .palamut-card-body {
+                padding: {
+                    left: 0px;
+                    right: 0px;
+                }
+            }
+        }
+    }
+    @if $side-curve == true {
+        &.side-curve {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    background-color: $color-primary;
+                    position: relative;
+                    border: 0px;
+                    padding-left: 70px;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        top: 0px;
+                        left: 0px;
+                        height: 100%;
+                        width: 35px;
+                        background-color: rgba($color: $color-white, $alpha: .2);
+                        text-align: right;
+                        line-height: 55px;
+                    }
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        left: 35px;
+                        top: 0;
+                        border-top: 26.5px solid transparent;
+                        border-right: 26.5px solid transparent;
+                        border-left: 26.5px solid rgba($color: $color-white, $alpha: .2);
+                        border-bottom: 26.5px solid transparent;
+                    }
+                    .icon-left{
+                        position: absolute;
+                        left: 20px;
+                        top: 30%;
+                    }
+                }
+            }
+        }
+    }
+    @if $curve-shape == true {
+        &.curve-shape {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    position: relative;
+                    z-index: 1;
+                    padding: 16.5px 30px;
+                    &[aria-expanded="true"] {
+                        color: $color-white;
+                        > i {
+                            color: inherit;
+                        }
+                        .path {
+                            fill: $color-primary;
+                        }
+                    }
+                }
+            }
+            .svg-shape {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+        .palamut-card-body {
+            padding: {
+                top: 30px;
+                bottom: 30px;
+                left: 65px;
+                right: 85px;
+            }
+        }
+    }
+    @if $accordion-4 == true {
+        &.accordion-4 {
+            .palamut-card-header {
+                > .palamut-btn-link {
+                    border: 1px solid #f5f5f5;
+                    border-bottom: 1px solid $color-primary;
+                    background-color: $color-white;
+                    position: relative;
+                    padding-left: 85px;
+                    &::before {
+                        position: absolute;
+                        top: -1px;
+                        left: -1px;
+                        content: "";
+                        height: calc(100% + 2px);
+                        width: 55px;
+                        text-align: center;
+                        line-height: 55px;
+                        color: $color-white;
+                        background-color: $color-primary;
+                    }
+                    .icon-left{
+                        position: absolute;
+                        left: 20px;
+                        top: 30%;
+                        color: $color-white;
+                    }
+                }
+            }
+            .palamut-card-body {
+                padding: {
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+.number {
+    &::before {
+        counter-increment: myNumber;
+        content: counter(myNumber) '.';
+    }
+}
+.icon-right {
+    float: right;
+}
+.icon-left {
+    float: left;
+}
+
+.path {
+    fill: $color-white;
+    stroke: $color-primary;
+    stroke-miterlimit: 0;
+}
+
+.pala_accordion_icon_group {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+}

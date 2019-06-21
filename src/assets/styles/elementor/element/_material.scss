@@ -1,0 +1,101 @@
+.material-style {
+    .form-group {
+        position: relative;
+        &.focus,
+        &.active {
+            .bar {
+                &::before {
+                    transform: scale(1, 1);
+                }
+            }
+            .label {
+                top: -10px;
+                font-size: rem(13px);
+            }
+        }
+    }
+    .label {
+        position: absolute;
+        top: 16px;
+        left: 30px;
+        @include transition;
+        pointer-events: none;
+    }
+    .bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #e7e7e7;
+        display: block;
+        @include transition;
+        pointer-events: none;
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color-primary;
+            @include transition;
+            transform-origin: left center;
+            transform: scale(0, 1);
+        }
+    }
+    .form-control {
+        background-color: transparent;
+        border: 0px solid #000;
+    }
+    .highlight {
+        + .bar {
+            &::before {
+                background-color: lighten($color: red, $amount: 15);
+            }
+        }
+    }
+    .submit-btn {
+        border-radius: 5px;
+    }
+    $white-v: true;
+    @if $white-v == true {
+        &.white-v {
+            .label {
+                color: $color-white;
+            }
+            .form-control {
+                color: $color-white;
+            }
+        }
+    }
+    $transparent-style: true;
+    @if $transparent-style == true {
+        &.transparent-style {
+            .bar {
+                opacity: .5;
+            }
+        }
+    }
+    .radius-btn {
+        border-radius: 27px;
+    }
+    $primary-v: true;
+    @if $primary-v == true {
+        &.primary-v {
+            .bar {
+                background-color: $color-primary;
+                &::before {
+                    background-color: $color-black;
+                }
+            }
+            .highlight {
+                + .bar {
+                    &::before {
+                        background-color: lighten($color: red, $amount: 15);
+                    }
+                }
+            }
+        }
+    }
+}

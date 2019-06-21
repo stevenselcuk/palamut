@@ -1,0 +1,13 @@
+.pala_social_media {
+    >li {
+        >a {
+            display: block;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        >li {
+            margin-bottom: 20px;
+        }
+    }
+}

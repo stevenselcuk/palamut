@@ -1,0 +1,33 @@
+.breadcumb {
+    > li {
+        display: inline-block;
+        color: #9d9fa0;
+        > a {
+            display: inline-block;
+            color: inherit;
+        }
+        &:not(:last-child) {
+            &:after {
+                content: "-";
+                padding: 0 5px;
+                position: relative;
+            }
+        }
+    }
+    &.version-2 {
+        > li {
+            color: $color-black;
+            > a {
+                color: $color-primary;
+            }
+            &:not(:last-child) {
+                &:after {
+                    content: "\e87a";
+                    font-family: $iconFont2;
+                    padding: 0 14px;
+                    top: 2px;
+                }
+            }
+        }
+    }
+}

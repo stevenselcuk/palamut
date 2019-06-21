@@ -1,0 +1,261 @@
+.icon-btn {
+    @include equal-size-lineHeight(50px);
+    text-align: center;
+    border-radius: 50%;
+    background-color: $color-black;
+    color: $color-white;
+    font-size: rem(18px);
+    display: inline-block;
+    position: relative;
+    @include transition;
+
+    &.style-2 {
+        &::before {
+            content: attr(data-title);
+            position: absolute;
+            width: 100%;
+            font-size: rem(14px);
+            font-weight: 700;
+            opacity: 0;
+            visibility: hidden;
+            @include transition;
+            text-align: left;
+            left: -23px;
+        }
+
+        &:hover {
+            width: 120px;
+            border-radius: 25px;
+            text-align: right;
+            padding: 0 20px;
+
+            &::before {
+                opacity: 1;
+                visibility: visible;
+                left: 23px;
+            }
+        }
+    }
+}
+
+.palamut-pricing-tag {
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 30px);
+    background-color: rgb(102, 102, 102);
+    top: 0;
+    right: -30px;
+    border-radius: 48px 0 0 48px;
+    @include transition;
+
+    +.palamut-pricing-price {
+        color: $color-white;
+    }
+
+    $style-2: true;
+
+    @if $style-2==true {
+        &.style-2 {
+            right: 0;
+            width: 100%;
+            border-radius: 48px;
+        }
+    }
+
+    $style-3: true;
+
+    @if $style-3==true {
+        &.style-3 {
+            right: 0;
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    $style-4: true;
+
+    @if $style-4==true {
+        &.style-4 {
+            width: 100%;
+            right: inherit;
+            left: -46px;
+            border-radius: 0px;
+            background: rgb(242, 112, 156);
+            background: linear-gradient(-35deg, rgba(242, 112, 156, 1) 0%, rgba(254, 143, 117, 1) 100%);
+            background-size: 101% 101%;
+
+            &::before {
+                $space: 15px;
+                position: absolute;
+                content: "";
+                bottom: -$space;
+                left: 0;
+                border-top: $space solid #8b4f63;
+                border-left: $space solid transparent;
+            }
+        }
+    }
+}
+
+.palamut-single-pricing {
+    // background-color: $color-white;
+    @include transition;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // border: 1px solid #e7e7e7;
+    // border-radius: 10px;
+    position: relative;
+    z-index: 1;
+
+    .pricing-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: -1;
+        height: 100%;
+        @include transition;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .palamut-pricing-title {
+        font-size: rem(22px);
+        margin-bottom: 0px;
+        @include transition;
+    }
+
+    .palamut-pricing-header {
+        margin-bottom: 25px;
+
+        >i {
+            font-size: rem(40px);
+            margin-bottom: 12px;
+        }
+
+        >p {
+            margin-top: 7px;
+        }
+
+        >hr {
+            border-top: 2px solid $color-white;
+            width: 30px;
+        }
+
+        >img {
+            margin-bottom: 45px;
+        }
+    }
+
+    .palamut-pricing-price-wraper {
+        position: relative;
+        margin-bottom: 15px;
+        line-height: initial;
+    }
+
+    .palamut-pricing-price {
+        position: relative;
+        z-index: 2;
+        font-size: rem(48px);
+        font-weight: 700;
+        letter-spacing: -.4px;
+        display: block;
+
+        >sup,
+        >sub {
+            font-size: rem(18px);
+        }
+
+        >sup {
+            top: 0;
+            left: 5px;
+        }
+
+        >sub {
+            bottom: 0;
+        }
+    }
+
+    .palamut-pricing-content {
+        >p {
+            @include transition;
+        }
+    }
+
+    .palamut-pricing-btn {
+        // @include height-lineheight(50px);
+        border-radius: 25px;
+        border-color: currentColor;
+        font-size: rem(14px);
+        font-weight: 700;
+        padding: 11px 41px;
+        display: inline-block;
+        // border: 1px solid #666666;
+        @include transition;
+
+        &.style-2 {
+            border-color: #e7e7e7;
+            color: $color-black;
+        }
+    }
+
+    .btn-outline-primary {
+        color: $color-primary;
+    }
+
+    .palamut-pricing-lists {
+        >li {
+            color: #565656;
+            font-size: rem(15px);
+
+            &:before {
+                content: '';
+                display: block;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 3px;
+            }
+
+            >i {
+                color: #55b559;
+                padding-right: 10px;
+                font-size: rem(10px);
+            }
+        }
+    }
+
+    .title-divider {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: -30px;
+            width: calc(100% + 60px);
+            height: 1px;
+            background-color: #e7e7e7;
+        }
+
+        .palamut-pricing-title {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            padding: 0 45px;
+            background-color: $color-white;
+        }
+    }
+}
+
+.elementkit-pricing-icon {
+    display: inline-block;
+}
+
+.elementor-widget-palamut-pricing {
+    @include transition;
+
+    .elementor-widget-container {
+        padding: 30px;
+    }
+}

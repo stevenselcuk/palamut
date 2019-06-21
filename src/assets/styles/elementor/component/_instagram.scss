@@ -1,0 +1,327 @@
+.pala-instagram-area {
+    padding: {
+        left: 15px;
+        right: 15px;
+    }
+}
+
+.layout-grid {
+    &.pala-insta-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: {
+            left: -15px;
+            right: -15px;
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .pala-insta-col-#{$i} {
+            max-width: ((100% / 12) * $i);
+            flex: 0 0 ((100% / 12) * $i);
+
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        @for $i from 1 through 12 {
+            .pala-insta-col-#{$i} {
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        @for $i from 1 through 12 {
+            .pala-insta-col-#{$i} {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+    }
+}
+
+.layout-masonary {
+    column-gap: 30px;
+
+    @for $i from 1 through 12 {
+        &.pala-insta-col-#{$i} {
+            column-count: 12 / $i;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        @for $i from 1 through 12 {
+            &.pala-insta-col-#{$i} {
+                column-count: 2;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        @for $i from 1 through 12 {
+            &.pala-insta-col-#{$i} {
+                column-count: 1;
+            }
+        }
+    }
+
+    .pala-ins-feed {
+        break-inside: avoid;
+    }
+}
+
+.pala-insta-content-holder {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.pala-nsta-user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.pala-insta-user-details {
+    display: flex;
+    align-items: center;
+    color: $color-black;
+
+    &:hover {
+        .pala-insta-user-name {
+            text-decoration: underline;
+            color: #e1306c;
+        }
+
+        .pala-insta-dataandtime {
+            text-decoration: underline;
+            color: #833ab4;
+        }
+    }
+
+    .pala-insta-user-image {
+        @include equal-size(44px);
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(40deg, #833ab4 15%, #e1306c 50%, #f56040 85%);
+        margin-right: 12px;
+        padding: 2px;
+
+        >img {
+            border: 1px solid #fafafa;
+        }
+
+        &.circle {
+            border-radius: 50%;
+
+            >img {
+                border-radius: inherit;
+            }
+        }
+    }
+}
+
+.pala-insta-username-and-time {
+    line-height: 1;
+
+    .pala-insta-user-name {
+        display: block;
+        font-size: rem(14px);
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .pala-insta-dataandtime {
+        font-size: rem(10px);
+        color: rgba($color: $color-black, $alpha: .6);
+    }
+}
+
+.pala-instagram-feed-posts-item-content {
+    padding: 16px;
+}
+
+// .pala-insta-comments-box {
+//     margin-bottom: 12px;
+// }
+
+.pala-insta-captions-box {
+    margin-top: 12px;
+}
+
+.pala-insta-statics-count {
+    display: inline-block;
+    color: $color-black;
+    @include transition;
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    &.pala-insta-statics-comment {
+        &:hover {
+            color: #f56040;
+
+            >svg {
+                path {
+                    fill: #f56040;
+                }
+            }
+        }
+    }
+
+    &.pala-insta-statics-favourite {
+        &:hover {
+            color: #833ab4;
+
+            >svg {
+                path {
+                    fill: #833ab4;
+                }
+            }
+        }
+    }
+
+    >svg {
+        @include equal-size(24px);
+        vertical-align: middle;
+
+        path {
+            @include transition;
+        }
+    }
+
+    .pala-insta-statics-value {
+        margin-left: 6px;
+        font-size: rem(14px);
+    }
+}
+
+.pala-insta-captions {
+    color: $color-black;
+    font-size: rem(14px);
+}
+
+.pala-insta-content-holder {
+    &.pala-insta-style-tiles {
+        .pala-instagram-feed-posts-item-content {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-20%);
+            width: 100%;
+            z-index: 5;
+            opacity: 0;
+            @include transition;
+            text-align: center;
+        }
+
+        &:hover {
+            .pala-instagram-feed-posts-item-content {
+                opacity: 1;
+                transform: translateY(-50%);
+                backface-visibility: hidden;
+            }
+
+            .insta-media {
+                .photo-thumb {
+                    transform: scale(1.1);
+                    filter: grayscale(1);
+                }
+            }
+        }
+
+        .pala-insta-statics-count {
+            svg {
+                path {
+                    fill: $color-white;
+                }
+            }
+        }
+
+        .pala-insta-captions {
+            color: $color-white;
+        }
+
+        .insta-media {
+            >a {
+                display: block;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .photo-thumb {
+                transition: transform 0.3s ease, filter 0.3s;
+                transform: scale(1);
+                backface-visibility: hidden;
+            }
+        }
+    }
+
+    .pala-insta-hover-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include equal-size(100%);
+        opacity: 0;
+        @include transition;
+    }
+
+    &:hover {
+        .pala-insta-hover-overlay {
+            background-color: rgba($color: $color-black, $alpha: .8);
+            opacity: 1;
+        }
+    }
+
+    &.pala-insta-style-classic {
+        border-radius: 3px;
+        border: 1px solid #e6e6e6;
+        background-color: $color-white;
+    }
+
+    .insta-media {
+        .photo-thumb {
+            width: 100%;
+        }
+    }
+}
+
+.pala-instagram-feed-item-source-icon {
+    vertical-align: middle;
+    display: inline-block;
+
+    svg {
+        path {
+            @include transition;
+        }
+    }
+}
+
+.insta-follow-btn-area {
+    >.btn {
+        background-color: #f56040;
+        border-radius: 21px;
+        box-shadow: 0px 7px 15px 0px rgba(#f56040, 0.3);
+        padding: 10px 35px;
+        font-size: rem(14px);
+        font-weight: 500;
+        color: #FFF;
+        border: 0px solid #000;
+    }
+}
+
+.pala-insta-statics-favourite {
+    svg {
+        transform: scale(1.1);
+    }
+}

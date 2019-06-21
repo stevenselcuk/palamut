@@ -1,0 +1,145 @@
+.xs-team-popup {
+    &.mfp-bg {
+        background-color: #555555;
+        &.mfp-ready {
+            opacity: 1;
+        }
+    }
+    .mfp-container {
+        width: 1170px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    button {
+        &.mfp-arrow {
+            line-height: 90px;
+        }
+        &.mfp-close {
+            color: $color-white;
+            margin: 0px;
+        }
+    }
+    .mfp-arrow {
+        &:after {
+            font-family: $iconFont2;
+            margin-top: 0;
+            border: 0;
+            color: $color-white;
+            font-size: rem(28px);
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .mfp-arrow-right::after {
+        content: "\e991";
+    }
+    .mfp-arrow-left:after {
+        content: '\e992';
+    }
+}
+
+.modal-img {
+    box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+    >img {
+        width: 100%;
+    }
+}
+
+.xs-modal-content {
+    padding: {
+        left: 20px;
+        right: 25px;
+    }
+    .xs-modal-header {
+        margin-bottom: 35px;
+        .person-title {
+            font-size: rem(22px);
+            margin-bottom: 8px;
+        }
+        .perosn-designation {
+            font-size: rem(13px);
+            color: rgba($color: $color-black, $alpha: .5);
+        }
+    }
+    .xs-modal-body {
+        margin-bottom: 22px;
+        p {
+            &:not(:last-child) {
+                margin-bottom: 28px;
+            }
+        }
+    }
+    .border-lists {
+        margin-bottom: 25px;
+    }
+    .pala-team-social-list {
+        >li {
+            >a {
+                line-height: 34px;
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
+
+.border-lists {
+    >li {
+        padding: 19px 0;
+        border: {
+            top: solid;
+            bottom: solid;
+            width: 1px;
+            color: rgba($color: $color-black, $alpha: .05);
+        }
+        &:last-child {
+            border-top: 0px solid #000;
+        }
+        strong {
+            font-weight: 700;
+            padding-right: 18px;
+        }
+        a {
+            color: $bColor;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.palamut-team-popup {
+    .modal-dialog {
+        max-width: calc(100% - 95px * 2);
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    .modal-content {
+        box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+        background-color: $color-white;
+        border: 0px;
+        border-radius: 0px;
+    }
+    .modal-body {
+        padding: 60px 40px;
+        display: flex;
+        .modal_image_wraper {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+        }
+        .modal_content_wraper {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+        }
+    }
+}

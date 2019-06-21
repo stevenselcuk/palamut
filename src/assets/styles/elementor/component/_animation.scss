@@ -1,0 +1,1343 @@
+.pala_animation {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.pala_animation {
+    .pala_motion_text {
+        white-space: pre-wrap;
+    }
+
+    &.pala_char_based {
+        .pala-letter {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            display: inline-block
+        }
+    }
+}
+
+/*************************************************************
+Striking
+**************************************************************/
+.ekit {
+    &-RainDrop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RainDrop;
+        }
+    }
+
+    &-WaterWave {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation: leWaterWave .2s linear;
+        }
+    }
+
+    &-lightning {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: lightning
+        }
+    }
+
+    &-JoltZoom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: JoltZoom
+        }
+    }
+
+    &-typing {
+        width: 473px;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #7E2EA0;
+        animation: typing 2s steps(12, end), cursor .2s steps(12, end);
+    }
+
+    &-wipe {
+        width: 473px;
+        overflow: hidden;
+        margin: 0 auto;
+        display: inline-flex;
+        animation-name: wipe;
+    }
+
+    &-open {
+        width: 473px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: inline-flex;
+        animation-name: open;
+    }
+
+    &-Magnify {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: Magnify
+        }
+    }
+
+    &-Beat {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: Beat;
+
+        }
+    }
+
+    &-FadeIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeIn;
+
+        }
+    }
+
+    &-FadeInLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeInLeft;
+
+        }
+    }
+
+    &-FadeInRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeInRight;
+
+        }
+    }
+
+    &-FadeInTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeInTop
+        }
+    }
+
+    &-FadeInBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeInBottom
+        }
+    }
+
+    &-FadeOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeOut
+        }
+    }
+
+    &-FadeOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeOutLeft
+        }
+    }
+
+    &-FadeOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeOutRight
+        }
+    }
+
+    &-FadeOutTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeOutTop
+        }
+    }
+
+    &-FadeOutBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FadeOutBottom
+        }
+    }
+
+    &-MovingBackFromRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: MovingBackFromRight;
+            transform-origin: bottom;
+        }
+    }
+
+    &-MovingBackFromLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: MovingBackFromLeft;
+            transform-origin: bottom
+        }
+    }
+
+    &-KickOutBehind {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: KickOutFront;
+            transform-origin: top
+        }
+    }
+
+    &-KickOutFront {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: KickOutBehind;
+            transform-origin: top
+        }
+    }
+
+    &-ScaleXIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ScaleXIn
+        }
+    }
+
+    &-ScaleXOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ScaleXOut
+        }
+    }
+
+    &-ScaleYIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ScaleYIn
+        }
+    }
+
+    &-ScaleYOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ScaleYOut
+        }
+    }
+
+    &-Jump {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: Jump;
+        }
+    }
+
+    &-AboundTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: AboundTop
+        }
+    }
+
+    &-AboundBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: AboundBottom
+        }
+    }
+
+    &-AboundLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: AboundLeft
+        }
+    }
+
+    &-AboundRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: AboundRight
+        }
+    }
+
+    &-FlyInTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyInTop
+        }
+    }
+
+    &-FlyInLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyInLeft;
+            animation-timing-function: ease-in-out
+        }
+    }
+
+    &-FlyInRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyInRight;
+            animation-timing-function: ease-in-out
+        }
+    }
+
+    &-FlyInBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyInBottom
+        }
+    }
+
+    &-FlyOutTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyOutTop
+        }
+    }
+
+    &-FlyOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyOutLeft;
+            animation-timing-function: ease-in-out;
+
+        }
+    }
+
+    &-FlyOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyOutRight;
+            animation-timing-function: ease-in-out;
+
+        }
+    }
+
+    &-FlyOutBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlyOutBottom
+        }
+    }
+
+    &-DoorCloseLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: DoorCloseLeft
+        }
+    }
+
+    &-DoorOpenRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: DoorOpenRight
+        }
+    }
+
+    &-DoorCloseRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: DoorCloseRight
+        }
+    }
+
+    &-DoorOpenLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: DoorOpenLeft
+        }
+    }
+
+    &-HangAndDropLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: HangAndDropLeft
+        }
+    }
+
+    &-HangAndDropRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: HangAndDropRight
+        }
+    }
+
+    &-PushReleaseFrom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PushReleaseFrom
+        }
+    }
+
+    &-PushReleaseFromLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PushReleaseFromLeft
+        }
+    }
+
+    &-PushReleaseFromTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PushReleaseFromTop
+        }
+    }
+
+    &-PushReleaseFromBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PushReleaseFromBottom
+        }
+    }
+
+    &-PushReleaseTo {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PushReleaseTo
+        }
+    }
+
+    &-PushReleaseToTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PushReleaseToTop
+        }
+    }
+
+    &-PushReleaseToBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PushReleaseToBottom
+        }
+    }
+
+    &-FlipInTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlipInTop
+        }
+    }
+
+    &-FlipOutTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlipOutTop
+        }
+    }
+
+    &-FlipInBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlipInBottom
+        }
+    }
+
+    &-FlipOutBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: FlipOutBottom
+        }
+    }
+
+    &-ElevateLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ElevateLeft
+        }
+    }
+
+    &-ElevateRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ElevateRight
+        }
+    }
+
+    &-RollFromLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollFromLeft
+        }
+    }
+
+    &-RollFromRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollFromRight
+        }
+    }
+
+    &-RollFromTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollFromTop
+        }
+    }
+
+    &-RollFromBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollFromBottom
+        }
+    }
+
+    &-RollToLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollToLeft
+        }
+    }
+
+    &-RollToRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollToRight
+        }
+    }
+
+    &-RollToTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollToTop
+        }
+    }
+
+    &-RollToBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RollToBottom
+        }
+    }
+
+    &-RotateSkateInRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateInRight
+        }
+    }
+
+    &-RotateSkateInLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateInLeft
+        }
+    }
+
+    &-RotateSkateInTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateInTop
+        }
+    }
+
+    &-RotateSkateInBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateInBottom
+        }
+    }
+
+    &-RotateSkateOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateOutRight
+        }
+    }
+
+    &-RotateSkateOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateOutLeft
+        }
+    }
+
+    &-RotateSkateOutTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateOutTop
+        }
+    }
+
+    &-RotateSkateOutBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateSkateOutBottom
+        }
+    }
+
+    &-RotateXZoomIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateXZoomIn
+        }
+    }
+
+    &-RotateXZoomOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateXZoomOut
+        }
+    }
+
+    &-RotateYZoomIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateYZoomIn
+        }
+    }
+
+    &-RotateYZoomOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateYZoomOut
+        }
+    }
+
+    &-RotateIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateIn
+        }
+    }
+
+    &-RotateOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateOut
+        }
+    }
+
+    &-RotateInLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateInLeft
+        }
+    }
+
+    &-RotateOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateOutLeft
+        }
+    }
+
+    &-RotateInRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateInRight
+        }
+    }
+
+    &-RotateOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: RotateOutRight
+        }
+    }
+
+    &-SpinInLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: SpinInLeft
+        }
+    }
+
+    &-SpinInRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: SpinInRight
+        }
+    }
+
+    &-SpinOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: SpinOutLeft
+        }
+    }
+
+    &-SpinOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: SpinOutRight
+        }
+    }
+
+    &-BlurIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurIn
+        }
+    }
+
+    &-BlurInRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurInRight
+        }
+    }
+
+    &-BlurInLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurInLeft
+        }
+    }
+
+    &-BlurInTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurInTop
+        }
+    }
+
+    &-BlurInBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurInBottom
+        }
+    }
+
+    &-BlurOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurOut
+        }
+
+    }
+
+    &-BlurOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurOutRight
+        }
+
+    }
+
+    &-BlurOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurOutLeft
+        }
+
+    }
+
+    &-BlurOutTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurOutTop
+        }
+
+    }
+
+    &-BlurOutBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BlurOutBottom
+        }
+
+    }
+
+    &-PopUp {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PopUp
+        }
+
+    }
+
+    &-PopUpLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PopUpLeft
+        }
+
+    }
+
+    &-PopUpRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PopUpRight
+        }
+
+    }
+
+    &-PopOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PopOut
+        }
+
+    }
+
+    &-PopOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PopOutLeft
+        }
+
+    }
+
+    &-PopOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PopOutRight
+        }
+
+    }
+
+    &-BounceFromTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BounceFromTop
+        }
+
+    }
+
+    &-BounceFromDown {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BounceFromDown
+        }
+
+    }
+
+    &-BounceY {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BounceY
+        }
+
+    }
+
+    &-BounceZoomIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BounceZoomIn
+        }
+
+    }
+
+    &-BounceZoomOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: BounceZoomOut
+        }
+
+    }
+
+    &-PerspectiveOutTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PerspectiveOutTop;
+            transform: perspective(500px);
+            transform-style: preserve-3d
+        }
+    }
+
+    &-PerspectiveOutBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: PerspectiveOutBottom;
+            transform: perspective(500px);
+            transform-style: preserve-3d
+        }
+    }
+
+    &-ZoomIn {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomIn
+        }
+    }
+
+    &-ZoomInLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomInLeft
+        }
+    }
+
+    &-ZoomInRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomInRight
+        }
+    }
+
+    &-ZoomInTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: LetterZoomInTop
+        }
+    }
+
+    &-ZoomInBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomInBottom
+        }
+    }
+
+    &-ZoomOut {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomOut
+        }
+    }
+
+    &-ZoomOutLeft {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomOutLeft
+        }
+    }
+
+    &-ZoomOutRight {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomOutRight
+        }
+    }
+
+    &-ZoomOutTop {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomOutTop
+        }
+    }
+
+    &-ZoomOutBottom {
+
+        &.pala_no_spilit,
+        &.pala_word_spilit .pala-word,
+        &.pala_char_based .pala-letter {
+            animation-name: ZoomOutBottom
+        }
+    }
+
+    &-oaoFadeIn {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoFadeInTop;
+                    animation-duration: .7s;
+                    animation-timing-function: ease-out;
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoFadeInBottom;
+                    animation-duration: .7s;
+                    animation-timing-function: ease-out;
+                }
+            }
+        }
+    }
+
+    &-oaoFadeOut {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoFadeOutop;
+                    animation-duration: .7s;
+                    animation-timing-function: ease-in;
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoFadeOutBottom;
+                    animation-duration: .7s;
+                    animation-timing-function: ease-in;
+                }
+            }
+        }
+    }
+
+
+
+    &-oaoFlyIn {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoFlyInTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoFlyInBottom
+                }
+            }
+        }
+    }
+
+    &-oaoFlyOut {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoFlyOutTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoFlyOutBottom
+                }
+            }
+        }
+    }
+
+    &-oaoRotateIn {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoRotateInTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoRotateInBottom
+                }
+            }
+        }
+    }
+
+    &-oaoRotateOut {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoRotateOutTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoRotateOutBottom
+                }
+            }
+        }
+    }
+
+    &-oaoRotateXIn {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoRotateXInTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoRotateXInBottom
+                }
+            }
+        }
+    }
+
+    &-oaoRotateXOut {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoRotateXOutTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoRotateXOutBottom
+                }
+            }
+        }
+    }
+
+    &-oaoRotateYIn {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoRotateYInTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoRotateYInBottom
+                }
+            }
+        }
+    }
+
+    &-oaoRotateYOut {
+        &.pala_char_based {
+            .pala-letter {
+                &:nth-child(even) {
+                    animation-name: oaoRotateYOutTop
+                }
+
+                &:nth-child(odd) {
+                    animation-name: oaoRotateYOutBottom
+                }
+            }
+        }
+    }
+
+    &-RevealInTop {
+        +.pala_reveal_bg {
+            transform-origin: top;
+            animation: ekitRevealInTop 1s ease forwards;
+        }
+    }
+
+    &-RevealInLeft {
+        +.pala_reveal_bg {
+            transform-origin: left;
+            animation: ekitRevealInLeft 1s ease forwards;
+        }
+    }
+
+    &-RevealInRight {
+        +.pala_reveal_bg {
+            transform-origin: right;
+            animation: ekitRevealInRight 1s ease forwards;
+        }
+    }
+
+    &-RevealInBottom {
+        +.pala_reveal_bg {
+            transform-origin: bottom;
+            animation: ekitRevealInBottom 1s ease forwards;
+        }
+    }
+}
+
+.pala_reveal_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+
+.pala_text {
+    position: relative;
+}

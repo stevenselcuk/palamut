@@ -1,0 +1,285 @@
+.single-btn {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+$baseSize: 30px; // base height
+$baseFontSize: 13px; // base font size
+$basePadding: 16px; // base padding
+// button radius
+@mixin buttonRadius($radius: $radius) {
+    border-radius: $radius / 2;
+}
+
+;
+// Functions
+@function palette($palette, $default) {
+    @return map-get(map-get($themes, $palette), $default);
+}
+
+// gradint themes
+@function gradieintPlate($palette, $default) {
+    @return map-get(map-get($gradientThemes, $palette), $default);
+}
+
+// hover gradient themes
+@function hoverGradieintPlate($palette, $default) {
+    @return map-get(map-get($hoverGradientThemes, $palette), $default);
+}
+
+// Themes
+$themes: (
+	sm: (
+		size: $baseSize,
+		fontSize: rem($baseFontSize),
+		padding: $basePadding
+	),
+	md: (
+		size: $baseSize + 10px,
+		fontSize: rem($baseFontSize + 1px),
+		padding: $basePadding + 6px
+	),
+	lg: (
+		size: $baseSize + 20px,
+		fontSize: rem($baseFontSize + 2px),
+		padding: $basePadding + 24px
+	),
+	xl: (
+		size: $baseSize + 30px,
+		fontSize: rem($baseFontSize + 3px),
+		padding: $basePadding + 20px
+	)
+);
+
+@each $name, $null in $themes {
+    .btn {
+        &.#{$name} {
+            @include height-lineheight(palette(($name), size));
+            font-size: palette(($name), fontSize);
+            padding: {
+                left: palette(($name), padding);
+                right: palette(($name), padding);
+            }
+            ;
+            &.round {
+                @include buttonRadius(palette(($name), size));
+            }
+        }
+    }
+}
+
+$gradientThemes: (
+	gra-one: (
+		bg-one: rgba(37,117,252,1),
+		bg-two: rgba(106,17,203,1) 100%,
+		angle: 90deg
+	),
+	gra-two: (
+		bg-one: rgba(255,188,65,1),
+		bg-two: rgba(253,60,89,1) 60%,
+		angle: -90deg
+	),
+	gra-three: (
+		bg-one: rgba(146,254,157,1),
+		bg-two: rgba(0,201,255,1) 80%,
+		angle: 90deg
+	),
+	gra-four: (
+		bg-one: rgba(146,254,157,1),
+		bg-two: rgba(0,201,255,1) 80%,
+		angle: -90deg
+	),
+	gra-five: (
+		bg-one: rgba(252,95,60,1),
+		bg-two: rgba(255,85,211,1) 80%,
+		angle: 90deg
+	),
+	gra-six: (
+		bg-one: rgba(50,214,251,1),
+		bg-two: rgba(85,88,237,1) 100%,
+		angle: -90deg
+	),
+	gra-seven: (
+		bg-one: rgba(250,212,112,1),
+		bg-two: rgba(249,105,51,1) 100%,
+		angle: 90deg
+	),
+	gra-eight: (
+		bg-one: rgba(255,212,97,1),
+		bg-two: rgba(252,82,144,1) 100%,
+		angle: -90deg
+	),
+	gra-nine: (
+		bg-one: rgba(177,140,254,1),
+		bg-two: rgba(148,96,255,1) 100%,
+		angle: 90deg
+	),
+	gra-ten: (
+		bg-one: rgba(53,237,126,1),
+		bg-two: rgba(83,249,149,1) 100%,
+		angle: -90deg
+	),
+	gra-eleven: (
+		bg-one: rgba(255,116,23,1),
+		bg-two: rgba(254,68,69,1) 100%,
+		angle: 90deg
+	)
+);
+
+@each $name, $null in $gradientThemes {
+	.btn {
+		&.#{$name},
+		&.border-#{$name} {
+			background: gradieintPlate(($name), bg-one);
+			background: linear-gradient(gradieintPlate(($name), angle), gradieintPlate(($name), bg-one) 0%, gradieintPlate(($name), bg-two));
+		}
+	}
+}
+
+$hoverGradientThemes: (
+	gra-one: (
+		bg-one: rgba(37,117,252,1),
+		bg-two: rgba(106,17,203,1) 100%,
+		angle: -90deg
+	),
+	gra-two: (
+		bg-one: rgba(255,188,65,1),
+		bg-two: rgba(253,60,89,1) 60%,
+		angle: 90deg
+	),
+	gra-three: (
+		bg-one: rgba(146,254,157,1),
+		bg-two: rgba(0,201,255,1) 80%,
+		angle: -90deg
+	),
+	gra-four: (
+		bg-one: rgba(146,254,157,1),
+		bg-two: rgba(0,201,255,1) 80%,
+		angle: 90deg
+	),
+	gra-five: (
+		bg-one: rgba(252,95,60,1),
+		bg-two: rgba(255,85,211,1) 80%,
+		angle: -90deg
+	),
+	gra-six: (
+		bg-one: rgba(50,214,251,1),
+		bg-two: rgba(85,88,237,1) 100%,
+		angle: 90deg
+	),
+	gra-seven: (
+		bg-one: rgba(250,212,112,1),
+		bg-two: rgba(249,105,51,1) 100%,
+		angle: -90deg
+	),
+	gra-eight: (
+		bg-one: rgba(255,212,97,1),
+		bg-two: rgba(252,82,144,1) 100%,
+		angle: 90deg
+	),
+	gra-nine: (
+		bg-one: rgba(177,140,254,1),
+		bg-two: rgba(148,96,255,1) 100%,
+		angle: -90deg
+	),
+	gra-ten: (
+		bg-one: rgba(53,237,126,1),
+		bg-two: rgba(83,249,149,1) 100%,
+		angle: 90deg
+	),
+	gra-eleven: (
+		bg-one: rgba(255,116,23,1),
+		bg-two: rgba(254,68,69,1) 100%,
+		angle: -90deg
+	)
+);
+
+@each $name, $null in $hoverGradientThemes {
+	.btn {
+		&.#{$name} {
+			&::before {
+				background: hoverGradieintPlate(($name), bg-one);
+				background: linear-gradient(hoverGradieintPlate(($name), angle), hoverGradieintPlate(($name), bg-one) 0%, hoverGradieintPlate(($name), bg-two));
+			}
+		}
+	}
+}
+
+.btn {
+    &.square {
+        border-radius: 0px;
+    }
+    &-outline-primary {
+        border-color: #f5f5f5;
+        background-color: $color-white;
+    }
+    &-info {
+        background-color: #ff1155;
+    }
+    &.info-s2 {
+        color: #ff1155;
+        background-color: $color-white;
+        box-shadow: -1.216px 6.894px 25px 0px rgba(0, 0, 0, 0.07);
+    }
+    &-outline-info {
+        border-color: #ff1155;
+        background-color: $color-white;
+        color: $color-black;
+        &.info-s2 {
+            color: $color-black;
+		}
+	}
+	&.btn-gra ,
+	&.border-gra {
+		position: relative;
+		@include transition;
+		z-index: 1;
+		&::before {
+			position: absolute;
+			content: "";
+			border-radius: inherit;
+			@include transition;
+			z-index: -1;
+		}
+	}
+    &.btn-gra {
+        &::before {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+			background-size: 101% 101%;
+			opacity: 0;
+		}
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+	&.border-gra {
+		background-size: 101% 101%;
+		border: 0px;
+        &::before {
+			top: 1px;
+			left: 1px;
+			right: 1px;
+			bottom: 1px;
+            background-color: $color-white;
+		}
+		&:hover {
+			&::before {
+				opacity: 0;
+			}
+		}
+	}
+}
+.palamut-btn {
+  i{
+	  display: inline-block;
+  }
+}

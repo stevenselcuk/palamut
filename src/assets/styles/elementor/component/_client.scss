@@ -1,0 +1,162 @@
+.palamut-clients-slider {
+    .slick-slide {
+        margin-right: 15px;
+        margin-left: 15px;
+
+        >div {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .palamut-client-slider-item.log-separator {
+        position: relative;
+
+        &:after {
+            content: "";
+            background: #e7e7e7;
+            position: absolute;
+            z-index: 999;
+            transform: translateY(-50%);
+        }
+    }
+
+    .slick-arrow.slick-next {
+        left: 100%;
+    }
+
+    .hover-bg-gradient {
+        .single-client {
+            &::before {
+                position: absolute;
+                content: "";
+                top: 100%;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgb(242, 112, 156);
+                background: linear-gradient(315deg, rgba(242, 112, 156, 1) 0%, rgba(254, 143, 117, 1) 60%);
+                transition: all .3s ease;
+                z-index: -1;
+            }
+        }
+    }
+
+    .single-client {
+        min-height: 170px;
+        z-index: 5;
+        @include flex-position(flex, center, center);
+        background-color: $color-white;
+        box-shadow: 5px 10px 15px 0px rgba(0,0,0,0.1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        @include transition;
+
+        img {
+            @include transition;
+        }
+
+        .content-image {
+            >.hover-image {
+                display: none;
+            }
+        }
+
+        &.image-switcher {
+            .content-image {
+                >.hover-image {
+                    display: block;
+                }
+            }
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+                top: 0;
+            }
+
+            z-index: 6;
+        }
+    }
+
+    .client-slider-item {
+        position: relative;
+    }
+
+    &.simple_logo_image {
+        .single-client::before {
+            display: none;
+        }
+    }
+
+    &.banner_logo_image {
+        .single-client {
+            &:before {
+                position: absolute;
+                content: "";
+                top: 100%;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #f2709c;
+                -webkit-transition: all .3s ease;
+                transition: all .3s ease;
+                z-index: -1;
+            }
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    top: 0;
+                }
+            }
+        }
+
+        &.hover_from_top {
+            .single-client {
+                &::before {
+                    top: -100%;
+                }
+
+                &:hover {
+                    &::before {
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        &.hover_from_left {
+            .single-client {
+                &::before {
+                    top: 0px;
+                    left: -100%;
+                }
+
+                &:hover {
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        &.hover_from_right {
+            .single-client {
+                &::before {
+                    top: 0;
+                    left: 100%;
+                }
+
+                &:hover {
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

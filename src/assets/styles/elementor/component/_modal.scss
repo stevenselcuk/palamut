@@ -1,0 +1,46 @@
+/* magnific pop up modal */
+.mfp-bg {
+  &.xs-promo-popup {
+    background-color: rgba(0,0,0,.87);
+    padding-bottom: 100%;
+    border-radius: 100%;
+    overflow: hidden;
+    animation: menu-animation .8s ease-out forwards;
+
+  }
+}
+
+
+/* Styles for dialog window */
+.xs-promo-popup {
+  .modal-content {
+    background-color: transparent;
+    padding: 0px;
+    border: 0px;
+  }
+  .mfp-close {
+    color: $color-white;
+    opacity: 0;
+    transition: all 1s ease .8s;
+    transform: translateY(-500px);
+  }
+  &.mfp-ready {
+    .mfp-close {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/* at start */
+.xs-promo-popup.my-mfp-slide-bottom .zoom-anim-dialog {
+  opacity: 0;
+  transition: all 1s ease .8s;
+  transform: translateY(-500px);
+}
+/* animate in */
+.xs-promo-popup.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}

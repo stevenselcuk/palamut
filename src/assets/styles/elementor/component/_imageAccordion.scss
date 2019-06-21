@@ -1,0 +1,120 @@
+// @mixin transition($property: all, $duration: .4s, $ease: ease){
+// 	transition: $property $duration $ease;
+// }
+
+@mixin element-hide($position: relative, $transition: $transition, $top: $top, $opacity: 0, $visibility: hidden) {
+    position: $position;
+    transition: $transition;
+    top: $top;
+    opacity: $opacity;
+    visibility: $visibility;
+}
+
+.palamut-image-accordion-wraper {
+    display: flex;
+    overflow: hidden;
+    min-height: 366px;
+    position: relative;
+    margin: {
+        left: -3px;
+        right: -3px;
+    }
+    &.no-gutters {
+        margin: {
+            left: 0px;
+            right: 0px;
+        }
+        > .palamut-single-image-accordion {
+            margin: {
+                left: 0px;
+                right: 0px;
+            }
+        }
+    }
+    // &.style-2 {
+    //     .palamut-single-image-accordion {
+    //         &.active {
+    //             flex: 4 0 auto;
+    //         }
+    //         .palamut-accordion-title-wraper {
+    //             top: -100px;
+    //         }
+    //     }
+    // }
+    .palamut-single-image-accordion {
+        flex: 1 0 auto;
+        @include background-content();
+        margin: 0 3px;
+        position: relative;
+        overflow: hidden;
+        min-height: 460px;
+        cursor: pointer;
+        @include transition;
+        display: flex;
+        &::before {
+            position: absolute;
+            content: "";
+            top: 100%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgb(0,0,0);
+            background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
+            transition: all .5s ease;
+            opacity: 0;
+        }
+        .palamut-accordion-content {
+            width: 100%;
+        }
+        .palamut-accordion-title {
+            color: $color-white;
+            margin-bottom: 0;
+        }
+        .palamut-accordion-title-wraper {
+            @include element-hide($top: 100px, $transition: all .6s ease);
+        }
+        .palamut-btn-wraper {
+            @include element-hide($top: 100px, $transition: all .7s ease);
+        }
+        .palamut-icon-wraper {
+            margin-bottom: 20px;
+            @include element-hide($top: -100px, $transition: all .6s ease);
+            .icon-outline {
+                color: $color-white;
+            }
+        }
+        &.active {
+            flex: 2 0 auto;
+            &::before {
+                top: 0%;
+                opacity: 1;
+            }
+            .palamut-accordion-title-wraper,
+            .palamut-icon-wraper,
+            .palamut-btn-wraper {
+                top: 0px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+.palamut-accordion-title {
+    color: $color-black;
+    font-size: rem(22px);
+    margin-bottom: 0px;
+    &.icon-title {
+        font-size: rem(28px);
+        display: inline-block;
+        > i {
+            position: relative;
+            top: 3px;
+        }
+        .icon-right {
+            padding-left: 15px;
+        }
+        .icon-left {
+            padding-right: 15px;
+        }
+    }
+}

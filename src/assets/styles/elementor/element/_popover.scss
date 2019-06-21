@@ -1,0 +1,141 @@
+.popover-area {
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 438px;
+}
+
+.popover-groups {
+    position: relative;
+    .single-popover {
+        $popover-position-top: 120px;
+        $popover-position-left: 60px;
+        position: absolute;
+        display: inline-block;
+        &.one {
+            top: $popover-position-top;
+            left: $popover-position-left;
+        }
+        &.two {
+            top: (($popover-position-top * 2) + 10px);
+            left: ($popover-position-left + 160px);
+        }
+        &.three {
+            top: ($popover-position-top + 60px);
+            left: ($popover-position-left * 8);
+        }
+        &.four {
+            top: ($popover-position-top - 3px);
+            left: ($popover-position-left * 12);
+        }
+        &.five {
+            top: (($popover-position-top * 2) + 80px);
+            left: ($popover-position-left * 14);
+        }
+    }
+}
+
+.single-popover {
+    .popover-button {
+        background-color: transparent;
+        border: 0px solid #000;
+        padding: 10px 0;
+    }
+}
+
+.popover {
+    background-color: transparent;
+    border: 0px;
+    max-width: 540px;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    .arrow {
+        display: none;
+    }
+    .popover-body {
+        padding: 0px;
+    }
+}
+
+.popover-wraper {
+    max-width: 540px;
+    width: 100%;
+    display: none;
+}
+
+.popover-content {
+    background-color: $color-primary;
+    border-radius: 10px;
+    color: $color-white;
+    padding: 40px 50px;
+    margin-bottom: 30px;
+    .quote-icons {
+        margin-bottom: 20px;
+        >i {
+            font-size: rem(48px);
+            opacity: .2;
+        }
+    }
+    .commentor-text {
+        margin-bottom: 24px;
+    }
+    .stars {
+        >li {
+            >a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+.popover-pin {
+    @include equal-size(72px);
+    border-radius: 50%;
+    display: inline-block;
+    color: $color-primary;
+    border: 10px solid currentColor;
+    position: relative;
+    z-index: 1;
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        border: {
+            top: 42px solid currentColor;
+            left: 35px solid transparent;
+            right: 35px solid transparent;
+            radius: 50% 50% 0 0;
+        }
+    }
+    >img {
+        border-radius: inherit;
+    }
+}
+
+.location_indicator {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        background-color: $color-primary;
+        border-radius: 50%;
+        animation: location-indicator 3s infinite cubic-bezier(0.4, 0, 1, 1) both;
+    }
+    &::after {
+        animation-delay: .5s;
+    }
+}

@@ -1,0 +1,60 @@
+.pala-single-piechart {
+    .piechart {
+        position: relative;
+        display: inline-block;
+        .pala-chart-content {
+            position: absolute;
+            top: 47%;
+            transform: translateY(-50%);
+            width: 100%;
+            text-align: center;
+            font-size: rem(28px);
+            font-weight: 700;
+            line-height: 1;
+            display: inline-block;
+        }
+    }
+}
+
+.flip-card {
+    position: relative;
+    max-height: 280px;
+    overflow: hidden;
+    color: $color-white;
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 15px 50px;
+        transform: translateY(100%);
+        opacity: 0;
+        visibility: hidden;
+        background: rgb(242, 112, 156);
+        background: linear-gradient(-35deg, rgba(242, 112, 156, 1) 0%, rgba(254, 143, 117, 1) 100%);
+    }
+    .front,
+    .back {
+        @include transition;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        backface-visibility: hidden;
+    }
+    &:hover {
+        .back {
+            transform: translateY(0%);
+            opacity: 1;
+            visibility: visible;
+        }
+        .front {
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    .pala-piechart-title {
+        color: $color-white;
+    }
+}

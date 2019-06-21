@@ -1,0 +1,199 @@
+@media (max-width: 991px) {
+    .offcanvas-collapse {
+        position: fixed;
+        top: 0;
+        /* Height of navbar */
+        bottom: 0;
+        left: -100%;
+        width: 320px;
+        overflow-y: auto;
+        visibility: hidden;
+        background-color: $color-white;
+        transition: all .8s ease;
+        z-index: 1100;
+        +.xs-overlay {
+            position: fixed;
+            opacity: 0;
+            transition: all .8s ease;
+            z-index: 5;
+        }
+        &.open {
+            left: 0;
+            visibility: visible;
+            +.xs-overlay {
+                opacity: .5;
+                visibility: visible;
+            }
+        }
+        .navbar-toggler {
+            position: absolute;
+            right: 0;
+            margin: 10px;
+        }
+    }
+    .main-menu {
+        padding-right: 0;
+        padding-top: 80px;
+        >li {
+            color: #f0f0f0;
+            border-top: solid 1px currentColor;
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            &:last-child {
+                border-bottom: solid 1px currentColor;
+            }
+            >a {
+                padding: 15px;
+            }
+        }
+    }
+    .nav-submenu {
+        position: static;
+        padding: 10px;
+        display: none;
+    }
+    .navbar-toggler {
+        position: relative;
+        z-index: 60;
+        font-size: rem(25px);
+    }
+    .nav-tools {
+        padding: 30px 15px;
+        >li {
+            display: block;
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .nav-collapse-wraper {
+                position: static;
+                width: 100%;
+            }
+        }
+    }
+    .sidebar-menu {
+        >.nav-search-form {
+            display: none;
+        }
+        .offcanvas-collapse {
+          .main-menu {
+            padding-bottom: 30px;
+          }
+          .nav-search-form {
+            margin: 15px;
+            width: 90%;
+          }
+        }
+    }
+    .center-nav {
+        .navbar-brand {
+            margin-left: 0px;
+        }
+        > .navbar-toggler {
+          position: absolute;
+          right: 50px;
+        }
+    }
+}
+
+.sidebar-menu {
+    .offcanvas-collapse {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        width: 320px;
+        overflow-y: auto;
+        visibility: hidden;
+        background-color: $color-white;
+        transition: all .8s ease;
+        z-index: 1100;
+        +.xs-overlay {
+            position: fixed;
+            opacity: 0;
+            transition: all .8s ease;
+            z-index: 5;
+        }
+        &.open {
+            left: 0;
+            visibility: visible;
+            +.xs-overlay {
+                opacity: .5;
+                visibility: visible;
+            }
+        }
+        .navbar-toggler {
+            position: absolute;
+            right: 0;
+            margin: 10px;
+        }
+    }
+    .main-menu {
+        padding-right: 0;
+        padding-top: 80px;
+        >li {
+            color: #f0f0f0;
+            border-top: solid 1px currentColor;
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            &:last-child {
+                border-bottom: solid 1px currentColor;
+            }
+            >a {
+                padding: 15px;
+            }
+        }
+    }
+    .nav-submenu {
+        position: static;
+        padding: 10px;
+        display: none;
+    }
+    .navbar-toggler {
+        position: relative;
+        z-index: 60;
+    }
+    .nav-tools {
+        padding: 30px 15px;
+        >li {
+            display: block;
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .nav-collapse-wraper {
+                position: static;
+                width: 100%;
+            }
+        }
+    }
+    >.nav-search-form {
+        margin-right: 25px;
+    }
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.menu-bar {
+    background-color: transparent;
+    border: 0px solid #000;
+    cursor: pointer;
+    padding: .25rem .75rem;
+    >span {
+        height: 3px;
+        width: 30px;
+        border-radius: 1.5px;
+        display: block;
+        background-color: #0b53ff;
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+    }
+}

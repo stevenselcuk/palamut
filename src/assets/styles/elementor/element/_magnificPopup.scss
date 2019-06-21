@@ -1,0 +1,194 @@
+.image-source-link {
+    color: #98C3D1;
+}
+
+.mfp-container,
+.mfp-bg {
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    /* ideally, transition speed should match zoom duration */
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.mfp-ready {
+    .mfp-container {
+        opacity: 1;
+    }
+    &.mfp-bg {
+        opacity: 0.8;
+    }
+}
+
+.mfp-removing {
+    .mfp-container,
+    &.mfp-bg {
+        opacity: 0;
+    }
+}
+
+/*
+
+====== Move-horizontal effect ======
+
+*/
+
+.mfp-move-horizontal {
+    /* start state */
+    .mfp-with-anim {
+        opacity: 0;
+        transition: all 0.3s;
+        transform: translateX(-50px);
+    }
+    &.mfp-bg {
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    /* animate in */
+    &.mfp-ready {
+        .mfp-with-anim {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        &.mfp-bg {
+            opacity: 0.8;
+        }
+    }
+    /* animate out */
+    &.mfp-removing {
+        .mfp-with-anim {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+}
+
+/*
+
+====== Zoom-out effect ======
+
+*/
+
+.mfp-zoom-out {
+    /* start state */
+    .mfp-with-anim {
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        transform: scale(1.3);
+    }
+    &.mfp-bg {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+    /* animate in */
+    &.mfp-ready {
+        .mfp-with-anim {
+            opacity: 1;
+            transform: scale(1);
+        }
+        &.mfp-bg {
+            opacity: 0.8;
+        }
+    }
+    /* animate out */
+    &.mfp-removing {
+        .mfp-with-anim {
+            transform: scale(1.3);
+            opacity: 0;
+        }
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+}
+
+button.mfp-close {
+    border: 1px solid $color-white;
+    margin: 20px;
+    border-radius: 50%;
+    @include transition;
+    &:hover {
+        background-color: $color-black;
+        color: $color-white;
+        border-color: $color-black;
+    }
+}
+
+.mfp-iframe-holder .mfp-close {
+    width: 44px;
+    text-align: center;
+    padding-right: 0px;
+    top: 0;
+    right: 0;
+}
+.mfp-container.mfp-iframe-holder {
+    position: fixed;
+    .mfp-close {
+        position: fixed;
+    }
+}
+
+/*
+
+====== Zoom effect ======
+
+*/
+
+.mfp-zoom-in {
+    .mfp-with-anim {
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        transform: scale(0.8);
+    }
+    &.mfp-bg {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+    &.mfp-ready {
+        .mfp-with-anim {
+            opacity: 1;
+            transform: scale(1);
+        }
+        &.mfp-bg {
+            opacity: 0.8;
+        }
+    }
+    &.mfp-removing {
+        .mfp-with-anim {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+}
+
+.white-popup-block {
+    background: #ccc;
+    padding: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    animation: open 1s;
+}
+
+.mfp-removing {
+    animation: close 1s;
+}
+
+
+
+.mfp-open {
+    .modal-popup-group,
+    .xs-modal-sidebar {
+        animation-name: galleryopen;
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        backface-visibility: hidden;
+    }
+}

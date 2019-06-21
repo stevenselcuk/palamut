@@ -1,0 +1,13 @@
+.map {
+    height: 238px;
+    > iframe {
+        width: 100%;
+        height: 100%;
+    }
+    &.style-2 {
+        height: 300px;
+    }
+    &.style-3 {
+        height: 320px;
+    }
+}

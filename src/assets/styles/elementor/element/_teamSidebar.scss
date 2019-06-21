@@ -1,0 +1,63 @@
+.palamut-team-sidebar {
+    padding-right: 0px !important;
+    &.palamut_sidebar_left {
+        .palamut-modal-dialog {
+            margin-right: auto;
+        }
+        &.fade {
+            .palamut-modal-dialog {
+                transform: translate(-50%,0);
+            }
+        }
+        &.show {
+            .palamut-modal-dialog {
+                transform: translate(0%,0);
+            }
+        }
+    }
+    &.palamut_sidebar_right {
+        .palamut-modal-dialog {
+            margin-left: auto;
+        }
+        &.fade {
+            .palamut-modal-dialog {
+                transform: translate(50%,0);
+            }
+        }
+        &.show {
+            .palamut-modal-dialog {
+                transform: translate(0%,0);
+            }
+        }
+        .palamut-modal-header {
+            justify-content: flex-end;
+        }
+    }
+    .palamut-modal-dialog {
+        margin: 0px;
+        max-width: 380px;
+        box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+        transition: transform .6s ease-out;
+        background-color: $color-white;
+        pointer-events: auto;
+    }
+    .palamutmodal-body {
+        padding: 40px;
+    }
+    .palamut-modal-header {
+        background-color: #FFFFFF;
+        box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, .1);
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        .close {
+            float: none;
+        }
+    }
+}
+
+.admin-bar {
+    .palamut-team-sidebar {
+        top: 32px;
+    }
+}

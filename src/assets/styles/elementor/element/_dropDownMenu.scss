@@ -1,0 +1,144 @@
+@media (min-width: 992px) {
+    .main-menu {
+        .has-submenu {
+            > .nav-submenu {
+                pointer-events: none;
+            }
+            &:hover {
+                >.nav-submenu {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+            }
+        }
+    }
+    .nav-submenu {
+        display: block !important;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0px 10px 30px 0px rgba(23, 104, 221, 0.2);
+        position: absolute;
+        top: 100%;
+        min-width: 250px;
+        margin: 0px;
+        padding: 0px;
+        z-index: 1000;
+        right: auto;
+        @include transition;
+    }
+}
+
+.nav-submenu {
+    border-radius: 0px;
+    border: 0px solid #000;
+    background-color: $color-white;
+}
+
+.mega-menu {
+    right: 0;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.xs-icon-menu {
+    li {
+        &:last-child {
+            a {
+                border-bottom: 0px solid #000;
+            }
+        }
+        a {
+            padding: {
+                top: 12px;
+                bottom: 12px;
+            }
+            border-bottom: 1px solid #f7f7f7;
+            padding-left: 20px;
+            padding-right: 30px;
+            display: block;
+            color: #141414;
+            font-size: rem(15px);
+            >i {
+                position: relative;
+                top: 1px;
+                padding-right: 18px;
+            }
+        }
+    }
+}
+
+.has-submenu {
+    .submenu-indicator {
+        &::before {
+            position: relative;
+            content: "\e874";
+            font-family: $iconFont2;
+            top: 0px;
+            right: -2px;
+            @include transition;
+            display: inline-block;
+            font-size: rem(10px);
+        }
+    }
+    &.show {
+        > .nav-submenu {
+            display: block;
+        }
+    }
+    .nav-submenu {
+        .has-submenu {
+            position: relative;
+            .nav-submenu {
+                left: 100%;
+                right: inherit;
+                top: 0;
+                .has-submenu {
+                    .nav-submenu {
+                        left: inherit;
+                        right: 100%;
+                    }
+                }
+            }
+            .submenu-indicator {
+                float: right;
+                &::before {
+                    content: "\e876";
+                }
+            }
+            &:hover {
+                >a {
+                    .submenu-indicator {
+                        &::before {
+                            transform: rotateY(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        >a {
+            .submenu-indicator {
+                &::before {
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+    }
+}
+
+.xs-icon-menu {
+    > li {
+        > a {
+            &:hover {
+                color: $color-primary;
+            }
+        }
+        &:hover {
+            > a {
+                color: $color-primary;
+            }
+        }
+    }
+}

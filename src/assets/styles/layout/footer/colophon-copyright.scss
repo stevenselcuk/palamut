@@ -1,0 +1,16 @@
+.site-info {
+	background: $bottombar-bg-color;
+	font-size: 12px;
+	padding: 0 $content__spacer--mobile;
+	display: flex;
+	justify-content: space-between;
+	padding-top: $content__padding;
+	padding-bottom: $content__padding;
+
+	.site-copyright {
+		text-align: left;
+	}
+	.site-theme {
+
+	}
+}

@@ -1,0 +1,42 @@
+.elementor-icon-list-item {
+    > a {
+        @include transition;
+        position: relative;
+        &.pala_badge_right {
+            justify-content: space-between;
+        }
+    }
+}
+
+.pala_menu_label {
+    border-radius: 3px;
+    padding: 2px 5px;
+    display: inline-block;
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #c91765;
+    margin-left: 5px;
+}
+
+.pala_menu_subtitle {
+    font-size: 11px;
+    font-style: normal;
+    color: #8d96ae;
+    display: block;
+}
+
+.elementor-icon-list-text {
+    @include transition;
+}
+
+.pala_page_list_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.elementor-icon-list-icon {
+    display: inline-block;
+    > i {
+        @include transition;
+    }
+}

@@ -1,0 +1,17 @@
+.icon-outline {
+    @include equal-size-lineHeight(40px);
+    display: inline-block;
+    color: $color-black;
+    text-align: center;
+    border: 1px solid currentColor;
+    &.circle {
+        border-radius: 50%;
+    }
+}
+.icon-wraper {
+    .icon-outline {
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
+}

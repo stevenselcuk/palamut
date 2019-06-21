@@ -1,0 +1,14 @@
+#secondary.widget-area {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 360px;
+	max-width: 740px;
+	padding-left: 20px;
+	padding-right: 20px;
+}

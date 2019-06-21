@@ -1,0 +1,73 @@
+.instafeed-container {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $color-black;
+        opacity: 0;
+        @include transition;
+        z-index: 1;
+    }
+    > img {
+        transform: scale(1.02);
+        @include transition;
+    }
+    .description-container {
+        position: absolute;
+        @include transition;
+        bottom: 0%;
+        left: 0;
+        z-index: 2;
+        padding: 30px;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        > span {
+            display: block;
+            color: $color-white;
+            line-height: 1;
+            > i {
+                padding-right: 6px;
+                display: inline-block;
+            }
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &:hover {
+        &::before {
+            opacity: .7;
+        }
+        .description-container {
+            opacity: 1;
+            visibility: visible;
+        }
+        > img {
+            transform: scale(1);
+        }
+    }
+}
+
+.instagram-gallery {
+    .owl-item {
+        > a {
+            margin-right: 6px;
+            display: block;
+        }
+    }
+}
+
+.indtafeed-gallery {
+    >  a {
+        float: left;
+        width: calc(100% / 6);
+        display: block;
+        border: .5px solid $color-white;
+    }
+}

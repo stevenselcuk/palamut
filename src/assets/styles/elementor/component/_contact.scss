@@ -1,0 +1,88 @@
+.pala-form {
+    form {
+        p {
+            margin-bottom: 0;
+        }
+        input {
+            &:not([type="submit"]) {
+                display: block;
+                width: 100%;
+                padding: .375rem .75rem;
+                font-size: 1rem;
+                color: #495057;
+                background-color: #fff;
+                border: 1px solid #e7e7e7;
+                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                height: 56px;
+                border-radius: 0px;
+                padding-left: 30px;
+                &:hover {
+                    border-color: #333333;
+                }
+                &:focus {
+                    border-color: #4d68ff;
+                }
+            }
+
+            &[type="submit"] {
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                user-select: none;
+                border-radius: 0;
+                @include transition;
+                padding: 12px 72px;
+                font-size: 0.9375rem;
+                background-color: #313636;
+                border: 0px solid #000;
+                color: $color-white;
+                cursor: pointer;
+                &:hover {
+                    background-color: #4d68ff;
+                }
+            }
+        }
+
+        label {
+            margin-bottom: 7px;
+            user-select: none;
+            color: #313636;
+
+            span {
+                padding-left: 10px;
+                pointer-events: none;
+                color: #777777;
+                font-size: 0.8125rem;
+                display: inline-block;
+            }
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid #e7e7e7;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            border-radius: 0px;
+            padding-left: 30px;
+            height: 176px;
+            resize: none;
+            padding-top: 15px;
+            &:hover {
+                border-color: #333333;
+            }
+            &:focus {
+                border-color: #4d68ff;
+            }
+        }
+
+        .pala-form-input {
+            margin-bottom: 50px;
+        }
+    }
+}

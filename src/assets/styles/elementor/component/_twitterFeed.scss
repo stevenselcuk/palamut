@@ -1,0 +1,476 @@
+.pala-twitter-feed {
+    padding: {
+        left: 15px;
+        right: 15px;
+    }
+}
+
+.pala-layout-grid {
+    .pala-twitter-feed-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &.pala-row {
+        margin: {
+            left: -15px;
+            right: -15px;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @for $i from 1 through 12 {
+        .pala-col-#{$i} {
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+
+            flex: 0 0 ((100% / 12) * $i);
+            max-width: ((100% / 12) * $i);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        @for $i from 1 through 12 {
+            .pala-col-#{$i} {
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        @for $i from 1 through 12 {
+            .pala-col-#{$i} {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+    }
+}
+
+.pala-twitter-feed-content-wraper {
+    background-color: #f7f9fb;
+    margin-bottom: 30px;
+    padding: 15px;
+    flex: auto;
+}
+
+.pala-twitter-feed-author {
+    display: flex;
+    align-items: center;
+
+    .pala-twitter-profile-picture {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        overflow: hidden;
+    }
+}
+
+.pala-twitter-profile-circle {
+    border-radius: 50%;
+}
+
+.profile-display-name {
+    margin-left: 10px;
+    line-height: 1;
+
+    .fullname {
+        color: #14171a;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        display: inline-block;
+
+        &:hover {
+            color: #D55732;
+            text-decoration: underline;
+        }
+    }
+
+    .screen_name {
+        font-size: 14px;
+        color: #657786;
+        display: block;
+
+        &:hover {
+            color: #D55732;
+            text-decoration: underline;
+        }
+    }
+
+    .pala-twitter-feed-item-user-screen-name {
+        display: flex;
+        align-items: center;
+    }
+
+    .pala-twitter-feed-item-user-date {
+        color: #657786;
+        font-size: 12px;
+        margin-left: 12px;
+    }
+}
+
+.pala-twitter-feed-comments {
+    display: flex;
+    align-items: center;
+
+    >a {
+        color: #657786;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 1;
+        padding: 0 2px;
+        position: relative;
+        margin-right: 24px;
+
+        svg {
+            height: 14px;
+            width: 14px;
+
+            &:not(:root) {
+                overflow: visible;
+            }
+        }
+
+        path {
+            fill: #657786;
+            @include transition;
+        }
+
+        >strong {
+            display: inline-block;
+            margin-left: 6px;
+            vertical-align: text-top;
+        }
+    }
+
+    .pala-twitter-comments {
+        &:hover {
+            color: #1da1f2;
+
+            svg {
+                path {
+                    fill: #1da1f2;
+                }
+            }
+        }
+    }
+
+    .pala-twitter-retweet {
+        &:hover {
+            color: #17bf63;
+
+            svg {
+                path {
+                    fill: #17bf63;
+                }
+            }
+        }
+    }
+
+    .pala-twitter-like {
+        &:hover {
+            color: #e0245e;
+
+            svg {
+                path {
+                    fill: #e0245e;
+                }
+            }
+        }
+    }
+}
+
+.feed-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    >a {
+        color: #D55732;
+
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.read-more-button {
+    margin-bottom: 20px;
+
+    >a {
+        color: #14171a;
+
+        &:focus,
+        &:hover {
+            color: #D55732;
+            text-decoration: underline;
+        }
+    }
+}
+
+.feed-title-hash {
+    margin-bottom: 20px;
+
+    >a {
+        color: #D55732;
+
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.pala-layout-masonary {
+    @for $i from 1 to 12 {
+        &.pala-col-#{$i} {
+            column-count: 12 / $i;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        @for $i from 1 through 12 {
+            &.pala-col-#{$i} {
+                column-count: 2;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        @for $i from 1 through 12 {
+            &.pala-col-#{$i} {
+                column-count: 1;
+            }
+        }
+    }
+
+    .pala-twitter-feed-content-wraper {
+        break-inside: avoid;
+    }
+}
+
+.pala-twitter-media {
+    margin-bottom: 20px;
+
+    >a {
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            .twitter_video_play_icon {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+
+    .video_content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+    }
+
+    .twitter_video_play_icon {
+        @include transition;
+        opacity: .9;
+        transform: scale(.9);
+        backface-visibility: hidden;
+        height: 64px;
+        width: 64px;
+
+        >circle {
+            fill: #1DA1F2;
+            @include transition;
+        }
+
+        >path {
+            fill: $color-white;
+            @include transition;
+        }
+    }
+}
+
+.pala-twitter-feed-header {
+    display: flex;
+    justify-content: space-between;
+
+    .pala-twitter-logo {
+        >a {
+            color: #e7e7e7;
+            @include transition;
+
+            &:hover {
+                color: #1DA1F2;
+            }
+        }
+    }
+}
+
+.pala-twitter-user-timeline {
+    padding: {
+        left: 15px;
+        right: 15px;
+    }
+
+    position: relative;
+}
+
+.pala-twitter-feed-header-user-info-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+    width: 100%;
+}
+
+.pala-twitter-feed-header-user-image-container {
+    margin-right: 9px;
+
+    >a {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        @include equal-size(100px);
+        border: 3px solid $color-white;
+    }
+}
+
+.pala-twitter-feed-header-user {
+    display: flex;
+    align-items: center;
+    // margin-top: -54px;
+}
+
+.pala-twitter-feed-header-user-info {
+    .pala-twitter-fullname {
+        display: block;
+        font-size: rem(16px);
+        font-weight: 700;
+        color: #222222;
+        line-height: 1;
+
+        &:hover {
+            text-decoration: underline;
+            color: #D55732;
+        }
+    }
+
+    .pala-twitter-screenname {
+        color: #657786;
+        font-size: rem(13px);
+        line-height: 1;
+
+        &:hover {
+            text-decoration: underline;
+            color: #D55732;
+        }
+    }
+}
+
+.twitter-verified-bdage {
+    display: inline-block;
+    padding-right: 2px;
+    vertical-align: middle;
+
+    >svg {
+        @include equal-size(13px);
+    }
+}
+
+.pala-twitter-feed-header-user-info-follow {
+    align-self: center;
+
+    >a {
+        background-color: #1da1f2;
+        border-radius: 17.5px;
+        box-shadow: 0px 7px 15px 0px rgba(29, 161, 242, 0.3);
+        padding: 6px 35px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFF;
+        display: inline-block;
+    }
+}
+
+.pala-twitter-feed-header-statistics {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
+
+    >.pala-twitter-tweet-count {
+        color: #657786;
+        font-size: 12px;
+        margin-bottom: 0;
+        margin-right: 50px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        >strong {
+            display: block;
+            color: #abb8c2;
+            font-size: 18px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .pala-twitter-feed-profile-info-wraper {
+        padding: 40px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .pala-twitter-feed-profile-info-wraper {
+        padding: 30px;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .pala-twitter-feed-profile-info-wraper {
+        padding: 15px;
+        // padding-top: 0px;
+    }
+
+    .pala-twitter-feed-header-user {
+        margin-bottom: 30px;
+    }
+}
+
+.pala-twitter-feed-header-banner-container {
+    +.pala-twitter-feed-profile-info-wraper {
+        margin-top: -54px;
+        padding-top: 0px;
+
+        .pala-twitter-feed-header-user-info {
+            align-self: flex-end;
+            margin-bottom: -4px;
+        }
+
+        .pala-twitter-feed-header-user-info-follow {
+            align-self: flex-end;
+        }
+    }
+}
+
+.pala-twitter-retweet {
+    svg {
+        transform: scale(1.2);
+    }
+}

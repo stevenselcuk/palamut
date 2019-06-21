@@ -1,0 +1,111 @@
+.xs-team-sidebar {
+    &:not(.mfp-bg) {
+        width: 380px;
+        background-color: $color-white;
+        box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+    }
+    &.mfp-bg {
+        background-color: #444444;
+        &.mfp-ready {
+            opacity: 1;
+        }
+    }
+    .mfp-content {
+        .mfp-close {
+            margin: 0;
+            top: -44px;
+            font-size: rem(0px);
+            @include equal-size(auto);
+            line-height: unset;
+            border: 0px solid #000;
+            opacity: 1;
+            left: 22px;
+            &:hover {
+                background-color: transparent;
+                color: $bColor;
+            }
+            &::before {
+                content: "\e870";
+                font-size: rem(15px);
+                font-family: $iconFont2;
+            }
+        }
+    }
+    .mfp-container {
+        padding: 0px;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            background-color: $color-white;
+            box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+            height: 60px;
+            width: 100%;
+        }
+    }
+    .mfp-arrow {
+        opacity: 1;
+        top: 0%;
+        margin-top: 15px;
+        width: auto;
+        height: auto;
+        font-size: rem(15px);
+        transform: scale(1);
+        &::after {
+            display: none;
+        }
+        &::before {
+            font-family: $iconFont2;
+            margin: 0;
+            border: 0;
+        }
+    }
+    .mfp-arrow-left {
+        left: calc(100% - 67px);
+        &::before {
+            content: "\e875";
+        }
+    }
+    .mfp-arrow-right {
+        right: 35px;
+        &::before {
+            content: "\e876";
+        }
+    }
+    &.right-sidebar {
+        right: 0;
+        left: inherit;
+        .mfp-arrow-left {
+            right: inherit;
+            left: 25px;
+        }
+        .mfp-arrow-right {
+            right: inherit;
+            left: 47px;
+        }
+        .mfp-content {
+            .mfp-close {
+                left: inherit;
+                right: 22px;
+            }
+        }
+    }
+}
+
+.xs-modal-sidebar {
+    padding: 40px;
+    margin-top: 60px;
+    .modal-img {
+        margin-bottom: 38px;
+    }
+    .xs-modal-content {
+        padding: {
+            left: 0;
+            right: 0;
+        }
+    }
+    .modal-img {
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,784 @@
+// colors list one
+$colors: #1cf196,
+#32d6fb,
+#fad470,
+#b18cfe;
+// colors list two
+$colors-two: #36a2eb,
+#ffce56,
+#4bc0c0,
+#ff6384;
+/* count down timer */
+
+.palamut-countdown-timer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+
+    .palamut-timer-container {
+        // display: inline-block;
+        // width: 25%;
+        flex: 0 0 25%;
+    }
+
+    .palamut-inner-container {
+        @include equal-size(150px);
+        border-radius: 50%;
+        background-color: #443aca;
+        display: flex;
+        align-items: center;
+
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+
+    .palamut-timer-content {
+        width: 100%;
+
+        >span {
+            display: block;
+            color: $color-white;
+            line-height: 1;
+        }
+    }
+
+    .palamut-timer-count {
+        font-size: rem(36px);
+        font-weight: 700;
+        margin-bottom: 13PX;
+    }
+
+    .palamut-timer-title {
+        font-size: rem(14px);
+        letter-spacing: 2.50px;
+    }
+
+    // &:before {
+    //     position: absolute;
+    //     content: "";
+    //     top: 0;
+    //     left: 0;
+    //     height: 100%;
+    //     width: 100%;
+    // }
+    $style-border: true;
+
+    @if $style-border==true {
+
+        /* style border */
+        &.palamut-style-border {
+            .palamut-inner-container {
+                background-color: $color-white;
+                box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+                border: 4px solid #333333;
+            }
+
+            .palamut-timer-content {
+                >span {
+                    color: #333333;
+                }
+            }
+        }
+    }
+
+    $thin-border: true;
+
+    @if $thin-border==true {
+
+        /* thin border */
+        &.palamut-thin-border {
+            .palamut-inner-container {
+                border: 1px solid #e7e7e7;
+            }
+        }
+    }
+
+    $colorful-border: true;
+
+    @if $colorful-border==true {
+
+        /* colorful border */
+        &.palamut-colorful-border {
+            .palamut-timer-container {
+                @for $i from 1 through length($colors) {
+                    &:nth-child(#{$i}) {
+                        .palamut-inner-container {
+                            border-color: nth($colors, $i);
+                        }
+                    }
+                }
+            }
+
+            @if $thin-border==true {
+
+                /* thin border */
+                &.palamut-thin-border {
+                    .palamut-timer-container {
+                        @for $i from 1 through length($colors) {
+                            &:nth-child(#{$i}) {
+                                .palamut-timer-count {
+                                    color: nth($colors, $i);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    $style-shadow: true;
+
+    @if $style-shadow==true {
+
+        /* shadow countdown timer */
+        &.palamut-style-shadow {
+            .palamut-inner-container {
+                box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    $colorful-bg: true;
+
+    @if $colorful-bg==true {
+
+        /* colorful background */
+        &.palamut-colorful-bg {
+            .palamut-timer-container {
+                @for $i from 1 through length($colors-two) {
+                    &:nth-child(#{$i}) {
+                        .palamut-inner-container {
+                            background-color: nth($colors-two, $i);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    $style-gradient: true;
+
+    @if $style-gradient==true {
+
+        /* style gradient */
+        &.palamut-style-gradient {
+            .palamut-inner-container {
+                background: rgb(130, 225, 130);
+                background: linear-gradient(0deg, rgba(130, 225, 130, 1) 0%, rgba(10, 203, 245, 1) 100%);
+            }
+        }
+    }
+
+    $multi-gradient: true;
+
+    @if $multi-gradient==true {
+        &.palamut-multi-gradient {
+            .palamut-timer-container {
+                .palamut-inner-container {
+                    background: rgb(130, 225, 130);
+                    background: linear-gradient(0deg, rgba(130, 225, 130, 1) 0%, rgba(10, 203, 245, 1) 100%);
+                }
+
+                &:nth-child(2) {
+                    .palamut-inner-container {
+                        background: rgb(177, 140, 254);
+                        background: linear-gradient(0deg, rgba(177, 140, 254, 1) 0%, rgba(148, 96, 255, 1) 100%);
+                    }
+                }
+
+                &:nth-child(3) {
+                    .palamut-inner-container {
+                        background: rgb(242, 112, 156);
+                        background: linear-gradient(0deg, rgba(242, 112, 156, 1) 0%, rgba(254, 143, 117, 1) 100%);
+                    }
+                }
+
+                &:nth-child(4) {
+                    .palamut-inner-container {
+                        background: rgb(7, 183, 135);
+                        background: linear-gradient(0deg, rgba(7, 183, 135, 1) 0%, rgba(126, 213, 0, 1) 100%);
+                    }
+                }
+            }
+        }
+    }
+
+    $multi-bg-image: true;
+
+    @if $multi-bg-image==true {
+
+        /* multi background image */
+        &.palamut-multi-bg-image {
+            .palamut-inner-container {
+                background-image: url(../images/countdown-timer/countdown-timer-img-1.jpg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                position: relative;
+                overflow: hidden;
+
+                .palamut-timer-content {
+                    position: relative;
+                    z-index: 6;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba($color: $color-black, $alpha: .6);
+                }
+            }
+
+            .palamut-timer-container {
+                &:nth-child(2) {
+                    .palamut-inner-container {
+                        background-image: url(../images/countdown-timer/countdown-timer-img-2.jpg);
+                    }
+                }
+
+                &:nth-child(3) {
+                    .palamut-inner-container {
+                        background-image: url(../images/countdown-timer/countdown-timer-img-3.jpg);
+                    }
+                }
+
+                &:nth-child(4) {
+                    .palamut-inner-container {
+                        background-image: url(../images/countdown-timer/countdown-timer-img-4.jpg);
+                    }
+                }
+            }
+        }
+    }
+
+    $multi-border-image: true;
+
+    @if $multi-border-image==true {
+
+        /* multiborder images */
+        &.palamut-multi-border-image {
+            .palamut-inner-container {
+                background-image: url(../images/countdown-timer/circle-img-1.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                background-color: $color-white;
+            }
+
+            .palamut-timer-container {
+                &:nth-child(2) {
+                    .palamut-inner-container {
+                        background-image: url(../images/countdown-timer/circle-img-2.png);
+                    }
+                }
+
+                &:nth-child(3) {
+                    .palamut-inner-container {
+                        background-image: url(../images/countdown-timer/circle-img-3.png);
+                    }
+                }
+
+                &:nth-child(4) {
+                    .palamut-inner-container {
+                        background-image: url(../images/countdown-timer/circle-img-4.png);
+                    }
+                }
+            }
+
+            .palamut-timer-content {
+                >span {
+                    color: #333333;
+                }
+            }
+        }
+    }
+}
+
+/* countdown timer two */
+
+$countdown-timer-2: true;
+
+@if $countdown-timer-2==true {
+    .palamut-countdown-timer-2 {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-wrap: wrap;
+
+        .palamut-timer-container {
+            // width: 25%;
+            // display: inline-block;
+            flex: 0 0 25%;
+            padding: 0 15px;
+        }
+
+        .palamut-timer-count {
+            background-color: $color-primary;
+            display: block;
+            @include height-lineheight(107px, $Lheight: 87px);
+            color: $color-white;
+            font-size: rem(48px);
+            font-weight: 700;
+            border-radius: 10px;
+        }
+
+        .palamut-timer-title {
+            display: block;
+            @include height-lineheight(40px);
+            border-radius: 10px;
+            border: 2px solid $color-primary;
+            font-size: rem(14px);
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            background-color: $color-white;
+            margin: 0 31px;
+            margin-top: -20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        $style-solid: true;
+
+        @if $style-solid==true {
+            &.palamut-style-solid {
+                .palamut-timer-count {
+                    background-color: $color-white;
+                    color: #ff5657;
+                    border: 3px solid currentColor;
+                }
+
+                .palamut-timer-title {
+                    color: $color-white;
+                    border: 0px;
+                    background-color: #ff5657;
+                }
+            }
+        }
+
+        $style-shadow: true;
+
+        @if $style-shadow==true {
+            &.palamut-style-shadow {
+                .palamut-timer-count {
+                    box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        $style-gradient: true;
+
+        @if $style-gradient==true {
+            &.palamut-style-gradient {
+                .palamut-timer-count {
+                    background: rgb(130, 225, 130);
+                    background: linear-gradient(-35deg, rgba(130, 225, 130, 1) 0%, rgba(10, 203, 245, 1) 100%);
+                    position: relative;
+                    border: 0px solid #000;
+                    z-index: 1;
+                    color: #333333;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        top: 3px;
+                        left: 3px;
+                        right: 3px;
+                        bottom: 3px;
+                        background-color: $color-white;
+                        border-radius: inherit;
+                        z-index: -1;
+                        pointer-events: none;
+                    }
+                }
+
+                .palamut-timer-title {
+                    background: rgb(130, 225, 130);
+                    background: linear-gradient(-35deg, rgba(130, 225, 130, 1) 0%, rgba(10, 203, 245, 1) 100%);
+                    border: 0px;
+                    color: $color-white;
+                }
+            }
+        }
+
+        $green-v: true;
+
+        @if $green-v==true {
+            &.palamut-green-v {
+
+                .palamut-timer-count,
+                .palamut-timer-title {
+                    background-color: transparent;
+                    color: #1cf196;
+                    border: 3px solid currentColor;
+                }
+
+                .palamut-timer-title {
+                    background-color: #222222;
+                }
+            }
+        }
+
+        $version-3: true;
+
+        @if $version-3==true {
+            &.palamut-version-3 {
+                .palamut-timer-count {
+                    line-height: 96px;
+                }
+
+                .palamut-timer-title {
+                    border: 3px solid $color-white;
+
+                    margin: {
+                        left: 0;
+                        right: 0;
+                        top: -14px;
+                    }
+                }
+            }
+        }
+
+        $style-primary: true;
+
+        @if $style-primary==true {
+            &.palamut-style-primary {
+                .palamut-timer-title {
+                    color: $color-primary;
+                    border-color: currentColor;
+                }
+            }
+        }
+
+        $boxed-style: true;
+
+        @if $boxed-style==true {
+            &.palamut-boxed-style {
+                border: 1px solid #e7e7e7;
+
+                @if $green-v {
+                    &.palamut-green-v {
+                        border-color: #1cf196;
+
+                        .palamut-timer-container {
+                            &:not(:last-child) {
+                                &::before {
+                                    background-color: #1cf196;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                border-radius: 10px;
+                padding: 49px 0;
+
+                .palamut-timer-container {
+                    .palamut-timer-count {
+                        margin-bottom: 12px;
+                    }
+
+                    &:not(:last-child) {
+                        position: relative;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            top: 50%;
+                            transform: translateY(-50%);
+                            right: 0;
+                            background-color: #e7e7e7;
+                            width: 1px;
+                            height: 30px;
+                        }
+                    }
+
+                    >span {
+                        border: 0px solid #000;
+                        height: auto;
+                        line-height: normal;
+                        background-color: transparent;
+                        margin: 0px;
+                    }
+                }
+
+                $version-2: true;
+
+                @if $version-2==true {
+                    &.palamut-version-2 {
+                        background-color: $color-white;
+                        box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+
+                        .palamut-timer-title {
+                            color: rgba($color: $color-black, $alpha: .5);
+                        }
+                    }
+                }
+
+                $multicolor: true;
+
+                @if $multicolor==true {
+                    &.palamut-multicolor {
+                        .palamut-timer-count {
+                            color: #5558ed;
+                        }
+
+                        .palamut-timer-container {
+                            &:nth-child(2) {
+                                .palamut-timer-count {
+                                    color: #ffcc03;
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                .palamut-timer-count {
+                                    color: #ff5657;
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                .palamut-timer-count {
+                                    color: #09b2a0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                $version-3: true;
+
+                @if $version-3==true {
+                    &.palamut-version-3 {
+                        border: 0px solid #000;
+                        border-radius: 0px;
+                        padding: 0px;
+
+                        .palamut-timer-container {
+                            &:not(:last-child) {
+                                &:before {
+                                    content: ":";
+                                    height: auto;
+                                    width: 0;
+                                    font-size: rem(40px);
+                                    color: $color-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* count down timer 3 */
+
+.palamut-countdown-timer-3 {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+
+    .palamut-timer-container {
+        // width: 25%;
+        // display: inline-block;
+        flex: 0 0 25%;
+        padding: 0 3px;
+    }
+
+    .palamut-timer-count {
+        @include height-lineheight(190px);
+        color: #333333;
+        display: block;
+        font-size: rem(48px);
+        font-weight: 700;
+        position: relative;
+        background-color: $color-white;
+        z-index: 1;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(-223deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, rgb(234, 234, 234) 50%, rgb(231, 231, 231) 100%);
+        }
+    }
+
+    .palamut-timer-title {
+        display: block;
+        @include height-lineheight(50px);
+        font-size: rem(14px);
+        letter-spacing: 2.5px;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+        background-color: #1cf196;
+        color: #333333;
+    }
+
+    $version-box: true;
+
+    @if $version-box==true {
+        &.palamut-version-box {
+            .palamut-timer-content {
+                background-color: #5558ed;
+                box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1);
+                height: 190px;
+                display: flex;
+                align-items: flex-end;
+                padding: 30px 0;
+            }
+
+            .palamut-inner-container {
+                flex: 0 0 100%;
+
+                >span {
+                    color: $color-white;
+                    background-color: transparent;
+                    height: auto;
+                    line-height: normal;
+                }
+            }
+
+            .palamut-timer-count {
+                margin-bottom: 10px;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            .palamut-timer-container {
+                padding: 0 5px;
+
+                &:nth-child(2) {
+                    .palamut-timer-content {
+                        height: 240px;
+                        background-color: #ffcc03;
+                    }
+                }
+
+                &:nth-child(3) {
+                    .palamut-timer-content {
+                        background-color: #ff5657;
+                    }
+                }
+
+                &:nth-child(4) {
+                    .palamut-timer-content {
+                        height: 150px;
+                        background-color: #09b2a0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.palamut-counter-area {
+    .xs-overlay {
+        opacity: .8;
+    }
+}
+
+/* ribbon style countdown */
+
+.palamut-countdown-container {
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    border-radius: 10px;
+    background-size: cover;
+    margin-bottom: 62px;
+
+    padding: {
+        top: 30px;
+        bottom: 60px;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $color-black;
+        opacity: .7;
+        border-radius: inherit;
+        pointer-events: none;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -62px;
+        left: 0;
+        //background-image: url(../images/countdown-timer/shadow.png);
+        width: 100%;
+        height: 49px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        pointer-events: none;
+        background-size: contain;
+    }
+}
+
+.palamut-countdown-timer-4 {
+    position: relative;
+    z-index: 2;
+    @include height-lineheight(120px);
+    background-color: rgb(253, 51, 88);
+    background-size: 101% 101%;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -20px;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        border-top: 20px solid #993535;
+        border-left: 30px solid transparent;
+    }
+
+    &::after {
+        right: 0;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid #993535;
+    }
+
+    .palamut-timer-container {
+        flex: 0 0 25%;
+        color: $color-white;
+        height: 100%;
+    }
+
+    .palamut-timer-count {
+        font-size: rem(48px);
+        font-weight: 700;
+    }
+
+    .palamut-timer-title {
+        font-size: rem(18px);
+        vertical-align: top;
+    }
+}

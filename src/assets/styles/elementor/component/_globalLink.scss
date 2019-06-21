@@ -1,0 +1,59 @@
+.palamut-infobox {
+    position: relative;
+}
+
+.pala_global_link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+}
+
+.pala-badge {
+    background-color: #ff057c;
+    font-size: .70588rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 1px 6px;
+    border-radius: .29412rem 0 .29412rem 0;
+    display: inline-block;
+}
+
+.pala-icon-box-badge {
+    position: absolute;
+}
+.pala_position {
+    &_top_left {
+        top: 0;
+        left: 0;
+    }
+    &_top_center {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &_top_right {
+        top: 0;
+        right: 0;
+    }
+    &_center_right {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+    &_bottom_left {
+        bottom: 0;
+        left: 0;
+    }
+    &_bottom_center {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &_bottom_right {
+        bottom: 0;
+        right: 0;
+    }
+}
