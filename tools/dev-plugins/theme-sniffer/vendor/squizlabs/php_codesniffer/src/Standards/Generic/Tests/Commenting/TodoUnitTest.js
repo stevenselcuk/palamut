@@ -18,6 +18,6 @@ alert('test');
 // Extract info from the array (todo: make it faster)
 // To do this, use a function!
 // notodo! NOTODO! NOtodo!
-//TODO . id:39
+//GARBAGE . id:39
 // étodo
 // todoé
