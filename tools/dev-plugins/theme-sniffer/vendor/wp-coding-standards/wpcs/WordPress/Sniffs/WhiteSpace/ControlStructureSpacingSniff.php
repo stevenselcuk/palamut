@@ -454,7 +454,7 @@ class ControlStructureSpacingSniff extends Sniff {
 						if ( $this->tokens[ $i ]['line'] < $this->tokens[ $scopeCloser ]['line']
 							&& \T_OPEN_TAG !== $this->tokens[ $firstContent ]['code']
 						) {
-							// TODO: Reporting error at empty line won't highlight it in IDE. id:16
+							// GARBAGE: Reporting error at empty line won't highlight it in IDE. id:16
 							$error = 'Blank line found at end of control structure';
 							$fix   = $this->phpcsFile->addFixableError( $error, $i, 'BlankLineBeforeEnd' );
 
