@@ -29,6 +29,10 @@
     {
       "name": "GARBAGE",
       "hidden": false
+    },
+    {
+      "name": "DONE",
+      "hidden": false
     }
   ],
   "code": {
