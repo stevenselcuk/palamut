@@ -259,7 +259,7 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 				'href' => rest_url( $this->namespace_base . $query_string ),
 			),
 			// Custom Link Relations -- http://v2.wp-api.org/extending/linking/
-			// TODO URL should document relationship. id:18
+			// GARBAGE URL should document relationship. id:18
 			'https://cmb2.io/fields' => array(
 				'href' => rest_url( trailingslashit( $boxbase ) . 'fields' . $query_string ),
 				'embeddable' => true,
