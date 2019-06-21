@@ -17,18 +17,18 @@
 		display: block;
 	}
 	flex-wrap: wrap;
-	align-items:flex-start;
-	justify-content: space-around;
+	align-items: start;
+	justify-content: space-evenly;
 	
 	main {
 		@include itsfor(tablet) {
-			flex-basis: 0 0 600px;
+			flex-basis: 600px;
 		}
 		@include itsfor(laptop) {
-			flex-basis: 0 0 720px;
+			flex-basis: 720px;
 		}
 		@include itsfor(desktop) {
-			flex-basis: 0 0 780px;
+			flex-basis: 780px;
 		}
 	
 	}

@@ -1,5 +1,4 @@
 body {
-	background-color: var(--body-background-color);
 	color: var(--body-text-color);
 	font-family: var(--body-text-fontfamily);
 	@include fluid-type(480px, 1024px, $body-font__size-min, $body-font__size-max);

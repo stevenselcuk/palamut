@@ -207,6 +207,7 @@ function devServer() {
 	watch( './src/assets/styles/**/*.scss', series( stylesDev, GutenbergStylesDev, ClassicStylesDev ) );
 	watch( './src/assets/styles/widgets/**', series( WidgetsstylesDev ) );
 	watch( './src/assets/styles/shortcodes/**', series( ShortCodestylesDev ) );
+	watch( './src/assets/styles/elementor/**', series( ElementorstylesDev ) );
 	watch( './src/assets/js/**', series( footerScriptsDev, Reload ) );
 	watch( './src/theme/**', series( copyThemeDev, Reload ) );
 	watch( './src/plugins/**', series( pluginsDev, Reload ) );
@@ -297,6 +298,30 @@ function ShortCodestylesDev() {
 		.pipe( browserSync.stream( { match: '**/*.css' } ) );
 }
 
+function ElementorstylesDev() {
+	return src( './src/assets/styles/elementor/main.scss' )
+		.pipe( plumber( function( error ) {
+			gutil.log( error.message );
+			this.emit( 'end' );
+		} ) )
+		.pipe( bulkSass() )
+		.pipe(
+			sass( {
+				errLogToConsole: true,
+				outputStyle: 'compact',
+				precision: 10,
+			} )
+		)
+	//		.pipe( autoprefixer( conf.BROWSERS_LIST ) )
+	//		.pipe( gcmq() )
+	//		.pipe( lineec() )
+	//		.pipe( postcss( pluginsListDev ) )
+		.pipe( concat( 'main.css' ) )
+	//		.pipe( lineec() )
+		.pipe( dest( './src/plugins/palamut/includes/supports/elementor/assets/css/' ) )
+		.pipe( browserSync.stream( { match: '**/*.css' } ) );
+}
+
 function WidgetsstylesDev() {
 	return src( './src/assets/styles/widgets/main.scss' )
 		.pipe( plumber( function( error ) {
@@ -374,6 +399,7 @@ exports.start = series(
 	WidgetsstylesDev,
 	GutenbergStylesDev,
 	ClassicStylesDev,
+	ElementorstylesDev,
 	footerScriptsDev,
 	pluginsDev,
 	devServer,

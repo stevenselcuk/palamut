@@ -16,16 +16,15 @@
  */
 if ( function_exists( 'register_block_type' ) || ! class_exists( 'Classic_Editor' ) ) :
 	require_once plugin_dir_path( __FILE__ ) . 'gutenberg/init.php';
-endif;
-/**
- * Add full support for Gutenberg.
- */
-require_once plugin_dir_path( __FILE__ ) . 'elementor/init.php';
-
-if ( ! function_exists( 'register_block_type' ) || class_exists( 'Classic_Editor' ) ) :
-
+else :
 	/**
-	* Add full support for Classic Editor
+	* Otherwise Add full support for Classic Editor. You don't like Gutenberg.
 	*/
 	require_once plugin_dir_path( __FILE__ ) . 'classic-editor/init.php';
+endif;
+/**
+ * Add full support for Elementor.
+ */
+if ( defined( 'ELEMENTOR_VERSION' ) ) :
+	require_once plugin_dir_path( __FILE__ ) . 'elementor/init.php';
 endif;

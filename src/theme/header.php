@@ -44,9 +44,6 @@
 			</div>
 			<!-- End: .site-branding -->
 
-		<?php
-		if ( has_nav_menu( 'main-navigation' ) ) :
-			?>
 			<!-- Start: #main-nav -->
 			<nav id="primary-nav" class="site-navigation" aria-label="<?php esc_attr_e( 'Header Menu', 'textdomain' ); ?>" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"
 				role="navigation">
@@ -57,7 +54,7 @@
 						'menu_class'     => 'primary-menu',
 						'depth'          => 2,
 						'container'      => false,
-						'fallback_cb'    => false,
+						'fallback_cb'    => 'Palamut_Mobile_Navwalker::fallback',
 						// @TODO: We need a fallback for no menu situation.
 					)
 				);
@@ -71,12 +68,7 @@
 				<div></div>
 			</button>
 			<!-- End: .hamburger-->
-
-		<?php elseif ( is_customize_preview() ): ?>
-			<div class="customizer-menu-notice">
-			<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-menus" data-balloon-pos="right" data-balloon="Add menu item"></button></span>
 		</div>
-		<?php endif; ?>
 		<?php
 		if ( prefix_gimme( 'show-search' ) ) :
 			get_search_form();

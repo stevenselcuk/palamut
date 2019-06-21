@@ -135,3 +135,21 @@ function allowed_html() {
 		)
 	);
 }
+
+function category_list( $cat ) {
+	$query_args = array(
+		'orderby'    => 'ID',
+		'order'      => 'DESC',
+		'hide_empty' => 1,
+		'taxonomy'   => $cat,
+	);
+
+	$categories = get_categories( $query_args );
+	$options    = array( esc_html__( '0', 'palamut' ) => 'All Category' );
+	if ( is_array( $categories ) && count( $categories ) > 0 ) {
+		foreach ( $categories as $cat ) {
+			$options[ $cat->term_id ] = $cat->name;
+		}
+		return $options;
+	}
+}
