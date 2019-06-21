@@ -1,15 +1,29 @@
 # Palamut WordPress Theme Framework & Companion Plugin
 
-Here is a short description of the theme that might appear in the customizer.
 
-## Description
+## What is Palamut?
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
- 
- 
-Before you start here are some informations
-
-*   Don't confuse with companion plugin **Palamut** and working environment **Palamut**, It's just for github repository name. That's all.
+Palamut is a habitat where is your unique WordPress theme born and lives. 
+**What is inside?**
+### WordPress Starter Theme
+It's your first spark. Tested up to WordPress 5.2. Support all WordPress Template Hierarchy. But there are some extras: Portfolio template (and also it's own category page, single and loop page. Starter theme includes customizer support with custom controls.
+**Other Starter Theme Features:**
+- Main Menu
+- Good looking mobile menu
+- Social Accounts menu
+- Sidebar (It is a classic, just  like 2010)
+- Footer Widget Area X 2
+**Companion Plugin: The Palamut**
+Yes, it has the same name as this repo but don't worry. All features are in here which are must in plugin domain in according with Envato. What are they?🤔
+- Gutenberg Blocks
+- Elementor Widgets (Right, It has gooooood support for Elementor)
+- WordPress Widgets
+- Short Codes ( Yes, I don't forget Classic Editor Support)
+- Demo Import
+**Gulp**
+It's your friend who never lets you down. Includes life saving tasks and there is more browserSync with PHP server! No more boring PHP stuff.😓 Live reload with this feature! Perfekt mix.🍔
+**Helpers**
+Palamut coded iaw WPTRT, Envato guideline. Palamut recommends Envato Theme Check, Query Monitor, Classic Editor and Elementor plugin for your working habitat. You can find them under /tools. 
 
 ## File Structure
     
