@@ -7,7 +7,7 @@
 // GARBAGE: remove this. id:3
 alert('test');
 
-// FIXME remove this. id:11
+// GARBAGE remove this. id:11
 alert('test');
 
 // fixme - remove this.
