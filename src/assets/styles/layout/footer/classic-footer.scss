@@ -1,21 +1,16 @@
 
-#colophon.classic-footer {
-	background: $footer-bg-color;
-	border-top: $border;
-	margin-top: $content__spacer;
-	width: 100%;
-	@include media-breakpoint-up(sm) {
-		padding: 11vw 4%;
-	}
-	@include media-breakpoint-down(sm) {
-		padding: 5vw 0%;
-	}
-	
+#colophon.classic-footer {	
 	.footer-widgets {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: $content__width--wide;
 		padding-left: $content__padding;
 		padding-right: $content__padding;
+		@include media-breakpoint-up(sm) {
+			padding: 11vw 4%;
+		}
+		@include media-breakpoint-down(sm) {
+			padding: 5vw 0%;
+		}
 	}
 }

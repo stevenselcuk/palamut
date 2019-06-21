@@ -348,6 +348,26 @@ $wp_customize->add_setting(
 		)
 	);
 
+	// Body Text Color.
+	$wp_customize->add_setting(
+		'body_text_color',
+		array(
+			'default'           => '#000000',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'prefix_sanitize_rgba',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Palamut_Alpha_Color_Control(
+			$wp_customize,
+			'body_text_color',
+			array(
+				'label'   => esc_html__( 'Body Text Color', 'textdomain' ),
+				'section' => 'prefix_typography_body',
+			)
+		)
+	);
 
 
 	 // Add the body font fanily setting and control.

@@ -100,10 +100,6 @@ function prefix_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-	 * Set transports for the Customizer.
-	 */
-	$wp_customize->get_setting( 'custom_logo_max_width' )->transport = 'postMessage';
 }
 
 add_action( 'customize_register', 'prefix_customize_register', 11 );

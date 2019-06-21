@@ -50,6 +50,11 @@ function prefix_customizer_css() {
 	// Layout.
 	$header_max_width = get_theme_mod( 'header_max_width', prefix_theme_defaults( 'header_max_width' ) );
 
+	// Colors.
+	$header_bg_color  = get_theme_mod( 'header_bg_color', prefix_theme_defaults( 'header_bg_color' ) );
+	$content_bg_color = get_theme_mod( 'content_bg_color', prefix_theme_defaults( 'content_bg_color' ) );
+	$body_text_color  = get_theme_mod( 'body_text_color', prefix_theme_defaults( 'body_text_color' ) );
+
 	// CSS render.
 	$css =
 	'
@@ -69,7 +74,11 @@ function prefix_customizer_css() {
 		--menu-item-fontsize:  ' . $menu_item_font_size . 'px;
 		--menu-item-fontweight:  ' . $menu_item_font_weight . ';
 		--menu-item-transform:  ' . $menu_item_transform . ';
-
+		
+		--header-bg-color:  ' . $header_bg_color . ';
+		--content-bg-color:  ' . $content_bg_color . ';
+		
+		--body-text-color:  ' . $body_text_color . ';
 
 
  	}

@@ -98,7 +98,6 @@
 		customizer_image_option_display_reverse( 'custom_logo', 'blogdescription', 140 );
 		customizer_image_option_display_reverse( 'custom_logo', 'display_header_text', 140 );
 
-
 		// Only show the columns size and gutter controls, when the "Columns" shop layout option is selected.
 		customizer_option_display( 'shop_layout', 'shop_layout_columns_size', 'product-grid__columns' );
 		customizer_option_display( 'shop_layout', 'shop_layout_columns_gutter', 'product-grid__columns' );

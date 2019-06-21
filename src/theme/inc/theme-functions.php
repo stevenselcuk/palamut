@@ -86,7 +86,7 @@ if ( ! function_exists( 'prefix_add_body_class' ) ) {
 		if ( prefix_gimme( 'show_search' ) ) {
 			$classes[] = prefix_gimme( 'search_type' );
 		}
-		if ( is_singular() && has_blocks() && ! class_exists( 'Classic_Editor' ) ) {
+		if ( has_blocks() || ! class_exists( 'Classic_Editor' ) ) {
 			$classes[] = 'gutenberg-editor';
 		} else {
 			$classes[] = 'classic-editor';
@@ -108,7 +108,7 @@ if ( ! function_exists( 'prefix_add_body_class' ) ) {
 			$classes[] = 'front-page';
 		}
 
-		if ( is_active_sidebar( 'sidebar' ) && prefix_gimme( 'show_sidebar' ) === true ) {
+		if ( is_active_sidebar( 'sidebar' ) ) {
 			$classes[] = 'has-sidebar';
 		}
 		return $classes;

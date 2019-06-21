@@ -19,6 +19,104 @@
  * @license pkg.license
  */
 
+if ( ! function_exists( 'prefix_mobile_menu' ) ) :
+
+	/**
+	 * Mobile Menu Component.
+	 *
+	 * @method prefix_mobile_menu
+	 */
+	function prefix_mobile_menu() {
+
+		$is_active = ( ! is_active_sidebar( 'sidebar-1' ) ) ? 'no-widget-area' : 'has-widget-area'; ?>
+
+	<aside id="secondary" class="offcanvas-sidebar <?php echo esc_attr( $is_active ); ?>">
+
+		<!-- Start: .hamburger-->
+		<button class="offcanvas-close">
+			<?php echo wp_kses( prefix_icons()->get( array( 'icon' => 'cancel' ) ), prefix_clean_svg() ); ?>
+		</button>
+		<!-- End: .hamburger-->
+
+		<?php do_action( 'prefix_mobile_sidebar_start' ); ?>
+
+		<div class="sidebar--section">
+
+			<div class="sidebar--section-inner">
+
+				<nav id="mobile-nav" class="mobile-navigation" aria-label="<?php esc_attr_e( 'Mobile Menu', 'textdomain' ); ?>">
+
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_class'     => 'mobile-menu',
+							'depth'          => '0',
+							'link_before'    => '<span>',
+							'link_after'     => '</span>',
+							'fallback_cb'    => 'Palamut_Mobile_Navwalker::fallback',
+							'walker'         => new Palamut_Mobile_Navwalker(),
+						)
+					);
+					?>
+				</nav>
+
+			</div>
+
+		</div>
+
+		<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
+			<div class="sidebar--section widget-area">
+				<div class="sidebar--section-inner">
+					<?php dynamic_sidebar( 'sidebar' ); ?>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php do_action( 'prefix_mobile_sidebar_end' ); ?>
+
+	</aside>
+		<?php
+
+	}
+endif;
+
+
+if ( ! function_exists( 'prefix_footer_widgets' ) ) :
+
+	/**
+	 * Footer Widget Area Component
+	 *
+	 * @method prefix_footer_widgets
+	 */
+	function prefix_footer_widgets() {
+		if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) ) :
+			?>
+
+<!-- Start: .footer-widgets-->
+<div class="footer-widgets row justify-around clearfix">
+
+			<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+		<div class="footer-sidebar small-12 phone-12 tablet-12 laptop-6 desktop-6">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+		</div>
+		<?php endif; ?>
+
+			<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
+		<div class="footer-sidebar small-12 phone-12 tablet-12 laptop-6 desktop-6">
+				<?php dynamic_sidebar( 'footer-2' ); ?>
+		</div>
+		<?php endif; ?>
+
+</div>
+<!-- End: .footer-widgets-->
+
+			<?php
+	endif;
+	}
+endif;
+
+
 if ( ! function_exists( 'prefix_site_info' ) ) :
 	/**
 	 * Conditionally display the content based on the Customizer.

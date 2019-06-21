@@ -7,7 +7,7 @@
  * @package palamut
  */
 
-if ( ! is_active_sidebar( 'sidebar' ) || false === prefix_gimme( 'show_sidebar' ) ) {
+if ( ! is_active_sidebar( 'sidebar' ) ) {
 	return;
 }
 ?>

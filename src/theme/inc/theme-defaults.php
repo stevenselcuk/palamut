@@ -64,6 +64,10 @@ function prefix_theme_defaults( $name ) {
 		$defaults = apply_filters(
 			'prefix_theme_defaults',
 			array(
+				// Colors.
+				'header_bg_color'       => '#ffffff',
+				'content_bg_color'      => '#ffffff',
+				'body_text_color'       => '#000000',
 				// Identity.
 				'custom_logo_max_width' => 64,
 				'site_title_font_size'  => 32,
@@ -71,16 +75,11 @@ function prefix_theme_defaults( $name ) {
 				// Layout.
 				'header_max_width'      => 1100,
 				'content_max_width'     => 1100,
-				'text_color'            => '#2a2a2a',
-				'header_icon_color'     => '#2a2a2a',
-				'nav_color'             => '#656e79',
-				'mobile_nav_color'      => '#2a2a2a',
-				'footer_bg_color'       => '#f1f1f1',
-				'footer_text_color'     => '#2a2a2a',
 				// Options.
 				'show_sidebar'          => false,
 				'prefix_site_info'      => true,
 				'show_theme_info'       => true,
+				'pagination_type'       => 'paginated',
 			)
 		);
 	}

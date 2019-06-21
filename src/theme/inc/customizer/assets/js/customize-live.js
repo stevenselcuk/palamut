@@ -27,14 +27,16 @@
 					$navigation = $( '.primary-menu' ),
 					$siteContent = $( '.site-content' ),
 					$sidebar = $( '#secondary' ),
+					$pagination = $( '.navigation.pagination' ),
 					$footer = $( '.site-footer' );
 
 				$header.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button" data-customizer-event="open-header">Edit</button>' );
 				$siteContent.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button customizer-open-widgetarea" data-customizer-event="open-content">Edit</button>' );
 				$sidebar.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button customizer-open-widgetarea" data-customizer-event="open-sidebar-widgets">Edit</button>' );
 				$footer.append( '<div class="customizer__border customizer__border-btm"></div><div class="customizer__border customizer__border-top"></div><div class="customizer__border customizer__border-left"></div><div class="customizer__border customizer__border-right"></div><button class="index-event-button customizer-editlayout-button customizer-open-widgetarea" data-customizer-event="open-footer">Edit</button>' );
-				$branding.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-site-indentity" data-balloon-pos="right" data-balloon="Edit this"></button></span>' );
-				$navigation.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-navigation" data-balloon-pos="right" data-balloon="Edit this"></button></span>' );
+				$branding.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-site-indentity" data-balloon-pos="left" data-balloon="Edit this"></button></span>' );
+				$navigation.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-navigation" data-balloon-pos="left" data-balloon="Edit this"></button></span>' );
+				$pagination.append( '<span class="customizer-add-menu"><button class="index-event-button customizer-event-button" data-customizer-event="open-content" data-balloon-pos="left" data-balloon="Edit this"></button></span>' );
 
 				// Listen for events on the new previewer buttons
 				$document.on( 'touch click', '.index-event-button', function( e ) {

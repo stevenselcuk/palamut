@@ -8,6 +8,13 @@
 	overflow: hidden;
 	position: relative;
 	z-index: 0;
+	background: var(--content-bg-color);
+	@include media-breakpoint-up(sm) {
+		padding: 11vw 4%;
+	}
+	@include media-breakpoint-down(sm) {
+		padding: 5vw 0%;
+	}
 }
 
 // Classic Widget Area Mechanism

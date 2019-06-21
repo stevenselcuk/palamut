@@ -27,25 +27,7 @@
 
 			<?php do_action( 'prefix_footer_start' ); ?>
 
-			<!-- Start: .footer-widgets-->
-			<div class="footer-widgets row justify-around clearfix">
-
-				<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-					<div class="footer-sidebar small-12 phone-12 tablet-12 laptop-6 desktop-6">
-						<?php dynamic_sidebar( 'footer-1' ); ?>
-					</div>
-				<?php endif; ?>
-
-				<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-					<div class="footer-sidebar small-12 phone-12 tablet-12 laptop-6 desktop-6">
-						<?php dynamic_sidebar( 'footer-2' ); ?>
-					</div>
-				<?php endif; ?>
-
-			</div>
-
 			<?php do_action( 'prefix_footer' ); ?>
-			<!-- End: .footer-widgets-->
 
 			<?php do_action( 'prefix_footer_end' ); ?>
 
@@ -53,8 +35,6 @@
 		<!-- #colophon -->
 
 		<?php do_action( 'prefix_site_end' ); ?>
-
-	<?php get_sidebar( 'mobile' ); ?>
 
 	<?php wp_footer(); ?>
 

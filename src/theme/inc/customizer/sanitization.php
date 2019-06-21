@@ -111,30 +111,47 @@ function prefix_sanitize_email( $email, $setting ) {
 	return ( ! null( $email ) ? $email : $setting->default );
 }
 
+/**
+ * [sanitize_hex_color description]
+ *
+ * @method sanitize_hex_color
+ *
+ * @param  [type]             $color
+ *
+ * @return [type]
+ */
+function prefix_sanitize_hex_color( $color ) {
 
+	if ( '' === $color ) {
+		return '';
+	}
+
+	// 3 or 6 hex digits, or the empty string.
+	if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+		return $color;
+	}
+
+	return '';
+}
 
 /**
- * HEX Color sanitization callback example.
+ * RGBA Hexa Both Color
  *
- * - Sanitization: hex_color
- * - Control: text, WP_Customize_Color_Control
- *
- * Note: sanitize_hex_color_no_hash() can also be used here, depending on whether
- * or not the hash prefix should be stored/retrieved with the hex color value.
- *
- * @see sanitize_hex_color() https://developer.wordpress.org/reference/functions/sanitize_hex_color/
- * @link sanitize_hex_color_no_hash() https://developer.wordpress.org/reference/functions/sanitize_hex_color_no_hash/
- *
- * @param string               $hex_color HEX color to sanitize.
- * @param WP_Customize_Setting $setting   Setting instance.
- * @return string The sanitized hex color if not null; otherwise, the setting default.
+ * @since 1.0
  */
-function prefix_sanitize_hex_color( $hex_color, $setting ) {
-	// Sanitize $input as a hex value without the hash prefix.
-	$hex_color = sanitize_hex_color( $hex_color );
+function prefix_sanitize_rgba( $color ) {
+	if ( empty( $color ) || is_array( $color ) ) {
+		return 'rgba(0,0,0,0)';
+	}
 
-	// If $input is a valid hex value, return it; otherwise, return the default.
-	return ( ! null( $hex_color ) ? $hex_color : $setting->default );
+	if ( false === strpos( $color, 'rgba' ) ) {
+		return prefix_sanitize_hex_color( $color );
+	}
+
+	// By now we know the string is formatted as an rgba color so we need to further sanitize it.
+	$color = str_replace( ' ', '', $color );
+	sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+	return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
 }
 
 
@@ -184,7 +201,7 @@ function prefix_sanitize_html( $html ) {
  *
  * @method prefix_sanitize_multiselect
  *
- * @param  [type]                      $input
+ * @param  [type] $input
  *
  * @return [type]
  */
