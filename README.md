@@ -1,7 +1,7 @@
 [![TODO board](https://imdone.io/api/1.0/projects/5d0d2ddbca642f04f5a40896/badge)](https://imdone.io/app#/board/stevenselcuk/palamut)
 
 # Palamut : The WordPress Developer Habitat
-[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/stevenselcuk)
+[![Buy Me A Coffee](/tools/orange_image.png)](https://www.buymeacoffee.com/stevenselcuk)
 
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b33f52710a25481cad1c777042789f7a)](https://app.codacy.com/app/stevenjselcuk/palamut?utm_source=github.com&utm_medium=referral&utm_content=stevenselcuk/palamut&utm_campaign=Badge_Grade_Dashboard)
