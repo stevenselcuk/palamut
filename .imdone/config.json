@@ -20,7 +20,8 @@
       "REVIEW",
       "MARK",
       "GARBAGE",
-      "HELP"
+      "HELP",
+      "134"
     ]
   },
   "lists": [
@@ -43,6 +44,10 @@
     {
       "name": "TODO",
       "hidden": false
+    },
+    {
+      "name": "134",
+      "hidden": false
     }
   ],
   "marked": {
@@ -57,5 +62,12 @@
     "id": "5d0d2ddbca642f04f5a40896",
     "name": "stevenselcuk/palamut",
     "useImdoneioForPriority": true
+  },
+  "meta": {
+    "gh": {
+      "urlTemplate": "https://github.com/stevenselcuk/palamut/issues/%s",
+      "titleTemplate": "View github issue %s",
+      "icon": "icon-octoface"
+    }
   }
 }
