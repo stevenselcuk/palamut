@@ -1,4 +1,6 @@
 # Palamut : The WordPress Developer Habitat
+[![Buy Me A Coffee](https://www.buymeacoffee.com/stevenselcuk)](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)
+
 
 [![palamut version](https://img.shields.io/badge/habitat-1.0.9-blue.svg)](https://img.shields.io/badge/habitat-1.0.9-blue.svg)
 [![palamut theme version](https://img.shields.io/badge/theme-1.0.0-brightgreen.svg)](https://img.shields.io/badge/theme-1.0.0-brightgreen.svg)
