@@ -15,7 +15,9 @@
  * @version 3.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+exit; // Exit if accessed directly
+}
 
 global $product, $woocommerce_loop, $apress_data;
 
@@ -25,23 +27,26 @@ $product_hover_image = isset($apress_data["product_hover_image"]) ? $apress_data
 
 
 // Store loop count we're currently on
-if ( empty( $woocommerce_loop['loop'] ) )
+if ( empty( $woocommerce_loop['loop'] ) ) {
 	$woocommerce_loop['loop'] = 0;
+}
 
 // Store column count for displaying the grid
 // Modification by apress
-if ( empty( $woocommerce_loop['columns'] ) )
+if ( empty( $woocommerce_loop['columns'] ) ) {
 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', $woocommerce_shop_page_columns );
+}
 
 // Ensure visibility
-if ( ! $product || ! $product->is_visible() )
+if ( ! $product || ! $product->is_visible() ) {
 	return;
+}
 
 // Extra post classes
 $classes = array();
 
 $attachment_ids = $product->get_gallery_image_ids();
-if( count($attachment_ids) > 0 ) {	
+if ( count($attachment_ids) > 0 ) {	
 	$classes[] = 'has-gallery';
 }
 
@@ -49,22 +54,24 @@ if( count($attachment_ids) > 0 ) {
 $woocommerce_loop['loop']++;
 
 
-if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] )
+if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] ) {
 	$classes[] = 'first';
-if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
+}
+if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	$classes[] = 'last';
+}
 	
 $woo_layout = isset($apress_data["woo_layout"]) ? $apress_data["woo_layout"] : 'woo_fitrows';
-	if($woo_layout == 'woo_fitrows'){
+	if ($woo_layout == 'woo_fitrows') {
 		$classes[] = 'fitrow_columns';
-	}else{
+	} else {
 		$classes[] = 'masonry-item';
 		}
 
 	
 ?>
 <?php
-if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
+if ($woocommerce_product_style == 'woocommerce_product_style2') { ?>
 
 <li <?php post_class( $classes );?>>
 	<?php	
@@ -75,11 +82,11 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' );
 	?>
-    <div class="product_list_item">
-    
-    <div class="zolo_product_thumbnail_wrapper">
-    <div class="zolo_product_thumbnail alternate_image_on_hover">
-    <?php
+	<div class="product_list_item">
+	
+	<div class="zolo_product_thumbnail_wrapper">
+	<div class="zolo_product_thumbnail alternate_image_on_hover">
+	<?php
 	/**
 	 * woocommerce_before_shop_loop_item_title hook.
 	 *
@@ -97,16 +104,16 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 		}
 	}*/	
 	?>
-    </div>
-    <div class="woo_product_button_group">
-        <?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
+	</div>
+	<div class="woo_product_button_group">
+		<?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
 		//apcore_quick_view();
 		 ?>
-    </div>
-    </div>
-    
-    <div class="zolo_product_details">
-    <?php
+	</div>
+	</div>
+	
+	<div class="zolo_product_details">
+	<?php
 	/**
 	 * woocommerce_shop_loop_item_title hook.
 	 *
@@ -122,10 +129,10 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 	 */
 	do_action( 'woocommerce_after_shop_loop_item_title' );
 	?>
-    </div>
-    
-    </div>
-    <?php
+	</div>
+	
+	</div>
+	<?php
 	/**
 	 * woocommerce_after_shop_loop_item hook.
 	 *
@@ -137,7 +144,7 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 </li>
 
 <?php
-}else if($woocommerce_product_style == 'woocommerce_product_style3' || $woocommerce_product_style == 'woocommerce_product_style4'){ ?>
+} else if ($woocommerce_product_style == 'woocommerce_product_style3' || $woocommerce_product_style == 'woocommerce_product_style4') { ?>
 
 <li <?php post_class( $classes );?>>
 	<?php	
@@ -148,11 +155,11 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' );
 	?>
-    <div class="product_list_item">
-    
-    <div class="zolo_product_thumbnail_wrapper">
-    <div class="zolo_product_thumbnail alternate_image_on_hover">
-    <?php
+	<div class="product_list_item">
+	
+	<div class="zolo_product_thumbnail_wrapper">
+	<div class="zolo_product_thumbnail alternate_image_on_hover">
+	<?php
 	/**
 	 * woocommerce_before_shop_loop_item_title hook.
 	 *
@@ -170,16 +177,16 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 		}
 	}*/	
 	?>
-    </div>
-    <div class="woo_product_button_group">
-        <?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
+	</div>
+	<div class="woo_product_button_group">
+		<?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
 		//apcore_quick_view();
 		 ?>
-    </div>
-    </div>
-    
-    <div class="zolo_product_details">
-    <?php
+	</div>
+	</div>
+	
+	<div class="zolo_product_details">
+	<?php
 	/**
 	 * woocommerce_shop_loop_item_title hook.
 	 *
@@ -195,10 +202,10 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 	 */
 	do_action( 'woocommerce_after_shop_loop_item_title' );
 	?>
-    </div>
-    
-    </div>
-    <?php
+	</div>
+	
+	</div>
+	<?php
 	/**
 	 * woocommerce_after_shop_loop_item hook.
 	 *
@@ -210,7 +217,7 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 </li>
 
 <?php
-}else if($woocommerce_product_style == 'woocommerce_product_style5'){ ?>
+} else if ($woocommerce_product_style == 'woocommerce_product_style5') { ?>
 
 <li <?php post_class( $classes );?>>
 	<?php	
@@ -221,11 +228,11 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' );
 	?>
-    <div class="product_list_item">
-    
-    <div class="zolo_product_thumbnail_wrapper">
-    <div class="zolo_product_thumbnail alternate_image_on_hover">
-    <?php
+	<div class="product_list_item">
+	
+	<div class="zolo_product_thumbnail_wrapper">
+	<div class="zolo_product_thumbnail alternate_image_on_hover">
+	<?php
 	/**
 	 * woocommerce_before_shop_loop_item_title hook.
 	 *
@@ -243,10 +250,10 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 		}
 	}*/	
 	?>
-    </div>
-    
-    <div class="woo_product_caption">
-    <?php
+	</div>
+	
+	<div class="woo_product_caption">
+	<?php
 	/**
 	 * woocommerce_shop_loop_item_title hook.
 	 *
@@ -271,24 +278,24 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 		   echo '<span class="zolo_woo_price">'.$price_html.'</span>';
 		  }
 		  if ( $price_html) {
-		   if(strpos($price_html,"amount") > 0){
+		   if (strpos($price_html,"amount") > 0) {
 			$price_html = str_replace("&ndash;","",$price_html); // remove dash "-" used in variable products
 		   }
 		   echo '<span class="zolo_woo_hover_price">'.$price_html.'</span>';
 		  }
 	?>
-    </div>
-    
-    <div class="woo_product_button_group">
-        <?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
+	</div>
+	
+	<div class="woo_product_button_group">
+		<?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
 		//apcore_quick_view();
 		 ?>
-    </div>
-    
-    </div>
-    
-    </div>
-    <?php
+	</div>
+	
+	</div>
+	
+	</div>
+	<?php
 	/**
 	 * woocommerce_after_shop_loop_item hook.
 	 *
@@ -299,13 +306,13 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 	?>
 </li>
 
-<?php }else if($woocommerce_product_style == 'woocommerce_product_style6' || $woocommerce_product_style == 'woocommerce_product_style7'){ ?>
+<?php } else if ($woocommerce_product_style == 'woocommerce_product_style6' || $woocommerce_product_style == 'woocommerce_product_style7') { ?>
 
 <li <?php post_class( $classes );?>>
   <div class="product_list_item">
-    <?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
-    <div class="zolo_product_thumbnail alternate_image_on_hover">
-      <?php
+	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
+	<div class="zolo_product_thumbnail alternate_image_on_hover">
+	  <?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook
 			 *
@@ -315,30 +322,30 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 			
 		?>
-      <?php
+	  <?php
 		//Apress codes
-		if( $product_hover_image == 'on' ) {	
+		if ( $product_hover_image == 'on' ) {	
 			$first_gallery_img = reset($attachment_ids); //get the first image of gallery
 			$image_link = wp_get_attachment_url( $first_gallery_img );	
-			if (isset($image_link)){
+			if (isset($image_link)) {
 				echo '<div class="zolo_product_hover_thumbnail" style="background:url('.$image_link.');"></div>';
 			}
 		}	
 		?>
-        <div class="woo_product_button_group">
-        	<?php do_action( 'apcore_woocommerce_shop_loop_buttons' );?>
-        </div>
-        <div class="zolo_cart_but">
-        	<?php do_action( 'apcore_woocommerce_shop_addtocart' ); ?>
-        </div>
-      
-    </div>
-    
-    <div class="zolo_product_details">
-      <a href="<?php the_permalink(); ?>"><h3 class="entry-title">
-        <?php the_title(); ?>
-      </h3></a>
-      <?php
+		<div class="woo_product_button_group">
+			<?php do_action( 'apcore_woocommerce_shop_loop_buttons' );?>
+		</div>
+		<div class="zolo_cart_but">
+			<?php do_action( 'apcore_woocommerce_shop_addtocart' ); ?>
+		</div>
+	  
+	</div>
+	
+	<div class="zolo_product_details">
+	  <a href="<?php the_permalink(); ?>"><h3 class="entry-title">
+		<?php the_title(); ?>
+	  </h3></a>
+	  <?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook
 			 *
@@ -347,17 +354,17 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 			 */
 			do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
-    </div>
-     </div>
+	</div>
+	 </div>
 </li>
 
-<?php }else{ ?>
+<?php } else { ?>
 
 <li <?php post_class( $classes );?>>
   <div class="product_list_item">
-    <?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
-    <div class="zolo_product_thumbnail alternate_image_on_hover">
-      <?php
+	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
+	<div class="zolo_product_thumbnail alternate_image_on_hover">
+	  <?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook
 			 *
@@ -367,32 +374,32 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 			
 		?>
-      <?php
+	  <?php
 		//Apress codes
-		if( $product_hover_image == 'on' ) {	
+		if ( $product_hover_image == 'on' ) {	
 			$first_gallery_img = reset($attachment_ids); //get the first image of gallery
 			$image_link = wp_get_attachment_url( $first_gallery_img );	
-			if (isset($image_link)){
+			if (isset($image_link)) {
 				echo '<div class="zolo_product_hover_thumbnail" style="background:url('.$image_link.');"></div>';
 			}
 		}	
 		?>
-      <div class="zolo_cart_but">
-      <div class="woo_product_button_group">
-        <?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
+	  <div class="zolo_cart_but">
+	  <div class="woo_product_button_group">
+		<?php do_action( 'apcore_woocommerce_shop_loop_buttons' );
 		//apcore_quick_view();
 		 ?>
-    </div>
-        <?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+	</div>
+		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 		<?php do_action( 'apcore_woocommerce_shop_addtocart' ); ?>
-      </div>
-    </div>
-    
-    <div class="zolo_product_details">
-      <a href="<?php the_permalink(); ?>"><h3 class="entry-title">
-        <?php the_title(); ?>
-      </h3></a>
-      <?php
+	  </div>
+	</div>
+	
+	<div class="zolo_product_details">
+	  <a href="<?php the_permalink(); ?>"><h3 class="entry-title">
+		<?php the_title(); ?>
+	  </h3></a>
+	  <?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook
 			 *
@@ -401,7 +408,7 @@ if($woocommerce_product_style == 'woocommerce_product_style2'){ ?>
 			 */
 			do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
-    </div>
-     </div>
+	</div>
+	 </div>
 </li>
 <?php } ?>

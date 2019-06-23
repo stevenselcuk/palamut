@@ -1,0 +1,19 @@
+{
+  "name": "selcukahmet/palamut",
+  "description": "A WordPress Theme Development Habitat",
+  "type": "project",
+  "license": "MIT",
+  "authors": [{
+    "name": "Steven J. Selcuk",
+    "email": "stevenjselcuk@gmail.com"
+  }],
+  "minimum-stability": "stable",
+  "scripts": {
+    "phpcs": "./vendor/bin/phpcs --standard=WPCSForEnvato --extensions=php",
+    "phpcs-fix": "./vendor/bin/phpcbf --standard=WPCSForEnvato --extensions=php"
+  },
+  "require": {},
+  "require-dev": {
+    "wpsh/wpcs-for-envato": "^0.3.0"
+  }
+}

@@ -3,6 +3,7 @@ dist/**
 build/**
 tmp/**
 backups/**
+vender/**
 src/plugins/palamut/includes/blocks/node_modules/**
 wp-config.php
 phpreport.txt
