@@ -1,44 +1,9 @@
 {
-<<<<<<< HEAD
   "exclude": [
     "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed|imdone-export.json)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
   ],
   "watcher": true,
-  "keepEmptyPriority": false,
-=======
-  "noHelp": true,
-  "sync": {
-    "useImdoneioForPriority": true,
-    "name": "stevenselcuk/palamut",
-    "id": "5d0d2ddbca642f04f5a40896"
-  },
-  "marked": {
-    "langPrefix": "language-",
-    "smartLists": true,
-    "pedantic": false,
-    "breaks": false,
-    "tables": true,
-    "gfm": true
-  },
-  "lists": [
-    {
-      "name": "TODO",
-      "hidden": false
-    },
-    {
-      "name": "FIXME",
-      "hidden": false
-    },
-    {
-      "name": "DONE",
-      "hidden": false
-    },
-    {
-      "name": "GARBAGE",
-      "hidden": false
-    }
-  ],
->>>>>>> 4461b0fef76d361afd0391a78374d2a199d4e7ac
+  "keepEmptyPriority": true,
   "code": {
     "include_lists": [
       "TODO",
@@ -53,26 +18,31 @@
       "IDEA",
       "NOTE",
       "REVIEW",
-<<<<<<< HEAD
-      "134"
+      "MARK",
+      "GARBAGE",
+      "HELP"
     ]
   },
   "lists": [
+    {
+      "hidden": false,
+      "name": "DONE"
+    },
+    {
+      "name": "GARBAGE",
+      "hidden": false
+    },
+    {
+      "name": "HELP",
+      "hidden": false
+    },
     {
       "name": "NOTE",
       "hidden": false
     },
     {
       "name": "TODO",
-      "hidden": true
-    },
-    {
-      "name": "FIXME",
-      "hidden": true
-    },
-    {
-      "name": "134",
-      "hidden": true
+      "hidden": false
     }
   ],
   "marked": {
@@ -82,17 +52,10 @@
     "pedantic": false,
     "smartLists": true,
     "langPrefix": "language-"
-  }
-=======
-      "MARK",
-      "HELP",
-      "GARBAGE"
-    ]
   },
-  "keepEmptyPriority": true,
-  "watcher": true,
-  "exclude": [
-    "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed|imdone-export.json)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
-  ]
->>>>>>> 4461b0fef76d361afd0391a78374d2a199d4e7ac
+  "sync": {
+    "id": "5d0d2ddbca642f04f5a40896",
+    "name": "stevenselcuk/palamut",
+    "useImdoneioForPriority": true
+  }
 }
