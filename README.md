@@ -1,3 +1,5 @@
+[![TODO board](https://imdone.io/api/1.0/projects/5d0d2ddbca642f04f5a40896/badge)](https://imdone.io/app#/board/stevenselcuk/palamut)
+
 # Palamut : The WordPress Developer Habitat
 [![Buy Me A Coffee](https://www.buymeacoffee.com/stevenselcuk)](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)
 

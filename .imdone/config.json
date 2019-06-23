@@ -18,10 +18,16 @@
       "IDEA",
       "NOTE",
       "REVIEW",
-      "134"
+      "MARK",
+      "134",
+      "HELP"
     ]
   },
   "lists": [
+    {
+      "name": "HELP",
+      "hidden": false
+    },
     {
       "name": "NOTE",
       "hidden": false
@@ -46,5 +52,11 @@
     "pedantic": false,
     "smartLists": true,
     "langPrefix": "language-"
-  }
+  },
+  "sync": {
+    "id": "5d0d2ddbca642f04f5a40896",
+    "name": "stevenselcuk/palamut",
+    "useImdoneioForPriority": true
+  },
+  "noHelp": true
 }
