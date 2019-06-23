@@ -264,7 +264,7 @@ class ErrorSuppressionTest extends TestCase
         $ruleset = new Ruleset($config);
 
         // Process without suppression.
-        $content = '<?php '.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'//TODO: write some code'; id:5
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -304,7 +304,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a docblock suppression.
-        $content = '<?php '.PHP_EOL.'/** phpcs:disable */'.PHP_EOL.'//TODO: write some code'.PHP_EOL.'/** phpcs:enable */';
+        $content = '<?php '.PHP_EOL.'/** phpcs:disable */'.PHP_EOL.'//GARBAGE: write some code'.PHP_EOL.'/** */'; phpcs:enable id:13
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -314,7 +314,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a docblock suppression (deprecated syntax).
-        $content = '<?php '.PHP_EOL.'/** @codingStandardsIgnoreStart */'.PHP_EOL.'//TODO: write some code'.PHP_EOL.'/** @codingStandardsIgnoreEnd */';
+        $content = '<?php '.PHP_EOL.'/** @codingStandardsIgnoreStart */'.PHP_EOL.'//GARBAGE: write some code'.PHP_EOL.'/** */'; id:31 @codingStandardsIgnoreEnd
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -605,7 +605,7 @@ class ErrorSuppressionTest extends TestCase
         $ruleset = new Ruleset($config);
 
         // Process without suppression.
-        $content = '<?php '.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'//GARBAGE: write some code'; id:22
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -675,7 +675,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a block comment suppression.
-        $content = '<?php '.PHP_EOL.'/* phpcs:ignoreFile */'.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'/* phpcs:ignoreFile */'.PHP_EOL.'//GARBAGE: write some code'; id:40
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -685,7 +685,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a multi-line block comment suppression.
-        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.' phpcs:ignoreFile'.PHP_EOL.' */'.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.' phpcs:ignoreFile'.PHP_EOL.' */'.PHP_EOL.'//GARBAGE: write some code'; id:6
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -695,7 +695,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a block comment suppression (deprecated syntax).
-        $content = '<?php '.PHP_EOL.'/* @codingStandardsIgnoreFile */'.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'/* @codingStandardsIgnoreFile */'.PHP_EOL.'//GARBAGE: write some code'; id:14
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -705,7 +705,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with a multi-line block comment suppression (deprecated syntax).
-        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.' @codingStandardsIgnoreFile'.PHP_EOL.' */'.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.' @codingStandardsIgnoreFile'.PHP_EOL.' */'.PHP_EOL.'//GARBAGE: write some code'; id:32
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -715,7 +715,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with docblock suppression.
-        $content = '<?php '.PHP_EOL.'/** phpcs:ignoreFile */'.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'/** phpcs:ignoreFile */'.PHP_EOL.'//TODO: write some code'; id:23
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -725,7 +725,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         // Process with docblock suppression (deprecated syntax).
-        $content = '<?php '.PHP_EOL.'/** @codingStandardsIgnoreFile */'.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'/** @codingStandardsIgnoreFile */'.PHP_EOL.'//GARBAGE: write some code'; id:41
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -825,7 +825,7 @@ class ErrorSuppressionTest extends TestCase
 
         // Suppress using docblocks.
         $content = '<?php '.PHP_EOL.'/**
-        '.PHP_EOL.' * phpcs:disable Generic.Commenting.Todo'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code';
+        '.PHP_EOL.' * phpcs:disable Generic.Commenting.Todo'.PHP_EOL.' */ '.PHP_EOL.'//GARBAGE: write some code'; id:7
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -839,7 +839,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(0, $warnings);
 
         $content = '<?php '.PHP_EOL.'/**
-        '.PHP_EOL.' * @phpcs:disable Generic.Commenting.Todo'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code';
+        '.PHP_EOL.' * @phpcs:disable Generic.Commenting.Todo'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code'; id:15
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -854,7 +854,7 @@ class ErrorSuppressionTest extends TestCase
 
         // Suppress wrong category using docblocks.
         $content = '<?php '.PHP_EOL.'/**
-        '.PHP_EOL.' * phpcs:disable Generic.Files'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code';
+        '.PHP_EOL.' * phpcs:disable Generic.Files'.PHP_EOL.' */ '.PHP_EOL.'//GARBAGE: write some code'; id:33
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -868,7 +868,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(1, $warnings);
 
         $content = '<?php '.PHP_EOL.'/**
-        '.PHP_EOL.' * @phpcs:disable Generic.Files'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code';
+        '.PHP_EOL.' * @phpcs:disable Generic.Files'.PHP_EOL.' */ '.PHP_EOL.'//TODO: write some code'; id:24
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -1074,7 +1074,7 @@ class ErrorSuppressionTest extends TestCase
         $ruleset = new Ruleset($config);
 
         // No suppression.
-        $content = '<?php '.PHP_EOL.'$var = FALSE; //TODO: write some code'.PHP_EOL.'$var = FALSE; //TODO: write some code';
+        $content = '<?php '.PHP_EOL.'$var = FALSE; //GARBAGE: write some code'.PHP_EOL.'$var = FALSE; //TODO: write some code'; id:42
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 
@@ -1205,7 +1205,7 @@ class ErrorSuppressionTest extends TestCase
         $this->assertCount(1, $warnings);
 
         // Suppress a single sniff using block comments.
-        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.'    Disable some checks'.PHP_EOL.'    phpcs:disable Generic.Commenting.Todo'.PHP_EOL.'*/'.PHP_EOL.'$var = FALSE;'.PHP_EOL.'//TODO: write some code';
+        $content = '<?php '.PHP_EOL.'/*'.PHP_EOL.'    Disable some checks'.PHP_EOL.'    phpcs:disable Generic.Commenting.Todo'.PHP_EOL.'*/'.PHP_EOL.'$var = FALSE;'.PHP_EOL.'//GARBAGE: write some code'; id:43
         $file    = new DummyFile($content, $ruleset, $config);
         $file->process();
 

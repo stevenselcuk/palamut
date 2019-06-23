@@ -6,6 +6,8 @@ backups/**
 src/plugins/palamut/includes/blocks/node_modules/**
 wp-config.php
 phpreport.txt
+.imdone
+imdone-help.md
 
 # IDE & Editors
 .idea

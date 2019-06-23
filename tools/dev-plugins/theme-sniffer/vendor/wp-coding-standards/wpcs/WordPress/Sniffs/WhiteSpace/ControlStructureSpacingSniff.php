@@ -454,7 +454,7 @@ class ControlStructureSpacingSniff extends Sniff {
 						if ( $this->tokens[ $i ]['line'] < $this->tokens[ $scopeCloser ]['line']
 							&& \T_OPEN_TAG !== $this->tokens[ $firstContent ]['code']
 						) {
-							// TODO: Reporting error at empty line won't highlight it in IDE.
+							// GARBAGE: Reporting error at empty line won't highlight it in IDE. id:16
 							$error = 'Blank line found at end of control structure';
 							$fix   = $this->phpcsFile->addFixableError( $error, $i, 'BlankLineBeforeEnd' );
 
@@ -546,7 +546,7 @@ class ControlStructureSpacingSniff extends Sniff {
 			}
 
 			if ( ( $this->tokens[ $scopeCloser ]['line'] + 1 ) !== $this->tokens[ $trailingContent ]['line'] ) {
-				// TODO: Won't cover following case: "} echo 'OK';".
+				// TODO: Won't cover following case: "} echo 'OK';". id:34
 				$error = 'Blank line found after control structure';
 				$fix   = $this->phpcsFile->addFixableError( $error, $scopeCloser, 'BlankLineAfterEnd' );
 
@@ -559,7 +559,7 @@ class ControlStructureSpacingSniff extends Sniff {
 						$i++;
 					}
 
-					// TODO: Instead a separate error should be triggered when content comes right after closing brace.
+					// GARBAGE: Instead a separate error should be triggered when content comes right after closing brace. id:25
 					if ( \T_COMMENT !== $this->tokens[ $scopeCloser ]['code']
 						&& isset( $this->phpcsCommentTokens[ $this->tokens[ $scopeCloser ]['type'] ] ) === false
 					) {

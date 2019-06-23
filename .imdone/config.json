@@ -1,9 +1,44 @@
 {
+<<<<<<< HEAD
   "exclude": [
     "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed|imdone-export.json)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
   ],
   "watcher": true,
   "keepEmptyPriority": false,
+=======
+  "noHelp": true,
+  "sync": {
+    "useImdoneioForPriority": true,
+    "name": "stevenselcuk/palamut",
+    "id": "5d0d2ddbca642f04f5a40896"
+  },
+  "marked": {
+    "langPrefix": "language-",
+    "smartLists": true,
+    "pedantic": false,
+    "breaks": false,
+    "tables": true,
+    "gfm": true
+  },
+  "lists": [
+    {
+      "name": "TODO",
+      "hidden": false
+    },
+    {
+      "name": "FIXME",
+      "hidden": false
+    },
+    {
+      "name": "DONE",
+      "hidden": false
+    },
+    {
+      "name": "GARBAGE",
+      "hidden": false
+    }
+  ],
+>>>>>>> 4461b0fef76d361afd0391a78374d2a199d4e7ac
   "code": {
     "include_lists": [
       "TODO",
@@ -18,6 +53,7 @@
       "IDEA",
       "NOTE",
       "REVIEW",
+<<<<<<< HEAD
       "134"
     ]
   },
@@ -47,4 +83,16 @@
     "smartLists": true,
     "langPrefix": "language-"
   }
+=======
+      "MARK",
+      "HELP",
+      "GARBAGE"
+    ]
+  },
+  "keepEmptyPriority": true,
+  "watcher": true,
+  "exclude": [
+    "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed|imdone-export.json)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
+  ]
+>>>>>>> 4461b0fef76d361afd0391a78374d2a199d4e7ac
 }
