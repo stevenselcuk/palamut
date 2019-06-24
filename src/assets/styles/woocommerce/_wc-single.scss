@@ -1,7 +1,7 @@
 .single-product {
 
 	.pswp__caption {
-		display: none !important;
+		display: none ;
 	}
 
     &[data-single-product="single-product-1"] {
@@ -152,7 +152,7 @@
 
 #delivery_calender_lite.delivery_calender_lite {
 	max-width: 200px;
-	margin-bottom: 25px !important;
+	margin-bottom: 25px ;
 }
 
 img#delivery_cal_lite {
@@ -252,7 +252,7 @@ img#delivery_cal_lite {
 
     .images a {
         // &:after {
-        //     display: none !important;
+        //     display: none ;
         // }
     }
 }
@@ -824,7 +824,7 @@ img#delivery_cal_lite {
 	            }
 	            .product:nth-child(4n) {
 	                @media screen and (min-width: 1100px) and (max-width: 1399px) {
-	                    display: none !important;
+	                    display: none ;
 	                }
 	            }
 	        }
@@ -906,7 +906,7 @@ img#delivery_cal_lite {
 
 
 .woocommerce-attributes-trigger-wrapper {
-    border-bottom: 0!important;
+    border-bottom: 0;
 }
 
 .upsells.products h2,
@@ -914,46 +914,46 @@ img#delivery_cal_lite {
 #woocommerce-info-trigger,
 #woocommerce-reviews-trigger,
 .product_title.entry-title {
-    font-size: 22px !important;
+    font-size: 22px ;
 
     @media screen and (min-width: 500px) {
-        font-size: 28px !important;
+        font-size: 28px ;
     }
 
     @media screen and (min-width: 900px) {
-        font-size: 35px !important;
+        font-size: 35px ;
     }
 
     @media screen and (min-width: 900px) and (max-width: 1024px) {
-        font-size: 40px !important;
+        font-size: 40px ;
     }
 
     @media screen and (min-width: 1200px) {
-        font-size: 40px !important;
+        font-size: 40px ;
     }
 }
 
 .attributes__inner .product_meta {
-    padding-bottom: 50px !important;
+    padding-bottom: 50px ;
     padding-left: 5px;
     display: block;
 
     @media screen and (min-width: 1200px) {
-        padding-bottom: 50px !important;
+        padding-bottom: 50px ;
     }
 
     @media screen and (max-width: 500px) {
-        padding-bottom: 40px !important;
+        padding-bottom: 40px ;
     }
 }
 
 .shop_attributes {
-    border: 0!important;
+    border: 0;
     width: auto;
     margin-bottom: 10px;
 
     @media screen and (max-width: 768px) {
-        font-size: 15px !important;
+        font-size: 15px ;
     }
 
     tr {

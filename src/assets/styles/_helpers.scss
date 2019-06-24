@@ -1,14 +1,14 @@
 .hidden {
-	display: none !important;
-	visibility: hidden !important;
+	display: none ;
+	visibility: hidden ;
 }
 
 .hide {
-	display: none !important;
+	display: none ;
 }
 
 .show {
-	display: block !important;
+	display: block ;
 }
 
 .invisible {
@@ -18,7 +18,7 @@
 body.noscroll {
 	height: 100vh;
 	margin: 0;
-	overflow: hidden!important;
+	overflow: hidden;
 }
 
 .text-hide {
@@ -60,7 +60,7 @@ body.noscroll {
 }
 
 .cursor {
-	cursor: pointer !important;
+	cursor: pointer ;
 }
 
 .ellipsis {
@@ -176,11 +176,11 @@ article[class^="post-"] {
 }
 
 .overflow-visible {
-	overflow: visible !important;
+	overflow: visible ;
 }
 
 .overflow-hidden {
-	overflow: hidden !important;
+	overflow: hidden ;
 }
 
 .embed-responsive-16by9,
@@ -189,7 +189,7 @@ article[class^="post-"] {
 }
 
 .instagram-media {
-	max-width: 100% !important;
+	max-width: 100% ;
 }
 
 .left-text {
@@ -209,11 +209,11 @@ article[class^="post-"] {
 }
 
 .font-size-inherit {
-	font-size: inherit !important;
+	font-size: inherit ;
 }
 
 .zindex2 {
-	z-index: 2 !important;
+	z-index: 2 ;
 }
 
 

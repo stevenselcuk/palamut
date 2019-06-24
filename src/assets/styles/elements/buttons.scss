@@ -6,11 +6,11 @@
 	@media (min-width: 700px) {
 		font-size: $font__size_base;
 	}
-	-moz-user-select: none!important;
-	-ms-user-select: none!important;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	-webkit-appearance: none;
 	-webkit-backface-visibility: hidden;
-	-webkit-user-select: none!important;
+	-webkit-user-select: none;
 	backface-visibility: hidden;
 	font-weight: 400;
 	padding: 9px 30px 11px;
@@ -23,7 +23,7 @@
 	}
 
 	&:focus {
-		outline: 0!important;
+		outline: 0;
 	}
 	
 

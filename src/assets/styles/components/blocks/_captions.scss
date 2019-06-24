@@ -3,7 +3,7 @@
 		display: block;
 		font-size: $caption_fontsize;
 		line-height: $font__line-height-pre;
-		margin: 0 0 -10px !important;
+		margin: 0 0 -10px ;
 		padding-top: 10px;
 		text-align: center;
 		white-space: nowrap;
@@ -19,8 +19,8 @@
 	}
 
 	.wp-block-gallery .blocks-gallery-item figcaption {
-		color: $white !important;
-		margin: 0 !important;
+		color: $white ;
+		margin: 0 ;
 		padding-bottom: 15px;
 		white-space: pre-wrap;
 	}

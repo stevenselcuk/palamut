@@ -1,5 +1,5 @@
 .layout {
-  display: none !important;
+  display: none ;
 }
 
 .customize-control-palamut-layout {
@@ -34,9 +34,9 @@
 .layout-switcher:focus,
 .layout-switcher:active {
   outline: none;
-  border-color: #ccc !important;
-  -webkit-box-shadow: 0 0 0 #000 !important;
-          box-shadow: 0 0 0 #000 !important;
+  border-color: #ccc ;
+  -webkit-box-shadow: 0 0 0 #000 ;
+          box-shadow: 0 0 0 #000 ;
 }
 
 .customize-control-palamut-layout .customize-control-description {

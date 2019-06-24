@@ -6,7 +6,7 @@
 
 	@include itsfor(smallPhone) {
 		// (min-width: 320px) and (max-width: 480px)
-	 max-width: $content_mobile-width !important;
+	 max-width: $content_mobile-width ;
 	}
 	@include itsfor(phone) {
 		// (min-width: 481px) and (max-width: 767px)

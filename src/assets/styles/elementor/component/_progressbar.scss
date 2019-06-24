@@ -79,7 +79,7 @@ $size in $trackSize {
         background-color: $color-semi-black;
         display: block;
         height: 100%;
-        overflow: visible !important;
+        overflow: visible ;
         position: relative;
         .number-percentage-wraper {
             position: absolute;

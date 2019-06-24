@@ -99,29 +99,29 @@ textarea:-webkit-autofill {
 }
 
 ::-webkit-input-placeholder {
-	-webkit-transition: opacity 0.3s !important;
+	-webkit-transition: opacity 0.3s ;
 	opacity: 1;
-	transition: opacity 0.3s !important;
+	transition: opacity 0.3s ;
 }
 
 :-moz-placeholder {
-	-moz-transition: opacity 0.3s !important;
+	-moz-transition: opacity 0.3s ;
 	opacity: 1;
-	transition: opacity 0.3s !important;
+	transition: opacity 0.3s ;
 }
 
 /* FF 4-18 */
 ::-moz-placeholder {
-	-moz-transition: opacity 0.3s !important;
+	-moz-transition: opacity 0.3s ;
 	opacity: 1;
-	transition: opacity 0.3s !important;
+	transition: opacity 0.3s ;
 }
 
 /* FF 19+ */
 :-ms-input-placeholder {
-	-ms-transition: opacity 0.3s !important;
+	-ms-transition: opacity 0.3s ;
 	opacity: 1;
-	transition: opacity 0.3s !important;
+	transition: opacity 0.3s ;
 }
 
 /* IE 10+ */

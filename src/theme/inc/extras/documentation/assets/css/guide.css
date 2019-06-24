@@ -213,14 +213,14 @@
 }
 
 .huh-container__search-submit {
-  display: none !important;
+  display: none ;
   position: absolute;
   right: 22px;
   top: 12px;
 }
 
 .huh-container__search-submit.is-visible {
-  display: block !important;
+  display: block ;
 }
 
 .huh-container__search input.placeholder {

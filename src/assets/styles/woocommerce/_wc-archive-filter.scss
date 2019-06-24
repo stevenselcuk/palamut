@@ -50,7 +50,7 @@
 
         .sticky-wrapper {
             @media only screen and (max-width: 768px) {
-                height: auto !important;
+                height: auto ;
             }
         }
 
@@ -102,7 +102,7 @@
                         cursor: default;
 
                         &::after {
-                            display: none !important;
+                            display: none ;
                         }
                     }
                 }
@@ -117,7 +117,7 @@
 
                     @media only screen and (max-width: 768px) {
                         &::after {
-                            display: none !important;
+                            display: none ;
                         }
                     }
                 }
@@ -206,13 +206,13 @@
 .product-filter {
 
     @media only screen and (max-width: 768px) {
-        position: relative !important;
-        top: inherit !important;
+        position: relative ;
+        top: inherit ;
     }
 
     @media only screen and (min-width: 769px) {
         overflow: hidden;
-        width: 100%!important;
+        width: 100%;
         position: absolute;
         transform: translateX(-300px);
         will-change: transform, opacity;

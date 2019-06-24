@@ -2441,7 +2441,7 @@ span.pala_animation { display: block; }
 
 .post--lists { list-style: none; padding-left: 0px; }
 
-.post--lists > li { border: none !important; }
+.post--lists > li { border: none; }
 
 .post--lists > li > a { padding: 8px 16px; line-height: normal; transition: all .4s ease; }
 
@@ -2601,7 +2601,7 @@ span.pala_animation { display: block; }
 
 .skill-bar { height: 3px; background-color: #f5f5f5; }
 
-.skill-bar .skill-track { width: 0%; background-color: #333333; display: block; height: 100%; overflow: visible !important; position: relative; }
+.skill-bar .skill-track { width: 0%; background-color: #333333; display: block; height: 100%; overflow: visible; position: relative; }
 
 .skill-bar .skill-track .number-percentage-wraper { position: absolute; right: 0; top: -33px; z-index: 1; }
 
@@ -3025,7 +3025,7 @@ span.pala_animation { display: block; }
 
 .elementkit-tab-content .elementkit-tab-pane { padding-left: 20px; padding-right: 20px; padding-bottom: 20px; padding-top: 20px; }
 
-.tab-nav-fluid { width: 100%; display: block !important; }
+.tab-nav-fluid { width: 100%; display: block; }
 
 .xs-single-team.media .team-header { max-width: 200px; width: 100%; flex: 0 0 200px; }
 
@@ -3292,7 +3292,7 @@ span.pala_animation { display: block; }
 
 .vintage-profile-card .profile-body .profile-title, .vintage-profile-card .profile-body .profile-designation { color: #FFFFFF; }
 
-.vintage-profile-card .profile-group { background-size: 101% 101% !important; background: #f2709c; background: linear-gradient(-35deg, #f2709c 0%, #fe8f75 100%); box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1); padding: 40px 20px; }
+.vintage-profile-card .profile-group { background-size: 101% 101%; background: #f2709c; background: linear-gradient(-35deg, #f2709c 0%, #fe8f75 100%); box-shadow: 0px 28px 40px 0px rgba(0, 0, 0, 0.1); padding: 40px 20px; }
 
 .vintage-profile-card.gradient-1 .profile-group { background: #82e182; background: linear-gradient(-35deg, #82e182 0%, #0acbf5 100%); }
 
@@ -4243,7 +4243,7 @@ span.pala_animation { display: block; }
 
 @media (min-width: 992px) { .main-menu .has-submenu > .nav-submenu { pointer-events: none; }
   .main-menu .has-submenu:hover > .nav-submenu { opacity: 1; visibility: visible; pointer-events: auto; }
-  .nav-submenu { display: block !important; opacity: 0; visibility: hidden; box-shadow: 0px 10px 30px 0px rgba(23, 104, 221, 0.2); position: absolute; top: 100%; min-width: 250px; margin: 0px; padding: 0px; z-index: 1000; right: auto; transition: all 0.4s ease; } }
+  .nav-submenu { display: block; opacity: 0; visibility: hidden; box-shadow: 0px 10px 30px 0px rgba(23, 104, 221, 0.2); position: absolute; top: 100%; min-width: 250px; margin: 0px; padding: 0px; z-index: 1000; right: auto; transition: all 0.4s ease; } }
 
 .nav-submenu { border-radius: 0px; border: 0px solid #000; background-color: #FFFFFF; }
 
@@ -4626,11 +4626,11 @@ button.mfp-close:hover { background-color: #000000; color: #FFFFFF; border-color
 
 .palamut-clients-slider .slick-prev::before, .palamut-clients-slider .slick-next::before { color: #000; }
 
-.palamut-clients-slider .slick-arrow { position: absolute; border: 0; background: transparent; z-index: 1; padding: 0; height: initial !important; width: initial !important; line-height: initial !important; font-size: 20px; color: #000; padding: 15px; }
+.palamut-clients-slider .slick-arrow { position: absolute; border: 0; background: transparent; z-index: 1; padding: 0; height: initial; width: initial; line-height: initial; font-size: 20px; color: #000; padding: 15px; }
 
 .palamut-clients-slider .slick-arrow .slick-next { left: 100%; }
 
-.palamut-clients-slider .slick-arrow::before { content: "" !important; }
+.palamut-clients-slider .slick-arrow::before { content: ""; }
 
 .palamut-clients-slider.arrow_inside button.slick-prev { left: 15px; }
 
@@ -4650,7 +4650,7 @@ button.mfp-close:hover { background-color: #000000; color: #FFFFFF; border-color
 
 .dot_dotted .slick-dots li button, .dot_dashed .slick-dots li button { width: 8px; height: 8px; border-radius: 50%; background-color: #000000; opacity: 1; display: block; -webkit-transition: all 0.4s ease; transition: all 0.4s ease; border: 0; }
 
-.dot_dotted .slick-dots li button::before, .dot_dashed .slick-dots li button::before { content: "" !important; }
+.dot_dotted .slick-dots li button::before, .dot_dashed .slick-dots li button::before { content: ""; }
 
 .dot_dotted .slick-dots li.slick-active button, .dot_dashed .slick-dots li.slick-active button { -webkit-transform: scale(2); transform: scale(2); opacity: 1; }
 
@@ -5059,7 +5059,7 @@ button.mfp-close:hover { background-color: #000000; color: #FFFFFF; border-color
 
 .palamut-team-popup .modal-body .modal_content_wraper { flex: 0 0 66.666667%; max-width: 66.666667%; padding-left: 15px; padding-right: 15px; }
 
-.palamut-team-sidebar { padding-right: 0px !important; }
+.palamut-team-sidebar { padding-right: 0px; }
 
 .palamut-team-sidebar.palamut_sidebar_left .palamut-modal-dialog { margin-right: auto; }
 

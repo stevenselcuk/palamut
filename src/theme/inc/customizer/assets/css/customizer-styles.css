@@ -23,7 +23,7 @@
 }
 
 .wp-full-overlay-sidebar {
-  box-shadow: 0px 0px 0 0px !important;
+  box-shadow: 0px 0px 0 0px ;
 }
 
 .cei-import-file {
@@ -45,7 +45,7 @@
 .customize-section-title,
 #customize-theme-controls .accordion-section-title,
 #customize-controls .customize-info .accordion-section-title {
-  background: #eee !important;
+  background: #eee ;
   font-weight: 500;
 }
 
@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 782px) {
   .customize-control-checkbox input[type=checkbox]:checked:before {
-    margin: -3px 0 0 -6px !important;
+    margin: -3px 0 0 -6px ;
   }
 }
 
@@ -83,7 +83,7 @@
 }
 
 .customize-controls-close {
-  background: transparent !important;
+  background: transparent ;
 }
 
 .expanded .wp-full-overlay-main {
@@ -318,7 +318,7 @@
 
 .customize-control-color .wp-picker-container,
 .customize-control-color .wp-picker-container .iris-picker {
-  width: 100% !important;
+  width: 100% ;
 }
 
 .customize-control-color .wp-picker-container.wp-picker-active {
@@ -341,8 +341,8 @@
 
 .customize-control-color .wp-color-result {
   border-radius: 50%;
-  height: 32px !important;
-  width: 32px !important;
+  height: 32px ;
+  width: 32px ;
   border-width: 0;
   box-shadow: 0 5px 10px currentColor;
   margin: 0;
@@ -369,7 +369,7 @@
 
 /* Meta */
 .media-frame .attachments-browser .media-toolbar {
-  display: block !important;
+  display: block ;
 }
 
 .index-meta-table {
@@ -391,7 +391,7 @@
 }
 
 .index-meta-table a {
-  outline: none !important;
+  outline: none ;
 }
 
 .index-meta-table label span {
@@ -420,7 +420,7 @@
 
 .index-meta-table input.button {
   margin-right: 0;
-  outline: none !important;
+  outline: none ;
   width: auto;
 }
 
@@ -466,29 +466,29 @@ td.index-box-color {
 }
 
 .index-box-color .wp-color-picker {
-  width: 65px !important;
+  width: 65px ;
 }
 
 .index-box-color .button.button-small {
-  height: 23px !important;
+  height: 23px ;
   margin-top: 1px;
 }
 
 .index-box-color .wp-picker-clear {
-  margin-left: 15px !important;
+  margin-left: 15px ;
 }
 
 .index-box-color .wp-picker-clear {
-  margin-left: 15px !important;
+  margin-left: 15px ;
 }
 
 .index-box-color .wp-color-result {
-  margin: 0 6px 3px 0 !important;
+  margin: 0 6px 3px 0 ;
 }
 
 .index-box-color .wp-color-result,
 .index-box-color .wp-color-result.wp-picker-open {
-  top: 1px !important;
+  top: 1px ;
 }
 
 
@@ -579,7 +579,7 @@ td.index-box-color {
 
 #customize-control-custom_logo {
   margin-top: 10px;
-  margin-bottom: 25px !important;
+  margin-bottom: 25px ;
 }
 
 #customize-control-title-logo_max_width {

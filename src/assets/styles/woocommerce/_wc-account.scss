@@ -20,7 +20,7 @@
 		}
 
 		.u-column1, .u-column2 {
-			background: $lightgray !important;
+			background: $lightgray ;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 40px;
@@ -65,13 +65,13 @@
             }
 
             p {
-                text-align: left !important;
+                text-align: left ;
                 max-width: none;
                 margin-bottom: 10px;
             }
 
 			p:last-of-type {
-                margin-bottom: 0 !important;
+                margin-bottom: 0 ;
 			}
             .woocommerce-form__label-for-checkbox {
             	margin-bottom: 0;

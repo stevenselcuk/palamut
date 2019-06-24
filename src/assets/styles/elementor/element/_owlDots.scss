@@ -12,9 +12,9 @@
         background: transparent;
         z-index: 1;
         padding: 0;
-        height: initial !important;
-        width: initial !important;
-        line-height: initial !important;
+        height: initial ;
+        width: initial ;
+        line-height: initial ;
         font-size: 20px;
         color: #000;
         padding: 15px;
@@ -22,7 +22,7 @@
             left: 100%;
         }
         &::before {
-            content: "" !important;
+            content: "" ;
         }
     }
 }
@@ -79,7 +79,7 @@
                 transition: all 0.4s ease;
                 border: 0;
                 &::before {
-                    content: "" !important;
+                    content: "" ;
                 }
             }
             &.slick-active {

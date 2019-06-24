@@ -25,7 +25,7 @@
 	.pingback .edit-link,
 	.site-info,
 	.comments-area--wrapper {
-		display: none !important;
+		display: none ;
 	}
 
 	/* Font sizes */
@@ -59,19 +59,19 @@
 	}
 
 	.entry-title {
-		font-size: 25pt !important;
-		line-height: 40pt !important;
+		font-size: 25pt ;
+		line-height: 40pt ;
 	}
 
 	.post .entry-header {
-		padding: 0 !important;
+		padding: 0 ;
 	}
 
 	/* Layout */
 
 	.site-content {
-		padding-left: 5% !important;
-		padding-right: 5% !important;
+		padding-left: 5% ;
+		padding-right: 5% ;
 		max-width: none;
 	}
 
@@ -79,9 +79,9 @@
 
 	.site-header {
 		background: transparent;
-		padding-left: 5% !important;
+		padding-left: 5% ;
 		margin-top: 50px;
-		padding-right: 5% !important;
+		padding-right: 5% ;
 		padding: 0;
 		position: relative;
 

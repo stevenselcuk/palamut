@@ -12,7 +12,7 @@
 			
 			&:focus {
 				border-color: $accent;
-				outline: none!important;
+				outline: none;
 			}
 		}
 		& input[type="submit"] {
@@ -27,7 +27,7 @@
 			@include shadow();
 			}
 			&:focus {
-				outline: none!important;
+				outline: none;
 			}
 		}
 	}

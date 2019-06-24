@@ -24,20 +24,20 @@
 }
 
 .header-classic.headroom--top {
-	background: transparent!important;
-	box-shadow: none!important;
+	background: transparent;
+	box-shadow: none;
 }
 
 .header-classic.headroom {
 	left: 0;
-	position: fixed!important;
+	position: fixed;
 	right: 0;
 	top: 0;
 }
 
 .header-classic.headroom--unpinned {
 	background: var(--header-bg-color);
-	box-shadow: none!important;
+	box-shadow: none;
 	transform: translate(0%,-100%);
 }
 
@@ -46,7 +46,7 @@
 	transform: translate(0%,0%);
 //	@include shadow-secondary;
 	left: 0;
-	position: fixed!important;
+	position: fixed;
 	right: 0;
 	top: 0;
 	z-index: 9999;
@@ -64,7 +64,7 @@
 	.headroom--pinned,{
 		margin-top: 32px;
 		@media screen and (max-width: 782px) {
-			margin-top: 0px!important;
+			margin-top: 0px;
 		}
 		}
 }

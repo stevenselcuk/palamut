@@ -98,7 +98,7 @@ body ::-moz-selection { background: #6515DD; color: #fff; opacity: 0.6; text-sha
 
 body ::selection { background: #6515DD; color: #fff; opacity: 0.6; text-shadow: none; }
 
-*, a, h1, h2, h3, h4, h5, h6, li, p, span { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased !important; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); outline: 0; text-rendering: geometricPrecision; vertical-align: baseline; word-wrap: break-word; }
+*, a, h1, h2, h3, h4, h5, h6, li, p, span { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); outline: 0; text-rendering: geometricPrecision; vertical-align: baseline; word-wrap: break-word; }
 
 p:empty { display: none; margin: 0; padding: 0; }
 
@@ -271,7 +271,7 @@ td, th { padding: 0; }
 
 .pala-instagram-widget .pala-insta-image .pala-insta-image__overlay { background: rgba(0, 0, 0, 0.5); height: 100%; visibility: hidden; width: 100%; }
 
-.pala-instagram-widget .pala-insta-image .pala-insta-image__description { line-height: 1.2em; margin-right: -1em; max-height: 7.2em; overflow: hidden; padding-right: 1em; position: relative; text-align: justify; height: 100%; padding-left: 1em !important; padding-right: 1em !important; transform: translateY(65%); visibility: hidden; width: 100%; transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+.pala-instagram-widget .pala-insta-image .pala-insta-image__description { line-height: 1.2em; margin-right: -1em; max-height: 7.2em; overflow: hidden; padding-right: 1em; position: relative; text-align: justify; height: 100%; padding-left: 1em; padding-right: 1em; transform: translateY(65%); visibility: hidden; width: 100%; transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
 
 .pala-instagram-widget .pala-insta-image .pala-insta-image__description:before { bottom: 0; content: '...'; position: absolute; right: 0; }
 
@@ -281,7 +281,7 @@ td, th { padding: 0; }
 
 .pala-instagram-widget .pala-insta-image:hover .pala-insta-image__description:hover .pala-insta-image__overlay { visibility: visible; }
 
-.pala-insta__followme { float: right; font-size: 12px !important; }
+.pala-insta__followme { float: right; font-size: 12px; }
 
 .instagram-widget-original .pala-insta-image { max-width: 350px; min-height: 350px; }
 

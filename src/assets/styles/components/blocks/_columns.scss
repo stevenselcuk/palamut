@@ -33,11 +33,11 @@
 			}
 
 			&:first-child {
-				margin-top: 0 !important;
+				margin-top: 0 ;
 			}
 
 			&:last-child {
-				margin-bottom: 0 !important;
+				margin-bottom: 0 ;
 			}
 		}
 
@@ -71,11 +71,11 @@
 		}
 
 		&[class*='has-'] > * {
-			margin-left: 0 !important;
-			margin-right: 40px !important;
+			margin-left: 0 ;
+			margin-right: 40px ;
 
 			&:last-child {
-				margin-right: 0 !important;
+				margin-right: 0 ;
 			}
 		}
 	}

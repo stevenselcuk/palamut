@@ -77,17 +77,17 @@
 .customize-control-palamut-range .palamut-range__number-input {
   background: none;
   border: none;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  -webkit-box-shadow: none ;
+          box-shadow: none ;
   color: #555d66;
   display: inline-block;
   font-size: 14px;
-  height: 26px !important;
-  line-height: 14px !important;
+  height: 26px ;
+  line-height: 14px ;
   padding: 2px 0;
   position: relative;
   text-align: right;
-  width: 30px !important;
+  width: 30px ;
 }
 
 .customize-control-palamut-range .palamut-range__number-input:hover, .customize-control-palamut-range .palamut-range__number-input:focus {

@@ -6,7 +6,7 @@ aside.offcanvas-sidebar {
 	display: flex;
 	flex-direction: row;
 	overflow-x: hidden;
-	overflow-y: scroll!important;
+	overflow-y: scroll;
 	padding: 30px;
 	pointer-events: none;
 	position: fixed;
@@ -131,7 +131,7 @@ aside.offcanvas-sidebar {
 		padding: 0;
 
 		a {
-			font-size: 12px !important;
+			font-size: 12px ;
 
 			&:hover {
 				opacity: 1;

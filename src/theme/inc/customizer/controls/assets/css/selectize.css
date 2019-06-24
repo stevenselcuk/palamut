@@ -15,10 +15,10 @@
  */
 
 .selectize-control.plugin-drag_drop.multi>.selectize-input>div.ui-sortable-placeholder {
-  visibility: visible !important;
-  background: #f2f2f2 !important;
-  background: rgba(0, 0, 0, 0.06) !important;
-  border: 0 none !important;
+  visibility: visible ;
+  background: #f2f2f2 ;
+  background: rgba(0, 0, 0, 0.06) ;
+  border: 0 none ;
   -webkit-box-shadow: inset 0 0 12px 4px #fff;
   box-shadow: inset 0 0 12px 4px #fff;
 }
@@ -51,7 +51,7 @@
   opacity: 0.4;
   margin-top: -12px;
   line-height: 20px;
-  font-size: 20px !important;
+  font-size: 20px ;
 }
 
 .selectize-dropdown-header-close:hover {
@@ -81,7 +81,7 @@
 
 .selectize-control.plugin-remove_button [data-value] {
   position: relative;
-  padding-right: 24px !important;
+  padding-right: 24px ;
 }
 
 .selectize-control.plugin-remove_button [data-value] .remove {
@@ -179,7 +179,7 @@
 
 .selectize-input.disabled,
 .selectize-input.disabled * {
-  cursor: default !important;
+  cursor: default ;
 }
 
 .selectize-input.focus {}
@@ -221,19 +221,19 @@
 }
 
 .selectize-input>input {
-  display: inline-block !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  max-width: 100% !important;
-  margin: 0 2px 0 0 !important;
-  text-indent: 0 !important;
-  border: 0 none !important;
-  background: none !important;
-  line-height: inherit !important;
-  -webkit-user-select: auto !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+  display: inline-block ;
+  padding: 0 ;
+  min-height: 0 ;
+  max-height: none ;
+  max-width: 100% ;
+  margin: 0 2px 0 0 ;
+  text-indent: 0 ;
+  border: 0 none ;
+  background: none ;
+  line-height: inherit ;
+  -webkit-user-select: auto ;
+  -webkit-box-shadow: none ;
+  box-shadow: none ;
 }
 
 .selectize-input>input::-ms-clear {
@@ -241,7 +241,7 @@
 }
 
 .selectize-input>input:focus {
-  outline: none !important;
+  outline: none ;
 }
 
 .selectize-input::after {
@@ -372,7 +372,7 @@
 }
 
 .selectize-control.rtl .selectize-input>input {
-  margin: 0 4px 0 -2px !important;
+  margin: 0 4px 0 -2px ;
 }
 
 .selectize-control .selectize-input.disabled {

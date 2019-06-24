@@ -33,7 +33,7 @@
     }
 
     a:after {
-        display: none !important;
+        display: none ;
     }
 
     .mceContentBody.wp-editor & {
@@ -59,7 +59,7 @@
         }
 
         .dk-select-open-down {
-            display: none !important;
+            display: none ;
         }
 
     }
@@ -149,7 +149,7 @@
     
     input[type="submit"] {
         width: 26px;
-        background-color: transparent !important;
+        background-color: transparent ;
         height: inherit;
         border: 0;
         padding: 0;

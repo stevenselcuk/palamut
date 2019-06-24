@@ -79,7 +79,7 @@
 /* Show screen reader text in some cases */
 .no-svg .social-navigation li a .screen-reader-text { clip: auto; font-size: 16px; font-weight: 400; height: auto; position: relative; width: auto; }
 
-.editor-styles-wrapper { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased !important; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: var(--body-background-color); background-color: var(--body-background-color); color: var(--body-text-color); font-family: var(--body-text-fontfamily); font-weight: var(--body-text-weight); outline: 0; text-rendering: geometricPrecision; line-height: 1.8; vertical-align: baseline; word-wrap: break-word; }
+.editor-styles-wrapper { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: var(--body-background-color); background-color: var(--body-background-color); color: var(--body-text-color); font-family: var(--body-text-fontfamily); font-weight: var(--body-text-weight); outline: 0; text-rendering: geometricPrecision; line-height: 1.8; vertical-align: baseline; word-wrap: break-word; }
 
 .editor-styles-wrapper { font-size: 14px; }
 
@@ -91,7 +91,7 @@
 
 @media screen and (min-width: 1024px) { .editor-styles-wrapper { line-height: 1.8; } }
 
-.mce-content-body h1, .mce-content-body h2, .mce-content-body h3, .mce-content-body h4, .mce-content-body h5, .mce-content-body h6 { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased !important; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); color: var(--heading-color); font-family: var(--heading-fontfamily); font-weight: var(--heading-fontweight); line-height: var(--heading-line-height); outline: 0; text-rendering: geometricPrecision; vertical-align: baseline; word-wrap: break-word; }
+.mce-content-body h1, .mce-content-body h2, .mce-content-body h3, .mce-content-body h4, .mce-content-body h5, .mce-content-body h6 { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); color: var(--heading-color); font-family: var(--heading-fontfamily); font-weight: var(--heading-fontweight); line-height: var(--heading-line-height); outline: 0; text-rendering: geometricPrecision; vertical-align: baseline; word-wrap: break-word; }
 
 .mce-content-body > * { margin: 20px auto; max-width: 740px; padding-left: 20px; padding-right: 20px; }
 
@@ -101,9 +101,9 @@
 
 @media screen and (min-width: 739px) { .mce-content-body > *:not(p):not(ul):not(ol) { margin-bottom: 42px; margin-top: 42px; } }
 
-.mce-content-body > *:first-child { margin-top: 0 !important; }
+.mce-content-body > *:first-child { margin-top: 0; }
 
-.mce-content-body > *:last-child { margin-bottom: 0 !important; }
+.mce-content-body > *:last-child { margin-bottom: 0; }
 
 .mce-content-body > * > *:first-child { margin-top: 0; }
 
@@ -113,23 +113,23 @@
 
 @media screen and (min-width: 739px) { .mce-content-body > *.alignwide { margin-bottom: 50px; margin-top: 50px; } }
 
-.mce-content-body > *.alignfull:not(.wp-block-video) { margin: 40px 20px; max-width: 100% !important; padding-left: 0; padding-right: 0; }
+.mce-content-body > *.alignfull:not(.wp-block-video) { margin: 40px 20px; max-width: 100%; padding-left: 0; padding-right: 0; }
 
 @media screen and (min-width: 739px) { .mce-content-body > *.alignfull:not(.wp-block-video) { margin-bottom: 60px; margin-top: 60px; } }
 
 .mce-content-body > *.alignleft { margin-right: 20px; max-width: 100%; }
 
-@media screen and (min-width: 499px) { .mce-content-body > *.alignleft { float: left; margin-right: 40px; margin-top: 0; max-width: 20px !important; } }
+@media screen and (min-width: 499px) { .mce-content-body > *.alignleft { float: left; margin-right: 40px; margin-top: 0; max-width: 20px; } }
 
 @media screen and (min-width: 739px) { .mce-content-body > *.alignleft { margin-left: calc(50% - 350px); } }
 
 .mce-content-body > *.alignright { margin-left: 20px; }
 
-@media screen and (min-width: 499px) { .mce-content-body > *.alignright { float: right; margin-left: 40px; margin-top: 0; max-width: 20px !important; } }
+@media screen and (min-width: 499px) { .mce-content-body > *.alignright { float: right; margin-left: 40px; margin-top: 0; max-width: 20px; } }
 
 @media screen and (min-width: 739px) { .mce-content-body > *.alignright { margin-right: calc(50% - 350px); } }
 
-@media screen and (max-width: 498px) { .mce-content-body > * .alignleft > figcaption, .mce-content-body > * .alignright > figcaption { display: block !important; } }
+@media screen and (max-width: 498px) { .mce-content-body > * .alignleft > figcaption, .mce-content-body > * .alignright > figcaption { display: block; } }
 
 .wp-block[data-type="core/paragraph"], .wp-block[data-type="core/list"] { font-family: var(--body-text-fontfamily); }
 

@@ -134,7 +134,7 @@ add_filter( 'woocommerce_sale_flash', 'prefix_woocommerce_sale_flash', 10, 3 );
  */
 if ( ! function_exists( 'prefix_woocommerce_before_checkout_shipping_form' ) ) :
 	function prefix_woocommerce_before_checkout_shipping_form() {
-		echo '<h3 style="margin-top: 0!important;">';
+		echo '<h3 style="margin-top: 0;">';
 			echo esc_html__( 'Shipping details', 'textdomain' );
 		echo '</h3>';
 	}

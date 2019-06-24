@@ -14,11 +14,11 @@
 		}
 
 		&.alignleft {
-			padding-right: 0 !important;
+			padding-right: 0 ;
 		}
 
 		&.alignright {
-			padding-left: 0 !important;
+			padding-left: 0 ;
 		}
 
 		&.alignleft,
@@ -26,8 +26,8 @@
 			margin-top: $content__spacer - 17px;
 
 			@media screen and (max-width: $content__align--mobile-media-query--max) {
-				margin-bottom: $content__spacer - 39px !important;
-				margin-top: $content__spacer !important;
+				margin-bottom: $content__spacer - 39px ;
+				margin-top: $content__spacer ;
 				  min-width: 100%;
 				width: calc(100% - #{$content__padding});
 			}

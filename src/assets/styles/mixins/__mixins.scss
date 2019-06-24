@@ -430,12 +430,12 @@ $vendors_all: (
 		top: 50%;
 		@include translate(-50%, -50%);
 	} @else {
-		left: 50% !important;
-		top: 50% !important;
+		left: 50% ;
+		top: 50% ;
 		@each $v in $vendors {
-			-#{$v}-transform: translate(-50%, 50%) !important;
+			-#{$v}-transform: translate(-50%, 50%) ;
 		}
-		transform: translate(-50%, 50%) !important;
+		transform: translate(-50%, 50%) ;
 	}
 }
 @mixin abs-cb($y: 0, $z: 1) {
@@ -899,17 +899,17 @@ $ease: ease;
 
 @mixin responsive-visibility($parent) {
 	#{$parent} {
-		display: block !important;
+		display: block ;
 	}
-	table#{$parent}  { display: table !important; }
-	tr#{$parent}     { display: table-row !important; }
+	table#{$parent}  { display: table ; }
+	tr#{$parent}     { display: table-row ; }
 	th#{$parent},
-	td#{$parent}     { display: table-cell !important; }
+	td#{$parent}     { display: table-cell ; }
 }
 
 @mixin responsive-invisibility($parent) {
 	#{$parent} {
-		display: none !important;
+		display: none ;
 	}
 }
 

@@ -43,8 +43,8 @@
 
 			p {
 				margin-bottom: 0;
-				font-size: 15px !important;
-				line-height: 1.2 !important;
+				font-size: 15px ;
+				line-height: 1.2 ;
 			}
 		}
 	}
@@ -53,12 +53,12 @@
 #order_review .cart_item {
 
 	dt {
-		font-size: 14px !important;
+		font-size: 14px ;
 	}
 
 	dd {
 		p {
-			font-size: 14px !important;
+			font-size: 14px ;
 		}
 	}
 }
@@ -69,7 +69,7 @@
 
 .blockUI.blockOverlay {
 	position: absolute;
-	// display: none !important;
+	// display: none ;
 	// filter: blur(50px);
 }
 
@@ -152,7 +152,7 @@ strong {
     .site-footer,
     .site-colophon .social-wrapper,
     .colophon-navigation {
-        display: none !important;
+        display: none ;
     }
 
 }
@@ -161,11 +161,11 @@ strong {
 	padding-bottom: 25px;
 }
 .wc-terms-and-conditions .woocommerce-form__label-for-checkbox {
-	font-size: 13px !important;
+	font-size: 13px ;
 }
 
 .woocommerce-cart.woocommerce--empty-cart .site-content__inner {
-    padding-bottom: 0 !important;
+    padding-bottom: 0 ;
 }
 
 .wc-backward {
@@ -178,7 +178,7 @@ strong {
 }
 
 .woocommerce-cart .single-page {
-    margin-top: 25px !important;
+    margin-top: 25px ;
 }
 
 
@@ -272,7 +272,7 @@ table.shop_table_responsive thead {
     }
 
     tr, tbody {
-        border: none !important;
+        border: none ;
     }
 
     th, tr td {
@@ -284,12 +284,12 @@ table.shop_table_responsive thead {
 
     label {
     	display: inline-block;
-    	font-size: 14px !important;
+    	font-size: 14px ;
     	position: relative;
     	top: -1px;
-    	margin-bottom: 0 !important;
-    	text-transform: inherit !important;
-    	letter-spacing: normal !important;
+    	margin-bottom: 0 ;
+    	text-transform: inherit ;
+    	letter-spacing: normal ;
 
     	.woocommerce-Price-amount {
     		position: relative;
@@ -324,7 +324,7 @@ table.shop_table_responsive thead {
         }
 
         input {
-            margin-bottom: 5px !important;
+            margin-bottom: 5px ;
             @media only screen and (max-width: 600px) {
                 width: 100%;
             }
@@ -337,7 +337,7 @@ table.shop_table_responsive thead {
 
     .actions .button {
         @media only screen and (max-width: 600px) {
-            width: 100% !important;
+            width: 100% ;
         }
     }
 
@@ -356,8 +356,8 @@ table.shop_table_responsive thead {
     margin-top: 50px;
 
     ul, li {
-    	margin: 0 !important;
-    	padding: 0 !important;
+    	margin: 0 ;
+    	padding: 0 ;
     	list-style: none;
     }
 }
@@ -373,7 +373,7 @@ table.shop_table_responsive thead {
     }
 
     td {
-        border-left: 1px solid $color__border-bottom !important;
+        border-left: 1px solid $color__border-bottom ;
     }
 
     .checkout-button {
@@ -395,7 +395,7 @@ table.shop_table_responsive thead {
     .site-footer,
     .site-colophon .social-wrapper,
     .colophon-navigation {
-        display: none !important;
+        display: none ;
     }
 
 }
@@ -548,7 +548,7 @@ table.shop_table_responsive thead {
 }
 
 .woocommerce .login {
-    background: $lightgray !important;
+    background: $lightgray ;
     margin-left: auto;
     margin-right: auto;
     padding: 40px;
@@ -585,7 +585,7 @@ table.shop_table_responsive thead {
     padding: 20px;
     padding-bottom: 0;
     margin-top: 50px;
-    z-index: 99999999999 !important;
+    z-index: 99999999999 ;
     @media only screen and (min-width: 769px) {
         padding: 35px 35px;
         padding-bottom: 0;
@@ -594,8 +594,8 @@ table.shop_table_responsive thead {
 	    float: right;
 	}
 	@media only screen and (max-width: 1023px) {
-	    width: 100% !important;
-		position: relative!important;
+	    width: 100% ;
+		position: relative;
 		top: 0px;
 		z-index: auto;
 	}
@@ -603,7 +603,7 @@ table.shop_table_responsive thead {
 
 	.payment_method_stripe {
 		p {
-			padding-left: 0 !important;
+			padding-left: 0 ;
 			margin-top: 0;
 		}
 	}
@@ -612,7 +612,7 @@ table.shop_table_responsive thead {
 		display: block;
 
 		.woocommerce-Price-amount {
-			font-size: 80% !important;
+			font-size: 80% ;
 		}
 	}
 
@@ -631,7 +631,7 @@ table.shop_table_responsive thead {
 
     table {
         font-size: 14px;
-        border-bottom: 1px solid $color__border-bottom !important;
+        border-bottom: 1px solid $color__border-bottom ;
     }
 
     table, tr, td, th {
@@ -785,8 +785,8 @@ table.shop_table_responsive thead {
 
 	@media only screen and (max-width: 1023px) {
         width: 100%;
-        float: none !important;
-        height: 100% !important;
+        float: none ;
+        height: 100% ;
     }
 
     @media only screen and (min-width: 1024px) {
@@ -826,7 +826,7 @@ form.checkout:after, form.checkout:before {
 }
 
 .form-row-last {
-    margin-right: 0 !important;
+    margin-right: 0 ;
 }
 
 
