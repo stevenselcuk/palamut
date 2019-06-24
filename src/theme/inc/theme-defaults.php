@@ -64,22 +64,30 @@ function prefix_theme_defaults( $name ) {
 		$defaults = apply_filters(
 			'prefix_theme_defaults',
 			array(
+				// Fonts.
+				'heading_font_family'          => 'Karla',
+				'body_font_family'             => 'Open Sans',
+				'menu_item_font_family'        => 'Open Sans',
 				// Colors.
-				'header_bg_color'       => '#ffffff',
-				'content_bg_color'      => '#ffffff',
-				'body_text_color'       => '#000000',
+				'heading_text_color'           => '#000000',
+				'header_bg_color'              => '#ffffff',
+				'content_bg_color'             => '#ffffff',
+				'body_text_color'              => '#000000',
+				'body_text_link_color'         => '#000000',
+				'body_text_link_color_hover'   => '#000000',
+				'body_text_link_color_visited' => '#000000',
 				// Identity.
-				'custom_logo_max_width' => 64,
-				'site_title_font_size'  => 32,
-				'site_desc_font_size'   => 12,
+				'custom_logo_max_width'        => 64,
+				'site_title_font_size'         => 32,
+				'site_desc_font_size'          => 12,
 				// Layout.
-				'header_max_width'      => 1100,
-				'content_max_width'     => 1100,
+				'header_max_width'             => 1100,
+				'content_max_width'            => 1100,
 				// Options.
-				'show_sidebar'          => false,
-				'prefix_site_info'      => true,
-				'show_theme_info'       => true,
-				'pagination_type'       => 'paginated',
+				'show_sidebar'                 => false,
+				'prefix_site_info'             => true,
+				'show_theme_info'              => true,
+				'pagination_type'              => 'paginated',
 			)
 		);
 	}

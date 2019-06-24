@@ -24,7 +24,6 @@
  */
 require_once __PRE_THEME_DIR . '/inc/customizer/sanitization.php';
 require_once __PRE_THEME_DIR . '/inc/customizer/dynamic-css.php';
-require_once __PRE_THEME_DIR . '/inc/customizer/fonts-library.php';
 /**
  * Add postMessage support for site title and description for the Customizer.
  *

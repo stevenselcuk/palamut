@@ -4,7 +4,7 @@
  * See: https://wordpress.org/plugins/woocommerce/
  *
  * @package     Ava
- * @link        https://themebeans.com/themes/palamut
+ * @link        https://textdomain.com/themes/palamut
  */
 
 /**

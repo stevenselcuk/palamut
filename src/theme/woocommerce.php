@@ -10,7 +10,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package     Ava
- * @link        https://themebeans.com/themes/palamut
+ * @link        https://textdomain.com/themes/palamut
  */
 
 get_header(); ?>

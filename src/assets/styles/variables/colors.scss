@@ -130,9 +130,6 @@ $colors: (white, $white), (dark-black, $dark-black), (mine-shaft, $mine-shaft), 
 :root {
 	--accent: #{$accent};
 	--accent-secondary: #{$accent_secondary};
-	--link-color: #{$link-color};
-	--link-color__hover: #{$link-color__hover};
-	--link-color__visited: #{$link-color__visited};
-	--heading-color:  #{$heading-color};
 	--menu-item-fontcolor: #{$menu-item-color};
+	
 }

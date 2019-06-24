@@ -2,7 +2,7 @@
 /**
  * Customizer > Sections > Header
  *
- * { Document descriptions will be add. }
+ * Header & Nav Area Customizations.
  *
  * @link to be defined
  *
@@ -19,11 +19,7 @@
  * @license pdwlicense
  */
 
- /**
-  * Layout (Its onder)
-  *
-  * @TODO : Renew its position.
-  */
+// Register Section.
 $wp_customize->add_section(
 	'prefix_theme_options_header',
 	array(

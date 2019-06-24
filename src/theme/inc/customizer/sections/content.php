@@ -2,7 +2,7 @@
 /**
  * Customizer > Sections > Content
  *
- * { Document descriptions will be add. }
+ * Main Section Customization Fields
  *
  * @link to be defined
  *
@@ -19,11 +19,7 @@
  * @license pdwlicense
  */
 
- /**
-  * Layout (Its onder)
-  *
-  * @TODO : Renew its position.
-  */
+// Register Section.
 $wp_customize->add_section(
 	'prefix_theme_options_content',
 	array(
@@ -42,6 +38,7 @@ $wp_customize->add_setting(
 	)
 );
 
+// Main (Content) Background Color.
 $wp_customize->add_control(
 	new Palamut_Alpha_Color_Control(
 		$wp_customize,

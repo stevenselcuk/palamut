@@ -42,7 +42,7 @@ if ( ! function_exists( 'prefix_documentation' ) ) :
 			return;
 		}
 
-		$markdown_url = 'https://raw.githubusercontent.com/themebeans/theme-docs/master/ava/readme.md';
+		$markdown_url = 'https://raw.githubusercontent.com/textdomain/theme-docs/master/ava/readme.md';
 
 		$huh = new Palamut_Docs();
 		$huh->init( $markdown_url );

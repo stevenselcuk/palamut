@@ -48,6 +48,30 @@
 		} );
 	} );
 
+	wp.customize( 'body_text_link_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site a:not(.entry-title a ), .entry-content a:not(.entry-title a )' ).css( { color: newval } );
+		} );
+	} );
+
+	wp.customize( 'body_text_link_color_hover', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site a:hover , .entry-content a:hover' ).css( { color: newval } );
+		} );
+	} );
+
+	wp.customize( 'body_text_link_color_visited', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site a:visited, .entry-content a:visited' ).css( { color: newval } );
+		} );
+	} );
+
+	wp.customize( 'heading_text_color', function( value ) {
+		value.bind( function( newval ) {
+			$( 'h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1, h2, h3, h4, h5, h6' ).css( { color: newval } );
+		} );
+	} );
+
 	// Primary Nav Operations Start.
 	wp.customize( 'menu_item_font_size', function( value ) {
 		value.bind( function( newval ) {

@@ -40,7 +40,7 @@
 
 .has-background:not([class*="background-color"]) { background-color: #f5f5f5; }
 
-:root { --accent: #6515DD; --accent-secondary: #60FDB0; --link-color: #6515DD; --link-color__hover: #250851; --link-color__visited: black; --heading-color:  #414042; --menu-item-fontcolor: #333333; }
+:root { --accent: #6515DD; --accent-secondary: #60FDB0; --menu-item-fontcolor: #333333; }
 
 @custom-media --sm-viewport only screen and (min-width: 320px) and (max-width: 481px);
 @custom-media --md-viewport only screen and (min-width: 481px) and (max-width: 783px);

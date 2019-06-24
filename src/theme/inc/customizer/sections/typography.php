@@ -2,7 +2,7 @@
 /**
  * Customizer > Sections > Typography
  *
- * { Document descriptions will be add. }
+ * Body, Heading, Nav and other typography related customizations.
  *
  * @link to be defined
  *
@@ -18,9 +18,6 @@
  * @copyright pdwcopyright
  * @license pdwlicense
  */
-
-// Call Google Font List.
-$fonts = prefix_font_library();
 
 // Register Typography Panel.
 $wp_customize->add_panel(
@@ -45,7 +42,7 @@ $wp_customize->add_section(
 
 // Register Heading Typography Section.
 $wp_customize->add_section(
-	'prefix_typography_pagetitles',
+	'prefix_typography_heading',
 	array(
 		'title'    => esc_html__( 'Heading', 'textdomain' ),
 		'panel'    => 'prefix_typography',
@@ -73,13 +70,12 @@ $wp_customize->add_section(
 	)
 );
 
-
-// =======================================
-// NAVIGATION TYPOGRAPHY
-// =======================================
-// Add the navigation  typography setting and controls.
 $wp_customize->add_setting(
-	'menu_item_font_family'
+	'menu_item_font_family',
+		array(
+			'default'           => prefix_theme_defaults( 'menu_item_font_family' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
 );
 
 $wp_customize->add_control(
@@ -174,11 +170,6 @@ $wp_customize->get_setting( 'menu_item_font_size' )->transport = 'postMessage';
 $wp_customize->get_setting( 'menu_item_transform' )->transport = 'postMessage';
 
 
-
-// =======================================
-// BODY TYPOGRAPHY
-// =======================================
-// Add the body typography setting and controls.
 $wp_customize->add_setting(
 	'body_font_family_subset',
 	array(
@@ -190,7 +181,11 @@ $wp_customize->add_setting(
 
 	// Add the body font fanily setting and control.
 	$wp_customize->add_setting(
-		'body_font_family'
+		'body_font_family',
+		array(
+			'default'           => prefix_theme_defaults( 'body_font_family' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
 	);
 
 	$wp_customize->add_control(
@@ -201,7 +196,6 @@ $wp_customize->add_setting(
 				'type'    => 'prefix-font-family',
 				'label'   => esc_html__( 'Body Font Family', 'textdomain' ),
 				'section' => 'prefix_typography_body',
-				'default' => 'Inherit',
 			)
 		)
 	);
@@ -239,115 +233,6 @@ $wp_customize->add_setting(
 		)
 	);
 
-
-	$wp_customize->add_setting(
-		'body_font_size',
-		array(
-			'default'           => '15',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
-			$wp_customize,
-			'body_font_size',
-			array(
-				'default'     => '15',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Font Size', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_body',
-				'input_attrs' => array(
-					'min'  => 10,
-					'max'  => 100,
-					'step' => 1,
-				),
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'body_line_height',
-		array(
-			'default'           => '26',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
-			$wp_customize,
-			'body_line_height',
-			array(
-				'default'     => '26',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Line Height', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_body',
-				'input_attrs' => array(
-					'min'  => 0,
-					'max'  => 50,
-					'step' => 1,
-				),
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'body_letter_spacing',
-		array(
-			'default'           => '0',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
-			$wp_customize,
-			'body_letter_spacing',
-			array(
-				'default'     => '0',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Letter Spacing', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_body',
-				'input_attrs' => array(
-					'min'  => 0,
-					'max'  => 10,
-					'step' => 1,
-				),
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'body_word_spacing',
-		array(
-			'default'           => '0',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
-			$wp_customize,
-			'body_word_spacing',
-			array(
-				'default'     => '0',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Word Spacing', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_body',
-				'input_attrs' => array(
-					'min'  => 0,
-					'max'  => 20,
-					'step' => 1,
-				),
-			)
-		)
-	);
-
 	// Body Text Color.
 	$wp_customize->add_setting(
 		'body_text_color',
@@ -369,54 +254,115 @@ $wp_customize->add_setting(
 		)
 	);
 
-
-	 // Add the body font fanily setting and control.
+	// Body Text Link Color.
 	$wp_customize->add_setting(
-		'heading_font_family',
+		'body_text_link_color',
 		array(
-			'default' => 'Karla',
+			'default'           => '#00FF85',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'prefix_sanitize_rgba',
 		)
 	);
 
 	$wp_customize->add_control(
-		'heading_font_family',
-		array(
-			'type'    => 'select',
-			'label'   => esc_html__( 'Font Family', 'textdomain' ),
-			'section' => 'prefix_typography_pagetitles',
-			'choices' => $fonts,
-		)
-	);
-
-	$wp_customize->add_setting(
-		'pagetitle_font_size',
-		array(
-			'default'           => '26',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
+		new Palamut_Alpha_Color_Control(
 			$wp_customize,
-			'pagetitle_font_size',
+			'body_text_link_color',
 			array(
-				'default'     => '26',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Font Size', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_pagetitles',
-				'input_attrs' => array(
-					'min'  => 10,
-					'max'  => 100,
-					'step' => 1,
-				),
+				'label'   => esc_html__( 'Body Text Link Color', 'textdomain' ),
+				'section' => 'prefix_typography_body',
+			)
+		)
+	);
+
+	// Body Text Hover Link Color.
+	$wp_customize->add_setting(
+		'body_text_link_color_hover',
+		array(
+			'default'           => '#00F0B6',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'prefix_sanitize_rgba',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Palamut_Alpha_Color_Control(
+			$wp_customize,
+			'body_text_link_color_hover',
+			array(
+				'label'   => esc_html__( 'Body Text Link Color (Hover)', 'textdomain' ),
+				'section' => 'prefix_typography_body',
+			)
+		)
+	);
+
+	// Body Text Visited Link Color.
+	$wp_customize->add_setting(
+		'body_text_link_color_visited',
+		array(
+			'default'           => '#00F0B6',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'prefix_sanitize_rgba',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Palamut_Alpha_Color_Control(
+			$wp_customize,
+			'body_text_link_color_visited',
+			array(
+				'label'   => esc_html__( 'Body Text Link Color (Visited)', 'textdomain' ),
+				'section' => 'prefix_typography_body',
+			)
+		)
+	);
+
+
+	// Add the body font fanily setting and control.
+	$wp_customize->add_setting(
+		'heading_font_family',
+		array(
+			'default'           => prefix_theme_defaults( 'heading_font_family' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Palamut_Typography_Control(
+			$wp_customize,
+			'heading_font_family',
+			array(
+				'type'    => 'prefix-font-family',
+				'label'   => esc_html__( 'Heading Font Family', 'textdomain' ),
+				'section' => 'prefix_typography_heading',
+			)
+		)
+	);
+
+	// Header Background Color.
+	$wp_customize->add_setting(
+		'heading_text_color',
+		array(
+			'default'           => prefix_theme_defaults( 'heading_text_color' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'prefix_sanitize_rgba',
+		)
+	);
+
+	// Heading Text Color.
+	$wp_customize->add_control(
+		new Palamut_Alpha_Color_Control(
+			$wp_customize,
+			'heading_text_color',
+			array(
+				'label'   => esc_html__( 'Content Background Color', 'textdomain' ),
+				'section' => 'prefix_typography_heading',
 			)
 		)
 	);
 
 	$wp_customize->add_setting(
-		'pagetitle_line_height',
+		'heading_line_height',
 		array(
 			'default'           => '26',
 			'sanitize_callback' => 'absint',
@@ -426,13 +372,13 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
 		new Palamut_Range_Control(
 			$wp_customize,
-			'pagetitle_line_height',
+			'heading_line_height',
 			array(
 				'default'     => '26',
 				'type'        => 'palamut-range',
 				'label'       => esc_html__( 'Line Height', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'prefix_typography_pagetitles',
+				'section'     => 'prefix_typography_heading',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 50,
@@ -443,7 +389,7 @@ $wp_customize->add_setting(
 	);
 
 	$wp_customize->add_setting(
-		'pagetitle_letter_spacing',
+		'heading_letter_spacing',
 		array(
 			'default'           => '0',
 			'sanitize_callback' => 'absint',
@@ -453,13 +399,13 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
 		new Palamut_Range_Control(
 			$wp_customize,
-			'pagetitle_letter_spacing',
+			'heading_letter_spacing',
 			array(
 				'default'     => '0',
 				'type'        => 'palamut-range',
 				'label'       => esc_html__( 'Letter Spacing', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'prefix_typography_pagetitles',
+				'section'     => 'prefix_typography_heading',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 10,
@@ -470,7 +416,7 @@ $wp_customize->add_setting(
 	);
 
 	$wp_customize->add_setting(
-		'pagetitle_word_spacing',
+		'heading_word_spacing',
 		array(
 			'default'           => '0',
 			'sanitize_callback' => 'absint',
@@ -480,13 +426,13 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
 		new Palamut_Range_Control(
 			$wp_customize,
-			'pagetitle_word_spacing',
+			'heading_word_spacing',
 			array(
 				'default'     => '0',
 				'type'        => 'palamut-range',
 				'label'       => esc_html__( 'Word Spacing', 'textdomain' ),
 				'description' => 'px',
-				'section'     => 'prefix_typography_pagetitles',
+				'section'     => 'prefix_typography_heading',
 				'input_attrs' => array(
 					'min'  => 0,
 					'max'  => 20,
@@ -496,85 +442,3 @@ $wp_customize->add_setting(
 		)
 	);
 
-
-
-	$wp_customize->add_setting(
-		'pagecontent_font_size',
-		array(
-			'default'           => '19',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
-			$wp_customize,
-			'pagecontent_font_size',
-			array(
-				'default'     => '19',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Font Size', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_pagecontent',
-				'input_attrs' => array(
-					'min'  => 10,
-					'max'  => 100,
-					'step' => 1,
-				),
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'pagecontent_line_height',
-		array(
-			'default'           => '32',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
-			$wp_customize,
-			'pagecontent_line_height',
-			array(
-				'default'     => '32',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Line Height', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_pagecontent',
-				'input_attrs' => array(
-					'min'  => 0,
-					'max'  => 50,
-					'step' => 1,
-				),
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'pagecontent_word_spacing',
-		array(
-			'default'           => '0',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Palamut_Range_Control(
-			$wp_customize,
-			'pagecontent_word_spacing',
-			array(
-				'default'     => '0',
-				'type'        => 'palamut-range',
-				'label'       => esc_html__( 'Word Spacing', 'textdomain' ),
-				'description' => 'px',
-				'section'     => 'prefix_typography_pagecontent',
-				'input_attrs' => array(
-					'min'  => 0,
-					'max'  => 20,
-					'step' => 1,
-				),
-			)
-		)
-	);

@@ -32,14 +32,10 @@
  */
 function prefix_customizer_css() {
 	// Body Typography.
-	$body_font_family    = get_theme_mod( 'body_font_family', 'Open Sans' );
-	$body_font_size      = get_theme_mod( 'body_font_size', '15' );
-	$body_line_height    = get_theme_mod( 'body_line_height', '26' );
-	$body_letter_spacing = get_theme_mod( 'body_letter_spacing', '0' );
-	$body_word_spacing   = get_theme_mod( 'body_word_spacing', '0' );
-	$heading_font_family = get_theme_mod( 'heading_font_family', 'inherit' );
+	$body_font_family    = get_theme_mod( 'body_font_family', prefix_theme_defaults( 'body_font_family' ) );
+	$heading_font_family = get_theme_mod( 'heading_font_family', prefix_theme_defaults( 'heading_font_family' ) );
 	// Menu Typography.
-	$menu_item_font_family = get_theme_mod( 'menu_item_font_family', 'inherit' );
+	$menu_item_font_family = get_theme_mod( 'menu_item_font_family', prefix_theme_defaults( 'menu_item_font_family' ) );
 	$menu_item_font_size   = get_theme_mod( 'menu_item_font_size', '14' );
 	$menu_item_font_weight = get_theme_mod( 'menu_item_font_weight', 'normal' );
 	$menu_item_transform   = get_theme_mod( 'menu_item_transform', 'none' );
@@ -51,9 +47,13 @@ function prefix_customizer_css() {
 	$header_max_width = get_theme_mod( 'header_max_width', prefix_theme_defaults( 'header_max_width' ) );
 
 	// Colors.
-	$header_bg_color  = get_theme_mod( 'header_bg_color', prefix_theme_defaults( 'header_bg_color' ) );
-	$content_bg_color = get_theme_mod( 'content_bg_color', prefix_theme_defaults( 'content_bg_color' ) );
-	$body_text_color  = get_theme_mod( 'body_text_color', prefix_theme_defaults( 'body_text_color' ) );
+	$header_bg_color     = get_theme_mod( 'header_bg_color', prefix_theme_defaults( 'header_bg_color' ) );
+	$content_bg_color    = get_theme_mod( 'content_bg_color', prefix_theme_defaults( 'content_bg_color' ) );
+	$body_text_color     = get_theme_mod( 'body_text_color', prefix_theme_defaults( 'body_text_color' ) );
+	$body_text_link_color     = get_theme_mod( 'body_text_link_color', prefix_theme_defaults( 'body_text_link_color' ) );
+	$body_text_link_color_hover    = get_theme_mod( 'body_text_link_color_hover', prefix_theme_defaults( 'body_text_link_color_hover' ) );
+	$body_text_link_color_visited     = get_theme_mod( 'body_text_link_color_visited', prefix_theme_defaults( 'body_text_link_color_visited' ) );
+	$heading_text_color  = get_theme_mod( 'heading_text_color', prefix_theme_defaults( 'heading_text_color' ) );
 
 	// CSS render.
 	$css =
@@ -79,6 +79,11 @@ function prefix_customizer_css() {
 		--content-bg-color:  ' . $content_bg_color . ';
 		
 		--body-text-color:  ' . $body_text_color . ';
+		--heading-color: ' . $heading_text_color . ';
+		
+		--link-color: ' . $body_text_link_color . ';
+		--link-color__hover: ' . $body_text_link_color_hover . ';
+		--link-color__visited: ' . $body_text_link_color_visited . ';
 
 
  	}
