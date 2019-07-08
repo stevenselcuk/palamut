@@ -1,9 +1,9 @@
 {
-  "name": "Dude",
+  "name": "theme_name",
   "version": "1.0.10",
-  "slug": "dude",
-  "prefix": "dude",
-  "textdomain": "dude",
+  "slug": "theme_package",
+  "prefix": "theme_prefix",
+  "textdomain": "theme_namespace",
   "plugin_name": "Palamut for Dude",
   "plugin_slug": "palamut",
   "plugin_prefix": "pala",

@@ -67,7 +67,6 @@ function prefix_customizer_css() {
 		--header-max-width: ' . $header_max_width . 'px;
 
  		--body-text-fontfamily: ' . $body_font_family . ';
- 		--body-text-fontsize:   ' . $body_font_size . 'px;
  		--heading-fontfamily:   ' . $heading_font_family . ';
 
 		--menu-item-fontfamily:' . $menu_item_font_family . ';
