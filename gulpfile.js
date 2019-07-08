@@ -187,8 +187,9 @@ function editConfig( done ) {
 				}
 			}
 		} );
+	} else {
+		gutil.log( 'No config? Huh! This is your first time I guess... See ya next time.' );
 	}
-	gutil.log( 'No config? Huh! This is your first time I guess... See ya next time.' );
 	done();
 }
 
@@ -1006,7 +1007,7 @@ const onError = err => {
 	this.emit( 'end' );
 };
 
-function endOfTheDay() {
+async function endOfTheDay() {
 	return src( './package.json' )
 	// bump package.json and bowser.json version
 		.pipe( bump( {
@@ -1030,9 +1031,6 @@ function endOfTheDay() {
 			gutil.log( '{{ 🍟 Well Done }} It was really productive day! You are awesome! 🙌🏻' );
 		} );
 }
-
-exports.zreport = series( endOfTheDay );
-
 async function createFreshTheme() {
 	return src( './src/**' )
 		.pipe( dest( './tools/fresh-theme' ) )
@@ -1041,18 +1039,12 @@ async function createFreshTheme() {
 			gutil.log( '{{ 🍟 Well Done }} A fresh theme created.' );
 		} );
 }
-
-exports.createfresh = series( createFreshTheme );
-
 async function freshInstall() {
 	await del( [ './src/**' ] ).then( () => {
 		return src( './tools/fresh-theme/**' ).pipe( dest( './src' ) );
 	} );
 }
-
-exports.fresh = series( freshInstall );
-
-function Backup() {
+async function Backup() {
 	if ( ! fs.existsSync( './build' ) ) {
 		gutil.log( buildNotFound );
 		process.exit( 1 );
@@ -1066,6 +1058,9 @@ function Backup() {
 	}
 }
 
+exports.zreport = series( endOfTheDay );
+exports.createfresh = series( createFreshTheme );
+exports.fresh = series( freshInstall );
 exports.backup = series( Backup );
 
 /* -------------------------------------------------------------------------------------------------

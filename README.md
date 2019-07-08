@@ -68,66 +68,35 @@ Palamut coded iaw WPTRT, Envato guideline. Palamut recommends Envato Theme Check
     └── package.json             # Node packages
 
 
-## Setup : Baby Steps
+## Initial Setup : Baby Steps
 
 Follow the Baby Steps when you are starting to develop new theme.
 
 * Open your terminal and go your working directory and follow these commands:
  
-`$ git clone https://github.com/stevenselcuk/palamut.git yourdesiredfoldernamehere`
+`$ npx create palamut`
 
-`$ cd yourdesiredfoldernamehere`
-
-`$ npm install`
-
-`$ npm run install:wordpress`
+* Enter your theme project credentials, (they are must and yes you can change later them in yourthemename/package.json )
 
 `$ npm run dev`
 
-* The latest command starts gulp task which has opens a new tab in your default browser. Please proceed to standard **WordPress installation** at this step.
-You will need a new database. *You may want to use your old one if available but the new database is strongly recommended.*
-When you finish the WordPress installation wizard, return to the terminal and break current task and run 
+* You have just finished WordPress installation step. Go other step  Dev : Toddler Stuff.
 
-`$ npm run config:wordpress`
-
-
-* You have just finished WordPress installation step. Go other step : Toddler Stuff.
-
-## Setup : Toddler Stuff
+## Dev : Toddler Stuff
 
 * Go `http://127.0.0.1:3020/wp-admin` (Login WordPress if not logged yet) and proceed Dashboard > Plugins Activate all plugins except **Hello Dolly** & **Akismet Anti-Spam**.
   ( If you want to develop a **WooCommerce** supported theme you may want to install & activate **WooCommerce Plugin**. )
-* Go `Dashboard > Themes` and activate the theme : pkg.name.
+* Go `Dashboard > Themes` and activate the theme : yourthemename.
  ( It's our theme, just looks weird, for now.)
 * Go `Dashboard > Tools > Import` and find WordPress row and click "Install Now" & after installing click Run Importer 
 Find **themeunittestdata.wordpress.xml** under **yourdesiredfoldernamehere/tools/dummy-data** and click **Upload file and import**
 Click checkbox "Download and import file attachments" and click submit.
 * Just go `http://127.0.0.1:3010` this is your theme! Looks good!
 
-## Setup : Young as fuck
+## Build : Young as fuck
 
-* Open your favorite editor and edit /yourdesiredfoldernamehere/packgage.json
-Find these lines and edit **Yourthemename** things as you want. 
-
-    "name": "Yourthemename", *No spaces please*
-    "version": "1.0.0",
-    "slug": "yourthemename", *No spaces please*
-    "prefix": "yourthemenamebutshort", *No spaces please*
-    "textdomain": "yourthemename", *No spaces please*
-
-( Don't forget reset as 1.0.0 to version, it is important.)
-* Go your working directory and delete /yourdesiredfoldernamehere/.git
-* Proceed to 'https://github.com/new' and create new private repository pass other options.
-* And init new git & add origin & push it It is someting like that: 
-
-    git init
-    git commit -m "first commit"
-    git remote add origin https://github.com/yourname/your-new-repo.git
-    git push -u origin master
-
-## You better work : Ricky Steps
-Oh boy, Documentation ends here. Maybe next time.
-
+`$ npm run build`
+* Your theme, plugin files and zip located under /yourthemename/dist/
 
 ## Frequently Asked Questions
 
