@@ -165,20 +165,31 @@ async function installationDone() {
 	await gutil.log( '{{ 🙌🏻 yaaaay! }} Installation has done! Let\'s work! Proceed with that command: \x1b[1m npm run dev \x1b[0m' );
 }
 
-function editConfig() {
-	return src( './build/wordpress/wp-config.php' )
-		.pipe( inject.after( 'define( \'WP_DEBUG\', false );', '\ndefine( \'DISABLE_WP_CRON\', true );\ndefine( \'WP_MEMORY_LIMIT\', \'128M\' );\n' ) )
-		.pipe( replace( {
-			patterns: [
-				{
-					match: 'define( \'WP_DEBUG\', false );',
-					replacement: 'define( \'WP_DEBUG\', true );',
-				},
-			],
-			usePrefix: false,
-		} ) )
-		.pipe( gutil.log( '{{ 🎛 Sum configs }} Config has been applied.' ) )
-		.pipe( dest( './build/wordpress' ) );
+function editConfig( done ) {
+	if ( fs.existsSync( './build/wordpress/wp-config.php' ) ) {
+		fs.readFile( './build/wordpress/wp-config.php', ( err, data ) => {
+			if ( data ) {
+				if ( data.indexOf( 'WP_MEMORY_LIMIT' ) >= 0 ) {
+					log( 'WordPress config looks good!' );
+				} else {
+					return src( './build/wordpress/wp-config.php' )
+						.pipe( inject.after( 'define( \'WP_DEBUG\', false );', '\ndefine( \'DISABLE_WP_CRON\', true );\ndefine( \'WP_MEMORY_LIMIT\', \'128M\' );\n' ) )
+						.pipe( replace( {
+							patterns: [
+								{
+									match: 'define( \'WP_DEBUG\', false );',
+									replacement: 'define( \'WP_DEBUG\', true );',
+								},
+							],
+							usePrefix: false,
+						} ) )
+						.pipe( dest( './build/wordpress' ) );
+				}
+			}
+		} );
+	}
+	gutil.log( 'No config? Huh! This is your first time I guess... See ya next time.' );
+	done();
 }
 
 exports.setup = series( cleanup, downloadWordPress );
@@ -211,6 +222,7 @@ function devServer() {
 	watch( './src/assets/js/**', series( footerScriptsDev, Reload ) );
 	watch( './src/theme/**', series( copyThemeDev, Reload ) );
 	watch( './src/plugins/**', series( pluginsDev, Reload ) );
+	watch( './build/wordpress/wp-config.php', series( editConfig ) );
 }
 
 function Reload( done ) {
@@ -393,6 +405,7 @@ function GutenbergStylesDev() {
 }
 
 exports.start = series(
+
 	copyThemeDev,
 	stylesDev,
 	ShortCodestylesDev,
