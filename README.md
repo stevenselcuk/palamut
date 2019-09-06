@@ -7,7 +7,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b33f52710a25481cad1c777042789f7a)](https://app.codacy.com/app/stevenjselcuk/palamut?utm_source=github.com&utm_medium=referral&utm_content=stevenselcuk/palamut&utm_campaign=Badge_Grade_Dashboard)
 [![palamut version](https://img.shields.io/badge/habitat-1.0.9-blue.svg)](https://img.shields.io/badge/habitat-1.0.9-blue.svg)
 [![palamut theme version](https://img.shields.io/badge/theme-1.0.0-brightgreen.svg)](https://img.shields.io/badge/theme-1.0.0-brightgreen.svg)
-[![palamut plugin version](https://img.shields.io/badge/plugin-1.0.0-brightgreen.svg)](https://img.shields.io/badge/plugin-1.0.0-brightgreen.svg)
+[![palamut plugin version](https://img.shields.io/badge/plugin-1.0.0-brightgreen.svg)](https://img.shields.io/badge/plugin-1.0.0-brightgreen.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/stevenselcuk/palamut.svg)](https://greenkeeper.io/)
 
 ## What is Palamut?
 
