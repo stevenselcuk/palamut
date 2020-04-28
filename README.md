@@ -7,7 +7,7 @@
 
 ## What is Palamut?
 
-Palamut is a habitat where is your unique WordPress theme born and lives. 
+Palamut is a habitat where is your unique WordPress theme born and lives.
 **What is inside?**
 
 ### WordPress Starter Theme (v.1.0.0)
@@ -33,10 +33,10 @@ Some additional features for your comfort.👐
 It's your friend who never lets you down. Includes life saving tasks and there is more browserSync with PHP server! No more boring PHP stuff.😓 Live reload with this feature! Perfekt mix.🍔
 
 **3rd Party Plugins**
-Palamut coded iaw WPTRT, Envato guideline. Palamut recommends Envato Theme Check, Query Monitor, Classic Editor and Elementor plugin for your working habitat. You can find them under /tools. 
+Palamut coded iaw WPTRT, Envato guideline. Palamut recommends Envato Theme Check, Query Monitor, Classic Editor and Elementor plugin for your working habitat. You can find them under /tools.
 
 ## File Structure
-    
+
     ├── build/                   # WordPress Installion
     ├── dist/                    # Ready to shipping builded files (zips & theme and palamut folders)
     ├── src/                     # Source files
@@ -45,14 +45,14 @@ Palamut coded iaw WPTRT, Envato guideline. Palamut recommends Envato Theme Check
     │       ├── img/             # Image directory
     │       ├── js/              # Main App JS File
     │       ├── styles/          # SCSS files
-    │   ├── plugins/             
+    │   ├── plugins/
     │       ├── palamut/         # Palamut the Companion for your theme
     │   ├── theme/               # Standard Theme files
-    │       ├── assets/ 
+    │       ├── assets/
     │       ├── components/
-    │       ├── inc/ 
-    │       ├── languages/ 
-    │       ├── wooCommerce/ 
+    │       ├── inc/
+    │       ├── languages/
+    │       ├── wooCommerce/
     ├── tools/                   # Tools and utilities
     │   ├── dev-plugins          # Developer Plugins (Just for development env.)
     │   ├── dummy-data           # Demo posts and testing data
@@ -69,7 +69,7 @@ Palamut coded iaw WPTRT, Envato guideline. Palamut recommends Envato Theme Check
 Follow the Baby Steps when you are starting to develop new theme.
 
 * Open your terminal and go your working directory and follow these commands:
- 
+
 `$ npx create palamut`
 
 * Enter your theme project credentials, (they are must and yes you can change later them in yourthemename/package.json )
@@ -78,18 +78,18 @@ Follow the Baby Steps when you are starting to develop new theme.
 
 * You have just finished WordPress installation step. Go other step  Dev : Toddler Stuff.
 
-## Dev : Toddler Stuff
+## Dev
 
 * Go `http://127.0.0.1:3020/wp-admin` (Login WordPress if not logged yet) and proceed Dashboard > Plugins Activate all plugins except **Hello Dolly** & **Akismet Anti-Spam**.
   ( If you want to develop a **WooCommerce** supported theme you may want to install & activate **WooCommerce Plugin**. )
 * Go `Dashboard > Themes` and activate the theme : yourthemename.
  ( It's our theme, just looks weird, for now.)
-* Go `Dashboard > Tools > Import` and find WordPress row and click "Install Now" & after installing click Run Importer 
+* Go `Dashboard > Tools > Import` and find WordPress row and click "Install Now" & after installing click Run Importer
 Find **themeunittestdata.wordpress.xml** under **yourdesiredfoldernamehere/tools/dummy-data** and click **Upload file and import**
 Click checkbox "Download and import file attachments" and click submit.
 * Just go `http://127.0.0.1:3010` this is your theme! Looks good!
 
-## Build : Young as fuck
+## Build
 
 `$ npm run build`
 * Your theme, plugin files and zip located under /yourthemename/dist/
@@ -97,7 +97,7 @@ Click checkbox "Download and import file attachments" and click submit.
 ## Frequently Asked Questions
 
 * May I ask a question?
- 
+
 Sure, stevenjselcuk on gmail.com shoot here!
 
 
@@ -120,6 +120,10 @@ Initial release
 ### 1.1.0
 * Released: May 2, 2019
 Building task has been added.  Use `npm run build`. Files and folders appears in `./build`
+
+### 1.1.1
+* Released: Apr 28, 2020
+Deps have been updated to latest versios
 
 
 ## Palamut The companion Plugin
